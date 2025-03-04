@@ -39,6 +39,8 @@ dependencies {
     api "com.google.protobuf:protobuf-java"
 
     api project(":tracdap-api-metadata")
+    testImplementation("com.diffblue.cover:cover-annotations:1.3.0")
+
 }
 
 // Javadoc gives a lot of warnings on the protobuf generated code

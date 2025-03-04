@@ -44,4 +44,6 @@ dependencies {
 
     // Pull in the executor test suite for testing
     testImplementation project(path: ':tracdap-lib-orch', configuration: 'testSuite')
+    testImplementation("com.diffblue.cover:cover-annotations:1.3.0")
+
 }
