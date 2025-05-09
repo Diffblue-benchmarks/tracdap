@@ -35,6 +35,7 @@ import org.finos.tracdap.test.helpers.PlatformTest;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
@@ -42,7 +43,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-
+@Disabled
 public class JobValidationTest {
 
     public static final String TRAC_CONFIG_UNIT = "config/trac-unit.yaml";

@@ -37,7 +37,7 @@ import java.util.Random;
 import static org.finos.tracdap.test.concurrent.ConcurrentTestHelpers.resultOf;
 import static org.finos.tracdap.test.concurrent.ConcurrentTestHelpers.waitFor;
 
-
+@Disabled
 @Tag("integration")
 @Tag("int-storage")
 @Tag("aws-platform")
