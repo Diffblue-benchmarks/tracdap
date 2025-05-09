@@ -1,0 +1,762 @@
+{
+  "meta" : {
+    "reportVersion" : "2.6"
+  },
+  "run" : {
+    "version" : "2025.02.02-08b2a5a-licensed",
+    "creationTimestamp" : "2025-03-04T17:59:36.241297Z",
+    "command" : "dcover create --coverage-reports --exclude-modules=sql-drivers",
+    "totalTime" : 147.591,
+    "environmentDetectionTime" : 0.171,
+    "indexingTime" : 0.224,
+    "entryPointsTime" : 0.158,
+    "generationTime" : 16522.154,
+    "timeToFirstTest" : 18832.623,
+    "timeToLastTest" : 17943.183,
+    "indexQueryTime" : 5.18,
+    "verificationTime" : 350.067,
+    "validationTime" : 21.525
+  },
+  "codes" : {
+    "R000" : "Success",
+    "R013" : "No inputs found that don't throw a trivial exception",
+    "R034" : "Diffblue Cover can't complete test",
+    "T000" : "Method eligible for test creation",
+    "T003" : "Private method",
+    "T005" : "Trivial constructor",
+    "T006" : "Main method",
+    "T010" : "Abstract or interface method",
+    "T012" : "Synthetic method",
+    "V000" : "Validated successfully"
+  },
+  "summary" : {
+    "classesCount" : 5,
+    "methodsCount" : 33,
+    "cumulativeDiffblueTestCount" : 8,
+    "cumulativeManualTestCount" : 0,
+    "completeTestCount" : 8,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 483,
+    "perMethodTestability" : {
+      "T000" : 13,
+      "T003" : 14,
+      "T005" : 1,
+      "T006" : 1,
+      "T010" : 3,
+      "T012" : 1
+    },
+    "perMethodOutcome" : {
+      "R000" : 5,
+      "R013" : 7,
+      "R034" : 1,
+      "T003" : 14,
+      "T005" : 1,
+      "T006" : 1,
+      "T010" : 3,
+      "T012" : 1
+    },
+    "perTestOutcome" : {
+      "R000" : 8
+    },
+    "perTestValidation" : {
+      "V000" : 8
+    }
+  },
+  "classes" : {
+    "org.finos.tracdap.tools.secrets.IUserManager" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 3
+      },
+      "perMethodOutcome" : {
+        "T010" : 3
+      }
+    },
+    "org.finos.tracdap.tools.secrets.JksHelpers" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 2,
+        "R013" : 1,
+        "T005" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 3
+      }
+    },
+    "org.finos.tracdap.tools.secrets.JksUserManager" : {
+      "methodsCount" : 6,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 4,
+        "T003" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R013" : 3,
+        "T003" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "org.finos.tracdap.tools.secrets.SecretTool" : {
+      "methodsCount" : 15,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T003" : 11,
+        "T006" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R034" : 1,
+        "T003" : 11,
+        "T006" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "org.finos.tracdap.tools.secrets.SqlUserManager" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 4,
+        "T003" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R013" : 3,
+        "T003" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    }
+  },
+  "methods" : {
+    "org.finos.tracdap.tools.secrets.IUserManager.addUser:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.tools.secrets.IUserManager.deleteUser:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.tools.secrets.IUserManager.initTracUsers:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.tools.secrets.JksHelpers.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "T005",
+      "lineNumbers" : [
+        33
+      ]
+    },
+    "org.finos.tracdap.tools.secrets.JksHelpers.loadKeystore:(Ljava/lang/String;Ljava/nio/file/Path;Ljava/lang/String;Z)Ljava/security/KeyStore;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        44,
+        46,
+        47,
+        49,
+        50,
+        51,
+        49,
+        54,
+        56,
+        58,
+        59
+      ]
+    },
+    "org.finos.tracdap.tools.secrets.JksHelpers.saveKeystore:(Ljava/nio/file/Path;Ljava/lang/String;Ljava/security/KeyStore;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        67,
+        69,
+        70,
+        72,
+        73,
+        74,
+        72,
+        76,
+        77,
+        83,
+        79,
+        81,
+        82,
+        84
+      ]
+    },
+    "org.finos.tracdap.tools.secrets.JksHelpers.writeKeysToKeystore:(Ljava/security/KeyStore;Ljava/lang/String;Ljava/security/KeyPair;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        90,
+        91,
+        93,
+        94,
+        103,
+        96,
+        98,
+        99,
+        101,
+        102,
+        104
+      ]
+    },
+    "org.finos.tracdap.tools.secrets.JksUserManager.<init>:(Lorg/finos/tracdap/common/config/ConfigManager;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        37,
+        38,
+        39,
+        40
+      ]
+    },
+    "org.finos.tracdap.tools.secrets.JksUserManager.addUser:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        61,
+        63,
+        65,
+        66,
+        67,
+        69,
+        71,
+        75,
+        73,
+        74,
+        76
+      ]
+    },
+    "org.finos.tracdap.tools.secrets.JksUserManager.deleteUser:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        83,
+        84,
+        85,
+        89,
+        87,
+        88,
+        90
+      ]
+    },
+    "org.finos.tracdap.tools.secrets.JksUserManager.initTracUsers:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        45,
+        46,
+        47,
+        48,
+        49,
+        51,
+        52,
+        53,
+        54
+      ]
+    },
+    "org.finos.tracdap.tools.secrets.JksUserManager.loadUserDb:()Ljava/security/KeyStore;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        95,
+        96,
+        97,
+        98,
+        100,
+        101,
+        103
+      ]
+    },
+    "org.finos.tracdap.tools.secrets.JksUserManager.saveUserDb:(Ljava/security/KeyStore;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        108,
+        109,
+        110,
+        112,
+        113,
+        115,
+        116
+      ]
+    },
+    "org.finos.tracdap.tools.secrets.SecretTool.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        59
+      ]
+    },
+    "org.finos.tracdap.tools.secrets.SecretTool.<init>:(Lorg/finos/tracdap/common/config/ConfigManager;Ljava/lang/String;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        82,
+        68,
+        84,
+        85,
+        87,
+        88,
+        89,
+        91,
+        92,
+        93,
+        94,
+        97,
+        99,
+        100,
+        101,
+        102,
+        105,
+        106,
+        108,
+        109
+      ]
+    },
+    "org.finos.tracdap.tools.secrets.SecretTool.addSecret:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        161,
+        163,
+        165,
+        167,
+        168
+      ]
+    },
+    "org.finos.tracdap.tools.secrets.SecretTool.addTracUser:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        252,
+        253,
+        254,
+        256,
+        257,
+        258,
+        260,
+        262,
+        263,
+        264
+      ]
+    },
+    "org.finos.tracdap.tools.secrets.SecretTool.consoleReadLine:(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        331,
+        333,
+        334,
+        337,
+        338,
+        339
+      ]
+    },
+    "org.finos.tracdap.tools.secrets.SecretTool.consoleReadPassword:(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        345,
+        347,
+        348,
+        351,
+        352,
+        353
+      ]
+    },
+    "org.finos.tracdap.tools.secrets.SecretTool.createRootAuthKey:(Ljava/lang/String;Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        183,
+        184,
+        185,
+        187,
+        189,
+        191,
+        192,
+        193,
+        204,
+        195,
+        196,
+        197,
+        198,
+        200,
+        201,
+        202,
+        203,
+        205
+      ]
+    },
+    "org.finos.tracdap.tools.secrets.SecretTool.deleteSecret:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        172,
+        174,
+        176,
+        177
+      ]
+    },
+    "org.finos.tracdap.tools.secrets.SecretTool.deleteTracUser:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        268,
+        269,
+        270
+      ]
+    },
+    "org.finos.tracdap.tools.secrets.SecretTool.getUserManager:()Lorg/finos/tracdap/tools/secrets/IUserManager;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        274,
+        276,
+        277,
+        278,
+        279,
+        280,
+        283,
+        285,
+        286,
+        288,
+        289,
+        291
+      ]
+    },
+    "org.finos.tracdap.tools.secrets.SecretTool.initSecrets:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        155,
+        156,
+        157
+      ]
+    },
+    "org.finos.tracdap.tools.secrets.SecretTool.initTracUsers:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        209,
+        211,
+        212,
+        213,
+        214,
+        215,
+        218,
+        219,
+        220,
+        221,
+        224,
+        225,
+        226,
+        227,
+        230,
+        231,
+        233,
+        235,
+        236,
+        237,
+        239,
+        240,
+        242,
+        243,
+        246,
+        247,
+        248
+      ]
+    },
+    "org.finos.tracdap.tools.secrets.SecretTool.main:([Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T006",
+      "perMethodOutcome" : "T006",
+      "lineNumbers" : [
+        369,
+        370,
+        372,
+        373,
+        374,
+        376,
+        377,
+        379,
+        397,
+        381,
+        383,
+        384,
+        386,
+        387,
+        389,
+        397,
+        391,
+        393,
+        394,
+        396,
+        398
+      ]
+    },
+    "org.finos.tracdap.tools.secrets.SecretTool.runTasks:(Ljava/util/List;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R034",
+      "lineNumbers" : [
+        114,
+        116,
+        118,
+        119,
+        121,
+        122,
+        124,
+        125,
+        127,
+        128,
+        130,
+        131,
+        133,
+        134,
+        136,
+        137,
+        140,
+        141,
+        143,
+        149,
+        145,
+        146,
+        147,
+        148,
+        151
+      ]
+    },
+    "org.finos.tracdap.tools.secrets.SecretTool.writeKeysToFiles:(Ljava/security/KeyPair;Ljava/nio/file/Path;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        298,
+        300,
+        301,
+        303,
+        304,
+        306,
+        307,
+        309,
+        310,
+        312,
+        313,
+        315,
+        316,
+        326,
+        318,
+        320,
+        321,
+        323,
+        324,
+        325,
+        327
+      ]
+    },
+    "org.finos.tracdap.tools.secrets.SqlUserManager.<init>:(Lorg/finos/tracdap/common/config/ConfigManager;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        36,
+        37,
+        38,
+        39
+      ]
+    },
+    "org.finos.tracdap.tools.secrets.SqlUserManager.addUser:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        88,
+        90,
+        92,
+        94,
+        95,
+        96,
+        97,
+        99,
+        100,
+        90,
+        105,
+        101,
+        103,
+        104,
+        106
+      ]
+    },
+    "org.finos.tracdap.tools.secrets.SqlUserManager.createDatasource:()Ljavax/sql/DataSource;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        43,
+        44,
+        45,
+        47,
+        48,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        60
+      ]
+    },
+    "org.finos.tracdap.tools.secrets.SqlUserManager.deleteUser:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        111,
+        113,
+        115,
+        117,
+        118,
+        120,
+        121,
+        113,
+        126,
+        122,
+        124,
+        125,
+        127
+      ]
+    },
+    "org.finos.tracdap.tools.secrets.SqlUserManager.initTracUsers:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        66,
+        68,
+        70,
+        75,
+        76,
+        77,
+        68,
+        82,
+        78,
+        80,
+        81,
+        83
+      ]
+    }
+  },
+  "validationMetrics" : {
+    "failingTests" : [
+      "org.finos.tracdap.gateway.proxy.rest.RestProxyTest.createSearchAndGet",
+      "org.finos.tracdap.gateway.proxy.http.Http1ProxyTest.initializationError"
+    ]
+  }
+}

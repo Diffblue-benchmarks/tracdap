@@ -1,0 +1,1284 @@
+{
+  "meta" : {
+    "reportVersion" : "2.6"
+  },
+  "run" : {
+    "version" : "2025.02.02-08b2a5a-licensed",
+    "creationTimestamp" : "2025-03-04T17:59:36.241297Z",
+    "command" : "dcover create --coverage-reports --exclude-modules=sql-drivers",
+    "totalTime" : 312.878,
+    "environmentDetectionTime" : 0.195,
+    "indexingTime" : 0.193,
+    "entryPointsTime" : 0.192,
+    "generationTime" : 610.858,
+    "timeToFirstTest" : 966.202,
+    "timeToLastTest" : 856.086,
+    "indexQueryTime" : 5.756,
+    "verificationTime" : 55.267,
+    "validationTime" : 21.791
+  },
+  "codes" : {
+    "R000" : "Success",
+    "R002" : "Missing observers",
+    "R006" : "Static initializer failed",
+    "R011" : "Sandboxing policy violation",
+    "R013" : "No inputs found that don't throw a trivial exception",
+    "T000" : "Method eligible for test creation",
+    "T003" : "Private method",
+    "T005" : "Trivial constructor",
+    "T012" : "Synthetic method",
+    "V000" : "Validated successfully"
+  },
+  "summary" : {
+    "classesCount" : 7,
+    "methodsCount" : 87,
+    "cumulativeDiffblueTestCount" : 8,
+    "cumulativeManualTestCount" : 0,
+    "completeTestCount" : 8,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 687,
+    "perMethodTestability" : {
+      "T000" : 31,
+      "T003" : 24,
+      "T005" : 2,
+      "T012" : 30
+    },
+    "perMethodOutcome" : {
+      "R000" : 6,
+      "R002" : 1,
+      "R006" : 1,
+      "R011" : 23,
+      "R013" : 2,
+      "T003" : 24,
+      "T012" : 30
+    },
+    "perTestOutcome" : {
+      "R000" : 8
+    },
+    "perTestValidation" : {
+      "V000" : 8
+    }
+  },
+  "classes" : {
+    "org.finos.tracdap.plugins.aws.storage.AwsStoragePlugin" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 4,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 6
+      }
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader" : {
+      "methodsCount" : 14,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 7,
+        "T003" : 4,
+        "T012" : 3
+      },
+      "perMethodOutcome" : {
+        "R006" : 1,
+        "R011" : 6,
+        "T003" : 4,
+        "T012" : 3
+      }
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader$ResponseHandler" : {
+      "methodsCount" : 10,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 5,
+        "T012" : 5
+      },
+      "perMethodOutcome" : {
+        "T003" : 5,
+        "T012" : 5
+      }
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader$ResponseStream" : {
+      "methodsCount" : 10,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 5,
+        "T012" : 5
+      },
+      "perMethodOutcome" : {
+        "T003" : 5,
+        "T012" : 5
+      }
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage" : {
+      "methodsCount" : 37,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 15,
+        "T003" : 9,
+        "T012" : 13
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R011" : 12,
+        "R013" : 2,
+        "T003" : 9,
+        "T012" : 13
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectWriter" : {
+      "methodsCount" : 8,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 5,
+        "T003" : 1,
+        "T012" : 2
+      },
+      "perMethodOutcome" : {
+        "R011" : 5,
+        "T003" : 1,
+        "T012" : 2
+      }
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3StorageErrors" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R002" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    }
+  },
+  "methods" : {
+    "org.finos.tracdap.plugins.aws.storage.AwsStoragePlugin.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        36,
+        37,
+        36
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.AwsStoragePlugin.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        31
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.AwsStoragePlugin.createService:(Ljava/lang/String;Ljava/util/Properties;Lorg/finos/tracdap/common/config/ConfigManager;)Ljava/lang/Object;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        52,
+        53,
+        54,
+        57,
+        58
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.AwsStoragePlugin.pluginName:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        41
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.AwsStoragePlugin.serviceInfo:()Ljava/util/List;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        46
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader$ResponseHandler.<init>:(Lorg/finos/tracdap/plugins/aws/storage/S3ObjectReader;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        199
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader$ResponseHandler.exceptionOccurred:(Ljava/lang/Throwable;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        220,
+        221
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader$ResponseHandler.lambda$exceptionOccurred$3:(Ljava/lang/Throwable;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        220
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader$ResponseHandler.lambda$onResponse$1:(Lsoftware/amazon/awssdk/services/s3/model/GetObjectResponse;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        210
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader$ResponseHandler.lambda$onStream$2:(Lsoftware/amazon/awssdk/core/async/SdkPublisher;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        215
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader$ResponseHandler.lambda$prepare$0:(Ljava/util/concurrent/CompletableFuture;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        204
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader$ResponseHandler.onResponse:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        199
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader$ResponseHandler.onResponse:(Lsoftware/amazon/awssdk/services/s3/model/GetObjectResponse;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        210,
+        211
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader$ResponseHandler.onStream:(Lsoftware/amazon/awssdk/core/async/SdkPublisher;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        215,
+        216
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader$ResponseHandler.prepare:()Ljava/util/concurrent/CompletableFuture;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        203,
+        204,
+        205
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader$ResponseStream.<init>:(Lorg/finos/tracdap/plugins/aws/storage/S3ObjectReader;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        224
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader$ResponseStream.lambda$onComplete$3:(Lorg/finos/tracdap/plugins/aws/storage/S3ObjectReader;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        243
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader$ResponseStream.lambda$onError$2:(Ljava/lang/Throwable;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        238
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader$ResponseStream.lambda$onNext$1:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        233
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader$ResponseStream.lambda$onSubscribe$0:(Lorg/reactivestreams/Subscription;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        228
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader$ResponseStream.onComplete:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        243,
+        244
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader$ResponseStream.onError:(Ljava/lang/Throwable;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        238,
+        239
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader$ResponseStream.onNext:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        224
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader$ResponseStream.onNext:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        233,
+        234
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader$ResponseStream.onSubscribe:(Lorg/reactivestreams/Subscription;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        228,
+        229
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader.<init>:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JILsoftware/amazon/awssdk/services/s3/S3AsyncClient;Lorg/finos/tracdap/common/data/IDataContext;JLorg/finos/tracdap/common/storage/StorageErrors;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R006",
+      "lineNumbers" : [
+        98,
+        100
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader.<init>:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lsoftware/amazon/awssdk/services/s3/S3AsyncClient;Lorg/finos/tracdap/common/data/IDataContext;JLorg/finos/tracdap/common/storage/StorageErrors;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        110,
+        112
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader.<init>:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lsoftware/amazon/awssdk/services/s3/S3AsyncClient;Lorg/finos/tracdap/common/data/IDataContext;Lorg/finos/tracdap/common/storage/StorageErrors;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        121,
+        122
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader.<init>:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZJILsoftware/amazon/awssdk/services/s3/S3AsyncClient;Lorg/finos/tracdap/common/data/IDataContext;JLorg/finos/tracdap/common/storage/StorageErrors;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        73,
+        75,
+        76,
+        77,
+        78,
+        80,
+        81,
+        82,
+        84,
+        85,
+        86,
+        87
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader._onPrepare:(Ljava/util/concurrent/CompletableFuture;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        164,
+        165
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader._onResponse:(Lsoftware/amazon/awssdk/services/s3/model/GetObjectResponse;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        169,
+        171,
+        172,
+        174
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader._onStream:(Lsoftware/amazon/awssdk/core/async/SdkPublisher;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        178,
+        179
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader._onSubscribe:(Lorg/reactivestreams/Subscription;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        183,
+        184,
+        185,
+        188,
+        190,
+        191,
+        192,
+        194
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader.access$000:(Lorg/finos/tracdap/plugins/aws/storage/S3ObjectReader;Ljava/lang/Throwable;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        41
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader.access$100:(Lorg/finos/tracdap/plugins/aws/storage/S3ObjectReader;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        41
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader.access$200:(Lorg/finos/tracdap/plugins/aws/storage/S3ObjectReader;Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        41
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader.clientCancel:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        152,
+        153,
+        157,
+        160
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader.clientRequest:(J)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        143,
+        144,
+        146,
+        147
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectReader.clientStart:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        127,
+        128,
+        129,
+        131,
+        132,
+        133,
+        136,
+        137,
+        138
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.<init>:(Ljava/lang/String;Ljava/util/Properties;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        81,
+        83,
+        85,
+        86,
+        87,
+        88,
+        90,
+        91,
+        92,
+        93,
+        94
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.attrsToFileStat:(Ljava/lang/String;Lsoftware/amazon/awssdk/services/s3/model/GetObjectAttributesResponse;)Lorg/finos/tracdap/common/storage/FileStat;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        485,
+        486,
+        487,
+        489,
+        490,
+        491,
+        493,
+        494,
+        495,
+        497
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.fsCreateDir:(Ljava/lang/String;Lorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        340,
+        342,
+        343,
+        344,
+        345,
+        346,
+        348,
+        351,
+        353
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.fsDeleteDir:(Ljava/lang/String;Lorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        374
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.fsDeleteDirContents:(Lsoftware/amazon/awssdk/services/s3/model/ListObjectsV2Response;Lorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        414,
+        415,
+        417,
+        418,
+        419,
+        420,
+        422,
+        423,
+        424,
+        425,
+        427,
+        429
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.fsDeleteDirPage:(Ljava/lang/String;Ljava/lang/String;Lorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        379,
+        382,
+        383,
+        384,
+        385,
+        386,
+        389,
+        391
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.fsDeleteFile:(Ljava/lang/String;Lorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        359,
+        361,
+        362,
+        363,
+        364,
+        366,
+        368
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.fsDirExists:(Ljava/lang/String;Lorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        236,
+        238,
+        239,
+        240,
+        241,
+        242,
+        244,
+        246
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.fsExists:(Ljava/lang/String;Lorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        201,
+        203,
+        204,
+        205,
+        206,
+        208,
+        210,
+        211,
+        212,
+        210
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.fsGetDirInfo:(Ljava/lang/String;Lorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        270,
+        272,
+        273,
+        274,
+        276,
+        277,
+        279,
+        281
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.fsGetFileInfo:(Ljava/lang/String;Lorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        253,
+        255,
+        256,
+        257,
+        258,
+        259,
+        261,
+        263
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.fsListContents:(Ljava/lang/String;Ljava/lang/String;IZLorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        288,
+        290,
+        291,
+        292,
+        293,
+        295,
+        296,
+        298,
+        299,
+        302,
+        304
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.fsOpenInputStream:(Ljava/lang/String;Lorg/finos/tracdap/common/data/IDataContext;)Ljava/util/concurrent/Flow$Publisher;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        464,
+        466
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.fsOpenOutputStream:(Ljava/lang/String;Ljava/util/concurrent/CompletableFuture;Lorg/finos/tracdap/common/data/IDataContext;)Ljava/util/concurrent/Flow$Subscriber;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        474,
+        476
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.fsReadChunk:(Ljava/lang/String;JILorg/finos/tracdap/common/data/IDataContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        435,
+        437,
+        441,
+        442,
+        444,
+        452,
+        444
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.lambda$fsCreateDir$3:(Lsoftware/amazon/awssdk/services/s3/model/PutObjectResponse;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        353
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.lambda$fsDeleteDirContents$7:(Lsoftware/amazon/awssdk/services/s3/model/S3Object;)Lsoftware/amazon/awssdk/services/s3/model/ObjectIdentifier;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        419
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.lambda$fsDeleteDirContents$8:(Ljava/util/List;Lsoftware/amazon/awssdk/services/s3/model/Delete$Builder;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        424
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.lambda$fsDeleteDirContents$9:(Lsoftware/amazon/awssdk/services/s3/model/DeleteObjectsResponse;)Ljava/lang/Void;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        429
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.lambda$fsDeleteDirPage$5:(Ljava/lang/String;Ljava/lang/String;Lorg/finos/tracdap/common/data/IExecutionContext;Ljava/lang/Void;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        407
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.lambda$fsDeleteDirPage$6:(Ljava/lang/String;Ljava/lang/String;Lorg/finos/tracdap/common/data/IExecutionContext;Lsoftware/amazon/awssdk/services/s3/model/ListObjectsV2Response;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        393,
+        394,
+        395,
+        397,
+        400,
+        401,
+        403,
+        404,
+        407
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.lambda$fsDeleteFile$4:(Lsoftware/amazon/awssdk/services/s3/model/DeleteObjectResponse;)Ljava/lang/Void;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        368
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.lambda$fsExists$0:(Lsoftware/amazon/awssdk/services/s3/model/HeadObjectResponse;)Ljava/lang/Boolean;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        211
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.lambda$fsGetFileInfo$1:(Ljava/lang/String;Lsoftware/amazon/awssdk/services/s3/model/GetObjectAttributesResponse;)Lorg/finos/tracdap/common/storage/FileStat;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        263
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.lambda$fsListContents$2:(Ljava/lang/String;Ljava/lang/String;Lsoftware/amazon/awssdk/services/s3/model/ListObjectsV2Response;)Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        304
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.lambda$fsReadChunk$10:(Ljava/util/ArrayList;Lorg/apache/arrow/memory/ArrowBuf;)Ljava/util/ArrayList;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        442
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.lambda$fsReadChunk$11:(Ljava/util/ArrayList;)Lorg/apache/arrow/memory/ArrowBuf;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        447,
+        448,
+        450
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.lambda$fsReadChunk$12:(Ljava/util/ArrayList;Ljava/lang/Throwable;)Lorg/apache/arrow/memory/ArrowBuf;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        454,
+        455
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.normalizePrefix:(Ljava/lang/String;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        98,
+        99,
+        101,
+        102,
+        104,
+        105,
+        107,
+        108,
+        110
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.objectExistsError:(Ljava/lang/Throwable;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        219,
+        220,
+        221,
+        223,
+        224,
+        226,
+        227,
+        229
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.objectToFileStat:(Lsoftware/amazon/awssdk/services/s3/model/S3Object;)Lorg/finos/tracdap/common/storage/FileStat;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        503,
+        504,
+        505,
+        506,
+        507,
+        509
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.prefixLsResult:(Ljava/lang/String;Ljava/lang/String;Lsoftware/amazon/awssdk/services/s3/model/ListObjectsV2Response;)Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        311,
+        312,
+        315,
+        316,
+        320,
+        321,
+        323,
+        324,
+        328,
+        329,
+        331,
+        332,
+        333,
+        331
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.prefixToFileStat:(Lsoftware/amazon/awssdk/services/s3/model/CommonPrefix;)Lorg/finos/tracdap/common/storage/FileStat;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        516,
+        517,
+        518,
+        519,
+        521
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.setupCredentials:(Ljava/util/Properties;)Lsoftware/amazon/awssdk/auth/credentials/AwsCredentialsProvider;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        115,
+        116,
+        117,
+        119,
+        120,
+        121,
+        124,
+        126,
+        127,
+        128,
+        130,
+        132,
+        135,
+        136,
+        137
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.start:(Lio/netty/channel/EventLoopGroup;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        157,
+        159,
+        161,
+        162,
+        171,
+        172,
+        173,
+        175,
+        176,
+        177,
+        178,
+        180,
+        181,
+        183,
+        184,
+        186,
+        187
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.stop:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        192,
+        194,
+        195
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectStorage.usePrefix:(Ljava/lang/String;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        526,
+        527,
+        529,
+        530,
+        532
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectWriter.<init>:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lsoftware/amazon/awssdk/services/s3/S3AsyncClient;Ljava/util/concurrent/CompletableFuture;Lorg/finos/tracdap/common/data/IDataContext;Lorg/finos/tracdap/common/storage/StorageErrors;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        73,
+        48,
+        64,
+        75,
+        76,
+        77,
+        78,
+        80,
+        81,
+        82,
+        83,
+        84,
+        86,
+        87,
+        88
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectWriter.lambda$onSubscribe$0:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        103
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectWriter.onComplete:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        132,
+        133,
+        134,
+        137,
+        139,
+        140,
+        141,
+        142,
+        143,
+        145,
+        147,
+        148
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectWriter.onCompleteHandler:(Lsoftware/amazon/awssdk/services/s3/model/PutObjectResponse;Ljava/lang/Throwable;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        154,
+        155,
+        156,
+        157,
+        159,
+        162,
+        165,
+        166,
+        162,
+        165,
+        166,
+        167
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectWriter.onError:(Ljava/lang/Throwable;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        117,
+        119,
+        121,
+        124,
+        125,
+        126,
+        124,
+        125,
+        126,
+        127
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectWriter.onNext:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        46
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectWriter.onNext:(Lorg/apache/arrow/memory/ArrowBuf;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        109,
+        110,
+        111
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3ObjectWriter.onSubscribe:(Ljava/util/concurrent/Flow$Subscription;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        93,
+        95,
+        97,
+        98,
+        101,
+        103,
+        104
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3StorageErrors.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        36,
+        37,
+        38,
+        39,
+        36
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3StorageErrors.<init>:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        43,
+        44
+      ]
+    },
+    "org.finos.tracdap.plugins.aws.storage.S3StorageErrors.checkKnownExceptions:(Ljava/lang/Throwable;)Lorg/finos/tracdap/common/storage/StorageErrors$ExplicitError;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        49,
+        51,
+        52,
+        54,
+        56,
+        58,
+        59,
+        60,
+        62
+      ]
+    }
+  }
+}

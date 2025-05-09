@@ -1,0 +1,3358 @@
+{
+  "meta" : {
+    "reportVersion" : "2.6"
+  },
+  "run" : {
+    "version" : "2025.02.02-08b2a5a-licensed",
+    "creationTimestamp" : "2025-03-04T17:59:36.241297Z",
+    "command" : "dcover create --coverage-reports --exclude-modules=sql-drivers",
+    "totalTime" : 226.303,
+    "environmentDetectionTime" : 0.558,
+    "indexingTime" : 0.19,
+    "entryPointsTime" : 0.554,
+    "generationTime" : 160.516,
+    "timeToFirstTest" : 287.272,
+    "timeToLastTest" : 269.447,
+    "indexQueryTime" : 6.548,
+    "verificationTime" : 23.677,
+    "validationTime" : 25.445
+  },
+  "codes" : {
+    "R000" : "Success",
+    "R002" : "Missing observers",
+    "R013" : "No inputs found that don't throw a trivial exception",
+    "T000" : "Method eligible for test creation",
+    "T001" : "Trivial getter",
+    "T003" : "Private method",
+    "T005" : "Trivial constructor",
+    "T008" : "Private and never called",
+    "T010" : "Abstract or interface method",
+    "T012" : "Synthetic method",
+    "V000" : "Validated successfully"
+  },
+  "summary" : {
+    "classesCount" : 26,
+    "methodsCount" : 227,
+    "cumulativeDiffblueTestCount" : 99,
+    "cumulativeManualTestCount" : 76,
+    "completeTestCount" : 99,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 1540,
+    "perMethodTestability" : {
+      "T000" : 67,
+      "T001" : 23,
+      "T003" : 42,
+      "T005" : 7,
+      "T008" : 1,
+      "T010" : 37,
+      "T012" : 50
+    },
+    "perMethodOutcome" : {
+      "R000" : 79,
+      "R002" : 2,
+      "R013" : 16,
+      "T003" : 42,
+      "T008" : 1,
+      "T010" : 37,
+      "T012" : 50
+    },
+    "perTestOutcome" : {
+      "R000" : 99
+    },
+    "perTestValidation" : {
+      "V000" : 99
+    }
+  },
+  "classes" : {
+    "org.finos.tracdap.common.cache.CacheEntry" : {
+      "methodsCount" : 9,
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 4,
+        "T001" : 4,
+        "T003" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 8,
+        "T003" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 6
+      }
+    },
+    "org.finos.tracdap.common.cache.CacheTicket" : {
+      "methodsCount" : 12,
+      "completeTestCount" : 7,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 5,
+        "T001" : 5,
+        "T003" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 10,
+        "T003" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 7
+      }
+    },
+    "org.finos.tracdap.common.cache.IJobCache" : {
+      "methodsCount" : 11,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 10,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "T010" : 10,
+        "T012" : 1
+      }
+    },
+    "org.finos.tracdap.common.cache.IJobCacheManager" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 1
+      },
+      "perMethodOutcome" : {
+        "T010" : 1
+      }
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache" : {
+      "methodsCount" : 30,
+      "completeTestCount" : 19,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 11,
+        "T003" : 11,
+        "T012" : 8
+      },
+      "perMethodOutcome" : {
+        "R000" : 10,
+        "R013" : 1,
+        "T003" : 11,
+        "T012" : 8
+      },
+      "perTestOutcome" : {
+        "R000" : 19
+      }
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache$ZCByteArrayOutputStream" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 1,
+        "T008" : 1
+      },
+      "perMethodOutcome" : {
+        "T003" : 1,
+        "T008" : 1
+      }
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCacheEntry" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCacheManager" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T003" : 1,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R002" : 1,
+        "T003" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCacheManager$StronglyTypedCache" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 1
+      },
+      "perMethodOutcome" : {
+        "T003" : 1
+      }
+    },
+    "org.finos.tracdap.common.exec.BatchConfig" : {
+      "methodsCount" : 9,
+      "completeTestCount" : 10,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T001" : 5,
+        "T003" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 8,
+        "T003" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 10
+      }
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor" : {
+      "methodsCount" : 28,
+      "completeTestCount" : 27,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 13,
+        "T003" : 9,
+        "T012" : 6
+      },
+      "perMethodOutcome" : {
+        "R000" : 12,
+        "R013" : 1,
+        "T003" : 9,
+        "T012" : 6
+      },
+      "perTestOutcome" : {
+        "R000" : 27
+      }
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor$1" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "T012" : 1
+      }
+    },
+    "org.finos.tracdap.common.exec.BatchJobState" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "org.finos.tracdap.common.exec.BatchStatus" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T001" : 2,
+        "T005" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 4
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "org.finos.tracdap.common.exec.BatchStatusCode" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 1,
+        "T012" : 4
+      },
+      "perMethodOutcome" : {
+        "T003" : 1,
+        "T012" : 4
+      }
+    },
+    "org.finos.tracdap.common.exec.BatchVolumeType" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 1,
+        "T012" : 4
+      },
+      "perMethodOutcome" : {
+        "T003" : 1,
+        "T012" : 4
+      }
+    },
+    "org.finos.tracdap.common.exec.IBatchExecutor" : {
+      "methodsCount" : 14,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 14
+      },
+      "perMethodOutcome" : {
+        "T010" : 14
+      }
+    },
+    "org.finos.tracdap.common.exec.IBatchExecutor$Feature" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 1,
+        "T012" : 4
+      },
+      "perMethodOutcome" : {
+        "T003" : 1,
+        "T012" : 4
+      }
+    },
+    "org.finos.tracdap.common.exec.IJobExecutor" : {
+      "methodsCount" : 12,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 12
+      },
+      "perMethodOutcome" : {
+        "T010" : 12
+      }
+    },
+    "org.finos.tracdap.common.exec.LaunchArg" : {
+      "methodsCount" : 8,
+      "completeTestCount" : 9,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 5,
+        "T001" : 1,
+        "T003" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 6,
+        "T003" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 9
+      }
+    },
+    "org.finos.tracdap.common.exec.LaunchArgType" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 1,
+        "T012" : 4
+      },
+      "perMethodOutcome" : {
+        "T003" : 1,
+        "T012" : 4
+      }
+    },
+    "org.finos.tracdap.common.exec.LaunchCmd" : {
+      "methodsCount" : 8,
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T001" : 3,
+        "T003" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 6,
+        "T003" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 6
+      }
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor" : {
+      "methodsCount" : 38,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 15,
+        "T003" : 9,
+        "T012" : 14
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R013" : 14,
+        "T003" : 9,
+        "T012" : 14
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor$1" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "T012" : 1
+      }
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchState" : {
+      "methodsCount" : 7,
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T001" : 3,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 7
+      },
+      "perTestOutcome" : {
+        "R000" : 4
+      }
+    },
+    "org.finos.tracdap.common.orch.CoreOrchestratorPlugin" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 3,
+        "R002" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 4
+      }
+    }
+  },
+  "methods" : {
+    "org.finos.tracdap.common.cache.CacheEntry.<init>:(Ljava/lang/String;ILjava/lang/String;Ljava/lang/Object;Lorg/finos/tracdap/common/exception/ECache;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        43,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50
+      ]
+    },
+    "org.finos.tracdap.common.cache.CacheEntry.cacheError:()Lorg/finos/tracdap/common/exception/ECache;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        78
+      ]
+    },
+    "org.finos.tracdap.common.cache.CacheEntry.cacheOk:()Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        74
+      ]
+    },
+    "org.finos.tracdap.common.cache.CacheEntry.error:(Ljava/lang/String;ILjava/lang/String;Lorg/finos/tracdap/common/exception/ECache;)Lorg/finos/tracdap/common/cache/CacheEntry;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        40
+      ]
+    },
+    "org.finos.tracdap.common.cache.CacheEntry.forValue:(Ljava/lang/String;ILjava/lang/String;Ljava/lang/Object;)Lorg/finos/tracdap/common/cache/CacheEntry;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        34
+      ]
+    },
+    "org.finos.tracdap.common.cache.CacheEntry.key:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        53
+      ]
+    },
+    "org.finos.tracdap.common.cache.CacheEntry.revision:()I" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        57
+      ]
+    },
+    "org.finos.tracdap.common.cache.CacheEntry.status:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        61
+      ]
+    },
+    "org.finos.tracdap.common.cache.CacheEntry.value:()Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        67,
+        68,
+        70
+      ]
+    },
+    "org.finos.tracdap.common.cache.CacheTicket.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        26
+      ]
+    },
+    "org.finos.tracdap.common.cache.CacheTicket.<init>:(Lorg/finos/tracdap/common/cache/IJobCache;Ljava/lang/String;ILjava/time/Instant;Ljava/time/Instant;ZZ)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        59,
+        61,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69
+      ]
+    },
+    "org.finos.tracdap.common.cache.CacheTicket.close:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        98,
+        99,
+        100
+      ]
+    },
+    "org.finos.tracdap.common.cache.CacheTicket.expiry:()Ljava/time/Instant;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        84
+      ]
+    },
+    "org.finos.tracdap.common.cache.CacheTicket.forDuration:(Lorg/finos/tracdap/common/cache/IJobCache;Ljava/lang/String;ILjava/time/Instant;Ljava/time/Duration;)Lorg/finos/tracdap/common/cache/CacheTicket;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        52
+      ]
+    },
+    "org.finos.tracdap.common.cache.CacheTicket.grantTime:()Ljava/time/Instant;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        80
+      ]
+    },
+    "org.finos.tracdap.common.cache.CacheTicket.key:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        72
+      ]
+    },
+    "org.finos.tracdap.common.cache.CacheTicket.missing:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        92
+      ]
+    },
+    "org.finos.tracdap.common.cache.CacheTicket.missingEntryTicket:(Ljava/lang/String;ILjava/time/Instant;)Lorg/finos/tracdap/common/cache/CacheTicket;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        39
+      ]
+    },
+    "org.finos.tracdap.common.cache.CacheTicket.revision:()I" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        76
+      ]
+    },
+    "org.finos.tracdap.common.cache.CacheTicket.superseded:()Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        88
+      ]
+    },
+    "org.finos.tracdap.common.cache.CacheTicket.supersededTicket:(Ljava/lang/String;ILjava/time/Instant;)Lorg/finos/tracdap/common/cache/CacheTicket;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        44
+      ]
+    },
+    "org.finos.tracdap.common.cache.IJobCache.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        29
+      ]
+    },
+    "org.finos.tracdap.common.cache.IJobCache.closeTicket:(Lorg/finos/tracdap/common/cache/CacheTicket;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.cache.IJobCache.createEntry:(Lorg/finos/tracdap/common/cache/CacheTicket;Ljava/lang/String;Ljava/io/Serializable;)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.cache.IJobCache.deleteEntry:(Lorg/finos/tracdap/common/cache/CacheTicket;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.cache.IJobCache.openNewTicket:(Ljava/lang/String;Ljava/time/Duration;)Lorg/finos/tracdap/common/cache/CacheTicket;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.cache.IJobCache.openTicket:(Ljava/lang/String;ILjava/time/Duration;)Lorg/finos/tracdap/common/cache/CacheTicket;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.cache.IJobCache.queryKey:(Ljava/lang/String;)Ljava/util/Optional;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.cache.IJobCache.queryStatus:(Ljava/util/List;)Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.cache.IJobCache.queryStatus:(Ljava/util/List;Z)Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.cache.IJobCache.readEntry:(Lorg/finos/tracdap/common/cache/CacheTicket;)Lorg/finos/tracdap/common/cache/CacheEntry;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.cache.IJobCache.updateEntry:(Lorg/finos/tracdap/common/cache/CacheTicket;Ljava/lang/String;Ljava/io/Serializable;)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.cache.IJobCacheManager.getCache:(Ljava/lang/String;Ljava/lang/Class;)Lorg/finos/tracdap/common/cache/IJobCache;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache$ZCByteArrayOutputStream.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T008",
+      "perMethodOutcome" : "T008",
+      "lineNumbers" : [
+        455
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache$ZCByteArrayOutputStream.toByteArray:()[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        458
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        42,
+        43
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        54,
+        47,
+        56,
+        57
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache.checkDuration:(Ljava/time/Duration;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        393,
+        394,
+        396,
+        397,
+        398
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache.checkEntryMatchesTicket:(Lorg/finos/tracdap/common/cache/local/LocalJobCacheEntry;Lorg/finos/tracdap/common/cache/CacheTicket;Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        366,
+        367,
+        368,
+        369,
+        371
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache.checkKey:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        375,
+        376,
+        378,
+        379,
+        381,
+        382,
+        383
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache.checkMaxDuration:(Ljava/lang/String;Ljava/time/Duration;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        408,
+        410,
+        414,
+        416
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache.checkRevision:(I)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        387,
+        388,
+        389
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache.checkTicket:(Lorg/finos/tracdap/common/cache/CacheTicket;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        402,
+        403,
+        404
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache.checkValidStatus:(Lorg/finos/tracdap/common/cache/CacheTicket;Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        342,
+        343,
+        345,
+        346,
+        347,
+        348,
+        351,
+        352,
+        353,
+        354,
+        356
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache.checkValidTicket:(Lorg/finos/tracdap/common/cache/CacheTicket;Ljava/lang/String;Ljava/time/Instant;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        318,
+        319,
+        321,
+        322,
+        323,
+        324,
+        327,
+        328,
+        329,
+        330,
+        333,
+        334,
+        335,
+        336,
+        338
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache.checkValidValue:(Lorg/finos/tracdap/common/cache/CacheTicket;Ljava/io/Serializable;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        360,
+        361,
+        362
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache.closeTicket:(Lorg/finos/tracdap/common/cache/CacheTicket;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        133,
+        135,
+        148
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache.createEntry:(Lorg/finos/tracdap/common/cache/CacheTicket;Ljava/lang/String;Ljava/io/Serializable;)I" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        153,
+        155,
+        156,
+        157,
+        159,
+        179
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache.decodeValue:([B)Ljava/io/Serializable;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        435,
+        437,
+        439,
+        440,
+        439,
+        435,
+        441,
+        442,
+        443,
+        445,
+        446,
+        447,
+        449,
+        450,
+        451
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache.deleteEntry:(Lorg/finos/tracdap/common/cache/CacheTicket;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        216,
+        218,
+        220,
+        235
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache.encodeValue:(Ljava/io/Serializable;)[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        420,
+        422,
+        423,
+        425,
+        426,
+        425,
+        420,
+        427,
+        428
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache.lambda$closeTicket$2:(Lorg/finos/tracdap/common/cache/CacheTicket;Ljava/lang/String;Lorg/finos/tracdap/common/cache/local/LocalJobCacheEntry;)Lorg/finos/tracdap/common/cache/local/LocalJobCacheEntry;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        137,
+        138,
+        140,
+        141,
+        143,
+        144,
+        146
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache.lambda$createEntry$3:(Lorg/finos/tracdap/common/cache/CacheTicket;Ljava/time/Instant;Ljava/lang/String;Ljava/io/Serializable;Ljava/lang/String;Lorg/finos/tracdap/common/cache/local/LocalJobCacheEntry;)Lorg/finos/tracdap/common/cache/local/LocalJobCacheEntry;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        161,
+        163,
+        164,
+        165,
+        166,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        176
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache.lambda$deleteEntry$5:(Lorg/finos/tracdap/common/cache/CacheTicket;Ljava/lang/String;Lorg/finos/tracdap/common/cache/local/LocalJobCacheEntry;)Lorg/finos/tracdap/common/cache/local/LocalJobCacheEntry;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        222,
+        224,
+        225,
+        226,
+        227,
+        230,
+        231,
+        233
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache.lambda$openNewTicket$0:(Ljava/time/Instant;Lorg/finos/tracdap/common/cache/CacheTicket;Ljava/lang/String;Lorg/finos/tracdap/common/cache/local/LocalJobCacheEntry;)Lorg/finos/tracdap/common/cache/local/LocalJobCacheEntry;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        71,
+        73,
+        74,
+        76,
+        77,
+        80,
+        81,
+        83
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache.lambda$openTicket$1:(ILjava/time/Instant;Lorg/finos/tracdap/common/cache/CacheTicket;Ljava/lang/String;Lorg/finos/tracdap/common/cache/local/LocalJobCacheEntry;)Lorg/finos/tracdap/common/cache/local/LocalJobCacheEntry;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        105,
+        106,
+        108,
+        109,
+        111,
+        112,
+        114
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache.lambda$queryStatus$6:(Ljava/util/List;Ljava/time/Instant;ZLjava/util/ArrayList;Ljava/lang/String;Lorg/finos/tracdap/common/cache/local/LocalJobCacheEntry;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        291,
+        292,
+        294,
+        295,
+        296,
+        303,
+        304,
+        305,
+        310,
+        307,
+        308,
+        309,
+        311
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache.lambda$updateEntry$4:(Lorg/finos/tracdap/common/cache/CacheTicket;Ljava/time/Instant;Ljava/lang/String;Ljava/io/Serializable;Ljava/lang/String;Lorg/finos/tracdap/common/cache/local/LocalJobCacheEntry;)Lorg/finos/tracdap/common/cache/local/LocalJobCacheEntry;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        193,
+        195,
+        196,
+        197,
+        198,
+        201,
+        202,
+        203,
+        204,
+        205,
+        207
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache.openNewTicket:(Ljava/lang/String;Ljava/time/Duration;)Lorg/finos/tracdap/common/cache/CacheTicket;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        62,
+        63,
+        64,
+        66,
+        67,
+        69,
+        86,
+        87,
+        89
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache.openTicket:(Ljava/lang/String;ILjava/time/Duration;)Lorg/finos/tracdap/common/cache/CacheTicket;" : {
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 4
+      },
+      "lineNumbers" : [
+        95,
+        96,
+        97,
+        98,
+        100,
+        101,
+        103,
+        117,
+        118,
+        120,
+        121,
+        122,
+        124,
+        127
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache.queryKey:(Ljava/lang/String;)Ljava/util/Optional;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        262,
+        264,
+        265,
+        268,
+        269,
+        271,
+        272
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache.queryStatus:(Ljava/util/List;)Ljava/util/List;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        279
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache.queryStatus:(Ljava/util/List;Z)Ljava/util/List;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        285,
+        287,
+        289,
+        313
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache.readEntry:(Lorg/finos/tracdap/common/cache/CacheTicket;)Lorg/finos/tracdap/common/cache/CacheEntry;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        240,
+        242,
+        244,
+        246,
+        248,
+        249,
+        250,
+        251,
+        254,
+        256
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCache.updateEntry:(Lorg/finos/tracdap/common/cache/CacheTicket;Ljava/lang/String;Ljava/io/Serializable;)I" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        185,
+        187,
+        188,
+        189,
+        191,
+        210
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCacheEntry.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        25
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCacheEntry.clone:()Lorg/finos/tracdap/common/cache/local/LocalJobCacheEntry;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        39,
+        41,
+        42
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCacheManager$StronglyTypedCache.<init>:(Ljava/lang/Class;Lorg/finos/tracdap/common/cache/IJobCache;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        75,
+        76,
+        77,
+        78
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCacheManager.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        33,
+        34,
+        35
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCacheManager.checkCacheType:(Lorg/finos/tracdap/common/cache/local/LocalJobCacheManager$StronglyTypedCache;Ljava/lang/String;Ljava/lang/Class;)Lorg/finos/tracdap/common/cache/IJobCache;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        60,
+        61,
+        63,
+        65,
+        63,
+        67
+      ]
+    },
+    "org.finos.tracdap.common.cache.local.LocalJobCacheManager.getCache:(Ljava/lang/String;Ljava/lang/Class;)Lorg/finos/tracdap/common/cache/IJobCache;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        40,
+        42,
+        43,
+        45,
+        46,
+        48,
+        50,
+        51,
+        53
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchConfig.<init>:(Lorg/finos/tracdap/common/exec/LaunchCmd;Ljava/util/List;ZLorg/finos/tracdap/common/exec/LaunchArg;Lorg/finos/tracdap/common/exec/LaunchArg;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchConfig.addExtraArgs:(Ljava/util/List;)V" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        48,
+        49,
+        51,
+        52
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchConfig.addLoggingRedirect:(Lorg/finos/tracdap/common/exec/LaunchArg;Lorg/finos/tracdap/common/exec/LaunchArg;)V" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        56,
+        57,
+        59,
+        60,
+        61,
+        62
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchConfig.forCommand:(Lorg/finos/tracdap/common/exec/LaunchCmd;Ljava/util/List;)Lorg/finos/tracdap/common/exec/BatchConfig;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        43
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchConfig.getLaunchArgs:()Ljava/util/List;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        69
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchConfig.getLaunchCmd:()Lorg/finos/tracdap/common/exec/LaunchCmd;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        65
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchConfig.getStdErr:()Lorg/finos/tracdap/common/exec/LaunchArg;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        81
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchConfig.getStdOut:()Lorg/finos/tracdap/common/exec/LaunchArg;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        77
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchConfig.isRedirectOutput:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        73
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor$1.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        465,
+        448
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        53
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor.<init>:(Lorg/finos/tracdap/common/exec/IBatchExecutor;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        61,
+        55,
+        62,
+        63,
+        64
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor.cancelJob:(Ljava/io/Serializable;)Ljava/io/Serializable;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        49
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor.cancelJob:(Lorg/finos/tracdap/common/exec/BatchJobState;)Lorg/finos/tracdap/common/exec/BatchJobState;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        192,
+        193
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor.deleteJob:(Ljava/io/Serializable;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        49
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor.deleteJob:(Lorg/finos/tracdap/common/exec/BatchJobState;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        198,
+        199
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor.extractErrorFromLogs:(Ljava/lang/String;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        309,
+        310,
+        312,
+        314,
+        316,
+        317,
+        320,
+        322,
+        324,
+        326,
+        327,
+        331,
+        332,
+        333
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor.followJobStatus:(Ljava/io/Serializable;)Ljava/util/concurrent/Flow$Publisher;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        49
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor.followJobStatus:(Lorg/finos/tracdap/common/exec/BatchJobState;)Ljava/util/concurrent/Flow$Publisher;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        339
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor.getJobResult:(Ljava/io/Serializable;)Lorg/finos/tracdap/api/internal/RuntimeJobResult;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        49
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor.getJobResult:(Lorg/finos/tracdap/common/exec/BatchJobState;)Lorg/finos/tracdap/api/internal/RuntimeJobResult;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        345,
+        346,
+        348,
+        349,
+        351,
+        352,
+        357,
+        358,
+        359
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor.getJobStatus:(Ljava/io/Serializable;)Lorg/finos/tracdap/api/internal/RuntimeJobStatus;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        49
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor.getJobStatus:(Lorg/finos/tracdap/common/exec/BatchJobState;)Lorg/finos/tracdap/api/internal/RuntimeJobStatus;" : {
+      "completeTestCount" : 7,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 7
+      },
+      "lineNumbers" : [
+        209,
+        214,
+        216,
+        221,
+        222,
+        223,
+        225,
+        226,
+        228,
+        231,
+        232,
+        234,
+        236,
+        238,
+        240,
+        242,
+        243,
+        245,
+        246,
+        249
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor.getResultFromApi:(Lorg/finos/tracdap/common/exec/BatchJobState;)Lorg/finos/tracdap/api/internal/RuntimeJobResult;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        364,
+        365,
+        369,
+        370,
+        372,
+        373,
+        374,
+        376,
+        384,
+        385,
+        376,
+        378,
+        380,
+        381,
+        384,
+        385,
+        386
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor.getResultFromResultFile:(Lorg/finos/tracdap/common/exec/BatchJobState;)Lorg/finos/tracdap/api/internal/RuntimeJobResult;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        391,
+        395,
+        396,
+        398,
+        399,
+        400,
+        401,
+        402,
+        403,
+        398,
+        405,
+        411,
+        412,
+        414,
+        416
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor.getRuntimeApi:(Lio/grpc/Channel;)Lorg/finos/tracdap/api/internal/TracRuntimeApiGrpc$TracRuntimeApiBlockingStub;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        439,
+        440,
+        441,
+        442,
+        443,
+        439
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor.getRuntimeApiAddress:(Lorg/finos/tracdap/common/exec/BatchJobState;)Ljava/net/InetSocketAddress;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        422,
+        424,
+        426,
+        430,
+        431,
+        434
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor.getStatusFromApi:(Lorg/finos/tracdap/common/exec/BatchJobState;)Lorg/finos/tracdap/api/internal/RuntimeJobStatus;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        254,
+        255,
+        259,
+        260,
+        262,
+        263,
+        264,
+        266,
+        274,
+        275,
+        266,
+        268,
+        270,
+        271,
+        274,
+        275,
+        276
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor.listJobs:()Ljava/util/List;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        203
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor.mapRuntimeApiError:(Lio/grpc/StatusRuntimeException;)Lorg/finos/tracdap/common/exception/EExecutor;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        465,
+        469,
+        473,
+        477,
+        480
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor.mapStatusCode:(Lorg/finos/tracdap/common/exec/BatchStatusCode;)Lorg/finos/tracdap/metadata/JobStatusCode;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        448,
+        450,
+        451,
+        452,
+        453,
+        454,
+        455,
+        459
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor.start:(Lorg/finos/tracdap/common/grpc/GrpcChannelFactory;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        68,
+        69,
+        70
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor.stateClass:()Ljava/lang/Class;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        80
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor.stop:()V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        74,
+        75
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor.submitExternalJob:()Lorg/finos/tracdap/common/exec/BatchJobState;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        187
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor.submitJob:()Lorg/finos/tracdap/common/exec/BatchJobState;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        85
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor.submitOneshotJob:(Lorg/finos/tracdap/metadata/TagHeader;Lorg/finos/tracdap/config/JobConfig;Lorg/finos/tracdap/config/RuntimeConfig;)Lorg/finos/tracdap/common/exec/BatchJobState;" : {
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 4
+      },
+      "lineNumbers" : [
+        93,
+        94,
+        98,
+        100,
+        101,
+        102,
+        103,
+        105,
+        108,
+        109,
+        110,
+        111,
+        112,
+        114,
+        117,
+        119,
+        120,
+        121,
+        119,
+        124,
+        125,
+        127,
+        128,
+        129,
+        131,
+        134,
+        135,
+        136,
+        137,
+        134,
+        133,
+        139,
+        140,
+        141,
+        142,
+        143,
+        141,
+        146,
+        147,
+        148,
+        149,
+        150,
+        148,
+        153,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        162,
+        164,
+        170,
+        173,
+        174,
+        179,
+        176,
+        177,
+        178,
+        181
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchJobExecutor.updateStatusFromLogs:(Lorg/finos/tracdap/common/exec/BatchJobState;Lorg/finos/tracdap/api/internal/RuntimeJobStatus$Builder;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        285,
+        289,
+        290,
+        291,
+        294,
+        298,
+        299,
+        301,
+        302,
+        304,
+        305
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchJobState.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        23
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchStatus.<init>:(Lorg/finos/tracdap/common/exec/BatchStatusCode;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        26,
+        27
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchStatus.<init>:(Lorg/finos/tracdap/common/exec/BatchStatusCode;Ljava/lang/String;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchStatus.getStatusCode:()Lorg/finos/tracdap/common/exec/BatchStatusCode;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        35
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchStatus.getStatusMessage:()Ljava/lang/String;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        39
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchStatusCode.$values:()[Lorg/finos/tracdap/common/exec/BatchStatusCode;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        20
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchStatusCode.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        20
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchStatusCode.<init>:(Ljava/lang/String;I)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        20
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchStatusCode.valueOf:(Ljava/lang/String;)Lorg/finos/tracdap/common/exec/BatchStatusCode;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        20
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchStatusCode.values:()[Lorg/finos/tracdap/common/exec/BatchStatusCode;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        20
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchVolumeType.$values:()[Lorg/finos/tracdap/common/exec/BatchVolumeType;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        20
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchVolumeType.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        22,
+        23,
+        24,
+        20
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchVolumeType.<init>:(Ljava/lang/String;I)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        20
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchVolumeType.valueOf:(Ljava/lang/String;)Lorg/finos/tracdap/common/exec/BatchVolumeType;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        20
+      ]
+    },
+    "org.finos.tracdap.common.exec.BatchVolumeType.values:()[Lorg/finos/tracdap/common/exec/BatchVolumeType;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        20
+      ]
+    },
+    "org.finos.tracdap.common.exec.IBatchExecutor$Feature.$values:()[Lorg/finos/tracdap/common/exec/IBatchExecutor$Feature;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        31
+      ]
+    },
+    "org.finos.tracdap.common.exec.IBatchExecutor$Feature.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        32,
+        33,
+        34,
+        35,
+        31
+      ]
+    },
+    "org.finos.tracdap.common.exec.IBatchExecutor$Feature.<init>:(Ljava/lang/String;I)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        31
+      ]
+    },
+    "org.finos.tracdap.common.exec.IBatchExecutor$Feature.valueOf:(Ljava/lang/String;)Lorg/finos/tracdap/common/exec/IBatchExecutor$Feature;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        31
+      ]
+    },
+    "org.finos.tracdap.common.exec.IBatchExecutor$Feature.values:()[Lorg/finos/tracdap/common/exec/IBatchExecutor$Feature;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        31
+      ]
+    },
+    "org.finos.tracdap.common.exec.IBatchExecutor.addFile:(Ljava/lang/String;Ljava/io/Serializable;Ljava/lang/String;Ljava/lang/String;[B)Ljava/io/Serializable;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.exec.IBatchExecutor.addVolume:(Ljava/lang/String;Ljava/io/Serializable;Ljava/lang/String;Lorg/finos/tracdap/common/exec/BatchVolumeType;)Ljava/io/Serializable;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.exec.IBatchExecutor.cancelBatch:(Ljava/lang/String;Ljava/io/Serializable;)Ljava/io/Serializable;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.exec.IBatchExecutor.configureBatchStorage:(Ljava/lang/String;Ljava/io/Serializable;Lorg/finos/tracdap/config/StorageConfig;Ljava/util/function/Consumer;)Ljava/io/Serializable;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.exec.IBatchExecutor.createBatch:(Ljava/lang/String;)Ljava/io/Serializable;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.exec.IBatchExecutor.deleteBatch:(Ljava/lang/String;Ljava/io/Serializable;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.exec.IBatchExecutor.getBatchAddress:(Ljava/lang/String;Ljava/io/Serializable;)Ljava/net/InetSocketAddress;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.exec.IBatchExecutor.getBatchStatus:(Ljava/lang/String;Ljava/io/Serializable;)Lorg/finos/tracdap/common/exec/BatchStatus;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.exec.IBatchExecutor.getOutputFile:(Ljava/lang/String;Ljava/io/Serializable;Ljava/lang/String;Ljava/lang/String;)[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.exec.IBatchExecutor.hasFeature:(Lorg/finos/tracdap/common/exec/IBatchExecutor$Feature;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.exec.IBatchExecutor.hasOutputFile:(Ljava/lang/String;Ljava/io/Serializable;Ljava/lang/String;Ljava/lang/String;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.exec.IBatchExecutor.start:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.exec.IBatchExecutor.stop:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.exec.IBatchExecutor.submitBatch:(Ljava/lang/String;Ljava/io/Serializable;Lorg/finos/tracdap/common/exec/BatchConfig;)Ljava/io/Serializable;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.exec.IJobExecutor.cancelJob:(Ljava/io/Serializable;)Ljava/io/Serializable;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.exec.IJobExecutor.deleteJob:(Ljava/io/Serializable;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.exec.IJobExecutor.followJobStatus:(Ljava/io/Serializable;)Ljava/util/concurrent/Flow$Publisher;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.exec.IJobExecutor.getJobResult:(Ljava/io/Serializable;)Lorg/finos/tracdap/api/internal/RuntimeJobResult;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.exec.IJobExecutor.getJobStatus:(Ljava/io/Serializable;)Lorg/finos/tracdap/api/internal/RuntimeJobStatus;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.exec.IJobExecutor.listJobs:()Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.exec.IJobExecutor.start:(Lorg/finos/tracdap/common/grpc/GrpcChannelFactory;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.exec.IJobExecutor.stateClass:()Ljava/lang/Class;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.exec.IJobExecutor.stop:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.exec.IJobExecutor.submitExternalJob:()Ljava/io/Serializable;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.exec.IJobExecutor.submitJob:()Ljava/io/Serializable;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.exec.IJobExecutor.submitOneshotJob:(Lorg/finos/tracdap/metadata/TagHeader;Lorg/finos/tracdap/config/JobConfig;Lorg/finos/tracdap/config/RuntimeConfig;)Ljava/io/Serializable;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.common.exec.LaunchArg.<init>:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    "org.finos.tracdap.common.exec.LaunchArg.<init>:(Ljava/lang/String;Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        38,
+        39,
+        40,
+        41,
+        42
+      ]
+    },
+    "org.finos.tracdap.common.exec.LaunchArg.getArgType:()Lorg/finos/tracdap/common/exec/LaunchArgType;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        45
+      ]
+    },
+    "org.finos.tracdap.common.exec.LaunchArg.getPathArg:()Ljava/lang/String;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        66,
+        67,
+        69
+      ]
+    },
+    "org.finos.tracdap.common.exec.LaunchArg.getPathVolume:()Ljava/lang/String;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        58,
+        59,
+        61
+      ]
+    },
+    "org.finos.tracdap.common.exec.LaunchArg.getStringArg:()Ljava/lang/String;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        50,
+        51,
+        53
+      ]
+    },
+    "org.finos.tracdap.common.exec.LaunchArg.path:(Ljava/lang/String;Ljava/lang/String;)Lorg/finos/tracdap/common/exec/LaunchArg;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        25
+      ]
+    },
+    "org.finos.tracdap.common.exec.LaunchArg.string:(Ljava/lang/String;)Lorg/finos/tracdap/common/exec/LaunchArg;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        29
+      ]
+    },
+    "org.finos.tracdap.common.exec.LaunchArgType.$values:()[Lorg/finos/tracdap/common/exec/LaunchArgType;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        20
+      ]
+    },
+    "org.finos.tracdap.common.exec.LaunchArgType.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        21,
+        22,
+        20
+      ]
+    },
+    "org.finos.tracdap.common.exec.LaunchArgType.<init>:(Ljava/lang/String;I)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        20
+      ]
+    },
+    "org.finos.tracdap.common.exec.LaunchArgType.valueOf:(Ljava/lang/String;)Lorg/finos/tracdap/common/exec/LaunchArgType;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        20
+      ]
+    },
+    "org.finos.tracdap.common.exec.LaunchArgType.values:()[Lorg/finos/tracdap/common/exec/LaunchArgType;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        20
+      ]
+    },
+    "org.finos.tracdap.common.exec.LaunchCmd.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        27,
+        28,
+        29,
+        27
+      ]
+    },
+    "org.finos.tracdap.common.exec.LaunchCmd.<init>:(Ljava/lang/String;Ljava/util/List;Z)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        47,
+        48,
+        49,
+        50,
+        51
+      ]
+    },
+    "org.finos.tracdap.common.exec.LaunchCmd.command:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        58
+      ]
+    },
+    "org.finos.tracdap.common.exec.LaunchCmd.commandArgs:()Ljava/util/List;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        62
+      ]
+    },
+    "org.finos.tracdap.common.exec.LaunchCmd.custom:(Ljava/lang/String;)Lorg/finos/tracdap/common/exec/LaunchCmd;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        40
+      ]
+    },
+    "org.finos.tracdap.common.exec.LaunchCmd.custom:(Ljava/lang/String;Ljava/util/List;)Lorg/finos/tracdap/common/exec/LaunchCmd;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        44
+      ]
+    },
+    "org.finos.tracdap.common.exec.LaunchCmd.isTrac:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        54
+      ]
+    },
+    "org.finos.tracdap.common.exec.LaunchCmd.trac:()Lorg/finos/tracdap/common/exec/LaunchCmd;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        36
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor$1.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        553
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        48,
+        49,
+        50,
+        52,
+        57
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.<init>:(Ljava/util/Properties;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        69,
+        59,
+        66,
+        67,
+        71,
+        72,
+        73,
+        74,
+        75
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.addFile:(Ljava/lang/String;Ljava/io/Serializable;Ljava/lang/String;Ljava/lang/String;[B)Ljava/io/Serializable;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        38
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.addFile:(Ljava/lang/String;Lorg/finos/tracdap/common/exec/local/LocalBatchState;Ljava/lang/String;Ljava/lang/String;[B)Lorg/finos/tracdap/common/exec/local/LocalBatchState;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        195,
+        196,
+        198,
+        199,
+        200,
+        201,
+        204,
+        205,
+        206,
+        209,
+        210,
+        211,
+        213,
+        215,
+        217,
+        222
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.addVolume:(Ljava/lang/String;Ljava/io/Serializable;Ljava/lang/String;Lorg/finos/tracdap/common/exec/BatchVolumeType;)Ljava/io/Serializable;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        38
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.addVolume:(Ljava/lang/String;Lorg/finos/tracdap/common/exec/local/LocalBatchState;Ljava/lang/String;Lorg/finos/tracdap/common/exec/BatchVolumeType;)Lorg/finos/tracdap/common/exec/local/LocalBatchState;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        134,
+        136,
+        137,
+        139,
+        141,
+        145,
+        146,
+        149,
+        151,
+        155,
+        156,
+        161,
+        162,
+        164,
+        166,
+        168,
+        172,
+        174,
+        172,
+        176,
+        177,
+        179,
+        181,
+        183,
+        181,
+        185,
+        186
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.cancelBatch:(Ljava/lang/String;Ljava/io/Serializable;)Ljava/io/Serializable;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        38
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.cancelBatch:(Ljava/lang/String;Lorg/finos/tracdap/common/exec/local/LocalBatchState;)Lorg/finos/tracdap/common/exec/local/LocalBatchState;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        298
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.configureBatchStorage:(Ljava/lang/String;Ljava/io/Serializable;Lorg/finos/tracdap/config/StorageConfig;Ljava/util/function/Consumer;)Ljava/io/Serializable;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        38
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.configureBatchStorage:(Ljava/lang/String;Lorg/finos/tracdap/common/exec/local/LocalBatchState;Lorg/finos/tracdap/config/StorageConfig;Ljava/util/function/Consumer;)Lorg/finos/tracdap/common/exec/local/LocalBatchState;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        451
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.createBatch:(Ljava/lang/String;)Lorg/finos/tracdap/common/exec/local/LocalBatchState;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        99,
+        100,
+        101,
+        102,
+        104,
+        106,
+        108,
+        109,
+        112,
+        114,
+        116,
+        118,
+        120,
+        122,
+        120,
+        124,
+        125
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.decodeLaunchArg:(Lorg/finos/tracdap/common/exec/LaunchArg;Lorg/finos/tracdap/common/exec/local/LocalBatchState;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        553,
+        556,
+        560,
+        561,
+        563,
+        564,
+        565,
+        566,
+        569,
+        570,
+        571,
+        572,
+        573,
+        569,
+        577
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.deleteBatch:(Ljava/lang/String;Ljava/io/Serializable;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        38
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.deleteBatch:(Ljava/lang/String;Lorg/finos/tracdap/common/exec/local/LocalBatchState;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        304,
+        305,
+        306,
+        308,
+        309,
+        311,
+        312,
+        313,
+        316,
+        318,
+        320,
+        322,
+        326,
+        320,
+        333,
+        327,
+        328,
+        333,
+        330,
+        331,
+        332,
+        333,
+        337,
+        340,
+        341,
+        342
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.fixSandboxPermissions:(Ljava/nio/file/Path;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        534,
+        536,
+        537,
+        538,
+        540,
+        542,
+        548,
+        544,
+        546,
+        547,
+        546,
+        549
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.getBatchAddress:(Ljava/lang/String;Ljava/io/Serializable;)Ljava/net/InetSocketAddress;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        38
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.getBatchAddress:(Ljava/lang/String;Lorg/finos/tracdap/common/exec/local/LocalBatchState;)Ljava/net/InetSocketAddress;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        442
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.getBatchStatus:(Ljava/lang/String;Ljava/io/Serializable;)Lorg/finos/tracdap/common/exec/BatchStatus;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        38
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.getBatchStatus:(Ljava/lang/String;Lorg/finos/tracdap/common/exec/local/LocalBatchState;)Lorg/finos/tracdap/common/exec/BatchStatus;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        349,
+        350,
+        352,
+        353,
+        355,
+        356,
+        358,
+        360,
+        361,
+        367,
+        369,
+        371,
+        372,
+        374
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.getOutputFile:(Ljava/lang/String;Ljava/io/Serializable;Ljava/lang/String;Ljava/lang/String;)[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        38
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.getOutputFile:(Ljava/lang/String;Lorg/finos/tracdap/common/exec/local/LocalBatchState;Ljava/lang/String;Ljava/lang/String;)[B" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        407,
+        408,
+        410,
+        411,
+        412,
+        413,
+        416,
+        417,
+        418,
+        421,
+        422,
+        423,
+        425,
+        428,
+        429,
+        430,
+        432,
+        433,
+        434
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.hasFeature:(Lorg/finos/tracdap/common/exec/IBatchExecutor$Feature;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        91
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.hasOutputFile:(Ljava/lang/String;Ljava/io/Serializable;Ljava/lang/String;Ljava/lang/String;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        38
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.hasOutputFile:(Ljava/lang/String;Lorg/finos/tracdap/common/exec/local/LocalBatchState;Ljava/lang/String;Ljava/lang/String;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        381,
+        382,
+        384,
+        385,
+        386,
+        387,
+        390,
+        391,
+        392,
+        395,
+        396,
+        397,
+        399
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.lambda$deleteBatch$2:(Ljava/nio/file/Path;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        323,
+        324,
+        325
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.lambda$submitBatch$0:(Lorg/finos/tracdap/common/exec/local/LocalBatchState;Lorg/finos/tracdap/common/exec/LaunchArg;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        239
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.lambda$submitBatch$1:(Lorg/finos/tracdap/common/exec/local/LocalBatchState;Lorg/finos/tracdap/common/exec/LaunchArg;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        252
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.logBatchComplete:(Ljava/lang/String;Ljava/lang/Process;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        592,
+        593,
+        595,
+        597,
+        599,
+        600,
+        601,
+        603,
+        604
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.logBatchStart:(Ljava/lang/String;Ljava/lang/ProcessBuilder;Ljava/lang/Process;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        583,
+        584,
+        585,
+        586,
+        587,
+        588
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.lookupBatchUser:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        510,
+        512,
+        513,
+        514,
+        517
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.prepareBatchPersist:(Ljava/util/Properties;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        500,
+        502,
+        503,
+        505
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.prepareBatchRootDir:(Ljava/util/Properties;)Ljava/nio/file/Path;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        480,
+        482,
+        483,
+        485,
+        486,
+        487,
+        489,
+        490,
+        491,
+        492,
+        495
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.prepareVenvPath:(Ljava/util/Properties;)Ljava/nio/file/Path;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        456,
+        458,
+        460,
+        461,
+        462,
+        465,
+        466,
+        467,
+        469,
+        470,
+        471,
+        472,
+        475
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.start:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        80,
+        81
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.stop:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        86,
+        87
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.submitBatch:(Ljava/lang/String;Ljava/io/Serializable;Lorg/finos/tracdap/common/exec/BatchConfig;)Ljava/io/Serializable;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        38
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.submitBatch:(Ljava/lang/String;Lorg/finos/tracdap/common/exec/local/LocalBatchState;Lorg/finos/tracdap/common/exec/BatchConfig;)Lorg/finos/tracdap/common/exec/local/LocalBatchState;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        231,
+        232,
+        234,
+        235,
+        237,
+        238,
+        239,
+        240,
+        242,
+        245,
+        246,
+        247,
+        250,
+        251,
+        252,
+        253,
+        256,
+        258,
+        259,
+        261,
+        262,
+        263,
+        265,
+        266,
+        268,
+        270,
+        271,
+        272,
+        274,
+        275,
+        276,
+        279,
+        281,
+        283,
+        285,
+        287,
+        288,
+        290
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchExecutor.validState:(Lorg/finos/tracdap/common/exec/local/LocalBatchState;)Lorg/finos/tracdap/common/exec/local/LocalBatchState;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        522,
+        523,
+        525
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchState.<init>:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchState.<init>:(Ljava/lang/String;Ljava/util/List;J)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        39,
+        40,
+        41,
+        42,
+        43
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchState.getBatchDir:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        57
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchState.getPid:()J" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        65
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchState.getVolumes:()Ljava/util/List;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        61
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchState.withPid:(J)Lorg/finos/tracdap/common/exec/local/LocalBatchState;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        53
+      ]
+    },
+    "org.finos.tracdap.common.exec.local.LocalBatchState.withVolume:(Ljava/lang/String;)Lorg/finos/tracdap/common/exec/local/LocalBatchState;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        46,
+        47,
+        48,
+        49
+      ]
+    },
+    "org.finos.tracdap.common.orch.CoreOrchestratorPlugin.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        40,
+        41,
+        42,
+        40
+      ]
+    },
+    "org.finos.tracdap.common.orch.CoreOrchestratorPlugin.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        33
+      ]
+    },
+    "org.finos.tracdap.common.orch.CoreOrchestratorPlugin.createService:(Ljava/lang/String;Ljava/util/Properties;Lorg/finos/tracdap/common/config/ConfigManager;)Ljava/lang/Object;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        58,
+        60,
+        61,
+        65,
+        67,
+        65,
+        69
+      ]
+    },
+    "org.finos.tracdap.common.orch.CoreOrchestratorPlugin.pluginName:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        47
+      ]
+    },
+    "org.finos.tracdap.common.orch.CoreOrchestratorPlugin.serviceInfo:()Ljava/util/List;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        52
+      ]
+    }
+  }
+}
