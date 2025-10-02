@@ -19,10 +19,10 @@ plugins {
 
     id "org.owasp.dependencycheck"
     id "com.github.jk1.dependency-license-report"
+
     id "maven-publish"
     id "signing"
     id "io.github.gradle-nexus.publish-plugin"
-    id "info.solidsoft.pitest" version "1.15.0" apply false
 }
 
 apply from: "gradle/versions.gradle"
@@ -33,20 +33,15 @@ import com.github.jk1.license.filter.*
 
 def versionNumber = ext.getVersionFromGit()
 
-apply plugin: 'info.solidsoft.pitest.aggregator'
 
 allprojects {
 
     group = 'org.finos.tracdap'
     version = versionNumber
-
-    repositories {
-        mavenCentral()
-    }
-
 }
 
 subprojects {
+
     var buildDir = rootProject.layout.buildDirectory.dir("modules/" + project.name)
     layout.buildDirectory.set(buildDir)
 
@@ -59,48 +54,9 @@ subprojects {
 
     // Task for printing out the full solution dependency tree
     tasks.register("dependencyReport", DependencyReportTask)
-
-// explicitly list all the modules you want PIT to run on:
-    def pitargets = [
-            ':aws-storage'              : ['org.finos.tracdap.*'],
-            ':azure-storage'            : ['org.finos.tracdap.*'],
-            ':deploy-metadb'            : ['org.finos.tracdap.*'],
-            ':gcp-storage'              : ['org.finos.tracdap.*'],
-            ':secret-tool'              : ['org.finos.tracdap.*'],
-//            ':sql-drivers'              : ['org.finos.tracdap.*'], no source code, so excluded.
-            ':ssh-executor'             : ['org.finos.tracdap.*'],
-            ':tracdap-api-config'       : ['org.finos.tracdap.*'],
-            ':tracdap-api-metadata'     : ['org.finos.tracdap.*'],
-            ':tracdap-api-services'     : ['org.finos.tracdap.*'],
-            ':tracdap-gateway'          : ['org.finos.tracdap.*'],
-//            ':tracdap-lib-annotations'  : ['org.finos.tracdap.*'], same failure as sql-drivers, so excluded
-            ':tracdap-lib-common'       : ['org.finos.tracdap.*'],
-            //':tracdap-lib-data'         : ['org.finos.tracdap.*'], this module causes stack overflow error, so excluded
-            ':tracdap-lib-db'           : ['org.finos.tracdap.*'],
-            ':tracdap-lib-orch'         : ['org.finos.tracdap.*'],
-            ':tracdap-lib-test'         : ['org.finos.tracdap.*'],
-            ':tracdap-lib-test-proto'   : ['org.finos.tracdap.*'],
-            ':tracdap-lib-validation'   : ['org.finos.tracdap.*'],
-            ':tracdap-svc-data'         : ['org.finos.tracdap.*'],
-            ':tracdap-svc-meta'         : ['org.finos.tracdap.*'],
-            ':tracdap-svc-orch'         : ['org.finos.tracdap.*']
-    ]
-
-    if(pitargets.containsKey(project.path)) {
-        apply plugin: 'java'
-        apply plugin: 'info.solidsoft.pitest'
-
-        pitest {
-            junit5PluginVersion = '1.2.1'
-            pitestVersion = '1.15.2'
-            targetClasses = pitargets[project.path]
-            exportLineCoverage = true
-            timestampedReports = false
-            outputFormats = ['XML', 'HTML']
-        }
-    }
-
 }
+
+
 dependencyCheck {
 
     def NVD_DATAFEED = System.getenv("NVD_DATAFEED")
