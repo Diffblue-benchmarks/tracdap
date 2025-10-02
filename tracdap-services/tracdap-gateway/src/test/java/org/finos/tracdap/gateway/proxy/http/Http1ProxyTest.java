@@ -37,7 +37,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-@Disabled
+
 public class Http1ProxyTest {
 
     private static final String HTTP1_PROXY_TEST_CONFIG = "/trac-unit-gateway-http1.yaml";

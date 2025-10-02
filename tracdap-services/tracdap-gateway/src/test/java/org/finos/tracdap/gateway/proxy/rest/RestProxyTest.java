@@ -31,7 +31,6 @@ import com.google.protobuf.util.JsonFormat;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.DisabledIfEnvironmentVariable;
 import org.junit.jupiter.api.extension.RegisterExtension;
@@ -50,7 +49,7 @@ import java.util.UUID;
 import static org.finos.tracdap.test.meta.SampleMetadata.TEST_TENANT;
 import static org.finos.tracdap.test.meta.SampleMetadata.selectorForTag;
 
-@Disabled
+
 public class RestProxyTest {
 
     public static final short TEST_GW_PORT = 9100;

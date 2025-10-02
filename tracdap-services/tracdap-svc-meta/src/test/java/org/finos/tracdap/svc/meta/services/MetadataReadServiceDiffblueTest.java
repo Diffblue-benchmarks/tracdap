@@ -11,12 +11,10 @@ import org.finos.tracdap.common.db.JdbcDialect;
 import org.finos.tracdap.config.PlatformConfig;
 import org.finos.tracdap.svc.meta.dal.IMetadataDal;
 import org.finos.tracdap.svc.meta.dal.jdbc.JdbcMetadataDal;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-@Disabled
 class MetadataReadServiceDiffblueTest {
   /**
    * Test {@link MetadataReadService#MetadataReadService(IMetadataDal, PlatformConfig)}.

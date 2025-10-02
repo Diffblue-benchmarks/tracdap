@@ -45,7 +45,7 @@ import java.util.stream.Collectors;
 
 import static org.finos.tracdap.svc.orch.jobs.Helpers.runJob;
 
-@Disabled
+
 @Tag("integration")
 @Tag("int-e2e")
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)

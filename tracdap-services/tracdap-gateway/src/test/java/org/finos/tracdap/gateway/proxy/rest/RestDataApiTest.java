@@ -34,7 +34,6 @@ import com.google.protobuf.util.JsonFormat;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.api.io.TempDir;
@@ -55,7 +54,7 @@ import static org.finos.tracdap.test.concurrent.ConcurrentTestHelpers.waitFor;
 import static org.finos.tracdap.test.meta.SampleMetadata.TEST_TENANT;
 import static org.finos.tracdap.test.meta.SampleMetadata.selectorForTag;
 
-@Disabled
+
 public class RestDataApiTest {
 
     public static final short TEST_GW_PORT = 9100;

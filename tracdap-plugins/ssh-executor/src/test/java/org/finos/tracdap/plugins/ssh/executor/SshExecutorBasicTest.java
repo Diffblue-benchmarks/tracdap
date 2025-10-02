@@ -22,7 +22,6 @@ import org.finos.tracdap.common.exec.ExecutorBasicTestSuite;
 import org.finos.tracdap.common.plugin.PluginManager;
 import org.finos.tracdap.test.config.ConfigHelpers;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.io.TempDir;
 
@@ -32,7 +31,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
-@Disabled
+
 @Tag("integration")
 @Tag("int-executor")
 @Tag("ssh")
