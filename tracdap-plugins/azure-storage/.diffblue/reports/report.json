@@ -1,21 +1,21 @@
 {
   "meta" : {
-    "reportVersion" : "2.6"
+    "reportVersion" : "2.7"
   },
   "run" : {
-    "version" : "2025.02.02-08b2a5a-licensed",
-    "creationTimestamp" : "2025-03-04T17:59:36.241297Z",
-    "command" : "dcover create --coverage-reports --exclude-modules=sql-drivers",
-    "totalTime" : 346.65,
-    "environmentDetectionTime" : 0.306,
-    "indexingTime" : 0.207,
-    "entryPointsTime" : 0.302,
-    "generationTime" : 5250.334,
-    "timeToFirstTest" : 6510.43,
-    "timeToLastTest" : 6020.216,
-    "indexQueryTime" : 8.077,
-    "verificationTime" : 190.084,
-    "validationTime" : 27.056
+    "version" : "2025.09.01-44e352d-licensed",
+    "creationTimestamp" : "2025-10-06T09:58:55.285946006Z",
+    "command" : "dcover create --exclude-modules=sql-drivers --coverage-reports --upload http://localhost:8080 --project-name tracdap --name with-diffblue-tests",
+    "totalTime" : 294.944,
+    "environmentDetectionTime" : 0.34,
+    "indexingTime" : 0.416,
+    "entryPointsTime" : 0.304,
+    "generationTime" : 6111.435,
+    "timeToFirstTest" : 7877.531,
+    "timeToLastTest" : 7046.987,
+    "indexQueryTime" : 11.258000000000001,
+    "verificationTime" : 212.423,
+    "validationTime" : 51.507
   },
   "codes" : {
     "R000" : "Success",
@@ -23,7 +23,6 @@
     "R006" : "Static initializer failed",
     "R011" : "Sandboxing policy violation",
     "R013" : "No inputs found that don't throw a trivial exception",
-    "R024" : "Analysis service shutdown unexpectedly",
     "R081" : "Exception in arrange section",
     "T000" : "Method eligible for test creation",
     "T003" : "Private method",
@@ -31,14 +30,16 @@
     "T008" : "Private and never called",
     "T012" : "Synthetic method",
     "T021" : "Empty method body",
-    "V000" : "Validated successfully"
+    "T023" : "Testability unknown",
+    "V000" : "Validated successfully",
+    "V003" : "Tests discarded during validation"
   },
   "summary" : {
     "classesCount" : 10,
     "methodsCount" : 103,
-    "cumulativeDiffblueTestCount" : 6,
+    "cumulativeDiffblueTestCount" : 8,
     "cumulativeManualTestCount" : 0,
-    "completeTestCount" : 8,
+    "completeTestCount" : 10,
     "incompleteTestCount" : 0,
     "skeletonTestCount" : 0,
     "totalPhysicalLineCount" : 678,
@@ -47,27 +48,29 @@
       "T003" : 38,
       "T005" : 4,
       "T008" : 2,
-      "T012" : 31,
-      "T021" : 1
+      "T012" : 27,
+      "T021" : 1,
+      "T023" : 4
     },
     "perMethodOutcome" : {
-      "R000" : 6,
+      "R000" : 7,
       "R002" : 1,
       "R006" : 1,
       "R011" : 20,
       "R013" : 1,
-      "R024" : 1,
       "R081" : 1,
       "T003" : 38,
-      "T005" : 2,
+      "T005" : 1,
       "T008" : 2,
-      "T012" : 31
+      "T012" : 27,
+      "T023" : 4
     },
     "perTestOutcome" : {
-      "R000" : 8
+      "R000" : 10
     },
     "perTestValidation" : {
-      "V000" : 8
+      "V000" : 10,
+      "V003" : 4
     }
   },
   "classes" : {
@@ -109,8 +112,9 @@
       "perMethodTestability" : {
         "T000" : 13,
         "T003" : 21,
-        "T012" : 21,
-        "T021" : 1
+        "T012" : 20,
+        "T021" : 1,
+        "T023" : 1
       },
       "perMethodOutcome" : {
         "R000" : 1,
@@ -118,7 +122,8 @@
         "R013" : 1,
         "R081" : 1,
         "T003" : 21,
-        "T012" : 21
+        "T012" : 20,
+        "T023" : 1
       },
       "perTestOutcome" : {
         "R000" : 2
@@ -178,18 +183,21 @@
       }
     },
     "org.finos.tracdap.plugins.azure.storage.AzureScheduling" : {
-      "methodsCount" : 4,
-      "completeTestCount" : 0,
+      "methodsCount" : 3,
+      "completeTestCount" : 2,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 1,
         "T005" : 1,
-        "T012" : 1
+        "T023" : 1
       },
       "perMethodOutcome" : {
-        "R024" : 1,
-        "T005" : 2,
-        "T012" : 1
+        "R000" : 1,
+        "T005" : 1,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 2
       }
     },
     "org.finos.tracdap.plugins.azure.storage.AzureStorageErrors" : {
@@ -200,13 +208,13 @@
         "T000" : 1,
         "T003" : 1,
         "T005" : 1,
-        "T012" : 1
+        "T023" : 1
       },
       "perMethodOutcome" : {
         "R000" : 1,
         "R002" : 1,
         "T003" : 1,
-        "T012" : 1
+        "T023" : 1
       },
       "perTestOutcome" : {
         "R000" : 1
@@ -219,11 +227,11 @@
       "perMethodTestability" : {
         "T000" : 3,
         "T005" : 1,
-        "T012" : 1
+        "T023" : 1
       },
       "perMethodOutcome" : {
         "R000" : 4,
-        "T012" : 1
+        "T023" : 1
       },
       "perTestOutcome" : {
         "R000" : 5
@@ -420,11 +428,8 @@
     "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.<clinit>:()V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T012",
-      "perMethodOutcome" : "T012",
-      "lineNumbers" : [
-        73
-      ]
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
     },
     "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.<init>:(Ljava/lang/String;Ljava/util/Properties;)V" : {
       "completeTestCount" : 2,
@@ -1336,11 +1341,8 @@
     "org.finos.tracdap.plugins.azure.storage.AzureScheduling.<clinit>:()V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T012",
-      "perMethodOutcome" : "T012",
-      "lineNumbers" : [
-        30
-      ]
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
     },
     "org.finos.tracdap.plugins.azure.storage.AzureScheduling.<init>:()V" : {
       "completeTestCount" : 0,
@@ -1352,10 +1354,13 @@
       ]
     },
     "org.finos.tracdap.plugins.azure.storage.AzureScheduling.schedulerFor:(Ljava/util/concurrent/ExecutorService;)Lreactor/core/scheduler/Scheduler;" : {
-      "completeTestCount" : 0,
+      "completeTestCount" : 2,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R024",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
       "lineNumbers" : [
         34,
         36,
@@ -1368,14 +1373,8 @@
     "org.finos.tracdap.plugins.azure.storage.AzureStorageErrors.<clinit>:()V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T012",
-      "perMethodOutcome" : "T012",
-      "lineNumbers" : [
-        29,
-        30,
-        31,
-        29
-      ]
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
     },
     "org.finos.tracdap.plugins.azure.storage.AzureStorageErrors.<init>:(Ljava/lang/String;)V" : {
       "completeTestCount" : 0,
@@ -1413,13 +1412,8 @@
     "org.finos.tracdap.plugins.azure.storage.AzureStoragePlugin.<clinit>:()V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T012",
-      "perMethodOutcome" : "T012",
-      "lineNumbers" : [
-        36,
-        37,
-        36
-      ]
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
     },
     "org.finos.tracdap.plugins.azure.storage.AzureStoragePlugin.<init>:()V" : {
       "completeTestCount" : 1,
@@ -1473,5 +1467,10 @@
         46
       ]
     }
+  },
+  "validationMetrics" : {
+    "failingTests" : [
+      "org.finos.tracdap.common.storage.local.LocalStorageOperationsTest.testStat_dirATime"
+    ]
   }
 }

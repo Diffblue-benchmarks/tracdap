@@ -1,21 +1,21 @@
 {
   "meta" : {
-    "reportVersion" : "2.6"
+    "reportVersion" : "2.7"
   },
   "run" : {
-    "version" : "2025.02.02-08b2a5a-licensed",
-    "creationTimestamp" : "2025-03-04T17:59:36.241297Z",
-    "command" : "dcover create --coverage-reports --exclude-modules=sql-drivers",
-    "totalTime" : 365.818,
-    "environmentDetectionTime" : 0.419,
-    "indexingTime" : 0.192,
-    "entryPointsTime" : 0.416,
-    "generationTime" : 406.96,
-    "timeToFirstTest" : 653.207,
-    "timeToLastTest" : 588.138,
-    "indexQueryTime" : 6.928,
-    "verificationTime" : 43.554,
-    "validationTime" : 36.267
+    "version" : "2025.09.01-44e352d-licensed",
+    "creationTimestamp" : "2025-10-06T09:58:55.285946006Z",
+    "command" : "dcover create --exclude-modules=sql-drivers --coverage-reports --upload http://localhost:8080 --project-name tracdap --name with-diffblue-tests",
+    "totalTime" : 685.395,
+    "environmentDetectionTime" : 0.329,
+    "indexingTime" : 0.372,
+    "entryPointsTime" : 0.314,
+    "generationTime" : 1206.769,
+    "timeToFirstTest" : 1503.658,
+    "timeToLastTest" : 1419.534,
+    "indexQueryTime" : 7.011,
+    "verificationTime" : 45.255,
+    "validationTime" : 45.04
   },
   "codes" : {
     "F009" : "Internal error",
@@ -26,7 +26,6 @@
     "R011" : "Sandboxing policy violation",
     "R013" : "No inputs found that don't throw a trivial exception",
     "R020" : "Temporary files were created but not deleted",
-    "R034" : "Diffblue Cover can't complete test",
     "R083" : "Can't find a suitable constructor",
     "T000" : "Method eligible for test creation",
     "T001" : "Trivial getter",
@@ -36,59 +35,61 @@
     "T005" : "Trivial constructor",
     "T012" : "Synthetic method",
     "T021" : "Empty method body",
+    "T023" : "Testability unknown",
     "V000" : "Validated successfully",
     "W001" : "Test did not compile"
   },
   "summary" : {
     "classesCount" : 24,
     "methodsCount" : 211,
-    "cumulativeDiffblueTestCount" : 141,
+    "cumulativeDiffblueTestCount" : 157,
     "cumulativeManualTestCount" : 0,
-    "completeTestCount" : 142,
+    "completeTestCount" : 158,
     "incompleteTestCount" : 0,
     "skeletonTestCount" : 0,
     "totalPhysicalLineCount" : 2175,
     "perMethodTestability" : {
-      "T000" : 133,
+      "T000" : 125,
       "T001" : 12,
       "T002" : 4,
       "T003" : 7,
       "T004" : 1,
       "T005" : 14,
-      "T012" : 32,
-      "T021" : 8
+      "T012" : 34,
+      "T021" : 8,
+      "T023" : 6
     },
     "perMethodOutcome" : {
-      "F009" : 3,
+      "F009" : 2,
       "R000" : 75,
-      "R002" : 5,
-      "R004" : 3,
+      "R002" : 4,
+      "R004" : 5,
       "R006" : 1,
-      "R011" : 29,
-      "R013" : 30,
-      "R020" : 1,
-      "R034" : 1,
-      "R083" : 11,
+      "R011" : 30,
+      "R013" : 28,
+      "R020" : 2,
+      "R083" : 4,
       "T003" : 7,
       "T004" : 1,
       "T005" : 11,
-      "T012" : 32,
+      "T012" : 34,
+      "T023" : 6,
       "W001" : 1
     },
     "perTestOutcome" : {
-      "R000" : 142
+      "R000" : 158
     },
     "perTestValidation" : {
-      "V000" : 142
+      "V000" : 158
     },
     "warnings" : {
-      "W001" : 7
+      "W001" : 8
     }
   },
   "classes" : {
     "org.finos.tracdap.test.concurrent.ConcurrentTestHelpers" : {
       "methodsCount" : 7,
-      "completeTestCount" : 6,
+      "completeTestCount" : 8,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 5,
@@ -96,18 +97,17 @@
         "T012" : 1
       },
       "perMethodOutcome" : {
-        "R000" : 3,
-        "R013" : 2,
+        "R000" : 5,
         "T005" : 1,
         "T012" : 1
       },
       "perTestOutcome" : {
-        "R000" : 6
+        "R000" : 8
       }
     },
     "org.finos.tracdap.test.config.ConfigHelpers" : {
       "methodsCount" : 7,
-      "completeTestCount" : 14,
+      "completeTestCount" : 18,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 4,
@@ -121,12 +121,12 @@
         "T012" : 2
       },
       "perTestOutcome" : {
-        "R000" : 14
+        "R000" : 18
       }
     },
     "org.finos.tracdap.test.data.DataApiTestHelpers" : {
       "methodsCount" : 15,
-      "completeTestCount" : 40,
+      "completeTestCount" : 47,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 12,
@@ -143,10 +143,10 @@
         "W001" : 1
       },
       "perTestOutcome" : {
-        "R000" : 40
+        "R000" : 47
       },
       "warnings" : {
-        "W001" : 7
+        "W001" : 8
       }
     },
     "org.finos.tracdap.test.data.DataApiTestHelpers$1" : {
@@ -165,10 +165,10 @@
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
-        "T012" : 1
+        "T023" : 1
       },
       "perMethodOutcome" : {
-        "T012" : 1
+        "T023" : 1
       }
     },
     "org.finos.tracdap.test.data.SampleData" : {
@@ -178,13 +178,15 @@
       "perMethodTestability" : {
         "T000" : 4,
         "T005" : 1,
-        "T012" : 15
+        "T012" : 14,
+        "T023" : 1
       },
       "perMethodOutcome" : {
         "F009" : 1,
         "R011" : 3,
         "T005" : 1,
-        "T012" : 15
+        "T012" : 14,
+        "T023" : 1
       }
     },
     "org.finos.tracdap.test.data.SampleData$1" : {
@@ -192,10 +194,10 @@
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
-        "T012" : 1
+        "T023" : 1
       },
       "perMethodOutcome" : {
-        "T012" : 1
+        "T023" : 1
       }
     },
     "org.finos.tracdap.test.data.SingleBatchDataSink" : {
@@ -228,7 +230,7 @@
     },
     "org.finos.tracdap.test.grpc.GrpcTestStreams" : {
       "methodsCount" : 4,
-      "completeTestCount" : 4,
+      "completeTestCount" : 10,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 3,
@@ -239,7 +241,7 @@
         "T005" : 1
       },
       "perTestOutcome" : {
-        "R000" : 4
+        "R000" : 10
       }
     },
     "org.finos.tracdap.test.grpc.GrpcTestStreams$ClientRequestStream" : {
@@ -259,10 +261,10 @@
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
-        "T000" : 4
+        "T012" : 4
       },
       "perMethodOutcome" : {
-        "R013" : 4
+        "T012" : 4
       }
     },
     "org.finos.tracdap.test.grpc.GrpcTestStreams$ClientResponseStream$Subscription" : {
@@ -279,18 +281,13 @@
     },
     "org.finos.tracdap.test.grpc.GrpcTestStreams$ClientResultHandler" : {
       "methodsCount" : 4,
-      "completeTestCount" : 2,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
-        "T000" : 4
+        "T012" : 4
       },
       "perMethodOutcome" : {
-        "R000" : 2,
-        "R002" : 1,
-        "R013" : 1
-      },
-      "perTestOutcome" : {
-        "R000" : 2
+        "T012" : 4
       }
     },
     "org.finos.tracdap.test.helpers.CloseWrapper" : {
@@ -304,7 +301,7 @@
       },
       "perMethodOutcome" : {
         "R000" : 2,
-        "R004" : 1,
+        "R013" : 1,
         "T003" : 1
       },
       "perTestOutcome" : {
@@ -333,16 +330,18 @@
         "T001" : 6,
         "T003" : 4,
         "T005" : 2,
-        "T012" : 5
+        "T012" : 4,
+        "T023" : 1
       },
       "perMethodOutcome" : {
         "R000" : 11,
-        "R004" : 2,
-        "R013" : 7,
-        "R020" : 1,
-        "R083" : 11,
+        "R004" : 5,
+        "R013" : 10,
+        "R020" : 2,
+        "R083" : 4,
         "T003" : 4,
-        "T012" : 5
+        "T012" : 4,
+        "T023" : 1
       },
       "perTestOutcome" : {
         "R000" : 4
@@ -407,24 +406,26 @@
     },
     "org.finos.tracdap.test.meta.SampleMetadata" : {
       "methodsCount" : 45,
-      "completeTestCount" : 63,
+      "completeTestCount" : 62,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 40,
         "T003" : 2,
         "T005" : 1,
-        "T012" : 2
+        "T012" : 1,
+        "T023" : 1
       },
       "perMethodOutcome" : {
-        "F009" : 2,
+        "F009" : 1,
         "R000" : 34,
-        "R013" : 4,
+        "R013" : 5,
         "T003" : 2,
         "T005" : 1,
-        "T012" : 2
+        "T012" : 1,
+        "T023" : 1
       },
       "perTestOutcome" : {
-        "R000" : 63
+        "R000" : 62
       }
     },
     "org.finos.tracdap.test.meta.SampleMetadata$1" : {
@@ -432,10 +433,10 @@
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
-        "T012" : 1
+        "T023" : 1
       },
       "perMethodOutcome" : {
-        "T012" : 1
+        "T023" : 1
       }
     },
     "org.finos.tracdap.test.storage.StorageTestHelpers" : {
@@ -448,8 +449,7 @@
         "T012" : 1
       },
       "perMethodOutcome" : {
-        "R011" : 2,
-        "R034" : 1,
+        "R011" : 3,
         "T005" : 1,
         "T012" : 1
       }
@@ -519,10 +519,13 @@
       ]
     },
     "org.finos.tracdap.test.concurrent.ConcurrentTestHelpers.waitFor:(Ljava/time/Duration;Ljava/util/List;)V" : {
-      "completeTestCount" : 0,
+      "completeTestCount" : 1,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R013",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
       "lineNumbers" : [
         35,
         37,
@@ -537,10 +540,13 @@
       ]
     },
     "org.finos.tracdap.test.concurrent.ConcurrentTestHelpers.waitFor:(Ljava/time/Duration;[Ljava/util/concurrent/CompletionStage;)V" : {
-      "completeTestCount" : 0,
+      "completeTestCount" : 1,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R013",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
       "lineNumbers" : [
         30,
         31
@@ -556,12 +562,12 @@
       ]
     },
     "org.finos.tracdap.test.config.ConfigHelpers.copyConfigDir:(Ljava/nio/file/Path;Ljava/nio/file/Path;)V" : {
-      "completeTestCount" : 4,
+      "completeTestCount" : 6,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 4
+        "R000" : 6
       },
       "lineNumbers" : [
         146,
@@ -629,12 +635,12 @@
       ]
     },
     "org.finos.tracdap.test.config.ConfigHelpers.prepareConfig:(Ljava/util/List;Ljava/nio/file/Path;Ljava/util/Map;)Ljava/util/List;" : {
-      "completeTestCount" : 10,
+      "completeTestCount" : 12,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 10
+        "R000" : 12
       },
       "lineNumbers" : [
         42,
@@ -706,11 +712,8 @@
     "org.finos.tracdap.test.data.DataApiTestHelpers$2.<clinit>:()V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T012",
-      "perMethodOutcome" : "T012",
-      "lineNumbers" : [
-        359
-      ]
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
     },
     "org.finos.tracdap.test.data.DataApiTestHelpers.<init>:()V" : {
       "completeTestCount" : 0,
@@ -722,12 +725,12 @@
       ]
     },
     "org.finos.tracdap.test.data.DataApiTestHelpers.clientStreaming:(Ljava/util/function/Function;Ljava/lang/Object;)Ljava/util/concurrent/CompletableFuture;" : {
-      "completeTestCount" : 17,
+      "completeTestCount" : 8,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 17
+        "R000" : 8
       },
       "lineNumbers" : [
         128
@@ -739,7 +742,7 @@
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "W001",
       "warnings" : {
-        "W001" : 2
+        "W001" : 3
       },
       "lineNumbers" : [
         112,
@@ -1020,12 +1023,12 @@
       ]
     },
     "org.finos.tracdap.test.data.DataApiTestHelpers.serverStreaming:(Ljava/util/function/BiConsumer;Ljava/lang/Object;Ljava/util/concurrent/Flow$Subscriber;)V" : {
-      "completeTestCount" : 9,
+      "completeTestCount" : 14,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 9
+        "R000" : 14
       },
       "warnings" : {
         "W001" : 5
@@ -1037,12 +1040,12 @@
       ]
     },
     "org.finos.tracdap.test.data.DataApiTestHelpers.serverStreaming:(Ljava/util/function/BiConsumer;Ljava/lang/Object;Lorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
-      "completeTestCount" : 4,
+      "completeTestCount" : 11,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 4
+        "R000" : 11
       },
       "lineNumbers" : [
         77,
@@ -1053,12 +1056,12 @@
       ]
     },
     "org.finos.tracdap.test.data.DataApiTestHelpers.serverStreamingDiscard:(Ljava/util/function/BiConsumer;Ljava/lang/Object;Lorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
-      "completeTestCount" : 2,
+      "completeTestCount" : 6,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 2
+        "R000" : 6
       },
       "lineNumbers" : [
         98,
@@ -1071,192 +1074,14 @@
     "org.finos.tracdap.test.data.SampleData$1.<clinit>:()V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T012",
-      "perMethodOutcome" : "T012",
-      "lineNumbers" : [
-        271,
-        204
-      ]
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
     },
     "org.finos.tracdap.test.data.SampleData.<clinit>:()V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T012",
-      "perMethodOutcome" : "T012",
-      "lineNumbers" : [
-        48,
-        49,
-        50,
-        51,
-        52,
-        53,
-        54,
-        51,
-        55,
-        56,
-        57,
-        58,
-        55,
-        59,
-        60,
-        61,
-        62,
-        59,
-        63,
-        64,
-        65,
-        66,
-        63,
-        67,
-        68,
-        69,
-        70,
-        67,
-        71,
-        72,
-        73,
-        74,
-        71,
-        75,
-        76,
-        77,
-        78,
-        75,
-        50,
-        79,
-        81,
-        82,
-        83,
-        84,
-        85,
-        86,
-        87,
-        84,
-        83,
-        88,
-        91,
-        92,
-        93,
-        94,
-        95,
-        96,
-        97,
-        94,
-        98,
-        99,
-        100,
-        101,
-        102,
-        98,
-        103,
-        104,
-        105,
-        106,
-        103,
-        107,
-        108,
-        109,
-        110,
-        107,
-        111,
-        112,
-        113,
-        114,
-        111,
-        93,
-        115,
-        117,
-        118,
-        119,
-        120,
-        121,
-        122,
-        123,
-        120,
-        119,
-        124,
-        127,
-        128,
-        129,
-        130,
-        128,
-        131,
-        132,
-        133,
-        131,
-        134,
-        135,
-        136,
-        137,
-        138,
-        134,
-        139,
-        140,
-        141,
-        142,
-        143,
-        139,
-        144,
-        145,
-        146,
-        147,
-        148,
-        149,
-        144,
-        150,
-        151,
-        152,
-        150,
-        153,
-        154,
-        155,
-        154,
-        156,
-        157,
-        158,
-        156,
-        153,
-        159,
-        160,
-        161,
-        160,
-        162,
-        163,
-        164,
-        162,
-        159,
-        165,
-        166,
-        167,
-        168,
-        166,
-        169,
-        170,
-        171,
-        169,
-        165,
-        172,
-        173,
-        174,
-        175,
-        173,
-        176,
-        177,
-        178,
-        176,
-        172,
-        179,
-        180,
-        181,
-        182,
-        180,
-        183,
-        184,
-        183,
-        179,
-        185,
-        127
-      ]
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
     },
     "org.finos.tracdap.test.data.SampleData.<init>:()V" : {
       "completeTestCount" : 0,
@@ -1866,8 +1691,8 @@
     "org.finos.tracdap.test.grpc.GrpcTestStreams$ClientResponseStream.<init>:(Ljava/util/concurrent/Flow$Subscriber;)V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R013",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         121,
         112,
@@ -1880,8 +1705,8 @@
     "org.finos.tracdap.test.grpc.GrpcTestStreams$ClientResponseStream.onCompleted:()V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R013",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         145,
         147,
@@ -1891,8 +1716,8 @@
     "org.finos.tracdap.test.grpc.GrpcTestStreams$ClientResponseStream.onError:(Ljava/lang/Throwable;)V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R013",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         137,
         139,
@@ -1902,21 +1727,18 @@
     "org.finos.tracdap.test.grpc.GrpcTestStreams$ClientResponseStream.onNext:(Ljava/lang/Object;)V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R013",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         131,
         132
       ]
     },
     "org.finos.tracdap.test.grpc.GrpcTestStreams$ClientResultHandler.<init>:(Ljava/util/concurrent/CompletableFuture;)V" : {
-      "completeTestCount" : 1,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
-      "perTestOutcome" : {
-        "R000" : 1
-      },
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         58,
         62,
@@ -1927,13 +1749,10 @@
       ]
     },
     "org.finos.tracdap.test.grpc.GrpcTestStreams$ClientResultHandler.onCompleted:()V" : {
-      "completeTestCount" : 1,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
-      "perTestOutcome" : {
-        "R000" : 1
-      },
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         94,
         98,
@@ -1947,8 +1766,8 @@
     "org.finos.tracdap.test.grpc.GrpcTestStreams$ClientResultHandler.onError:(Ljava/lang/Throwable;)V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R013",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         83,
         87,
@@ -1959,8 +1778,8 @@
     "org.finos.tracdap.test.grpc.GrpcTestStreams$ClientResultHandler.onNext:(Ljava/lang/Object;)V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R002",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         72,
         76,
@@ -2002,12 +1821,12 @@
       ]
     },
     "org.finos.tracdap.test.grpc.GrpcTestStreams.clientResponseStream:(Ljava/util/concurrent/Flow$Subscriber;)Lio/grpc/stub/StreamObserver;" : {
-      "completeTestCount" : 2,
+      "completeTestCount" : 8,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 2
+        "R000" : 8
       },
       "lineNumbers" : [
         44
@@ -2028,7 +1847,7 @@
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R004",
+      "perMethodOutcome" : "R013",
       "lineNumbers" : [
         39,
         40,
@@ -2219,13 +2038,8 @@
     "org.finos.tracdap.test.helpers.PlatformTest.<clinit>:()V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T012",
-      "perMethodOutcome" : "T012",
-      "lineNumbers" : [
-        72,
-        73,
-        74
-      ]
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
     },
     "org.finos.tracdap.test.helpers.PlatformTest.<init>:(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;ZZZLjava/util/List;Lorg/finos/tracdap/common/middleware/GrpcConcern;Ljava/util/List;)V" : {
       "completeTestCount" : 0,
@@ -2253,7 +2067,7 @@
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodOutcome" : "R013",
       "lineNumbers" : [
         268,
         269,
@@ -2267,7 +2081,7 @@
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodOutcome" : "R020",
       "lineNumbers" : [
         246,
         247,
@@ -2343,7 +2157,7 @@
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodOutcome" : "R013",
       "lineNumbers" : [
         318,
         323,
@@ -2634,7 +2448,7 @@
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodOutcome" : "R004",
       "lineNumbers" : [
         467,
         468,
@@ -2682,7 +2496,7 @@
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodOutcome" : "R013",
       "lineNumbers" : [
         427,
         429,
@@ -2738,7 +2552,7 @@
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodOutcome" : "R004",
       "lineNumbers" : [
         519,
         520,
@@ -2751,7 +2565,7 @@
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodOutcome" : "R004",
       "lineNumbers" : [
         556,
         557,
@@ -2963,21 +2777,14 @@
     "org.finos.tracdap.test.meta.SampleMetadata$1.<clinit>:()V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T012",
-      "perMethodOutcome" : "T012",
-      "lineNumbers" : [
-        645,
-        51
-      ]
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
     },
     "org.finos.tracdap.test.meta.SampleMetadata.<clinit>:()V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T012",
-      "perMethodOutcome" : "T012",
-      "lineNumbers" : [
-        46
-      ]
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
     },
     "org.finos.tracdap.test.meta.SampleMetadata.<init>:()V" : {
       "completeTestCount" : 0,
@@ -3050,7 +2857,7 @@
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "F009",
+      "perMethodOutcome" : "R013",
       "lineNumbers" : [
         674,
         676,
@@ -3915,12 +3722,12 @@
       ]
     },
     "org.finos.tracdap.test.meta.SampleMetadata.tagForNextObject:(Lorg/finos/tracdap/metadata/Tag;Lorg/finos/tracdap/metadata/ObjectDefinition;Z)Lorg/finos/tracdap/metadata/Tag;" : {
-      "completeTestCount" : 2,
+      "completeTestCount" : 1,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 2
+        "R000" : 1
       },
       "lineNumbers" : [
         589,
@@ -3997,7 +3804,7 @@
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R034",
+      "perMethodOutcome" : "R011",
       "lineNumbers" : [
         37,
         38,
@@ -4026,5 +3833,6 @@
         62
       ]
     }
-  }
+  },
+  "validationMetrics" : { }
 }

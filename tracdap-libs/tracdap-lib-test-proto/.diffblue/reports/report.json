@@ -1,78 +1,51 @@
 {
   "meta" : {
-    "reportVersion" : "2.6"
+    "reportVersion" : "2.7"
   },
   "run" : {
-    "version" : "2025.02.02-08b2a5a-licensed",
-    "creationTimestamp" : "2025-03-04T17:59:36.241297Z",
-    "command" : "dcover create --coverage-reports --exclude-modules=sql-drivers",
-    "totalTime" : 154.994,
-    "environmentDetectionTime" : 0.508,
-    "indexingTime" : 0.22,
-    "entryPointsTime" : 0.506,
-    "generationTime" : 16040.961,
-    "timeToFirstTest" : 18109.765,
-    "timeToLastTest" : 17315.284,
-    "indexQueryTime" : 4.19,
-    "verificationTime" : 320.922,
-    "validationTime" : 19.731
+    "version" : "2025.09.01-44e352d-licensed",
+    "creationTimestamp" : "2025-10-06T09:51:04.002575388Z",
+    "command" : "dcover coverage-reports --exclude-modules=sql-drivers upload --exclude-modules=sql-drivers http://localhost:8080 --project-name tracdap --name baseline-no-diffblue-tests",
+    "totalTime" : 52.02,
+    "environmentDetectionTime" : 27.206,
+    "indexingTime" : 0.0,
+    "entryPointsTime" : 0.0,
+    "generationTime" : 0.0,
+    "timeToFirstTest" : 52.02,
+    "timeToLastTest" : 52.02,
+    "indexQueryTime" : 0.0,
+    "verificationTime" : 0.0,
+    "validationTime" : 0.0
   },
   "codes" : {
-    "F009" : "Internal error",
-    "R000" : "Success",
-    "R002" : "Missing observers",
-    "R004" : "No meaningful assertions found",
-    "R013" : "No inputs found that don't throw a trivial exception",
-    "R083" : "Can't find a suitable constructor",
-    "T000" : "Method eligible for test creation",
-    "T001" : "Trivial getter",
     "T003" : "Private method",
     "T004" : "In anonymous inner class",
-    "T005" : "Trivial constructor",
     "T008" : "Private and never called",
-    "T010" : "Abstract or interface method",
     "T012" : "Synthetic method",
-    "T021" : "Empty method body",
-    "V000" : "Validated successfully"
+    "T023" : "Testability unknown"
   },
   "summary" : {
     "classesCount" : 7,
-    "methodsCount" : 104,
-    "cumulativeDiffblueTestCount" : 39,
+    "methodsCount" : 97,
+    "cumulativeDiffblueTestCount" : 0,
     "cumulativeManualTestCount" : 0,
-    "completeTestCount" : 39,
+    "completeTestCount" : 0,
     "incompleteTestCount" : 0,
     "skeletonTestCount" : 0,
     "totalPhysicalLineCount" : 797,
     "perMethodTestability" : {
-      "T000" : 59,
-      "T001" : 9,
-      "T003" : 10,
+      "T003" : 2,
       "T004" : 2,
-      "T005" : 5,
       "T008" : 3,
-      "T010" : 9,
-      "T012" : 6,
-      "T021" : 1
+      "T012" : 86,
+      "T023" : 4
     },
     "perMethodOutcome" : {
-      "F009" : 13,
-      "R000" : 22,
-      "R002" : 1,
-      "R004" : 2,
-      "R013" : 1,
-      "R083" : 35,
-      "T003" : 10,
+      "T003" : 2,
       "T004" : 2,
       "T008" : 3,
-      "T010" : 9,
-      "T012" : 6
-    },
-    "perTestOutcome" : {
-      "R000" : 39
-    },
-    "perTestValidation" : {
-      "V000" : 39
+      "T012" : 86,
+      "T023" : 4
     }
   },
   "classes" : {
@@ -81,41 +54,27 @@
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
-        "T000" : 1,
-        "T001" : 1,
         "T008" : 1,
-        "T012" : 1,
-        "T021" : 1
+        "T012" : 3,
+        "T023" : 1
       },
       "perMethodOutcome" : {
-        "R004" : 1,
-        "R083" : 2,
         "T008" : 1,
-        "T012" : 1
+        "T012" : 3,
+        "T023" : 1
       }
     },
     "org.finos.tracdap.test.config.TestConfigExt" : {
-      "methodsCount" : 43,
-      "completeTestCount" : 39,
+      "methodsCount" : 40,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
-        "T000" : 29,
-        "T001" : 4,
-        "T003" : 3,
-        "T005" : 5,
-        "T012" : 2
+        "T012" : 39,
+        "T023" : 1
       },
       "perMethodOutcome" : {
-        "F009" : 13,
-        "R000" : 22,
-        "R002" : 1,
-        "R004" : 1,
-        "R013" : 1,
-        "T003" : 3,
-        "T012" : 2
-      },
-      "perTestOutcome" : {
-        "R000" : 39
+        "T012" : 39,
+        "T023" : 1
       }
     },
     "org.finos.tracdap.test.config.TestConfigExt$1" : {
@@ -130,19 +89,16 @@
       }
     },
     "org.finos.tracdap.test.config.TestConfigExt$Builder" : {
-      "methodsCount" : 39,
+      "methodsCount" : 35,
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
-        "T000" : 29,
-        "T001" : 4,
-        "T003" : 5,
-        "T012" : 1
+        "T012" : 34,
+        "T023" : 1
       },
       "perMethodOutcome" : {
-        "R083" : 33,
-        "T003" : 5,
-        "T012" : 1
+        "T012" : 34,
+        "T023" : 1
       }
     },
     "org.finos.tracdap.test.config.TestConfigExt$Builder$MetadataMappingConverter" : {
@@ -166,11 +122,11 @@
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T008" : 1,
-        "T012" : 1
+        "T023" : 1
       },
       "perMethodOutcome" : {
         "T008" : 1,
-        "T012" : 1
+        "T023" : 1
       }
     },
     "org.finos.tracdap.test.config.TestConfigExtOrBuilder" : {
@@ -178,10 +134,10 @@
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
-        "T010" : 9
+        "T012" : 9
       },
       "perMethodOutcome" : {
-        "T010" : 9
+        "T012" : 9
       }
     }
   },
@@ -189,25 +145,8 @@
     "org.finos.tracdap.test.config.ConfigExtensionsProto.<clinit>:()V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T012",
-      "perMethodOutcome" : "T012",
-      "lineNumbers" : [
-        11,
-        17,
-        11,
-        46,
-        58,
-        61,
-        59,
-        64,
-        65,
-        69,
-        70,
-        71,
-        75,
-        76,
-        77
-      ]
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
     },
     "org.finos.tracdap.test.config.ConfigExtensionsProto.<init>:()V" : {
       "completeTestCount" : 0,
@@ -221,8 +160,8 @@
     "org.finos.tracdap.test.config.ConfigExtensionsProto.getDescriptor:()Lcom/google/protobuf/Descriptors$FileDescriptor;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T001",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         41
       ]
@@ -230,8 +169,8 @@
     "org.finos.tracdap.test.config.ConfigExtensionsProto.registerAllExtensions:(Lcom/google/protobuf/ExtensionRegistry;)V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R004",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         25,
         27
@@ -240,8 +179,8 @@
     "org.finos.tracdap.test.config.ConfigExtensionsProto.registerAllExtensions:(Lcom/google/protobuf/ExtensionRegistryLite;)V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T021",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         21
       ]
@@ -314,17 +253,14 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.<clinit>:()V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T012",
-      "perMethodOutcome" : "T012",
-      "lineNumbers" : [
-        681
-      ]
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
     },
     "org.finos.tracdap.test.config.TestConfigExt$Builder.<init>:()V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T003",
-      "perMethodOutcome" : "T003",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         420,
         565,
@@ -334,31 +270,19 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.<init>:(Lcom/google/protobuf/AbstractMessage$BuilderParent;)V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T003",
-      "perMethodOutcome" : "T003",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         426,
         565,
         428
       ]
     },
-    "org.finos.tracdap.test.config.TestConfigExt$Builder.build:()Lorg/finos/tracdap/test/config/TestConfigExt;" : {
-      "completeTestCount" : 0,
-      "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
-      "lineNumbers" : [
-        452,
-        453,
-        454,
-        456
-      ]
-    },
     "org.finos.tracdap.test.config.TestConfigExt$Builder.buildPartial0:(Lorg/finos/tracdap/test/config/TestConfigExt;)V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T003",
-      "perMethodOutcome" : "T003",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         468,
         469,
@@ -370,37 +294,11 @@
         478
       ]
     },
-    "org.finos.tracdap.test.config.TestConfigExt$Builder.buildPartial:()Lorg/finos/tracdap/test/config/TestConfigExt;" : {
-      "completeTestCount" : 0,
-      "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
-      "lineNumbers" : [
-        461,
-        462,
-        463,
-        464
-      ]
-    },
-    "org.finos.tracdap.test.config.TestConfigExt$Builder.clear:()Lorg/finos/tracdap/test/config/TestConfigExt$Builder;" : {
-      "completeTestCount" : 0,
-      "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
-      "lineNumbers" : [
-        431,
-        432,
-        433,
-        434,
-        435,
-        436
-      ]
-    },
     "org.finos.tracdap.test.config.TestConfigExt$Builder.clearMetadataMapping:()Lorg/finos/tracdap/test/config/TestConfigExt$Builder;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         755,
         756,
@@ -410,8 +308,8 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.clearSetting1:()Lorg/finos/tracdap/test/config/TestConfigExt$Builder;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         617,
         618,
@@ -422,8 +320,8 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.clearSetting2:()Lorg/finos/tracdap/test/config/TestConfigExt$Builder;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         663,
         664,
@@ -434,27 +332,18 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.containsMetadataMapping:(Ljava/lang/String;)Z" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         710,
         711
       ]
     },
-    "org.finos.tracdap.test.config.TestConfigExt$Builder.getDefaultInstanceForType:()Lorg/finos/tracdap/test/config/TestConfigExt;" : {
-      "completeTestCount" : 0,
-      "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
-      "lineNumbers" : [
-        447
-      ]
-    },
     "org.finos.tracdap.test.config.TestConfigExt$Builder.getDescriptor:()Lcom/google/protobuf/Descriptors$Descriptor;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T001",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         386
       ]
@@ -462,8 +351,8 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.getDescriptorForType:()Lcom/google/protobuf/Descriptors$Descriptor;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T001",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         442
       ]
@@ -471,8 +360,8 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.getMetadataMapping:()Ljava/util/Map;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         719
       ]
@@ -480,8 +369,8 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.getMetadataMappingCount:()I" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         702
       ]
@@ -489,8 +378,8 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.getMetadataMappingMap:()Ljava/util/Map;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         726
       ]
@@ -498,8 +387,8 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.getMetadataMappingOrDefault:(Ljava/lang/String;Lorg/finos/tracdap/metadata/TagSelector;)Lorg/finos/tracdap/metadata/TagSelector;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         737,
         738,
@@ -509,8 +398,8 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.getMetadataMappingOrThrow:(Ljava/lang/String;)Lorg/finos/tracdap/metadata/TagSelector;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         747,
         748,
@@ -522,8 +411,8 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.getMutableMetadataMapping:()Ljava/util/Map;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         775,
         776
@@ -532,8 +421,8 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.getSetting1:()Ljava/lang/String;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         571,
         572,
@@ -547,8 +436,8 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.getSetting1Bytes:()Lcom/google/protobuf/ByteString;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         588,
         589,
@@ -562,8 +451,8 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.getSetting2:()Z" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T001",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         644
       ]
@@ -571,8 +460,8 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.internalGetFieldAccessorTable:()Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         414,
         415,
@@ -582,8 +471,8 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.internalGetMapFieldReflection:(I)Lcom/google/protobuf/MapFieldReflectionAccessor;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         392,
         394,
@@ -593,8 +482,8 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.internalGetMetadataMapping:()Lcom/google/protobuf/MapFieldBuilder;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T003",
-      "perMethodOutcome" : "T003",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         687,
         688,
@@ -604,8 +493,8 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.internalGetMutableMapFieldReflection:(I)Lcom/google/protobuf/MapFieldReflectionAccessor;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         403,
         405,
@@ -615,8 +504,8 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.internalGetMutableMetadataMapping:()Lcom/google/protobuf/MapFieldBuilder;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T003",
-      "perMethodOutcome" : "T003",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         694,
         695,
@@ -628,8 +517,8 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.isInitialized:()Z" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T001",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         510
       ]
@@ -637,8 +526,8 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.mergeFrom:(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lorg/finos/tracdap/test/config/TestConfigExt$Builder;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         518,
         519,
@@ -677,8 +566,8 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.mergeFrom:(Lcom/google/protobuf/Message;)Lorg/finos/tracdap/test/config/TestConfigExt$Builder;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         482,
         483,
@@ -689,8 +578,8 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.mergeFrom:(Lorg/finos/tracdap/test/config/TestConfigExt;)Lorg/finos/tracdap/test/config/TestConfigExt$Builder;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         491,
         492,
@@ -711,8 +600,8 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.putAllMetadataMapping:(Ljava/util/Map;)Lorg/finos/tracdap/test/config/TestConfigExt$Builder;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         796,
         797,
@@ -727,8 +616,8 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.putMetadataMapping:(Ljava/lang/String;Lorg/finos/tracdap/metadata/TagSelector;)Lorg/finos/tracdap/test/config/TestConfigExt$Builder;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         784,
         785,
@@ -741,8 +630,8 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.putMetadataMappingBuilderIfAbsent:(Ljava/lang/String;)Lorg/finos/tracdap/metadata/TagSelector$Builder;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         811,
         812,
@@ -758,8 +647,8 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.removeMetadataMapping:(Ljava/lang/String;)Lorg/finos/tracdap/test/config/TestConfigExt$Builder;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         764,
         765,
@@ -770,8 +659,8 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.setSetting1:(Ljava/lang/String;)Lorg/finos/tracdap/test/config/TestConfigExt$Builder;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         606,
         607,
@@ -783,8 +672,8 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.setSetting1Bytes:(Lcom/google/protobuf/ByteString;)Lorg/finos/tracdap/test/config/TestConfigExt$Builder;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         629,
         630,
@@ -797,8 +686,8 @@
     "org.finos.tracdap.test.config.TestConfigExt$Builder.setSetting2:(Z)Lorg/finos/tracdap/test/config/TestConfigExt$Builder;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R083",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         653,
         654,
@@ -809,14 +698,8 @@
     "org.finos.tracdap.test.config.TestConfigExt$MetadataMappingDefaultEntryHolder.<clinit>:()V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T012",
-      "perMethodOutcome" : "T012",
-      "lineNumbers" : [
-        111,
-        118,
-        113,
-        111
-      ]
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
     },
     "org.finos.tracdap.test.config.TestConfigExt$MetadataMappingDefaultEntryHolder.<init>:()V" : {
       "completeTestCount" : 0,
@@ -830,21 +713,14 @@
     "org.finos.tracdap.test.config.TestConfigExt.<clinit>:()V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T012",
-      "perMethodOutcome" : "T012",
-      "lineNumbers" : [
-        17,
-        23,
-        17,
-        830,
-        838
-      ]
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
     },
     "org.finos.tracdap.test.config.TestConfigExt.<init>:()V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T003",
-      "perMethodOutcome" : "T003",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         29,
         59,
@@ -857,8 +733,8 @@
     "org.finos.tracdap.test.config.TestConfigExt.<init>:(Lcom/google/protobuf/GeneratedMessage$Builder;)V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T003",
-      "perMethodOutcome" : "T003",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         27,
         59,
@@ -877,26 +753,20 @@
       ]
     },
     "org.finos.tracdap.test.config.TestConfigExt.containsMetadataMapping:(Ljava/lang/String;)Z" : {
-      "completeTestCount" : 1,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
-      "perTestOutcome" : {
-        "R000" : 1
-      },
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         140,
         141
       ]
     },
     "org.finos.tracdap.test.config.TestConfigExt.equals:(Ljava/lang/Object;)Z" : {
-      "completeTestCount" : 5,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
-      "perTestOutcome" : {
-        "R000" : 5
-      },
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         246,
         247,
@@ -918,77 +788,53 @@
     "org.finos.tracdap.test.config.TestConfigExt.getDefaultInstance:()Lorg/finos/tracdap/test/config/TestConfigExt;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T001",
-      "perMethodOutcome" : "F009",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         834
-      ]
-    },
-    "org.finos.tracdap.test.config.TestConfigExt.getDefaultInstanceForType:()Lorg/finos/tracdap/test/config/TestConfigExt;" : {
-      "completeTestCount" : 1,
-      "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
-      "perTestOutcome" : {
-        "R000" : 1
-      },
-      "lineNumbers" : [
-        870
       ]
     },
     "org.finos.tracdap.test.config.TestConfigExt.getDescriptor:()Lcom/google/protobuf/Descriptors$Descriptor;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T001",
-      "perMethodOutcome" : "F009",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         35
       ]
     },
     "org.finos.tracdap.test.config.TestConfigExt.getMetadataMapping:()Ljava/util/Map;" : {
-      "completeTestCount" : 1,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
-      "perTestOutcome" : {
-        "R000" : 1
-      },
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         149
       ]
     },
     "org.finos.tracdap.test.config.TestConfigExt.getMetadataMappingCount:()I" : {
-      "completeTestCount" : 1,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
-      "perTestOutcome" : {
-        "R000" : 1
-      },
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         132
       ]
     },
     "org.finos.tracdap.test.config.TestConfigExt.getMetadataMappingMap:()Ljava/util/Map;" : {
-      "completeTestCount" : 1,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
-      "perTestOutcome" : {
-        "R000" : 1
-      },
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         156
       ]
     },
     "org.finos.tracdap.test.config.TestConfigExt.getMetadataMappingOrDefault:(Ljava/lang/String;Lorg/finos/tracdap/metadata/TagSelector;)Lorg/finos/tracdap/metadata/TagSelector;" : {
-      "completeTestCount" : 1,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
-      "perTestOutcome" : {
-        "R000" : 1
-      },
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         167,
         168,
@@ -997,13 +843,10 @@
       ]
     },
     "org.finos.tracdap.test.config.TestConfigExt.getMetadataMappingOrThrow:(Ljava/lang/String;)Lorg/finos/tracdap/metadata/TagSelector;" : {
-      "completeTestCount" : 1,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
-      "perTestOutcome" : {
-        "R000" : 1
-      },
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         178,
         179,
@@ -1016,20 +859,17 @@
     "org.finos.tracdap.test.config.TestConfigExt.getParserForType:()Lcom/google/protobuf/Parser;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T001",
-      "perMethodOutcome" : "F009",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         865
       ]
     },
     "org.finos.tracdap.test.config.TestConfigExt.getSerializedSize:()I" : {
-      "completeTestCount" : 1,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
-      "perTestOutcome" : {
-        "R000" : 1
-      },
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         218,
         219,
@@ -1053,13 +893,10 @@
       ]
     },
     "org.finos.tracdap.test.config.TestConfigExt.getSetting1:()Ljava/lang/String;" : {
-      "completeTestCount" : 1,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
-      "perTestOutcome" : {
-        "R000" : 1
-      },
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         67,
         68,
@@ -1071,13 +908,10 @@
       ]
     },
     "org.finos.tracdap.test.config.TestConfigExt.getSetting1Bytes:()Lcom/google/protobuf/ByteString;" : {
-      "completeTestCount" : 1,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
-      "perTestOutcome" : {
-        "R000" : 1
-      },
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         85,
         86,
@@ -1091,20 +925,17 @@
     "org.finos.tracdap.test.config.TestConfigExt.getSetting2:()Z" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T001",
-      "perMethodOutcome" : "F009",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         105
       ]
     },
     "org.finos.tracdap.test.config.TestConfigExt.hashCode:()I" : {
-      "completeTestCount" : 5,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
-      "perTestOutcome" : {
-        "R000" : 5
-      },
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         266,
         267,
@@ -1127,8 +958,8 @@
     "org.finos.tracdap.test.config.TestConfigExt.internalGetFieldAccessorTable:()Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R002",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         53,
         54,
@@ -1136,13 +967,10 @@
       ]
     },
     "org.finos.tracdap.test.config.TestConfigExt.internalGetMapFieldReflection:(I)Lcom/google/protobuf/MapFieldReflectionAccessor;" : {
-      "completeTestCount" : 2,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
-      "perTestOutcome" : {
-        "R000" : 2
-      },
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         42,
         44,
@@ -1152,8 +980,8 @@
     "org.finos.tracdap.test.config.TestConfigExt.internalGetMetadataMapping:()Lcom/google/protobuf/MapField;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T003",
-      "perMethodOutcome" : "T003",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         125,
         126,
@@ -1161,13 +989,10 @@
       ]
     },
     "org.finos.tracdap.test.config.TestConfigExt.isInitialized:()Z" : {
-      "completeTestCount" : 1,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
-      "perTestOutcome" : {
-        "R000" : 1
-      },
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         190,
         191,
@@ -1179,8 +1004,8 @@
     "org.finos.tracdap.test.config.TestConfigExt.newBuilder:()Lorg/finos/tracdap/test/config/TestConfigExt$Builder;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T005",
-      "perMethodOutcome" : "F009",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         360
       ]
@@ -1188,39 +1013,27 @@
     "org.finos.tracdap.test.config.TestConfigExt.newBuilder:(Lorg/finos/tracdap/test/config/TestConfigExt;)Lorg/finos/tracdap/test/config/TestConfigExt$Builder;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T005",
-      "perMethodOutcome" : "F009",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         363
-      ]
-    },
-    "org.finos.tracdap.test.config.TestConfigExt.newBuilderForType:()Lorg/finos/tracdap/test/config/TestConfigExt$Builder;" : {
-      "completeTestCount" : 0,
-      "incompleteTestCount" : 0,
-      "perMethodTestability" : "T005",
-      "perMethodOutcome" : "F009",
-      "lineNumbers" : [
-        358
       ]
     },
     "org.finos.tracdap.test.config.TestConfigExt.newBuilderForType:(Lcom/google/protobuf/AbstractMessage$BuilderParent;)Lorg/finos/tracdap/test/config/TestConfigExt$Builder;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T005",
-      "perMethodOutcome" : "F009",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         374,
         375
       ]
     },
     "org.finos.tracdap.test.config.TestConfigExt.parseDelimitedFrom:(Ljava/io/InputStream;)Lorg/finos/tracdap/test/config/TestConfigExt;" : {
-      "completeTestCount" : 5,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
-      "perTestOutcome" : {
-        "R000" : 5
-      },
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         332,
         333,
@@ -1228,13 +1041,10 @@
       ]
     },
     "org.finos.tracdap.test.config.TestConfigExt.parseDelimitedFrom:(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lorg/finos/tracdap/test/config/TestConfigExt;" : {
-      "completeTestCount" : 5,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
-      "perTestOutcome" : {
-        "R000" : 5
-      },
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         340,
         341,
@@ -1244,8 +1054,8 @@
     "org.finos.tracdap.test.config.TestConfigExt.parseFrom:(Lcom/google/protobuf/ByteString;)Lorg/finos/tracdap/test/config/TestConfigExt;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "F009",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         299
       ]
@@ -1253,8 +1063,8 @@
     "org.finos.tracdap.test.config.TestConfigExt.parseFrom:(Lcom/google/protobuf/ByteString;Lcom/google/protobuf/ExtensionRegistryLite;)Lorg/finos/tracdap/test/config/TestConfigExt;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "F009",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         305
       ]
@@ -1262,8 +1072,8 @@
     "org.finos.tracdap.test.config.TestConfigExt.parseFrom:(Lcom/google/protobuf/CodedInputStream;)Lorg/finos/tracdap/test/config/TestConfigExt;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "F009",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         346,
         347,
@@ -1273,8 +1083,8 @@
     "org.finos.tracdap.test.config.TestConfigExt.parseFrom:(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lorg/finos/tracdap/test/config/TestConfigExt;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "F009",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         353,
         354,
@@ -1282,13 +1092,10 @@
       ]
     },
     "org.finos.tracdap.test.config.TestConfigExt.parseFrom:(Ljava/io/InputStream;)Lorg/finos/tracdap/test/config/TestConfigExt;" : {
-      "completeTestCount" : 4,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
-      "perTestOutcome" : {
-        "R000" : 4
-      },
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         319,
         320,
@@ -1296,13 +1103,10 @@
       ]
     },
     "org.finos.tracdap.test.config.TestConfigExt.parseFrom:(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lorg/finos/tracdap/test/config/TestConfigExt;" : {
-      "completeTestCount" : 3,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
-      "perTestOutcome" : {
-        "R000" : 3
-      },
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         326,
         327,
@@ -1310,49 +1114,37 @@
       ]
     },
     "org.finos.tracdap.test.config.TestConfigExt.parseFrom:(Ljava/nio/ByteBuffer;)Lorg/finos/tracdap/test/config/TestConfigExt;" : {
-      "completeTestCount" : 1,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
-      "perTestOutcome" : {
-        "R000" : 1
-      },
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         288
       ]
     },
     "org.finos.tracdap.test.config.TestConfigExt.parseFrom:(Ljava/nio/ByteBuffer;Lcom/google/protobuf/ExtensionRegistryLite;)Lorg/finos/tracdap/test/config/TestConfigExt;" : {
-      "completeTestCount" : 1,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
-      "perTestOutcome" : {
-        "R000" : 1
-      },
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         294
       ]
     },
     "org.finos.tracdap.test.config.TestConfigExt.parseFrom:([B)Lorg/finos/tracdap/test/config/TestConfigExt;" : {
-      "completeTestCount" : 1,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
-      "perTestOutcome" : {
-        "R000" : 1
-      },
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         309
       ]
     },
     "org.finos.tracdap.test.config.TestConfigExt.parseFrom:([BLcom/google/protobuf/ExtensionRegistryLite;)Lorg/finos/tracdap/test/config/TestConfigExt;" : {
-      "completeTestCount" : 1,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
-      "perTestOutcome" : {
-        "R000" : 1
-      },
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         315
       ]
@@ -1360,28 +1152,17 @@
     "org.finos.tracdap.test.config.TestConfigExt.parser:()Lcom/google/protobuf/Parser;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R004",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         860
-      ]
-    },
-    "org.finos.tracdap.test.config.TestConfigExt.toBuilder:()Lorg/finos/tracdap/test/config/TestConfigExt$Builder;" : {
-      "completeTestCount" : 0,
-      "incompleteTestCount" : 0,
-      "perMethodTestability" : "T005",
-      "perMethodOutcome" : "F009",
-      "lineNumbers" : [
-        367,
-        368,
-        367
       ]
     },
     "org.finos.tracdap.test.config.TestConfigExt.writeTo:(Lcom/google/protobuf/CodedOutputStream;)V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R013",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         201,
         202,
@@ -1397,56 +1178,57 @@
     "org.finos.tracdap.test.config.TestConfigExtOrBuilder.containsMetadataMapping:(Ljava/lang/String;)Z" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T010",
-      "perMethodOutcome" : "T010"
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012"
     },
     "org.finos.tracdap.test.config.TestConfigExtOrBuilder.getMetadataMapping:()Ljava/util/Map;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T010",
-      "perMethodOutcome" : "T010"
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012"
     },
     "org.finos.tracdap.test.config.TestConfigExtOrBuilder.getMetadataMappingCount:()I" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T010",
-      "perMethodOutcome" : "T010"
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012"
     },
     "org.finos.tracdap.test.config.TestConfigExtOrBuilder.getMetadataMappingMap:()Ljava/util/Map;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T010",
-      "perMethodOutcome" : "T010"
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012"
     },
     "org.finos.tracdap.test.config.TestConfigExtOrBuilder.getMetadataMappingOrDefault:(Ljava/lang/String;Lorg/finos/tracdap/metadata/TagSelector;)Lorg/finos/tracdap/metadata/TagSelector;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T010",
-      "perMethodOutcome" : "T010"
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012"
     },
     "org.finos.tracdap.test.config.TestConfigExtOrBuilder.getMetadataMappingOrThrow:(Ljava/lang/String;)Lorg/finos/tracdap/metadata/TagSelector;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T010",
-      "perMethodOutcome" : "T010"
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012"
     },
     "org.finos.tracdap.test.config.TestConfigExtOrBuilder.getSetting1:()Ljava/lang/String;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T010",
-      "perMethodOutcome" : "T010"
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012"
     },
     "org.finos.tracdap.test.config.TestConfigExtOrBuilder.getSetting1Bytes:()Lcom/google/protobuf/ByteString;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T010",
-      "perMethodOutcome" : "T010"
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012"
     },
     "org.finos.tracdap.test.config.TestConfigExtOrBuilder.getSetting2:()Z" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T010",
-      "perMethodOutcome" : "T010"
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012"
     }
-  }
+  },
+  "validationMetrics" : { }
 }

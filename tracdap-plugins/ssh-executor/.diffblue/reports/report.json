@@ -1,21 +1,21 @@
 {
   "meta" : {
-    "reportVersion" : "2.6"
+    "reportVersion" : "2.7"
   },
   "run" : {
-    "version" : "2025.02.02-08b2a5a-licensed",
-    "creationTimestamp" : "2025-03-04T17:59:36.241297Z",
-    "command" : "dcover create --coverage-reports --exclude-modules=sql-drivers",
-    "totalTime" : 129.122,
-    "environmentDetectionTime" : 0.161,
-    "indexingTime" : 0.214,
-    "entryPointsTime" : 0.159,
-    "generationTime" : 15030.831,
-    "timeToFirstTest" : 16781.851,
-    "timeToLastTest" : 16113.935,
-    "indexQueryTime" : 4.972,
-    "verificationTime" : 293.324,
-    "validationTime" : 19.916
+    "version" : "2025.09.01-44e352d-licensed",
+    "creationTimestamp" : "2025-10-06T09:58:55.285946006Z",
+    "command" : "dcover create --exclude-modules=sql-drivers --coverage-reports --upload http://localhost:8080 --project-name tracdap --name with-diffblue-tests",
+    "totalTime" : 223.931,
+    "environmentDetectionTime" : 0.247,
+    "indexingTime" : 0.44,
+    "entryPointsTime" : 0.207,
+    "generationTime" : 7159.937,
+    "timeToFirstTest" : 9712.515,
+    "timeToLastTest" : 8494.427,
+    "indexQueryTime" : 6.2490000000000006,
+    "verificationTime" : 245.099,
+    "validationTime" : 33.863
   },
   "codes" : {
     "F009" : "Internal error",
@@ -27,7 +27,9 @@
     "T005" : "Trivial constructor",
     "T008" : "Private and never called",
     "T012" : "Synthetic method",
-    "V000" : "Validated successfully"
+    "T023" : "Testability unknown",
+    "V000" : "Validated successfully",
+    "V003" : "Tests discarded during validation"
   },
   "summary" : {
     "classesCount" : 5,
@@ -44,7 +46,8 @@
       "T003" : 17,
       "T005" : 1,
       "T008" : 1,
-      "T012" : 17
+      "T012" : 14,
+      "T023" : 3
     },
     "perMethodOutcome" : {
       "F009" : 16,
@@ -52,13 +55,15 @@
       "R002" : 1,
       "T003" : 17,
       "T008" : 1,
-      "T012" : 17
+      "T012" : 14,
+      "T023" : 3
     },
     "perTestOutcome" : {
       "R000" : 6
     },
     "perTestValidation" : {
-      "V000" : 6
+      "V000" : 6,
+      "V003" : 4
     }
   },
   "classes" : {
@@ -69,12 +74,14 @@
       "perMethodTestability" : {
         "T000" : 15,
         "T003" : 16,
-        "T012" : 15
+        "T012" : 14,
+        "T023" : 1
       },
       "perMethodOutcome" : {
         "F009" : 15,
         "T003" : 16,
-        "T012" : 15
+        "T012" : 14,
+        "T023" : 1
       }
     },
     "org.finos.tracdap.plugins.ssh.executor.SshExecutor$1" : {
@@ -82,10 +89,10 @@
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
-        "T012" : 1
+        "T023" : 1
       },
       "perMethodOutcome" : {
-        "T012" : 1
+        "T023" : 1
       }
     },
     "org.finos.tracdap.plugins.ssh.executor.SshExecutor$SessionState" : {
@@ -106,13 +113,13 @@
       "perMethodTestability" : {
         "T000" : 3,
         "T005" : 1,
-        "T012" : 1
+        "T023" : 1
       },
       "perMethodOutcome" : {
         "F009" : 1,
         "R000" : 2,
         "R002" : 1,
-        "T012" : 1
+        "T023" : 1
       },
       "perTestOutcome" : {
         "R000" : 2
@@ -140,11 +147,8 @@
     "org.finos.tracdap.plugins.ssh.executor.SshExecutor$1.<clinit>:()V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T012",
-      "perMethodOutcome" : "T012",
-      "lineNumbers" : [
-        723
-      ]
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
     },
     "org.finos.tracdap.plugins.ssh.executor.SshExecutor$SessionState.<init>:()V" : {
       "completeTestCount" : 0,
@@ -158,16 +162,8 @@
     "org.finos.tracdap.plugins.ssh.executor.SshExecutor.<clinit>:()V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T012",
-      "perMethodOutcome" : "T012",
-      "lineNumbers" : [
-        71,
-        72,
-        80,
-        85,
-        94,
-        98
-      ]
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
     },
     "org.finos.tracdap.plugins.ssh.executor.SshExecutor.<init>:(Ljava/util/Properties;Lorg/finos/tracdap/common/config/ConfigManager;)V" : {
       "completeTestCount" : 0,
@@ -850,13 +846,8 @@
     "org.finos.tracdap.plugins.ssh.executor.SshExecutorPlugin.<clinit>:()V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T012",
-      "perMethodOutcome" : "T012",
-      "lineNumbers" : [
-        36,
-        37,
-        36
-      ]
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
     },
     "org.finos.tracdap.plugins.ssh.executor.SshExecutorPlugin.<init>:()V" : {
       "completeTestCount" : 0,
@@ -1033,5 +1024,10 @@
         49
       ]
     }
+  },
+  "validationMetrics" : {
+    "failingTests" : [
+      "org.finos.tracdap.common.storage.local.LocalStorageOperationsTest.testStat_dirATime"
+    ]
   }
 }

@@ -1,30 +1,31 @@
 {
   "meta" : {
-    "reportVersion" : "2.6"
+    "reportVersion" : "2.7"
   },
   "run" : {
-    "version" : "2025.02.02-08b2a5a-licensed",
-    "creationTimestamp" : "2025-03-04T17:59:36.241297Z",
-    "command" : "dcover create --coverage-reports --exclude-modules=sql-drivers",
-    "totalTime" : 123.56,
-    "environmentDetectionTime" : 0.191,
-    "indexingTime" : 0.205,
-    "entryPointsTime" : 0.189,
-    "generationTime" : 5015.385,
-    "timeToFirstTest" : 6163.683,
-    "timeToLastTest" : 5723.898,
-    "indexQueryTime" : 5.409,
-    "verificationTime" : 182.55,
-    "validationTime" : 21.428
+    "version" : "2025.09.01-44e352d-licensed",
+    "creationTimestamp" : "2025-10-06T09:58:55.285946006Z",
+    "command" : "dcover create --exclude-modules=sql-drivers --coverage-reports --upload http://localhost:8080 --project-name tracdap --name with-diffblue-tests",
+    "totalTime" : 231.265,
+    "environmentDetectionTime" : 0.094,
+    "indexingTime" : 0.408,
+    "entryPointsTime" : 0.082,
+    "generationTime" : 6020.019,
+    "timeToFirstTest" : 7581.029,
+    "timeToLastTest" : 6856.121,
+    "indexQueryTime" : 7.6290000000000004,
+    "verificationTime" : 205.257,
+    "validationTime" : 38.826
   },
   "codes" : {
     "R000" : "Success",
-    "R002" : "Missing observers",
+    "R011" : "Sandboxing policy violation",
     "T000" : "Method eligible for test creation",
     "T003" : "Private method",
     "T006" : "Main method",
-    "T012" : "Synthetic method",
-    "V000" : "Validated successfully"
+    "T023" : "Testability unknown",
+    "V000" : "Validated successfully",
+    "V003" : "Tests discarded during validation"
   },
   "summary" : {
     "classesCount" : 1,
@@ -39,20 +40,21 @@
       "T000" : 2,
       "T003" : 3,
       "T006" : 1,
-      "T012" : 1
+      "T023" : 1
     },
     "perMethodOutcome" : {
       "R000" : 1,
-      "R002" : 1,
+      "R011" : 1,
       "T003" : 3,
       "T006" : 1,
-      "T012" : 1
+      "T023" : 1
     },
     "perTestOutcome" : {
       "R000" : 1
     },
     "perTestValidation" : {
-      "V000" : 1
+      "V000" : 1,
+      "V003" : 4
     }
   },
   "classes" : {
@@ -64,14 +66,14 @@
         "T000" : 2,
         "T003" : 3,
         "T006" : 1,
-        "T012" : 1
+        "T023" : 1
       },
       "perMethodOutcome" : {
         "R000" : 1,
-        "R002" : 1,
+        "R011" : 1,
         "T003" : 3,
         "T006" : 1,
-        "T012" : 1
+        "T023" : 1
       },
       "perTestOutcome" : {
         "R000" : 1
@@ -82,21 +84,14 @@
     "org.finos.tracdap.tools.deploy.metadb.DeployMetaDB.<clinit>:()V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T012",
-      "perMethodOutcome" : "T012",
-      "lineNumbers" : [
-        53,
-        54,
-        55,
-        56,
-        53
-      ]
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
     },
     "org.finos.tracdap.tools.deploy.metadb.DeployMetaDB.<init>:(Lorg/finos/tracdap/common/config/ConfigManager;)V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R002",
+      "perMethodOutcome" : "R011",
       "lineNumbers" : [
         66,
         68,
@@ -253,5 +248,10 @@
         115
       ]
     }
+  },
+  "validationMetrics" : {
+    "failingTests" : [
+      "org.finos.tracdap.common.storage.local.LocalStorageOperationsTest.testStat_dirATime"
+    ]
   }
 }

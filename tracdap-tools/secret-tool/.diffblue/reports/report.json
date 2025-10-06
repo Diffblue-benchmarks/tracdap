@@ -1,21 +1,21 @@
 {
   "meta" : {
-    "reportVersion" : "2.6"
+    "reportVersion" : "2.7"
   },
   "run" : {
-    "version" : "2025.02.02-08b2a5a-licensed",
-    "creationTimestamp" : "2025-03-04T17:59:36.241297Z",
-    "command" : "dcover create --coverage-reports --exclude-modules=sql-drivers",
-    "totalTime" : 147.591,
-    "environmentDetectionTime" : 0.171,
-    "indexingTime" : 0.224,
-    "entryPointsTime" : 0.158,
-    "generationTime" : 16522.154,
-    "timeToFirstTest" : 18832.623,
-    "timeToLastTest" : 17943.183,
-    "indexQueryTime" : 5.18,
-    "verificationTime" : 350.067,
-    "validationTime" : 21.525
+    "version" : "2025.09.01-44e352d-licensed",
+    "creationTimestamp" : "2025-10-06T09:58:55.285946006Z",
+    "command" : "dcover create --exclude-modules=sql-drivers --coverage-reports --upload http://localhost:8080 --project-name tracdap --name with-diffblue-tests",
+    "totalTime" : 349.233,
+    "environmentDetectionTime" : 0.076,
+    "indexingTime" : 0.469,
+    "entryPointsTime" : 0.064,
+    "generationTime" : 10521.317,
+    "timeToFirstTest" : 14059.398,
+    "timeToLastTest" : 12385.128,
+    "indexQueryTime" : 7.152,
+    "verificationTime" : 324.335,
+    "validationTime" : 37.614
   },
   "codes" : {
     "R000" : "Success",
@@ -26,15 +26,16 @@
     "T005" : "Trivial constructor",
     "T006" : "Main method",
     "T010" : "Abstract or interface method",
-    "T012" : "Synthetic method",
-    "V000" : "Validated successfully"
+    "T023" : "Testability unknown",
+    "V000" : "Validated successfully",
+    "V003" : "Tests discarded during validation"
   },
   "summary" : {
     "classesCount" : 5,
     "methodsCount" : 33,
-    "cumulativeDiffblueTestCount" : 8,
+    "cumulativeDiffblueTestCount" : 6,
     "cumulativeManualTestCount" : 0,
-    "completeTestCount" : 8,
+    "completeTestCount" : 6,
     "incompleteTestCount" : 0,
     "skeletonTestCount" : 0,
     "totalPhysicalLineCount" : 483,
@@ -44,23 +45,24 @@
       "T005" : 1,
       "T006" : 1,
       "T010" : 3,
-      "T012" : 1
+      "T023" : 1
     },
     "perMethodOutcome" : {
-      "R000" : 5,
-      "R013" : 7,
+      "R000" : 4,
+      "R013" : 8,
       "R034" : 1,
       "T003" : 14,
       "T005" : 1,
       "T006" : 1,
       "T010" : 3,
-      "T012" : 1
+      "T023" : 1
     },
     "perTestOutcome" : {
-      "R000" : 8
+      "R000" : 6
     },
     "perTestValidation" : {
-      "V000" : 8
+      "V000" : 6,
+      "V003" : 4
     }
   },
   "classes" : {
@@ -77,19 +79,19 @@
     },
     "org.finos.tracdap.tools.secrets.JksHelpers" : {
       "methodsCount" : 4,
-      "completeTestCount" : 3,
+      "completeTestCount" : 1,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 3,
         "T005" : 1
       },
       "perMethodOutcome" : {
-        "R000" : 2,
-        "R013" : 1,
+        "R000" : 1,
+        "R013" : 2,
         "T005" : 1
       },
       "perTestOutcome" : {
-        "R000" : 3
+        "R000" : 1
       }
     },
     "org.finos.tracdap.tools.secrets.JksUserManager" : {
@@ -117,14 +119,14 @@
         "T000" : 2,
         "T003" : 11,
         "T006" : 1,
-        "T012" : 1
+        "T023" : 1
       },
       "perMethodOutcome" : {
         "R000" : 1,
         "R034" : 1,
         "T003" : 11,
         "T006" : 1,
-        "T012" : 1
+        "T023" : 1
       },
       "perTestOutcome" : {
         "R000" : 1
@@ -199,13 +201,10 @@
       ]
     },
     "org.finos.tracdap.tools.secrets.JksHelpers.saveKeystore:(Ljava/nio/file/Path;Ljava/lang/String;Ljava/security/KeyStore;)V" : {
-      "completeTestCount" : 2,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
-      "perTestOutcome" : {
-        "R000" : 2
-      },
+      "perMethodOutcome" : "R013",
       "lineNumbers" : [
         67,
         69,
@@ -341,19 +340,8 @@
     "org.finos.tracdap.tools.secrets.SecretTool.<clinit>:()V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T012",
-      "perMethodOutcome" : "T012",
-      "lineNumbers" : [
-        59,
-        60,
-        61,
-        62,
-        63,
-        64,
-        65,
-        66,
-        59
-      ]
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
     },
     "org.finos.tracdap.tools.secrets.SecretTool.<init>:(Lorg/finos/tracdap/common/config/ConfigManager;Ljava/lang/String;)V" : {
       "completeTestCount" : 1,
@@ -755,8 +743,7 @@
   },
   "validationMetrics" : {
     "failingTests" : [
-      "org.finos.tracdap.gateway.proxy.rest.RestProxyTest.createSearchAndGet",
-      "org.finos.tracdap.gateway.proxy.http.Http1ProxyTest.initializationError"
+      "org.finos.tracdap.common.storage.local.LocalStorageOperationsTest.testStat_dirATime"
     ]
   }
 }

@@ -1,26 +1,27 @@
 {
   "meta" : {
-    "reportVersion" : "2.6"
+    "reportVersion" : "2.7"
   },
   "run" : {
-    "version" : "2025.02.02-08b2a5a-licensed",
-    "creationTimestamp" : "2025-03-04T17:59:36.241297Z",
-    "command" : "dcover create --coverage-reports --exclude-modules=sql-drivers",
-    "totalTime" : 537.26,
-    "environmentDetectionTime" : 0.328,
-    "indexingTime" : 0.213,
-    "entryPointsTime" : 0.325,
-    "generationTime" : 15001.849,
-    "timeToFirstTest" : 16652.629,
-    "timeToLastTest" : 16027.001,
-    "indexQueryTime" : 6.194,
-    "verificationTime" : 287.4,
-    "validationTime" : 25.437
+    "version" : "2025.09.01-44e352d-licensed",
+    "creationTimestamp" : "2025-10-06T09:58:55.285946006Z",
+    "command" : "dcover create --exclude-modules=sql-drivers --coverage-reports --upload http://localhost:8080 --project-name tracdap --name with-diffblue-tests",
+    "totalTime" : 1124.772,
+    "environmentDetectionTime" : 0.734,
+    "indexingTime" : 0.434,
+    "entryPointsTime" : 0.679,
+    "generationTime" : 7105.811,
+    "timeToFirstTest" : 9486.851,
+    "timeToLastTest" : 8350.379,
+    "indexQueryTime" : 9.388,
+    "verificationTime" : 241.955,
+    "validationTime" : 44.321
   },
   "codes" : {
     "F009" : "Internal error",
     "R000" : "Success",
     "R002" : "Missing observers",
+    "R011" : "Sandboxing policy violation",
     "R013" : "No inputs found that don't throw a trivial exception",
     "R034" : "Diffblue Cover can't complete test",
     "T000" : "Method eligible for test creation",
@@ -29,42 +30,48 @@
     "T006" : "Main method",
     "T010" : "Abstract or interface method",
     "T012" : "Synthetic method",
-    "V000" : "Validated successfully"
+    "T023" : "Testability unknown",
+    "V000" : "Validated successfully",
+    "V003" : "Tests discarded during validation"
   },
   "summary" : {
     "classesCount" : 16,
     "methodsCount" : 146,
-    "cumulativeDiffblueTestCount" : 36,
+    "cumulativeDiffblueTestCount" : 33,
     "cumulativeManualTestCount" : 15,
-    "completeTestCount" : 36,
+    "completeTestCount" : 33,
     "incompleteTestCount" : 0,
     "skeletonTestCount" : 0,
     "totalPhysicalLineCount" : 2026,
     "perMethodTestability" : {
-      "T000" : 70,
-      "T003" : 31,
+      "T000" : 64,
+      "T003" : 28,
       "T005" : 7,
       "T006" : 1,
       "T010" : 9,
-      "T012" : 28
+      "T012" : 34,
+      "T023" : 3
     },
     "perMethodOutcome" : {
       "F009" : 1,
-      "R000" : 24,
-      "R002" : 6,
-      "R013" : 41,
+      "R000" : 23,
+      "R002" : 5,
+      "R011" : 1,
+      "R013" : 36,
       "R034" : 3,
-      "T003" : 31,
+      "T003" : 28,
       "T005" : 2,
       "T006" : 1,
       "T010" : 9,
-      "T012" : 28
+      "T012" : 34,
+      "T023" : 3
     },
     "perTestOutcome" : {
-      "R000" : 36
+      "R000" : 33
     },
     "perTestValidation" : {
-      "V000" : 36
+      "V000" : 33,
+      "V003" : 4
     }
   },
   "classes" : {
@@ -80,7 +87,7 @@
       },
       "perMethodOutcome" : {
         "R000" : 1,
-        "R002" : 1,
+        "R011" : 1,
         "R013" : 1,
         "T003" : 2,
         "T006" : 1,
@@ -106,12 +113,10 @@
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
-        "T000" : 6,
-        "T003" : 3
+        "T012" : 9
       },
       "perMethodOutcome" : {
-        "R013" : 6,
-        "T003" : 3
+        "T012" : 9
       }
     },
     "org.finos.tracdap.svc.orch.jobs.IJobLogic" : {
@@ -127,7 +132,7 @@
     },
     "org.finos.tracdap.svc.orch.jobs.ImportModelJob" : {
       "methodsCount" : 10,
-      "completeTestCount" : 10,
+      "completeTestCount" : 8,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 8,
@@ -140,7 +145,7 @@
         "T012" : 1
       },
       "perTestOutcome" : {
-        "R000" : 10
+        "R000" : 8
       }
     },
     "org.finos.tracdap.svc.orch.jobs.JobLogic" : {
@@ -150,12 +155,12 @@
       "perMethodTestability" : {
         "T000" : 1,
         "T005" : 1,
-        "T012" : 1
+        "T023" : 1
       },
       "perMethodOutcome" : {
         "R000" : 1,
         "T005" : 1,
-        "T012" : 1
+        "T023" : 1
       },
       "perTestOutcome" : {
         "R000" : 2
@@ -230,21 +235,19 @@
     },
     "org.finos.tracdap.svc.orch.service.JobManager" : {
       "methodsCount" : 28,
-      "completeTestCount" : 1,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 5,
         "T003" : 10,
-        "T012" : 13
+        "T012" : 12,
+        "T023" : 1
       },
       "perMethodOutcome" : {
-        "R000" : 1,
-        "R013" : 4,
+        "R013" : 5,
         "T003" : 10,
-        "T012" : 13
-      },
-      "perTestOutcome" : {
-        "R000" : 1
+        "T012" : 12,
+        "T023" : 1
       }
     },
     "org.finos.tracdap.svc.orch.service.JobOperation" : {
@@ -281,10 +284,10 @@
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
-        "T012" : 1
+        "T023" : 1
       },
       "perMethodOutcome" : {
-        "T012" : 1
+        "T023" : 1
       }
     },
     "org.finos.tracdap.svc.orch.service.JobProcessorHelpers" : {
@@ -352,7 +355,7 @@
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R002",
+      "perMethodOutcome" : "R011",
       "lineNumbers" : [
         89,
         68,
@@ -553,8 +556,8 @@
     "org.finos.tracdap.svc.orch.api.TracOrchestratorApi.<init>:(Lorg/finos/tracdap/svc/orch/service/JobManager;Lorg/finos/tracdap/svc/orch/service/JobProcessor;Lorg/finos/tracdap/common/middleware/GrpcConcern;)V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R013",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         44,
         37,
@@ -567,8 +570,8 @@
     "org.finos.tracdap.svc.orch.api.TracOrchestratorApi.cancelJob:(Lorg/finos/tracdap/api/JobStatusRequest;Lio/grpc/stub/StreamObserver;)V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R013",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         97,
         98
@@ -577,8 +580,8 @@
     "org.finos.tracdap.svc.orch.api.TracOrchestratorApi.checkJob:(Lorg/finos/tracdap/api/JobStatusRequest;Lio/grpc/stub/StreamObserver;)V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R013",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         81,
         82,
@@ -592,8 +595,8 @@
     "org.finos.tracdap.svc.orch.api.TracOrchestratorApi.checkJobImpl:(Lorg/finos/tracdap/api/JobStatusRequest;)Lorg/finos/tracdap/api/JobStatus;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T003",
-      "perMethodOutcome" : "T003",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         122,
         123,
@@ -609,8 +612,8 @@
     "org.finos.tracdap.svc.orch.api.TracOrchestratorApi.followJob:(Lorg/finos/tracdap/api/JobStatusRequest;Lio/grpc/stub/StreamObserver;)V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R013",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         92,
         93
@@ -619,8 +622,8 @@
     "org.finos.tracdap.svc.orch.api.TracOrchestratorApi.submitJob:(Lorg/finos/tracdap/api/JobRequest;Lio/grpc/stub/StreamObserver;)V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R013",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         68,
         69,
@@ -634,8 +637,8 @@
     "org.finos.tracdap.svc.orch.api.TracOrchestratorApi.submitJobImpl:(Lorg/finos/tracdap/api/JobRequest;)Lorg/finos/tracdap/api/JobStatus;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T003",
-      "perMethodOutcome" : "T003",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         111,
         112,
@@ -647,8 +650,8 @@
     "org.finos.tracdap.svc.orch.api.TracOrchestratorApi.validateJob:(Lorg/finos/tracdap/api/JobRequest;Lio/grpc/stub/StreamObserver;)V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R013",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         55,
         56,
@@ -662,8 +665,8 @@
     "org.finos.tracdap.svc.orch.api.TracOrchestratorApi.validateJobImpl:(Lorg/finos/tracdap/api/JobRequest;)Lorg/finos/tracdap/api/JobStatus;" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T003",
-      "perMethodOutcome" : "T003",
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
       "lineNumbers" : [
         102,
         103,
@@ -741,12 +744,12 @@
       ]
     },
     "org.finos.tracdap.svc.orch.jobs.ImportModelJob.applyTransform:(Lorg/finos/tracdap/metadata/JobDefinition;Lorg/finos/tracdap/common/metadata/MetadataBundle;Lorg/finos/tracdap/config/PlatformConfig;)Lorg/finos/tracdap/metadata/JobDefinition;" : {
-      "completeTestCount" : 2,
+      "completeTestCount" : 1,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 2
+        "R000" : 1
       },
       "lineNumbers" : [
         48,
@@ -776,12 +779,12 @@
       ]
     },
     "org.finos.tracdap.svc.orch.jobs.ImportModelJob.buildResultMetadata:(Ljava/lang/String;Lorg/finos/tracdap/config/JobConfig;Lorg/finos/tracdap/api/internal/RuntimeJobResult;)Ljava/util/List;" : {
-      "completeTestCount" : 2,
+      "completeTestCount" : 1,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 2
+        "R000" : 1
       },
       "lineNumbers" : [
         140,
@@ -912,19 +915,8 @@
     "org.finos.tracdap.svc.orch.jobs.JobLogic.<clinit>:()V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T012",
-      "perMethodOutcome" : "T012",
-      "lineNumbers" : [
-        34,
-        35,
-        36,
-        37,
-        34,
-        42,
-        39,
-        41,
-        43
-      ]
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
     },
     "org.finos.tracdap.svc.orch.jobs.JobLogic.<init>:()V" : {
       "completeTestCount" : 0,
@@ -1340,12 +1332,12 @@
       ]
     },
     "org.finos.tracdap.svc.orch.jobs.RunModelOrFlow.newResultIds:(Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;)Ljava/util/Map;" : {
-      "completeTestCount" : 4,
+      "completeTestCount" : 3,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 4
+        "R000" : 3
       },
       "lineNumbers" : [
         65,
@@ -1463,12 +1455,12 @@
       ]
     },
     "org.finos.tracdap.svc.orch.jobs.RunModelOrFlow.setResultIds:(Ljava/util/Set;Ljava/util/Map;)Ljava/util/Map;" : {
-      "completeTestCount" : 1,
+      "completeTestCount" : 2,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 1
+        "R000" : 2
       },
       "lineNumbers" : [
         134,
@@ -1492,26 +1484,14 @@
     "org.finos.tracdap.svc.orch.service.JobManager.<clinit>:()V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T012",
-      "perMethodOutcome" : "T012",
-      "lineNumbers" : [
-        50,
-        51,
-        670,
-        673,
-        679,
-        691,
-        695
-      ]
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
     },
     "org.finos.tracdap.svc.orch.service.JobManager.<init>:(Lorg/finos/tracdap/config/PlatformConfig;Lorg/finos/tracdap/svc/orch/service/JobProcessor;Lorg/finos/tracdap/common/cache/IJobCache;Ljava/util/concurrent/ScheduledExecutorService;)V" : {
-      "completeTestCount" : 1,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
-      "perTestOutcome" : {
-        "R000" : 1
-      },
+      "perMethodOutcome" : "R013",
       "lineNumbers" : [
         89,
         67,
@@ -2016,11 +1996,8 @@
     "org.finos.tracdap.svc.orch.service.JobProcessor$1.<clinit>:()V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T012",
-      "perMethodOutcome" : "T012",
-      "lineNumbers" : [
-        276
-      ]
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
     },
     "org.finos.tracdap.svc.orch.service.JobProcessor.<init>:(Lorg/finos/tracdap/config/PlatformConfig;Lorg/finos/tracdap/api/internal/TrustedMetadataApiGrpc$TrustedMetadataApiBlockingStub;Lorg/finos/tracdap/common/middleware/GrpcConcern;Lorg/finos/tracdap/common/exec/IJobExecutor;)V" : {
       "completeTestCount" : 0,
@@ -2820,5 +2797,10 @@
         103
       ]
     }
+  },
+  "validationMetrics" : {
+    "failingTests" : [
+      "org.finos.tracdap.common.storage.local.LocalStorageOperationsTest.testStat_dirATime"
+    ]
   }
 }

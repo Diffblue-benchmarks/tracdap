@@ -1,21 +1,21 @@
 {
   "meta" : {
-    "reportVersion" : "2.6"
+    "reportVersion" : "2.7"
   },
   "run" : {
-    "version" : "2025.02.02-08b2a5a-licensed",
-    "creationTimestamp" : "2025-03-04T17:59:36.241297Z",
-    "command" : "dcover create --coverage-reports --exclude-modules=sql-drivers",
-    "totalTime" : 123.858,
-    "environmentDetectionTime" : 0.234,
-    "indexingTime" : 0.211,
-    "entryPointsTime" : 0.229,
-    "generationTime" : 14593.076,
-    "timeToFirstTest" : 16115.278,
-    "timeToLastTest" : 15543.17,
-    "indexQueryTime" : 5.5840000000000005,
-    "verificationTime" : 278.682,
-    "validationTime" : 20.07
+    "version" : "2025.09.01-44e352d-licensed",
+    "creationTimestamp" : "2025-10-06T09:58:55.285946006Z",
+    "command" : "dcover create --exclude-modules=sql-drivers --coverage-reports --upload http://localhost:8080 --project-name tracdap --name with-diffblue-tests",
+    "totalTime" : 251.812,
+    "environmentDetectionTime" : 0.03,
+    "indexingTime" : 0.425,
+    "entryPointsTime" : 0.019,
+    "generationTime" : 6212.852,
+    "timeToFirstTest" : 8360.553,
+    "timeToLastTest" : 7333.262,
+    "indexQueryTime" : 5.308,
+    "verificationTime" : 231.755,
+    "validationTime" : 37.813
   },
   "codes" : {
     "R000" : "Success",
@@ -23,14 +23,16 @@
     "T003" : "Private method",
     "T005" : "Trivial constructor",
     "T012" : "Synthetic method",
-    "V000" : "Validated successfully"
+    "T023" : "Testability unknown",
+    "V000" : "Validated successfully",
+    "V003" : "Tests discarded during validation"
   },
   "summary" : {
     "classesCount" : 2,
     "methodsCount" : 15,
-    "cumulativeDiffblueTestCount" : 6,
+    "cumulativeDiffblueTestCount" : 11,
     "cumulativeManualTestCount" : 0,
-    "completeTestCount" : 6,
+    "completeTestCount" : 11,
     "incompleteTestCount" : 0,
     "skeletonTestCount" : 0,
     "totalPhysicalLineCount" : 106,
@@ -38,19 +40,22 @@
       "T000" : 5,
       "T003" : 5,
       "T005" : 1,
-      "T012" : 4
+      "T012" : 3,
+      "T023" : 1
     },
     "perMethodOutcome" : {
       "R000" : 5,
       "T003" : 5,
       "T005" : 1,
-      "T012" : 4
+      "T012" : 3,
+      "T023" : 1
     },
     "perTestOutcome" : {
-      "R000" : 6
+      "R000" : 11
     },
     "perTestValidation" : {
-      "V000" : 6
+      "V000" : 11,
+      "V003" : 4
     }
   },
   "classes" : {
@@ -60,16 +65,18 @@
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T003" : 1,
-        "T012" : 4
+        "T012" : 3,
+        "T023" : 1
       },
       "perMethodOutcome" : {
         "T003" : 1,
-        "T012" : 4
+        "T012" : 3,
+        "T023" : 1
       }
     },
     "org.finos.tracdap.common.db.JdbcSetup" : {
       "methodsCount" : 10,
-      "completeTestCount" : 6,
+      "completeTestCount" : 11,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 5,
@@ -82,7 +89,7 @@
         "T005" : 1
       },
       "perTestOutcome" : {
-        "R000" : 6
+        "R000" : 11
       }
     }
   },
@@ -99,17 +106,8 @@
     "org.finos.tracdap.common.db.JdbcDialect.<clinit>:()V" : {
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
-      "perMethodTestability" : "T012",
-      "perMethodOutcome" : "T012",
-      "lineNumbers" : [
-        21,
-        22,
-        23,
-        24,
-        25,
-        26,
-        20
-      ]
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
     },
     "org.finos.tracdap.common.db.JdbcDialect.<init>:(Ljava/lang/String;I)V" : {
       "completeTestCount" : 0,
@@ -214,12 +212,12 @@
       ]
     },
     "org.finos.tracdap.common.db.JdbcSetup.createDatasource:(Lorg/finos/tracdap/common/config/ConfigManager;Lorg/finos/tracdap/config/PluginConfig;)Ljavax/sql/DataSource;" : {
-      "completeTestCount" : 2,
+      "completeTestCount" : 5,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 2
+        "R000" : 5
       },
       "lineNumbers" : [
         68,
@@ -251,12 +249,12 @@
       ]
     },
     "org.finos.tracdap.common.db.JdbcSetup.destroyDatasource:(Ljavax/sql/DataSource;)V" : {
-      "completeTestCount" : 1,
+      "completeTestCount" : 3,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 1
+        "R000" : 3
       },
       "lineNumbers" : [
         115,
@@ -292,5 +290,10 @@
         41
       ]
     }
+  },
+  "validationMetrics" : {
+    "failingTests" : [
+      "org.finos.tracdap.common.storage.local.LocalStorageOperationsTest.testStat_dirATime"
+    ]
   }
 }
