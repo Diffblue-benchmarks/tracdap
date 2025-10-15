@@ -59,6 +59,30 @@ class NettyHelpersDiffblueTest {
    * Test {@link NettyHelpers#eventLoopExecutor(String)}.
    *
    * <ul>
+   *   <li>When {@code 1.99*}.
+   *   <li>Then return {@link ThreadPerTaskExecutor}.
+   * </ul>
+   *
+   * <p>Method under test: {@link NettyHelpers#eventLoopExecutor(String)}
+   */
+  @Test
+  @DisplayName("Test eventLoopExecutor(String); when '1.99*'; then return ThreadPerTaskExecutor")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Executor NettyHelpers.eventLoopExecutor(String)"})
+  void testEventLoopExecutor_when199_thenReturnThreadPerTaskExecutor() {
+    // Arrange and Act
+    Executor actualEventLoopExecutorResult = NettyHelpers.eventLoopExecutor("1.99*");
+    actualEventLoopExecutorResult.execute(mock(Runnable.class));
+
+    // Assert
+    assertTrue(actualEventLoopExecutorResult instanceof ThreadPerTaskExecutor);
+  }
+
+  /**
+   * Test {@link NettyHelpers#eventLoopExecutor(String)}.
+   *
+   * <ul>
    *   <li>When {@code Thread Pool Name}.
    *   <li>Then return {@link ThreadPerTaskExecutor}.
    * </ul>
@@ -72,12 +96,8 @@ class NettyHelpersDiffblueTest {
   @ManagedByDiffblue
   @MethodsUnderTest({"Executor NettyHelpers.eventLoopExecutor(String)"})
   void testEventLoopExecutor_whenThreadPoolName_thenReturnThreadPerTaskExecutor() {
-    // Arrange and Act
-    Executor actualEventLoopExecutorResult = NettyHelpers.eventLoopExecutor("Thread Pool Name");
-    actualEventLoopExecutorResult.execute(mock(Runnable.class));
-
-    // Assert
-    assertTrue(actualEventLoopExecutorResult instanceof ThreadPerTaskExecutor);
+    // Arrange, Act and Assert
+    assertTrue(NettyHelpers.eventLoopExecutor("Thread Pool Name") instanceof ThreadPerTaskExecutor);
   }
 
   /**

@@ -1,6 +1,8 @@
 package org.finos.tracdap.svc.meta;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.ArgumentMatchers.isA;
 import static org.mockito.Mockito.mock;
@@ -13,6 +15,8 @@ import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Properties;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.ThreadPoolExecutor;
 import org.finos.tracdap.common.config.ConfigManager;
 import org.finos.tracdap.common.config.IConfigLoader;
 import org.finos.tracdap.common.exception.EStartup;
@@ -58,5 +62,38 @@ class TracMetadataServiceDiffblueTest {
     verify(plugins).createConfigService(isA(Class.class), eq("https"), isA(Properties.class));
     verify(plugins).getExtensions();
     verify(plugins).isServiceAvailable(isA(Class.class), eq("https"));
+  }
+
+  /**
+   * Test {@link TracMetadataService#createPrimaryExecutor(Properties)}.
+   *
+   * <p>Method under test: {@link TracMetadataService#createPrimaryExecutor(Properties)}
+   */
+  @Test
+  @DisplayName("Test createPrimaryExecutor(Properties)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"ExecutorService TracMetadataService.createPrimaryExecutor(Properties)"})
+  void testCreatePrimaryExecutor() {
+    // Arrange
+    PluginManager pluginManager = new PluginManager();
+    Path workingDir = Paths.get(System.getProperty("java.io.tmpdir"), "test.txt");
+    ConfigManager configManager =
+        new ConfigManager("https://example.org/example", workingDir, new PluginManager());
+
+    TracMetadataService tracMetadataService = new TracMetadataService(pluginManager, configManager);
+
+    // Act
+    ExecutorService actualCreatePrimaryExecutorResult =
+        tracMetadataService.createPrimaryExecutor(new Properties());
+
+    // Assert
+    assertTrue(actualCreatePrimaryExecutorResult instanceof ThreadPoolExecutor);
+    assertEquals(
+        0L, ((ThreadPoolExecutor) actualCreatePrimaryExecutorResult).getCompletedTaskCount());
+    assertEquals(20, ((ThreadPoolExecutor) actualCreatePrimaryExecutorResult).getCorePoolSize());
+    assertEquals(20, ((ThreadPoolExecutor) actualCreatePrimaryExecutorResult).getLargestPoolSize());
+    assertEquals(20, ((ThreadPoolExecutor) actualCreatePrimaryExecutorResult).getMaximumPoolSize());
+    assertTrue(((ThreadPoolExecutor) actualCreatePrimaryExecutorResult).getQueue().isEmpty());
   }
 }

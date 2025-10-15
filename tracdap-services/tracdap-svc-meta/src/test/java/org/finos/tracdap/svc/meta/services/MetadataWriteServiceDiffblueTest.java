@@ -85,18 +85,19 @@ class MetadataWriteServiceDiffblueTest {
    * Test {@link MetadataWriteService#preallocateId(String, MetadataWriteRequest)}.
    *
    * <ul>
-   *   <li>Then return DefaultInstanceForType UnknownFields is UnknownFields.
+   *   <li>When DefaultInstance.
+   *   <li>Then return ObjectIdBytes iterator hasNext.
    * </ul>
    *
    * <p>Method under test: {@link MetadataWriteService#preallocateId(String, MetadataWriteRequest)}
    */
   @Test
   @DisplayName(
-      "Test preallocateId(String, MetadataWriteRequest); then return DefaultInstanceForType UnknownFields is UnknownFields")
+      "Test preallocateId(String, MetadataWriteRequest); when DefaultInstance; then return ObjectIdBytes iterator hasNext")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"TagHeader MetadataWriteService.preallocateId(String, MetadataWriteRequest)"})
-  void testPreallocateId_thenReturnDefaultInstanceForTypeUnknownFieldsIsUnknownFields() {
+  void testPreallocateId_whenDefaultInstance_thenReturnObjectIdBytesIteratorHasNext() {
     // Arrange
     IMetadataDal dal = mock(IMetadataDal.class);
     doNothing()
@@ -110,6 +111,7 @@ class MetadataWriteServiceDiffblueTest {
 
     // Assert
     verify(dal).savePreallocatedIds(eq("Tenant"), isA(List.class));
+    assertTrue(actualPreallocateIdResult.getObjectIdBytes().iterator().hasNext());
     UnknownFieldSet unknownFields = actualPreallocateIdResult.getUnknownFields();
     TagHeader defaultInstanceForType = actualPreallocateIdResult.getDefaultInstanceForType();
     assertSame(unknownFields, defaultInstanceForType.getUnknownFields());

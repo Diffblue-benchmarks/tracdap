@@ -5,19 +5,25 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.ArgumentMatchers.isA;
 import static org.mockito.ArgumentMatchers.isNull;
 import static org.mockito.Mockito.anyLong;
+import static org.mockito.Mockito.atLeast;
 import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
 import io.netty.channel.DefaultEventLoop;
+import io.netty.util.concurrent.DefaultEventExecutor;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.concurrent.CompletableFuture;
 import org.apache.arrow.memory.ArrowBuf;
 import org.finos.tracdap.common.exception.EUnexpected;
 import org.finos.tracdap.common.storage.StorageErrors;
+import org.finos.tracdap.test.grpc.GrpcTestStreams;
+import org.finos.tracdap.test.grpc.GrpcTestStreams.ClientResponseStream;
+import org.finos.tracdap.test.grpc.GrpcTestStreams.ClientResponseStream.Subscription;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -73,6 +79,47 @@ class LocalFileWriterDiffblueTest {
   void testWriteChunkComplete2() {
     // Arrange
     StorageErrors errors = mock(StorageErrors.class);
+    when(errors.chunkNotFullyWritten(anyLong(), anyLong())).thenReturn(null);
+    when(errors.handleException(
+            Mockito.<String>any(), Mockito.<String>any(), Mockito.<Throwable>any()))
+        .thenReturn(new EUnexpected());
+    Path absolutePath = Paths.get(System.getProperty("java.io.tmpdir"));
+    CompletableFuture<Long> signal = new CompletableFuture<>();
+
+    LocalFileWriter localFileWriter =
+        new LocalFileWriter("Storage Path", absolutePath, signal, new DefaultEventLoop(), errors);
+
+    ArrowBuf chunk = mock(ArrowBuf.class);
+    when(chunk.capacity()).thenReturn(0L);
+    when(chunk.refCnt()).thenReturn(1);
+    when(chunk.readableBytes()).thenReturn(1L);
+    doNothing().when(chunk).close();
+
+    // Act
+    localFileWriter.writeChunkComplete(19088743, chunk);
+
+    // Assert
+    verify(chunk).capacity();
+    verify(chunk).close();
+    verify(chunk).readableBytes();
+    verify(chunk).refCnt();
+    verify(errors).chunkNotFullyWritten(1L, 19088743L);
+    verify(errors).handleException(eq("WRITE"), eq("Storage Path"), isNull());
+  }
+
+  /**
+   * Test {@link LocalFileWriter#writeChunkComplete(Integer, ArrowBuf)}.
+   *
+   * <p>Method under test: {@link LocalFileWriter#writeChunkComplete(Integer, ArrowBuf)}
+   */
+  @Test
+  @DisplayName("Test writeChunkComplete(Integer, ArrowBuf)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void LocalFileWriter.writeChunkComplete(Integer, ArrowBuf)"})
+  void testWriteChunkComplete3() {
+    // Arrange
+    StorageErrors errors = mock(StorageErrors.class);
     when(errors.handleException(
             Mockito.<String>any(), Mockito.<String>any(), Mockito.<Throwable>any()))
         .thenThrow(new IllegalStateException());
@@ -95,6 +142,93 @@ class LocalFileWriterDiffblueTest {
     verify(chunk).readableBytes();
     verify(chunk).refCnt();
     verify(errors).handleException(eq("WRITE"), eq("Storage Path"), isA(Throwable.class));
+  }
+
+  /**
+   * Test {@link LocalFileWriter#writeChunkComplete(Integer, ArrowBuf)}.
+   *
+   * <p>Method under test: {@link LocalFileWriter#writeChunkComplete(Integer, ArrowBuf)}
+   */
+  @Test
+  @DisplayName("Test writeChunkComplete(Integer, ArrowBuf)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void LocalFileWriter.writeChunkComplete(Integer, ArrowBuf)"})
+  void testWriteChunkComplete4() {
+    // Arrange
+    StorageErrors errors = mock(StorageErrors.class);
+    when(errors.chunkNotFullyWritten(anyLong(), anyLong())).thenReturn(null);
+    when(errors.handleException(
+            Mockito.<String>any(), Mockito.<String>any(), Mockito.<Throwable>any()))
+        .thenReturn(new EUnexpected());
+    Path absolutePath = Paths.get(System.getProperty("java.io.tmpdir"), "foo", "42", "foo");
+    CompletableFuture<Long> signal = new CompletableFuture<>();
+
+    LocalFileWriter localFileWriter =
+        new LocalFileWriter("Storage Path", absolutePath, signal, new DefaultEventLoop(), errors);
+    localFileWriter.onSubscribe(new Subscription());
+
+    ArrowBuf chunk = mock(ArrowBuf.class);
+    when(chunk.capacity()).thenReturn(0L);
+    when(chunk.refCnt()).thenReturn(1);
+    when(chunk.readableBytes()).thenReturn(1L);
+    doNothing().when(chunk).close();
+
+    // Act
+    localFileWriter.writeChunkComplete(19088743, chunk);
+
+    // Assert
+    verify(chunk).capacity();
+    verify(chunk).close();
+    verify(chunk).readableBytes();
+    verify(chunk).refCnt();
+    verify(errors).chunkNotFullyWritten(1L, 19088743L);
+    verify(errors, atLeast(1))
+        .handleException(eq("WRITE"), eq("Storage Path"), Mockito.<Throwable>any());
+  }
+
+  /**
+   * Test {@link LocalFileWriter#writeChunkComplete(Integer, ArrowBuf)}.
+   *
+   * <p>Method under test: {@link LocalFileWriter#writeChunkComplete(Integer, ArrowBuf)}
+   */
+  @Test
+  @DisplayName("Test writeChunkComplete(Integer, ArrowBuf)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void LocalFileWriter.writeChunkComplete(Integer, ArrowBuf)"})
+  void testWriteChunkComplete5() {
+    // Arrange
+    StorageErrors errors = mock(StorageErrors.class);
+    when(errors.chunkNotFullyWritten(anyLong(), anyLong())).thenReturn(null);
+    when(errors.handleException(
+            Mockito.<String>any(), Mockito.<String>any(), Mockito.<Throwable>any()))
+        .thenReturn(new EUnexpected());
+    Path absolutePath = Paths.get(System.getProperty("java.io.tmpdir"), "foo", "42", "foo");
+    CompletableFuture<Long> signal = new CompletableFuture<>();
+
+    LocalFileWriter localFileWriter =
+        new LocalFileWriter(
+            "Storage Path", absolutePath, signal, new DefaultEventExecutor(), errors);
+    localFileWriter.onSubscribe(new Subscription());
+
+    ArrowBuf chunk = mock(ArrowBuf.class);
+    when(chunk.capacity()).thenReturn(0L);
+    when(chunk.refCnt()).thenReturn(1);
+    when(chunk.readableBytes()).thenReturn(1L);
+    doNothing().when(chunk).close();
+
+    // Act
+    localFileWriter.writeChunkComplete(19088743, chunk);
+
+    // Assert
+    verify(chunk).capacity();
+    verify(chunk).close();
+    verify(chunk).readableBytes();
+    verify(chunk).refCnt();
+    verify(errors).chunkNotFullyWritten(1L, 19088743L);
+    verify(errors, atLeast(1))
+        .handleException(eq("WRITE"), eq("Storage Path"), Mockito.<Throwable>any());
   }
 
   /**
@@ -187,30 +321,89 @@ class LocalFileWriterDiffblueTest {
    * Test {@link LocalFileWriter#writeChunkComplete(Integer, ArrowBuf)}.
    *
    * <ul>
-   *   <li>Given {@link StorageErrors} {@link StorageErrors#chunkNotFullyWritten(long, long)} return
-   *       {@code null}.
+   *   <li>Given {@link ClientResponseStream.Subscription} {@link
+   *       ClientResponseStream.Subscription#cancel()} does nothing.
+   *   <li>Then calls {@link ClientResponseStream.Subscription#cancel()}.
    * </ul>
    *
    * <p>Method under test: {@link LocalFileWriter#writeChunkComplete(Integer, ArrowBuf)}
    */
   @Test
   @DisplayName(
-      "Test writeChunkComplete(Integer, ArrowBuf); given StorageErrors chunkNotFullyWritten(long, long) return 'null'")
+      "Test writeChunkComplete(Integer, ArrowBuf); given Subscription cancel() does nothing; then calls cancel()")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"void LocalFileWriter.writeChunkComplete(Integer, ArrowBuf)"})
-  void testWriteChunkComplete_givenStorageErrorsChunkNotFullyWrittenReturnNull() {
+  void testWriteChunkComplete_givenSubscriptionCancelDoesNothing_thenCallsCancel() {
     // Arrange
     StorageErrors errors = mock(StorageErrors.class);
     when(errors.chunkNotFullyWritten(anyLong(), anyLong())).thenReturn(null);
     when(errors.handleException(
             Mockito.<String>any(), Mockito.<String>any(), Mockito.<Throwable>any()))
         .thenReturn(new EUnexpected());
-    Path absolutePath = Paths.get(System.getProperty("java.io.tmpdir"));
+
+    Subscription subscription = mock(Subscription.class);
+    doNothing().when(subscription).cancel();
+    Path absolutePath = Paths.get(System.getProperty("java.io.tmpdir"), "foo", "42", "foo");
     CompletableFuture<Long> signal = new CompletableFuture<>();
 
     LocalFileWriter localFileWriter =
         new LocalFileWriter("Storage Path", absolutePath, signal, new DefaultEventLoop(), errors);
+    localFileWriter.onSubscribe(subscription);
+
+    ArrowBuf chunk = mock(ArrowBuf.class);
+    when(chunk.capacity()).thenReturn(0L);
+    when(chunk.refCnt()).thenReturn(1);
+    when(chunk.readableBytes()).thenReturn(1L);
+    doNothing().when(chunk).close();
+
+    // Act
+    localFileWriter.writeChunkComplete(19088743, chunk);
+
+    // Assert
+    verify(chunk).capacity();
+    verify(chunk).close();
+    verify(chunk).readableBytes();
+    verify(chunk).refCnt();
+    verify(errors).chunkNotFullyWritten(1L, 19088743L);
+    verify(errors, atLeast(1))
+        .handleException(eq("WRITE"), eq("Storage Path"), Mockito.<Throwable>any());
+    verify(subscription).cancel();
+  }
+
+  /**
+   * Test {@link LocalFileWriter#writeChunkComplete(Integer, ArrowBuf)}.
+   *
+   * <ul>
+   *   <li>Given {@link ClientResponseStream.Subscription} {@link
+   *       ClientResponseStream.Subscription#cancel()} throw {@link
+   *       IllegalStateException#IllegalStateException()}.
+   * </ul>
+   *
+   * <p>Method under test: {@link LocalFileWriter#writeChunkComplete(Integer, ArrowBuf)}
+   */
+  @Test
+  @DisplayName(
+      "Test writeChunkComplete(Integer, ArrowBuf); given Subscription cancel() throw IllegalStateException()")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void LocalFileWriter.writeChunkComplete(Integer, ArrowBuf)"})
+  void testWriteChunkComplete_givenSubscriptionCancelThrowIllegalStateException() {
+    // Arrange
+    StorageErrors errors = mock(StorageErrors.class);
+    when(errors.chunkNotFullyWritten(anyLong(), anyLong())).thenReturn(null);
+    when(errors.handleException(
+            Mockito.<String>any(), Mockito.<String>any(), Mockito.<Throwable>any()))
+        .thenReturn(new EUnexpected());
+
+    Subscription subscription = mock(Subscription.class);
+    doThrow(new IllegalStateException()).when(subscription).cancel();
+    Path absolutePath = Paths.get(System.getProperty("java.io.tmpdir"), "foo", "42", "foo");
+    CompletableFuture<Long> signal = new CompletableFuture<>();
+
+    LocalFileWriter localFileWriter =
+        new LocalFileWriter("Storage Path", absolutePath, signal, new DefaultEventLoop(), errors);
+    localFileWriter.onSubscribe(subscription);
 
     ArrowBuf chunk = mock(ArrowBuf.class);
     when(chunk.capacity()).thenReturn(0L);
@@ -228,6 +421,7 @@ class LocalFileWriterDiffblueTest {
     verify(chunk).refCnt();
     verify(errors).chunkNotFullyWritten(1L, 19088743L);
     verify(errors).handleException(eq("WRITE"), eq("Storage Path"), isNull());
+    verify(subscription).cancel();
   }
 
   /**

@@ -4,18 +4,18 @@
   },
   "run" : {
     "version" : "2025.09.01-44e352d-licensed",
-    "creationTimestamp" : "2025-10-06T09:58:55.285946006Z",
+    "creationTimestamp" : "2025-10-15T15:46:24.817560458Z",
     "command" : "dcover create --exclude-modules=sql-drivers --coverage-reports --upload http://localhost:8080 --project-name tracdap --name with-diffblue-tests",
-    "totalTime" : 2602.641,
-    "environmentDetectionTime" : 0.515,
-    "indexingTime" : 0.463,
-    "entryPointsTime" : 0.453,
-    "generationTime" : 10350.268,
-    "timeToFirstTest" : 13707.956,
-    "timeToLastTest" : 12122.246,
-    "indexQueryTime" : 8.199,
-    "verificationTime" : 316.702,
-    "validationTime" : 124.918
+    "totalTime" : 3704.538,
+    "environmentDetectionTime" : 0.849,
+    "indexingTime" : 0.511,
+    "entryPointsTime" : 0.783,
+    "generationTime" : 14466.954,
+    "timeToFirstTest" : 19960.317,
+    "timeToLastTest" : 17308.077,
+    "indexQueryTime" : 12.487,
+    "verificationTime" : 458.909,
+    "validationTime" : 213.291
   },
   "codes" : {
     "F009" : "Internal error",
@@ -26,7 +26,6 @@
     "R006" : "Static initializer failed",
     "R011" : "Sandboxing policy violation",
     "R013" : "No inputs found that don't throw a trivial exception",
-    "R024" : "Analysis service shutdown unexpectedly",
     "R081" : "Exception in arrange section",
     "T000" : "Method eligible for test creation",
     "T001" : "Trivial getter",
@@ -45,9 +44,9 @@
   "summary" : {
     "classesCount" : 40,
     "methodsCount" : 318,
-    "cumulativeDiffblueTestCount" : 135,
+    "cumulativeDiffblueTestCount" : 132,
     "cumulativeManualTestCount" : 7,
-    "completeTestCount" : 138,
+    "completeTestCount" : 135,
     "incompleteTestCount" : 0,
     "skeletonTestCount" : 0,
     "totalPhysicalLineCount" : 3735,
@@ -72,7 +71,6 @@
       "R006" : 1,
       "R011" : 9,
       "R013" : 18,
-      "R024" : 1,
       "R081" : 16,
       "T003" : 119,
       "T004" : 2,
@@ -84,10 +82,10 @@
       "T023" : 26
     },
     "perTestOutcome" : {
-      "R000" : 138
+      "R000" : 135
     },
     "perTestValidation" : {
-      "V000" : 134,
+      "V000" : 131,
       "V003" : 4
     },
     "warnings" : {
@@ -590,7 +588,7 @@
       }
     },
     "org.finos.tracdap.gateway.proxy.rest.RestApiTranslator" : {
-      "methodsCount" : 20,
+      "methodsCount" : 19,
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
@@ -599,7 +597,6 @@
         "T012" : 5
       },
       "perMethodOutcome" : {
-        "R024" : 1,
         "T003" : 14,
         "T012" : 5
       }
@@ -750,7 +747,7 @@
     },
     "org.finos.tracdap.gateway.routing.WebSocketsRouter" : {
       "methodsCount" : 22,
-      "completeTestCount" : 29,
+      "completeTestCount" : 26,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 7,
@@ -766,7 +763,7 @@
         "T023" : 1
       },
       "perTestOutcome" : {
-        "R000" : 29
+        "R000" : 26
       }
     }
   },
@@ -4283,7 +4280,7 @@
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R024",
+      "perMethodOutcome" : "F009",
       "lineNumbers" : [
         160,
         162,
@@ -5526,12 +5523,12 @@
       ]
     },
     "org.finos.tracdap.gateway.routing.WebSocketsRouter.exceptionCaught:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Throwable;)V" : {
-      "completeTestCount" : 7,
+      "completeTestCount" : 5,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 7
+        "R000" : 5
       },
       "lineNumbers" : [
         219,
@@ -5750,12 +5747,12 @@
       ]
     },
     "org.finos.tracdap.gateway.routing.WebSocketsRouter.reportProxyRouteError:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Throwable;Z)V" : {
-      "completeTestCount" : 6,
+      "completeTestCount" : 5,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 6
+        "R000" : 5
       },
       "lineNumbers" : [
         252,
@@ -5828,7 +5825,7 @@
   },
   "validationMetrics" : {
     "failingTests" : [
-      "org.finos.tracdap.common.storage.local.LocalStorageOperationsTest.testStat_dirATime"
+      "org.finos.tracdap.common.storage.local.LocalStorageOperationsTest.testStat_dirMTime"
     ]
   }
 }

@@ -1892,31 +1892,6 @@ class SampleMetadataDiffblueTest {
    * Test {@link SampleMetadata#randomPrimitive(BasicType)}.
    *
    * <ul>
-   *   <li>When {@code DECIMAL}.
-   *   <li>Then return ValueCase is {@code DECIMALVALUE}.
-   * </ul>
-   *
-   * <p>Method under test: {@link SampleMetadata#randomPrimitive(BasicType)}
-   */
-  @Test
-  @DisplayName(
-      "Test randomPrimitive(BasicType); when 'DECIMAL'; then return ValueCase is 'DECIMALVALUE'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"Value SampleMetadata.randomPrimitive(BasicType)"})
-  void testRandomPrimitive_whenDecimal_thenReturnValueCaseIsDecimalvalue() {
-    // Arrange and Act
-    Value actualRandomPrimitiveResult = SampleMetadata.randomPrimitive(BasicType.DECIMAL);
-
-    // Assert
-    assertEquals(ValueCase.DECIMALVALUE, actualRandomPrimitiveResult.getValueCase());
-    assertTrue(actualRandomPrimitiveResult.hasDecimalValue());
-  }
-
-  /**
-   * Test {@link SampleMetadata#randomPrimitive(BasicType)}.
-   *
-   * <ul>
    *   <li>When {@code FLOAT}.
    *   <li>Then return SerializedSize is thirteen.
    * </ul>

@@ -78,6 +78,54 @@ class GrpcDownloadSinkDiffblueTest {
   /**
    * Test {@link GrpcDownloadSink#GrpcDownloadSink(StreamObserver, Supplier, boolean)}.
    *
+   * <p>Method under test: {@link GrpcDownloadSink#GrpcDownloadSink(StreamObserver, Supplier,
+   * boolean)}
+   */
+  @Test
+  @DisplayName("Test new GrpcDownloadSink(StreamObserver, Supplier, boolean)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void GrpcDownloadSink.<init>(StreamObserver, Supplier, boolean)"})
+  void testNewGrpcDownloadSink3() {
+    // Arrange
+    FutureFirstItemSubscriber<MessageLite> subscriber =
+        new FutureFirstItemSubscriber<>(new CompletableFuture<>());
+    DelayedSubscriber<MessageLite> subscriber2 =
+        new DelayedSubscriber<>(subscriber, new CompletableFuture<>());
+
+    // Act and Assert
+    assertThrows(
+        EUnexpected.class,
+        () ->
+            new GrpcDownloadSink<>(
+                new ClientResponseStream<>(subscriber2), mock(Supplier.class), true));
+  }
+
+  /**
+   * Test {@link GrpcDownloadSink#GrpcDownloadSink(StreamObserver, Supplier, boolean)}.
+   *
+   * <p>Method under test: {@link GrpcDownloadSink#GrpcDownloadSink(StreamObserver, Supplier,
+   * boolean)}
+   */
+  @Test
+  @DisplayName("Test new GrpcDownloadSink(StreamObserver, Supplier, boolean)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void GrpcDownloadSink.<init>(StreamObserver, Supplier, boolean)"})
+  void testNewGrpcDownloadSink4() {
+    // Arrange
+    ServerCallStreamObserver<MessageLite> response = mock(ServerCallStreamObserver.class);
+    doThrow(new EUnexpected()).when(response).setOnCancelHandler(Mockito.<Runnable>any());
+
+    // Act and Assert
+    assertThrows(
+        EUnexpected.class, () -> new GrpcDownloadSink<>(response, mock(Supplier.class), false));
+    verify(response).setOnCancelHandler(isA(Runnable.class));
+  }
+
+  /**
+   * Test {@link GrpcDownloadSink#GrpcDownloadSink(StreamObserver, Supplier, boolean)}.
+   *
    * <ul>
    *   <li>Given newBuilder.
    *   <li>When {@link Supplier} {@link Supplier#get()} return newBuilder.
@@ -93,6 +141,41 @@ class GrpcDownloadSinkDiffblueTest {
   @ManagedByDiffblue
   @MethodsUnderTest({"void GrpcDownloadSink.<init>(StreamObserver, Supplier, boolean)"})
   void testNewGrpcDownloadSink_givenNewBuilder_whenSupplierGetReturnNewBuilder() {
+    // Arrange
+    ServerCallStreamObserver<MessageLite> response = mock(ServerCallStreamObserver.class);
+    doNothing().when(response).setOnCancelHandler(Mockito.<Runnable>any());
+    doNothing().when(response).setOnReadyHandler(Mockito.<Runnable>any());
+
+    Supplier<Builder> builder = mock(Supplier.class);
+    when(builder.get()).thenReturn(UnknownFieldSet.newBuilder());
+
+    // Act
+    new GrpcDownloadSink<>(response, builder, false);
+
+    // Assert
+    verify(response).setOnCancelHandler(isA(Runnable.class));
+    verify(response).setOnReadyHandler(isA(Runnable.class));
+    verify(builder).get();
+  }
+
+  /**
+   * Test {@link GrpcDownloadSink#GrpcDownloadSink(StreamObserver, Supplier, boolean)}.
+   *
+   * <ul>
+   *   <li>Given newBuilder.
+   *   <li>When {@link Supplier} {@link Supplier#get()} return newBuilder.
+   * </ul>
+   *
+   * <p>Method under test: {@link GrpcDownloadSink#GrpcDownloadSink(StreamObserver, Supplier,
+   * boolean)}
+   */
+  @Test
+  @DisplayName(
+      "Test new GrpcDownloadSink(StreamObserver, Supplier, boolean); given newBuilder; when Supplier get() return newBuilder")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void GrpcDownloadSink.<init>(StreamObserver, Supplier, boolean)"})
+  void testNewGrpcDownloadSink_givenNewBuilder_whenSupplierGetReturnNewBuilder2() {
     // Arrange
     ServerCallStreamObserver<MessageLite> response = mock(ServerCallStreamObserver.class);
     doNothing().when(response).setOnCancelHandler(Mockito.<Runnable>any());
@@ -147,6 +230,39 @@ class GrpcDownloadSinkDiffblueTest {
    * Test {@link GrpcDownloadSink#GrpcDownloadSink(StreamObserver, Supplier, boolean)}.
    *
    * <ul>
+   *   <li>When {@link Supplier} {@link Supplier#get()} throw {@link EUnexpected#EUnexpected()}.
+   *   <li>Then calls {@link Supplier#get()}.
+   * </ul>
+   *
+   * <p>Method under test: {@link GrpcDownloadSink#GrpcDownloadSink(StreamObserver, Supplier,
+   * boolean)}
+   */
+  @Test
+  @DisplayName(
+      "Test new GrpcDownloadSink(StreamObserver, Supplier, boolean); when Supplier get() throw EUnexpected(); then calls get()")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void GrpcDownloadSink.<init>(StreamObserver, Supplier, boolean)"})
+  void testNewGrpcDownloadSink_whenSupplierGetThrowEUnexpected_thenCallsGet2() {
+    // Arrange
+    ServerCallStreamObserver<MessageLite> response = mock(ServerCallStreamObserver.class);
+    doNothing().when(response).setOnCancelHandler(Mockito.<Runnable>any());
+    doNothing().when(response).setOnReadyHandler(Mockito.<Runnable>any());
+
+    Supplier<Builder> builder = mock(Supplier.class);
+    when(builder.get()).thenThrow(new EUnexpected());
+
+    // Act and Assert
+    assertThrows(EUnexpected.class, () -> new GrpcDownloadSink<>(response, builder, false));
+    verify(response).setOnCancelHandler(isA(Runnable.class));
+    verify(response).setOnReadyHandler(isA(Runnable.class));
+    verify(builder).get();
+  }
+
+  /**
+   * Test {@link GrpcDownloadSink#GrpcDownloadSink(StreamObserver, Supplier, boolean)}.
+   *
+   * <ul>
    *   <li>When {@code true}.
    *   <li>Then calls {@link ServerCallStreamObserver#setOnReadyHandler(Runnable)}.
    * </ul>
@@ -161,6 +277,37 @@ class GrpcDownloadSinkDiffblueTest {
   @ManagedByDiffblue
   @MethodsUnderTest({"void GrpcDownloadSink.<init>(StreamObserver, Supplier, boolean)"})
   void testNewGrpcDownloadSink_whenTrue_thenCallsSetOnReadyHandler() {
+    // Arrange
+    ServerCallStreamObserver<MessageLite> response = mock(ServerCallStreamObserver.class);
+    doNothing().when(response).setOnCancelHandler(Mockito.<Runnable>any());
+    doNothing().when(response).setOnReadyHandler(Mockito.<Runnable>any());
+
+    // Act
+    new GrpcDownloadSink<>(response, mock(Supplier.class), true);
+
+    // Assert
+    verify(response).setOnCancelHandler(isA(Runnable.class));
+    verify(response).setOnReadyHandler(isA(Runnable.class));
+  }
+
+  /**
+   * Test {@link GrpcDownloadSink#GrpcDownloadSink(StreamObserver, Supplier, boolean)}.
+   *
+   * <ul>
+   *   <li>When {@code true}.
+   *   <li>Then calls {@link ServerCallStreamObserver#setOnReadyHandler(Runnable)}.
+   * </ul>
+   *
+   * <p>Method under test: {@link GrpcDownloadSink#GrpcDownloadSink(StreamObserver, Supplier,
+   * boolean)}
+   */
+  @Test
+  @DisplayName(
+      "Test new GrpcDownloadSink(StreamObserver, Supplier, boolean); when 'true'; then calls setOnReadyHandler(Runnable)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void GrpcDownloadSink.<init>(StreamObserver, Supplier, boolean)"})
+  void testNewGrpcDownloadSink_whenTrue_thenCallsSetOnReadyHandler2() {
     // Arrange
     ServerCallStreamObserver<MessageLite> response = mock(ServerCallStreamObserver.class);
     doNothing().when(response).setOnCancelHandler(Mockito.<Runnable>any());

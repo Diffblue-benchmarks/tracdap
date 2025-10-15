@@ -2,8 +2,6 @@ package org.finos.tracdap.common.validation.core.impl;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
 import com.google.protobuf.Descriptors;
@@ -44,178 +42,32 @@ class ValidationFailureDiffblueTest {
   }
 
   /**
-   * Test {@link ValidationFailure#locationAndMessage()}.
+   * Test getters and setters.
    *
-   * <p>Method under test: {@link ValidationFailure#locationAndMessage()}
-   */
-  @Test
-  @DisplayName("Test locationAndMessage()")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"String ValidationFailure.locationAndMessage()"})
-  void testLocationAndMessage() {
-    // Arrange
-    ValidationLocation parent = new ValidationLocation(null, "Target", null, "Field Name");
-    ValidationLocation parent2 = new ValidationLocation(parent, "Target", null, "Field Name");
-    ValidationLocation location = new ValidationLocation(parent2, "Target", null, "Field Name");
-
-    // Act and Assert
-    assertEquals(
-        "Field Name.Field Name: Not all who wander are lost",
-        new ValidationFailure(location, "Not all who wander are lost").locationAndMessage());
-  }
-
-  /**
-   * Test {@link ValidationFailure#locationAndMessage()}.
+   * <p>Methods under test:
    *
    * <ul>
-   *   <li>Then calls {@link Descriptors.FieldDescriptor#isRepeated()}.
+   *   <li>{@link ValidationFailure#ValidationFailure(ValidationLocation, String)}
+   *   <li>{@link ValidationFailure#message()}
    * </ul>
-   *
-   * <p>Method under test: {@link ValidationFailure#locationAndMessage()}
    */
   @Test
-  @DisplayName("Test locationAndMessage(); then calls isRepeated()")
+  @DisplayName("Test getters and setters")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
-  @MethodsUnderTest({"String ValidationFailure.locationAndMessage()"})
-  void testLocationAndMessage_thenCallsIsRepeated() {
+  @MethodsUnderTest({
+    "void ValidationFailure.<init>(ValidationLocation, String)",
+    "String ValidationFailure.message()"
+  })
+  void testGettersAndSetters2() {
     // Arrange
-    ValidationLocation parent = mock(ValidationLocation.class);
-    when(parent.isRoot()).thenReturn(true);
-    ValidationLocation parent2 =
-        new ValidationLocation(
-            parent,
-            "Target",
-            mock(OneofDescriptor.class),
-            mock(FieldDescriptor.class),
-            "Field Name");
-
-    FieldDescriptor field = mock(FieldDescriptor.class);
-    when(field.isRepeated()).thenReturn(true);
-
-    ValidationLocation location = new ValidationLocation(parent2, "Target", field, "Field Name");
-
-    // Act
-    String actualLocationAndMessageResult =
-        new ValidationFailure(location, "Not all who wander are lost").locationAndMessage();
-
-    // Assert
-    verify(field).isRepeated();
-    verify(parent).isRoot();
-    assertEquals(
-        "Field Name.Field Name: Not all who wander are lost", actualLocationAndMessageResult);
-  }
-
-  /**
-   * Test {@link ValidationFailure#locationAndMessage()}.
-   *
-   * <ul>
-   *   <li>Then return {@code Not all who wander are lost}.
-   * </ul>
-   *
-   * <p>Method under test: {@link ValidationFailure#locationAndMessage()}
-   */
-  @Test
-  @DisplayName("Test locationAndMessage(); then return 'Not all who wander are lost'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"String ValidationFailure.locationAndMessage()"})
-  void testLocationAndMessage_thenReturnNotAllWhoWanderAreLost() {
-    // Arrange
-    ValidationLocation location = new ValidationLocation(null, "Target", null, "Field Name");
+    ValidationLocation parent = new ValidationLocation(null, "Target", null, null, "Field Name");
+    ValidationLocation location = new ValidationLocation(parent, "Target", null, "Field Name");
 
     // Act and Assert
     assertEquals(
         "Not all who wander are lost",
-        new ValidationFailure(location, "Not all who wander are lost").locationAndMessage());
-  }
-
-  /**
-   * Test {@link ValidationFailure#location()}.
-   *
-   * <p>Method under test: {@link ValidationFailure#location()}
-   */
-  @Test
-  @DisplayName("Test location()")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"String ValidationFailure.location()"})
-  void testLocation() {
-    // Arrange
-    ValidationLocation parent = new ValidationLocation(null, "Target", null, "Field Name");
-    ValidationLocation parent2 = new ValidationLocation(parent, "Target", null, "Field Name");
-    ValidationLocation location = new ValidationLocation(parent2, "Target", null, "Field Name");
-
-    // Act and Assert
-    assertEquals(
-        "Field Name.Field Name",
-        new ValidationFailure(location, "Not all who wander are lost").location());
-  }
-
-  /**
-   * Test {@link ValidationFailure#location()}.
-   *
-   * <ul>
-   *   <li>Given {@link ValidationLocation} {@link ValidationLocation#isRoot()} return {@code true}.
-   *   <li>Then calls {@link Descriptors.FieldDescriptor#isRepeated()}.
-   * </ul>
-   *
-   * <p>Method under test: {@link ValidationFailure#location()}
-   */
-  @Test
-  @DisplayName(
-      "Test location(); given ValidationLocation isRoot() return 'true'; then calls isRepeated()")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"String ValidationFailure.location()"})
-  void testLocation_givenValidationLocationIsRootReturnTrue_thenCallsIsRepeated() {
-    // Arrange
-    ValidationLocation parent = mock(ValidationLocation.class);
-    when(parent.isRoot()).thenReturn(true);
-    ValidationLocation parent2 =
-        new ValidationLocation(
-            parent,
-            "Target",
-            mock(OneofDescriptor.class),
-            mock(FieldDescriptor.class),
-            "Field Name");
-
-    FieldDescriptor field = mock(FieldDescriptor.class);
-    when(field.isRepeated()).thenReturn(true);
-
-    ValidationLocation location = new ValidationLocation(parent2, "Target", field, "Field Name");
-
-    // Act
-    String actualLocationResult =
-        new ValidationFailure(location, "Not all who wander are lost").location();
-
-    // Assert
-    verify(field).isRepeated();
-    verify(parent).isRoot();
-    assertEquals("Field Name.Field Name", actualLocationResult);
-  }
-
-  /**
-   * Test {@link ValidationFailure#location()}.
-   *
-   * <ul>
-   *   <li>Then return empty string.
-   * </ul>
-   *
-   * <p>Method under test: {@link ValidationFailure#location()}
-   */
-  @Test
-  @DisplayName("Test location(); then return empty string")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"String ValidationFailure.location()"})
-  void testLocation_thenReturnEmptyString() {
-    // Arrange
-    ValidationLocation location = new ValidationLocation(null, "Target", null, "Field Name");
-
-    // Act and Assert
-    assertEquals("", new ValidationFailure(location, "Not all who wander are lost").location());
+        new ValidationFailure(location, "Not all who wander are lost").message());
   }
 
   /**
@@ -233,6 +85,37 @@ class ValidationFailureDiffblueTest {
   @ManagedByDiffblue
   @MethodsUnderTest({"String ValidationFailure.fieldName()"})
   void testFieldName_thenReturnFieldName() {
+    // Arrange
+    ValidationLocation parent =
+        new ValidationLocation(
+            mock(ValidationLocation.class),
+            "Target",
+            mock(OneofDescriptor.class),
+            mock(FieldDescriptor.class),
+            "Field Name");
+    ValidationLocation location =
+        new ValidationLocation(parent, "Target", mock(FieldDescriptor.class), "Field Name");
+
+    // Act and Assert
+    assertEquals(
+        "Field Name", new ValidationFailure(location, "Not all who wander are lost").fieldName());
+  }
+
+  /**
+   * Test {@link ValidationFailure#fieldName()}.
+   *
+   * <ul>
+   *   <li>Then return {@code Field Name}.
+   * </ul>
+   *
+   * <p>Method under test: {@link ValidationFailure#fieldName()}
+   */
+  @Test
+  @DisplayName("Test fieldName(); then return 'Field Name'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"String ValidationFailure.fieldName()"})
+  void testFieldName_thenReturnFieldName2() {
     // Arrange
     ValidationLocation parent =
         new ValidationLocation(

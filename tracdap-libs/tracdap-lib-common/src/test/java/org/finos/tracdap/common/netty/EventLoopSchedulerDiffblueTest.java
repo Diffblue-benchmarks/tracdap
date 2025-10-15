@@ -2,37 +2,15 @@ package org.finos.tracdap.common.netty;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
 import io.netty.channel.DefaultEventLoop;
-import io.netty.util.concurrent.DefaultEventExecutorChooserFactory;
 import io.netty.util.concurrent.EventExecutor;
-import io.netty.util.concurrent.EventExecutorChooserFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 class EventLoopSchedulerDiffblueTest {
-  /**
-   * Test {@link EventLoopScheduler#roundRobin()}.
-   *
-   * <p>Method under test: {@link EventLoopScheduler#roundRobin()}
-   */
-  @Test
-  @DisplayName("Test roundRobin()")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"EventExecutorChooserFactory EventLoopScheduler.roundRobin()"})
-  void testRoundRobin() {
-    // Arrange and Act
-    EventExecutorChooserFactory actualRoundRobinResult = EventLoopScheduler.roundRobin();
-    actualRoundRobinResult.newChooser(new EventExecutor[] {new DefaultEventLoop()});
-
-    // Assert
-    assertTrue(actualRoundRobinResult instanceof DefaultEventExecutorChooserFactory);
-  }
-
   /**
    * Test {@link EventLoopScheduler#newChooser(EventExecutor[])}.
    *

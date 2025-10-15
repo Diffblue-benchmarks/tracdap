@@ -4,18 +4,18 @@
   },
   "run" : {
     "version" : "2025.09.01-44e352d-licensed",
-    "creationTimestamp" : "2025-10-06T09:58:55.285946006Z",
+    "creationTimestamp" : "2025-10-15T15:46:24.817560458Z",
     "command" : "dcover create --exclude-modules=sql-drivers --coverage-reports --upload http://localhost:8080 --project-name tracdap --name with-diffblue-tests",
-    "totalTime" : 2688.535,
-    "environmentDetectionTime" : 0.934,
-    "indexingTime" : 0.402,
-    "entryPointsTime" : 0.907,
-    "generationTime" : 5966.919,
-    "timeToFirstTest" : 7346.832,
-    "timeToLastTest" : 6712.354,
-    "indexQueryTime" : 10.242,
-    "verificationTime" : 199.308,
-    "validationTime" : 70.188
+    "totalTime" : 4191.926,
+    "environmentDetectionTime" : 1.581,
+    "indexingTime" : 0.424,
+    "entryPointsTime" : 1.555,
+    "generationTime" : 8046.54,
+    "timeToFirstTest" : 9830.542,
+    "timeToLastTest" : 8932.627,
+    "indexQueryTime" : 16.148,
+    "verificationTime" : 262.721,
+    "validationTime" : 126.506
   },
   "codes" : {
     "R000" : "Success",
@@ -41,9 +41,9 @@
   "summary" : {
     "classesCount" : 56,
     "methodsCount" : 618,
-    "cumulativeDiffblueTestCount" : 405,
+    "cumulativeDiffblueTestCount" : 397,
     "cumulativeManualTestCount" : 129,
-    "completeTestCount" : 412,
+    "completeTestCount" : 404,
     "incompleteTestCount" : 0,
     "skeletonTestCount" : 0,
     "totalPhysicalLineCount" : 6106,
@@ -58,13 +58,13 @@
       "T023" : 35
     },
     "perMethodOutcome" : {
-      "R000" : 231,
+      "R000" : 217,
       "R002" : 1,
       "R004" : 4,
       "R005" : 1,
       "R011" : 5,
       "R013" : 12,
-      "R024" : 1,
+      "R024" : 2,
       "R083" : 59,
       "T003" : 120,
       "T005" : 33,
@@ -74,10 +74,10 @@
       "W001" : 2
     },
     "perTestOutcome" : {
-      "R000" : 412
+      "R000" : 404
     },
     "perTestValidation" : {
-      "V000" : 412,
+      "V000" : 404,
       "V003" : 4
     },
     "warnings" : {
@@ -453,8 +453,8 @@
       }
     },
     "org.finos.tracdap.common.validation.core.impl.ValidationFailure" : {
-      "methodsCount" : 5,
-      "completeTestCount" : 8,
+      "methodsCount" : 6,
+      "completeTestCount" : 4,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 3,
@@ -462,10 +462,11 @@
         "T005" : 1
       },
       "perMethodOutcome" : {
-        "R000" : 5
+        "R000" : 5,
+        "R024" : 1
       },
       "perTestOutcome" : {
-        "R000" : 8
+        "R000" : 4
       }
     },
     "org.finos.tracdap.common.validation.core.impl.ValidationKey" : {
@@ -486,8 +487,8 @@
       }
     },
     "org.finos.tracdap.common.validation.core.impl.ValidationLocation" : {
-      "methodsCount" : 29,
-      "completeTestCount" : 8,
+      "methodsCount" : 15,
+      "completeTestCount" : 4,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 7,
@@ -497,12 +498,12 @@
         "T005" : 3
       },
       "perMethodOutcome" : {
-        "R000" : 27,
+        "R000" : 13,
         "R024" : 1,
         "T003" : 1
       },
       "perTestOutcome" : {
-        "R000" : 8
+        "R000" : 4
       }
     },
     "org.finos.tracdap.common.validation.core.impl.ValidationResult" : {
@@ -5199,12 +5200,12 @@
       ]
     },
     "org.finos.tracdap.common.validation.core.impl.ValidationFailure.<init>:(Lorg/finos/tracdap/common/validation/core/impl/ValidationLocation;Ljava/lang/String;)V" : {
-      "completeTestCount" : 1,
+      "completeTestCount" : 2,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T005",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 1
+        "R000" : 2
       },
       "lineNumbers" : [
         26,
@@ -5214,37 +5215,31 @@
       ]
     },
     "org.finos.tracdap.common.validation.core.impl.ValidationFailure.fieldName:()Ljava/lang/String;" : {
-      "completeTestCount" : 1,
+      "completeTestCount" : 2,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 1
+        "R000" : 2
       },
       "lineNumbers" : [
         44
       ]
     },
     "org.finos.tracdap.common.validation.core.impl.ValidationFailure.location:()Ljava/lang/String;" : {
-      "completeTestCount" : 3,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
-      "perTestOutcome" : {
-        "R000" : 3
-      },
+      "perMethodOutcome" : "F009",
       "lineNumbers" : [
         40
       ]
     },
     "org.finos.tracdap.common.validation.core.impl.ValidationFailure.locationAndMessage:()Ljava/lang/String;" : {
-      "completeTestCount" : 3,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
-      "perTestOutcome" : {
-        "R000" : 3
-      },
+      "perMethodOutcome" : "F009",
       "lineNumbers" : [
         33,
         34,
@@ -5252,12 +5247,12 @@
       ]
     },
     "org.finos.tracdap.common.validation.core.impl.ValidationFailure.message:()Ljava/lang/String;" : {
-      "completeTestCount" : 1,
+      "completeTestCount" : 2,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T001",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 1
+        "R000" : 2
       },
       "lineNumbers" : [
         48
@@ -5444,12 +5439,12 @@
       ]
     },
     "org.finos.tracdap.common.validation.core.impl.ValidationLocation.<init>:(Lorg/finos/tracdap/common/validation/core/impl/ValidationLocation;Ljava/lang/Object;Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/String;)V" : {
-      "completeTestCount" : 6,
+      "completeTestCount" : 3,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T005",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 6
+        "R000" : 3
       },
       "lineNumbers" : [
         75,
@@ -5457,12 +5452,12 @@
       ]
     },
     "org.finos.tracdap.common.validation.core.impl.ValidationLocation.<init>:(Lorg/finos/tracdap/common/validation/core/impl/ValidationLocation;Ljava/lang/Object;Lcom/google/protobuf/Descriptors$MethodDescriptor;Lcom/google/protobuf/Descriptors$OneofDescriptor;Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/String;)V" : {
-      "completeTestCount" : 6,
+      "completeTestCount" : 3,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T005",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 6
+        "R000" : 3
       },
       "lineNumbers" : [
         46,
@@ -5478,12 +5473,12 @@
       ]
     },
     "org.finos.tracdap.common.validation.core.impl.ValidationLocation.<init>:(Lorg/finos/tracdap/common/validation/core/impl/ValidationLocation;Ljava/lang/Object;Lcom/google/protobuf/Descriptors$OneofDescriptor;Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/String;)V" : {
-      "completeTestCount" : 6,
+      "completeTestCount" : 3,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T005",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 6
+        "R000" : 3
       },
       "lineNumbers" : [
         66,
@@ -5491,12 +5486,12 @@
       ]
     },
     "org.finos.tracdap.common.validation.core.impl.ValidationLocation.done:()Z" : {
-      "completeTestCount" : 2,
+      "completeTestCount" : 1,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
+      "perMethodOutcome" : "R024",
       "perTestOutcome" : {
-        "R000" : 2
+        "R000" : 1
       },
       "lineNumbers" : [
         137
@@ -5518,12 +5513,12 @@
       ]
     },
     "org.finos.tracdap.common.validation.core.impl.ValidationLocation.fail:()V" : {
-      "completeTestCount" : 6,
+      "completeTestCount" : 3,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T002",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 6
+        "R000" : 3
       },
       "lineNumbers" : [
         141,
@@ -5531,36 +5526,36 @@
       ]
     },
     "org.finos.tracdap.common.validation.core.impl.ValidationLocation.failed:()Z" : {
-      "completeTestCount" : 6,
+      "completeTestCount" : 3,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T001",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 6
+        "R000" : 3
       },
       "lineNumbers" : [
         129
       ]
     },
     "org.finos.tracdap.common.validation.core.impl.ValidationLocation.field:()Lcom/google/protobuf/Descriptors$FieldDescriptor;" : {
-      "completeTestCount" : 6,
+      "completeTestCount" : 3,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T001",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 6
+        "R000" : 3
       },
       "lineNumbers" : [
         125
       ]
     },
     "org.finos.tracdap.common.validation.core.impl.ValidationLocation.fieldName:()Ljava/lang/String;" : {
-      "completeTestCount" : 6,
+      "completeTestCount" : 3,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T001",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 6
+        "R000" : 3
       },
       "lineNumbers" : [
         101
@@ -5594,12 +5589,12 @@
       ]
     },
     "org.finos.tracdap.common.validation.core.impl.ValidationLocation.method:()Lcom/google/protobuf/Descriptors$MethodDescriptor;" : {
-      "completeTestCount" : 6,
+      "completeTestCount" : 3,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T001",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 6
+        "R000" : 3
       },
       "lineNumbers" : [
         109
@@ -5617,36 +5612,36 @@
       ]
     },
     "org.finos.tracdap.common.validation.core.impl.ValidationLocation.oneOf:()Lcom/google/protobuf/Descriptors$OneofDescriptor;" : {
-      "completeTestCount" : 6,
+      "completeTestCount" : 3,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T001",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 6
+        "R000" : 3
       },
       "lineNumbers" : [
         121
       ]
     },
     "org.finos.tracdap.common.validation.core.impl.ValidationLocation.parent:()Lorg/finos/tracdap/common/validation/core/impl/ValidationLocation;" : {
-      "completeTestCount" : 6,
+      "completeTestCount" : 3,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T001",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 6
+        "R000" : 3
       },
       "lineNumbers" : [
         97
       ]
     },
     "org.finos.tracdap.common.validation.core.impl.ValidationLocation.skip:()V" : {
-      "completeTestCount" : 6,
+      "completeTestCount" : 3,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T002",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 6
+        "R000" : 3
       },
       "lineNumbers" : [
         145,
@@ -5654,12 +5649,12 @@
       ]
     },
     "org.finos.tracdap.common.validation.core.impl.ValidationLocation.skipped:()Z" : {
-      "completeTestCount" : 6,
+      "completeTestCount" : 3,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T001",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 6
+        "R000" : 3
       },
       "lineNumbers" : [
         133
@@ -5688,12 +5683,12 @@
       ]
     },
     "org.finos.tracdap.common.validation.core.impl.ValidationLocation.target:()Ljava/lang/Object;" : {
-      "completeTestCount" : 6,
+      "completeTestCount" : 3,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T001",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 6
+        "R000" : 3
       },
       "lineNumbers" : [
         105
@@ -9789,7 +9784,7 @@
   },
   "validationMetrics" : {
     "failingTests" : [
-      "org.finos.tracdap.common.storage.local.LocalStorageOperationsTest.testStat_dirATime"
+      "org.finos.tracdap.common.storage.local.LocalStorageOperationsTest.testStat_dirMTime"
     ]
   }
 }

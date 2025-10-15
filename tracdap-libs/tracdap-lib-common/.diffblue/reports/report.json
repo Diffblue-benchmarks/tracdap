@@ -4,18 +4,18 @@
   },
   "run" : {
     "version" : "2025.09.01-44e352d-licensed",
-    "creationTimestamp" : "2025-10-06T09:58:55.285946006Z",
+    "creationTimestamp" : "2025-10-15T15:46:24.817560458Z",
     "command" : "dcover create --exclude-modules=sql-drivers --coverage-reports --upload http://localhost:8080 --project-name tracdap --name with-diffblue-tests",
-    "totalTime" : 1409.275,
-    "environmentDetectionTime" : 0.375,
-    "indexingTime" : 0.398,
-    "entryPointsTime" : 0.364,
-    "generationTime" : 3576.295,
-    "timeToFirstTest" : 4654.628,
-    "timeToLastTest" : 4162.145,
-    "indexQueryTime" : 6.088,
-    "verificationTime" : 132.155,
-    "validationTime" : 105.46
+    "totalTime" : 1997.102,
+    "environmentDetectionTime" : 0.423,
+    "indexingTime" : 0.417,
+    "entryPointsTime" : 0.413,
+    "generationTime" : 4403.909,
+    "timeToFirstTest" : 5633.808,
+    "timeToLastTest" : 4997.439,
+    "indexQueryTime" : 6.297,
+    "verificationTime" : 146.118,
+    "validationTime" : 189.889
   },
   "codes" : {
     "F009" : "Internal error",
@@ -45,9 +45,9 @@
   "summary" : {
     "classesCount" : 169,
     "methodsCount" : 771,
-    "cumulativeDiffblueTestCount" : 507,
+    "cumulativeDiffblueTestCount" : 511,
     "cumulativeManualTestCount" : 63,
-    "completeTestCount" : 526,
+    "completeTestCount" : 530,
     "incompleteTestCount" : 0,
     "skeletonTestCount" : 0,
     "totalPhysicalLineCount" : 5977,
@@ -67,11 +67,11 @@
     },
     "perMethodOutcome" : {
       "F009" : 1,
-      "R000" : 383,
-      "R002" : 20,
+      "R000" : 382,
+      "R002" : 18,
       "R004" : 5,
-      "R013" : 53,
-      "R024" : 1,
+      "R013" : 51,
+      "R024" : 2,
       "R081" : 24,
       "R083" : 6,
       "T003" : 130,
@@ -85,10 +85,10 @@
       "W001" : 1
     },
     "perTestOutcome" : {
-      "R000" : 526
+      "R000" : 530
     },
     "perTestValidation" : {
-      "V000" : 522,
+      "V000" : 526,
       "V003" : 4
     },
     "warnings" : {
@@ -1832,8 +1832,8 @@
       }
     },
     "org.finos.tracdap.common.netty.EventLoopOffloadTracker" : {
-      "methodsCount" : 6,
-      "completeTestCount" : 2,
+      "methodsCount" : 7,
+      "completeTestCount" : 5,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 3,
@@ -1841,13 +1841,13 @@
         "T005" : 1
       },
       "perMethodOutcome" : {
-        "R000" : 1,
+        "R000" : 2,
         "R002" : 3,
         "R024" : 1,
         "T003" : 1
       },
       "perTestOutcome" : {
-        "R000" : 2
+        "R000" : 5
       }
     },
     "org.finos.tracdap.common.netty.EventLoopOffloadTracker$OffloadedExecutor" : {
@@ -1878,7 +1878,7 @@
     },
     "org.finos.tracdap.common.netty.EventLoopResolver" : {
       "methodsCount" : 14,
-      "completeTestCount" : 15,
+      "completeTestCount" : 16,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 5,
@@ -1894,25 +1894,23 @@
         "T023" : 1
       },
       "perTestOutcome" : {
-        "R000" : 15
+        "R000" : 16
       }
     },
     "org.finos.tracdap.common.netty.EventLoopScheduler" : {
-      "methodsCount" : 7,
-      "completeTestCount" : 4,
+      "methodsCount" : 2,
+      "completeTestCount" : 3,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 6,
         "T003" : 1
       },
       "perMethodOutcome" : {
-        "R000" : 2,
-        "R002" : 2,
-        "R013" : 2,
+        "R024" : 1,
         "T003" : 1
       },
       "perTestOutcome" : {
-        "R000" : 4
+        "R000" : 3
       }
     },
     "org.finos.tracdap.common.netty.EventLoopScheduler$Chooser" : {
@@ -1928,7 +1926,7 @@
     },
     "org.finos.tracdap.common.netty.NettyHelpers" : {
       "methodsCount" : 9,
-      "completeTestCount" : 8,
+      "completeTestCount" : 9,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 7,
@@ -1941,7 +1939,7 @@
         "T023" : 1
       },
       "perTestOutcome" : {
-        "R000" : 8
+        "R000" : 9
       }
     },
     "org.finos.tracdap.common.netty.NettyThreadFactoryWrapper" : {
@@ -9623,10 +9621,13 @@
       ]
     },
     "org.finos.tracdap.common.netty.EventLoopOffloadTracker.wrappExecutor:(Ljava/util/concurrent/Executor;)Ljava/util/concurrent/Executor;" : {
-      "completeTestCount" : 0,
+      "completeTestCount" : 3,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "R002",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
       "lineNumbers" : [
         47
       ]
@@ -9647,12 +9648,12 @@
       "perMethodOutcome" : "T023"
     },
     "org.finos.tracdap.common.netty.EventLoopResolver.<init>:(Lio/netty/util/concurrent/EventExecutorGroup;)V" : {
-      "completeTestCount" : 1,
+      "completeTestCount" : 2,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 1
+        "R000" : 2
       },
       "lineNumbers" : [
         64,
@@ -9875,7 +9876,7 @@
       "completeTestCount" : 3,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
+      "perMethodOutcome" : "R024",
       "perTestOutcome" : {
         "R000" : 3
       },
@@ -9891,7 +9892,7 @@
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R013",
+      "perMethodOutcome" : "F009",
       "lineNumbers" : [
         54
       ]
@@ -9900,7 +9901,7 @@
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R013",
+      "perMethodOutcome" : "F009",
       "lineNumbers" : [
         58
       ]
@@ -9909,7 +9910,7 @@
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R002",
+      "perMethodOutcome" : "F009",
       "lineNumbers" : [
         62
       ]
@@ -9918,19 +9919,16 @@
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R002",
+      "perMethodOutcome" : "F009",
       "lineNumbers" : [
         66
       ]
     },
     "org.finos.tracdap.common.netty.EventLoopScheduler.roundRobin:()Lio/netty/util/concurrent/EventExecutorChooserFactory;" : {
-      "completeTestCount" : 1,
+      "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R000",
-      "perTestOutcome" : {
-        "R000" : 1
-      },
+      "perMethodOutcome" : "F009",
       "lineNumbers" : [
         50
       ]
@@ -9951,12 +9949,12 @@
       ]
     },
     "org.finos.tracdap.common.netty.NettyHelpers.eventLoopExecutor:(Ljava/lang/String;)Ljava/util/concurrent/Executor;" : {
-      "completeTestCount" : 1,
+      "completeTestCount" : 2,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 1
+        "R000" : 2
       },
       "lineNumbers" : [
         43,
@@ -13079,7 +13077,7 @@
   },
   "validationMetrics" : {
     "failingTests" : [
-      "org.finos.tracdap.common.storage.local.LocalStorageOperationsTest.testStat_dirATime"
+      "org.finos.tracdap.common.storage.local.LocalStorageOperationsTest.testStat_dirMTime"
     ]
   }
 }

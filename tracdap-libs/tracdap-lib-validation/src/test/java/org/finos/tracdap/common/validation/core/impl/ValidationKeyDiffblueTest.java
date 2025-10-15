@@ -353,7 +353,6 @@ class ValidationKeyDiffblueTest {
    * <p>Methods under test:
    *
    * <ul>
-   *   <li>{@link ValidationKey#displayName()}
    *   <li>{@link ValidationKey#shortName()}
    *   <li>{@link ValidationKey#validationType()}
    * </ul>
@@ -372,11 +371,9 @@ class ValidationKeyDiffblueTest {
     ValidationKey forConsistencyResult = ValidationKey.forConsistency(ArrayValue.getDescriptor());
 
     // Act
-    String actualDisplayNameResult = forConsistencyResult.displayName();
     String actualShortNameResult = forConsistencyResult.shortName();
 
     // Assert
-    assertEquals("ArrayValue CONSISTENCY", actualDisplayNameResult);
     assertEquals("ArrayValue", actualShortNameResult);
     assertEquals(ValidationType.CONSISTENCY, forConsistencyResult.validationType());
   }

@@ -12,6 +12,7 @@ import com.diffblue.cover.annotations.MethodsUnderTest;
 import io.netty.channel.DefaultEventLoop;
 import io.netty.util.concurrent.DefaultEventExecutor;
 import io.netty.util.concurrent.OrderedEventExecutor;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -35,13 +36,52 @@ import org.finos.tracdap.common.async.flow.SourcePublisher;
 import org.finos.tracdap.test.grpc.GrpcTestStreams;
 import org.finos.tracdap.test.grpc.GrpcTestStreams.ClientRequestStream;
 import org.finos.tracdap.test.grpc.GrpcTestStreams.ClientResponseStream;
-import org.finos.tracdap.test.grpc.GrpcTestStreams.ClientResponseStream.Subscription;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 class FlowsDiffblueTest {
+  /**
+   * Test {@link Flows#publish(List)} with {@code List}.
+   *
+   * <ul>
+   *   <li>Given {@code 42}.
+   *   <li>When {@link ArrayList#ArrayList()} add {@code 42}.
+   *   <li>Then calls {@link Consumer#accept(Object)}.
+   * </ul>
+   *
+   * <p>Method under test: {@link Flows#publish(List)}
+   */
+  @Test
+  @DisplayName(
+      "Test publish(List) with 'List'; given '42'; when ArrayList() add '42'; then calls accept(Object)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Publisher Flows.publish(List)"})
+  void testPublishWithList_given42_whenArrayListAdd42_thenCallsAccept() {
+    // Arrange
+    ArrayList<Object> source = new ArrayList<>();
+    source.add("42");
+
+    // Act
+    Publisher<Object> actualPublishResult = Flows.publish(source);
+    Consumer<Object> releaseFunc = mock(Consumer.class);
+    doNothing().when(releaseFunc).accept(Mockito.<Object>any());
+    HubProcessor<? super Object> subscriber =
+        new HubProcessor<>(new DefaultEventLoop(), releaseFunc);
+    IOException ioException = new IOException("Server streaming succeeded in client");
+    CompletableFuture<?> signal = new CompletableFuture<>();
+    signal.obtrudeException(ioException);
+    DelayedSubscriber<? super Object> subscriber2 = new DelayedSubscriber<>(subscriber, signal);
+    actualPublishResult.subscribe(
+        new ClientRequestStream<>(new ClientResponseStream<>(subscriber2)));
+
+    // Assert
+    assertTrue(actualPublishResult instanceof SourcePublisher);
+    verify(releaseFunc).accept(isA(Object.class));
+  }
+
   /**
    * Test {@link Flows#publish(List)} with {@code List}.
    *
@@ -185,6 +225,38 @@ class FlowsDiffblueTest {
         new DelayedSubscriber<>(subscriber2, new CompletableFuture<>());
     actualPublishResult.subscribe(
         new ClientRequestStream<>(new ClientResponseStream<>(subscriber3)));
+
+    // Assert
+    assertTrue(actualPublishResult instanceof SourcePublisher);
+  }
+
+  /**
+   * Test {@link Flows#publish(List)} with {@code List}.
+   *
+   * <ul>
+   *   <li>Given {@code Client streaming succeeded in client}.
+   * </ul>
+   *
+   * <p>Method under test: {@link Flows#publish(List)}
+   */
+  @Test
+  @DisplayName("Test publish(List) with 'List'; given 'Client streaming succeeded in client'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Publisher Flows.publish(List)"})
+  void testPublishWithList_givenClientStreamingSucceededInClient() {
+    // Arrange
+    ArrayList<Object> source = new ArrayList<>();
+    source.add("Client streaming succeeded in client");
+
+    // Act
+    Publisher<Object> actualPublishResult = Flows.publish(source);
+    CompletableFuture<?> signal = new CompletableFuture<>();
+    signal.obtrudeException(new Throwable());
+    DelayedSubscriber<? super Object> subscriber =
+        new DelayedSubscriber<>(new HubProcessor<>(new DefaultEventLoop()), signal);
+    actualPublishResult.subscribe(
+        new ClientRequestStream<>(new ClientResponseStream<>(subscriber)));
 
     // Assert
     assertTrue(actualPublishResult instanceof SourcePublisher);
@@ -660,253 +732,6 @@ class FlowsDiffblueTest {
         new DelayedSubscriber<>(subscriber2, new CompletableFuture<>());
     actualPublishResult.subscribe(
         new ClientRequestStream<>(new ClientResponseStream<>(subscriber3)));
-
-    // Assert
-    assertTrue(actualPublishResult instanceof SourcePublisher);
-  }
-
-  /**
-   * Test {@link Flows#publish(Stream)} with {@code Stream}.
-   *
-   * <ul>
-   *   <li>Given {@code 42}.
-   *   <li>When {@link ArrayList#ArrayList()} add {@code 42}.
-   *   <li>Then return {@link SourcePublisher}.
-   * </ul>
-   *
-   * <p>Method under test: {@link Flows#publish(Stream)}
-   */
-  @Test
-  @DisplayName(
-      "Test publish(Stream) with 'Stream'; given '42'; when ArrayList() add '42'; then return SourcePublisher")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"Publisher Flows.publish(Stream)"})
-  void testPublishWithStream_given42_whenArrayListAdd42_thenReturnSourcePublisher4() {
-    // Arrange
-    ArrayList<Object> objectList = new ArrayList<>();
-    objectList.add("42");
-    Stream<Object> source = objectList.stream();
-
-    // Act
-    Publisher<Object> actualPublishResult = Flows.publish(source);
-    HubProcessor<? super Object> subscriber =
-        new HubProcessor<>(new DefaultEventLoop(), mock(Consumer.class));
-    DelayedSubscriber<? super Object> subscriber2 =
-        new DelayedSubscriber<>(subscriber, new CompletableFuture<>());
-    actualPublishResult.subscribe(
-        new ClientRequestStream<>(new ClientResponseStream<>(subscriber2)));
-
-    // Assert
-    assertTrue(actualPublishResult instanceof SourcePublisher);
-  }
-
-  /**
-   * Test {@link Flows#publish(Stream)} with {@code Stream}.
-   *
-   * <ul>
-   *   <li>Given {@code 42}.
-   *   <li>When {@link ArrayList#ArrayList()} add {@code 42}.
-   *   <li>Then return {@link SourcePublisher}.
-   * </ul>
-   *
-   * <p>Method under test: {@link Flows#publish(Stream)}
-   */
-  @Test
-  @DisplayName(
-      "Test publish(Stream) with 'Stream'; given '42'; when ArrayList() add '42'; then return SourcePublisher")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"Publisher Flows.publish(Stream)"})
-  void testPublishWithStream_given42_whenArrayListAdd42_thenReturnSourcePublisher5() {
-    // Arrange
-    ArrayList<Object> objectList = new ArrayList<>();
-    objectList.add("42");
-    objectList.add("42");
-    Stream<Object> source = objectList.stream();
-
-    // Act
-    Publisher<Object> actualPublishResult = Flows.publish(source);
-    HubProcessor<? super Object> subscriber = new HubProcessor<>(new DefaultEventExecutor());
-    DelayedSubscriber<? super Object> subscriber2 =
-        new DelayedSubscriber<>(subscriber, new CompletableFuture<>());
-    actualPublishResult.subscribe(
-        new ClientRequestStream<>(new ClientResponseStream<>(subscriber2)));
-
-    // Assert
-    assertTrue(actualPublishResult instanceof SourcePublisher);
-  }
-
-  /**
-   * Test {@link Flows#publish(Stream)} with {@code Stream}.
-   *
-   * <ul>
-   *   <li>Given {@code 42}.
-   *   <li>When {@link ArrayList#ArrayList()} add {@code 42}.
-   *   <li>Then return {@link SourcePublisher}.
-   * </ul>
-   *
-   * <p>Method under test: {@link Flows#publish(Stream)}
-   */
-  @Test
-  @DisplayName(
-      "Test publish(Stream) with 'Stream'; given '42'; when ArrayList() add '42'; then return SourcePublisher")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"Publisher Flows.publish(Stream)"})
-  void testPublishWithStream_given42_whenArrayListAdd42_thenReturnSourcePublisher6() {
-    // Arrange
-    ArrayList<Object> objectList = new ArrayList<>();
-    objectList.add("42");
-    Stream<Object> source = objectList.stream();
-
-    // Act
-    Publisher<Object> actualPublishResult = Flows.publish(source);
-    FutureFirstItemSubscriber<? super Object> subscriber =
-        new FutureFirstItemSubscriber<>(new CompletableFuture<>());
-    subscriber.onSubscribe(new Subscription());
-    DelayedSubscriber<? super Object> subscriber2 =
-        new DelayedSubscriber<>(subscriber, new CompletableFuture<>());
-    DelayedSubscriber<? super Object> subscriber3 =
-        new DelayedSubscriber<>(subscriber2, new CompletableFuture<>());
-    actualPublishResult.subscribe(
-        new ClientRequestStream<>(new ClientResponseStream<>(subscriber3)));
-
-    // Assert
-    assertTrue(actualPublishResult instanceof SourcePublisher);
-  }
-
-  /**
-   * Test {@link Flows#publish(Stream)} with {@code Stream}.
-   *
-   * <ul>
-   *   <li>Given {@code 42}.
-   *   <li>When {@link ArrayList#ArrayList()} add {@code 42}.
-   *   <li>Then return {@link SourcePublisher}.
-   * </ul>
-   *
-   * <p>Method under test: {@link Flows#publish(Stream)}
-   */
-  @Test
-  @DisplayName(
-      "Test publish(Stream) with 'Stream'; given '42'; when ArrayList() add '42'; then return SourcePublisher")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"Publisher Flows.publish(Stream)"})
-  void testPublishWithStream_given42_whenArrayListAdd42_thenReturnSourcePublisher7() {
-    // Arrange
-    ArrayList<Object> objectList = new ArrayList<>();
-    objectList.add("42");
-    Stream<Object> source = objectList.stream();
-
-    // Act
-    Publisher<Object> actualPublishResult = Flows.publish(source);
-    CompletableFuture<?> signal = new CompletableFuture<>();
-    signal.obtrudeException(new Throwable());
-    DelayedSubscriber<? super Object> subscriber =
-        new DelayedSubscriber<>(new HubProcessor<>(new DefaultEventExecutor()), signal);
-    actualPublishResult.subscribe(
-        new ClientRequestStream<>(new ClientResponseStream<>(subscriber)));
-
-    // Assert
-    assertTrue(actualPublishResult instanceof SourcePublisher);
-  }
-
-  /**
-   * Test {@link Flows#publish(Stream)} with {@code Stream}.
-   *
-   * <ul>
-   *   <li>Given {@code 42}.
-   *   <li>When {@link ArrayList#ArrayList()} add {@code 42}.
-   *   <li>Then return {@link SourcePublisher}.
-   * </ul>
-   *
-   * <p>Method under test: {@link Flows#publish(Stream)}
-   */
-  @Test
-  @DisplayName(
-      "Test publish(Stream) with 'Stream'; given '42'; when ArrayList() add '42'; then return SourcePublisher")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"Publisher Flows.publish(Stream)"})
-  void testPublishWithStream_given42_whenArrayListAdd42_thenReturnSourcePublisher8() {
-    // Arrange
-    ArrayList<Object> objectList = new ArrayList<>();
-    objectList.add("42");
-    Stream<Object> source = objectList.stream();
-
-    // Act
-    Publisher<Object> actualPublishResult = Flows.publish(source);
-    CompletableFuture<?> signal = new CompletableFuture<>();
-    signal.obtrudeException(new Throwable());
-    DelayedSubscriber<? super Object> subscriber =
-        new DelayedSubscriber<>(new HubProcessor<>(new DefaultEventLoop()), signal);
-    actualPublishResult.subscribe(
-        new ClientRequestStream<>(new ClientResponseStream<>(subscriber)));
-
-    // Assert
-    assertTrue(actualPublishResult instanceof SourcePublisher);
-  }
-
-  /**
-   * Test {@link Flows#publish(Stream)} with {@code Stream}.
-   *
-   * <ul>
-   *   <li>Given {@code Client streaming succeeded in client}.
-   * </ul>
-   *
-   * <p>Method under test: {@link Flows#publish(Stream)}
-   */
-  @Test
-  @DisplayName("Test publish(Stream) with 'Stream'; given 'Client streaming succeeded in client'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"Publisher Flows.publish(Stream)"})
-  void testPublishWithStream_givenClientStreamingSucceededInClient() {
-    // Arrange
-    ArrayList<Object> objectList = new ArrayList<>();
-    objectList.add("Client streaming succeeded in client");
-    Stream<Object> source = objectList.stream();
-
-    // Act
-    Publisher<Object> actualPublishResult = Flows.publish(source);
-    HubProcessor<? super Object> subscriber = new HubProcessor<>(new DefaultEventExecutor());
-    DelayedSubscriber<? super Object> subscriber2 =
-        new DelayedSubscriber<>(subscriber, new CompletableFuture<>());
-    actualPublishResult.subscribe(
-        new ClientRequestStream<>(new ClientResponseStream<>(subscriber2)));
-
-    // Assert
-    assertTrue(actualPublishResult instanceof SourcePublisher);
-  }
-
-  /**
-   * Test {@link Flows#publish(Stream)} with {@code Stream}.
-   *
-   * <ul>
-   *   <li>Given {@code Server streaming succeeded in client}.
-   * </ul>
-   *
-   * <p>Method under test: {@link Flows#publish(Stream)}
-   */
-  @Test
-  @DisplayName("Test publish(Stream) with 'Stream'; given 'Server streaming succeeded in client'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"Publisher Flows.publish(Stream)"})
-  void testPublishWithStream_givenServerStreamingSucceededInClient() {
-    // Arrange
-    ArrayList<Object> objectList = new ArrayList<>();
-    objectList.add("Server streaming succeeded in client");
-    Stream<Object> source = objectList.stream();
-
-    // Act
-    Publisher<Object> actualPublishResult = Flows.publish(source);
-    HubProcessor<? super Object> subscriber = new HubProcessor<>(new DefaultEventExecutor());
-    DelayedSubscriber<? super Object> subscriber2 =
-        new DelayedSubscriber<>(subscriber, new CompletableFuture<>());
-    actualPublishResult.subscribe(
-        new ClientRequestStream<>(new ClientResponseStream<>(subscriber2)));
 
     // Assert
     assertTrue(actualPublishResult instanceof SourcePublisher);
@@ -1621,6 +1446,43 @@ class FlowsDiffblueTest {
 
     // Act
     Publisher<Object> actualMapResult = Flows.map(source, mock(Function.class));
+    DefaultEventExecutor eventLoop = new DefaultEventExecutor();
+    eventLoop.addShutdownHook(mock(Runnable.class));
+    HubProcessor<? super Object> subscriber = new HubProcessor<>(eventLoop);
+    CompletableFuture<?> signal = new CompletableFuture<>();
+    signal.obtrudeException(new Throwable());
+    DelayedSubscriber<? super Object> delayedSubscriber =
+        new DelayedSubscriber<>(subscriber, signal);
+    actualMapResult.subscribe(delayedSubscriber);
+
+    // Assert
+    verify(source).subscribe(isA(Subscriber.class));
+    assertTrue(actualMapResult instanceof MapProcessor);
+  }
+
+  /**
+   * Test {@link Flows#map(Publisher, Function)} with {@code source}, {@code mapping}.
+   *
+   * <ul>
+   *   <li>When {@link Publisher} {@link Publisher#subscribe(Subscriber)} does nothing.
+   *   <li>Then calls {@link Publisher#subscribe(Subscriber)}.
+   * </ul>
+   *
+   * <p>Method under test: {@link Flows#map(Publisher, Function)}
+   */
+  @Test
+  @DisplayName(
+      "Test map(Publisher, Function) with 'source', 'mapping'; when Publisher subscribe(Subscriber) does nothing; then calls subscribe(Subscriber)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Publisher Flows.map(Publisher, Function)"})
+  void testMapWithSourceMapping_whenPublisherSubscribeDoesNothing_thenCallsSubscribe10() {
+    // Arrange
+    Publisher<Object> source = mock(Publisher.class);
+    doNothing().when(source).subscribe(Mockito.<Subscriber<Object>>any());
+
+    // Act
+    Publisher<Object> actualMapResult = Flows.map(source, mock(Function.class));
     CompletableFuture<?> signal = new CompletableFuture<>();
     signal.obtrudeException(new Throwable());
     HubProcessor<? super Object> subscriber = new HubProcessor<>(new DefaultEventLoop());
@@ -1767,10 +1629,41 @@ class FlowsDiffblueTest {
     // Arrange
     DefaultEventExecutor eventLoop = new DefaultEventExecutor();
     eventLoop.addShutdownHook(mock(Runnable.class));
-    eventLoop.addShutdownHook(new Thread("foo"));
+    HubProcessor<Object> publisher = new HubProcessor<>(eventLoop, mock(Consumer.class));
 
     // Act
-    CompletionStage<Object> actualFirstResult = Flows.first(new HubProcessor<>(eventLoop));
+    CompletionStage<Object> actualFirstResult = Flows.first(publisher);
+
+    // Assert
+    assertTrue(actualFirstResult instanceof CompletableFuture);
+  }
+
+  /**
+   * Test {@link Flows#first(Publisher)}.
+   *
+   * <ul>
+   *   <li>Given {@link Runnable}.
+   *   <li>When {@link DefaultEventExecutor#DefaultEventExecutor()} addShutdownHook {@link
+   *       Runnable}.
+   * </ul>
+   *
+   * <p>Method under test: {@link Flows#first(Publisher)}
+   */
+  @Test
+  @DisplayName(
+      "Test first(Publisher); given Runnable; when DefaultEventExecutor() addShutdownHook Runnable")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"CompletionStage Flows.first(Publisher)"})
+  void testFirst_givenRunnable_whenDefaultEventExecutorAddShutdownHookRunnable2() {
+    // Arrange
+    DefaultEventExecutor eventLoop = new DefaultEventExecutor();
+    eventLoop.addShutdownHook(mock(Runnable.class));
+    eventLoop.addShutdownHook(mock(Runnable.class));
+    HubProcessor<Object> publisher = new HubProcessor<>(eventLoop, mock(Consumer.class));
+
+    // Act
+    CompletionStage<Object> actualFirstResult = Flows.first(publisher);
 
     // Assert
     assertTrue(actualFirstResult instanceof CompletableFuture);
@@ -1796,38 +1689,10 @@ class FlowsDiffblueTest {
     // Arrange
     DefaultEventLoop eventLoop = new DefaultEventLoop();
     eventLoop.addShutdownHook(mock(Runnable.class));
+    HubProcessor<Object> publisher = new HubProcessor<>(eventLoop, mock(Consumer.class));
 
     // Act
-    CompletionStage<Object> actualFirstResult = Flows.first(new HubProcessor<>(eventLoop));
-
-    // Assert
-    assertTrue(actualFirstResult instanceof CompletableFuture);
-  }
-
-  /**
-   * Test {@link Flows#first(Publisher)}.
-   *
-   * <ul>
-   *   <li>Given {@link Thread#Thread(String)} with {@code foo}.
-   *   <li>When {@link DefaultEventLoop#DefaultEventLoop()} addShutdownHook {@link
-   *       Thread#Thread(String)} with {@code foo}.
-   * </ul>
-   *
-   * <p>Method under test: {@link Flows#first(Publisher)}
-   */
-  @Test
-  @DisplayName(
-      "Test first(Publisher); given Thread(String) with 'foo'; when DefaultEventLoop() addShutdownHook Thread(String) with 'foo'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"CompletionStage Flows.first(Publisher)"})
-  void testFirst_givenThreadWithFoo_whenDefaultEventLoopAddShutdownHookThreadWithFoo() {
-    // Arrange
-    DefaultEventLoop eventLoop = new DefaultEventLoop();
-    eventLoop.addShutdownHook(new Thread("foo"));
-
-    // Act
-    CompletionStage<Object> actualFirstResult = Flows.first(new HubProcessor<>(eventLoop));
+    CompletionStage<Object> actualFirstResult = Flows.first(publisher);
 
     // Assert
     assertTrue(actualFirstResult instanceof CompletableFuture);

@@ -4,18 +4,18 @@
   },
   "run" : {
     "version" : "2025.09.01-44e352d-licensed",
-    "creationTimestamp" : "2025-10-06T09:58:55.285946006Z",
+    "creationTimestamp" : "2025-10-15T15:46:24.817560458Z",
     "command" : "dcover create --exclude-modules=sql-drivers --coverage-reports --upload http://localhost:8080 --project-name tracdap --name with-diffblue-tests",
-    "totalTime" : 685.395,
-    "environmentDetectionTime" : 0.329,
-    "indexingTime" : 0.372,
-    "entryPointsTime" : 0.314,
-    "generationTime" : 1206.769,
-    "timeToFirstTest" : 1503.658,
-    "timeToLastTest" : 1419.534,
-    "indexQueryTime" : 7.011,
-    "verificationTime" : 45.255,
-    "validationTime" : 45.04
+    "totalTime" : 666.277,
+    "environmentDetectionTime" : 0.333,
+    "indexingTime" : 0.397,
+    "entryPointsTime" : 0.319,
+    "generationTime" : 1202.504,
+    "timeToFirstTest" : 1490.16,
+    "timeToLastTest" : 1408.914,
+    "indexQueryTime" : 6.58,
+    "verificationTime" : 44.474,
+    "validationTime" : 44.413
   },
   "codes" : {
     "F009" : "Internal error",
@@ -37,14 +37,15 @@
     "T021" : "Empty method body",
     "T023" : "Testability unknown",
     "V000" : "Validated successfully",
-    "W001" : "Test did not compile"
+    "W001" : "Test did not compile",
+    "W002" : "Test compiled, but did not pass"
   },
   "summary" : {
     "classesCount" : 24,
     "methodsCount" : 211,
-    "cumulativeDiffblueTestCount" : 157,
+    "cumulativeDiffblueTestCount" : 152,
     "cumulativeManualTestCount" : 0,
-    "completeTestCount" : 158,
+    "completeTestCount" : 153,
     "incompleteTestCount" : 0,
     "skeletonTestCount" : 0,
     "totalPhysicalLineCount" : 2175,
@@ -77,13 +78,14 @@
       "W001" : 1
     },
     "perTestOutcome" : {
-      "R000" : 158
+      "R000" : 153
     },
     "perTestValidation" : {
-      "V000" : 158
+      "V000" : 153
     },
     "warnings" : {
-      "W001" : 8
+      "W001" : 8,
+      "W002" : 1
     }
   },
   "classes" : {
@@ -126,7 +128,7 @@
     },
     "org.finos.tracdap.test.data.DataApiTestHelpers" : {
       "methodsCount" : 15,
-      "completeTestCount" : 47,
+      "completeTestCount" : 43,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 12,
@@ -143,7 +145,7 @@
         "W001" : 1
       },
       "perTestOutcome" : {
-        "R000" : 47
+        "R000" : 43
       },
       "warnings" : {
         "W001" : 8
@@ -406,7 +408,7 @@
     },
     "org.finos.tracdap.test.meta.SampleMetadata" : {
       "methodsCount" : 45,
-      "completeTestCount" : 62,
+      "completeTestCount" : 61,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 40,
@@ -425,7 +427,10 @@
         "T023" : 1
       },
       "perTestOutcome" : {
-        "R000" : 62
+        "R000" : 61
+      },
+      "warnings" : {
+        "W002" : 1
       }
     },
     "org.finos.tracdap.test.meta.SampleMetadata$1" : {
@@ -1040,12 +1045,12 @@
       ]
     },
     "org.finos.tracdap.test.data.DataApiTestHelpers.serverStreaming:(Ljava/util/function/BiConsumer;Ljava/lang/Object;Lorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
-      "completeTestCount" : 11,
+      "completeTestCount" : 8,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 11
+        "R000" : 8
       },
       "lineNumbers" : [
         77,
@@ -1056,12 +1061,12 @@
       ]
     },
     "org.finos.tracdap.test.data.DataApiTestHelpers.serverStreamingDiscard:(Ljava/util/function/BiConsumer;Ljava/lang/Object;Lorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
-      "completeTestCount" : 6,
+      "completeTestCount" : 5,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 6
+        "R000" : 5
       },
       "lineNumbers" : [
         98,
@@ -3637,12 +3642,15 @@
       ]
     },
     "org.finos.tracdap.test.meta.SampleMetadata.randomPrimitive:(Lorg/finos/tracdap/metadata/BasicType;)Lorg/finos/tracdap/metadata/Value;" : {
-      "completeTestCount" : 7,
+      "completeTestCount" : 6,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 7
+        "R000" : 6
+      },
+      "warnings" : {
+        "W002" : 1
       },
       "lineNumbers" : [
         716,

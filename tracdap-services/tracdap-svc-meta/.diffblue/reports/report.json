@@ -4,18 +4,18 @@
   },
   "run" : {
     "version" : "2025.09.01-44e352d-licensed",
-    "creationTimestamp" : "2025-10-06T09:58:55.285946006Z",
+    "creationTimestamp" : "2025-10-15T15:46:24.817560458Z",
     "command" : "dcover create --exclude-modules=sql-drivers --coverage-reports --upload http://localhost:8080 --project-name tracdap --name with-diffblue-tests",
-    "totalTime" : 1241.809,
-    "environmentDetectionTime" : 0.707,
-    "indexingTime" : 0.45,
-    "entryPointsTime" : 0.679,
-    "generationTime" : 8083.422,
-    "timeToFirstTest" : 11024.439,
-    "timeToLastTest" : 9636.647,
-    "indexQueryTime" : 7.8340000000000005,
-    "verificationTime" : 287.279,
-    "validationTime" : 102.993
+    "totalTime" : 2038.635,
+    "environmentDetectionTime" : 0.912,
+    "indexingTime" : 0.499,
+    "entryPointsTime" : 0.878,
+    "generationTime" : 11365.09,
+    "timeToFirstTest" : 16100.177,
+    "timeToLastTest" : 13789.988,
+    "indexQueryTime" : 13.115,
+    "verificationTime" : 407.615,
+    "validationTime" : 188.106
   },
   "codes" : {
     "F009" : "Internal error",
@@ -40,7 +40,7 @@
   "summary" : {
     "classesCount" : 45,
     "methodsCount" : 406,
-    "cumulativeDiffblueTestCount" : 230,
+    "cumulativeDiffblueTestCount" : 231,
     "cumulativeManualTestCount" : 64,
     "completeTestCount" : 265,
     "incompleteTestCount" : 0,
@@ -76,8 +76,8 @@
       "R000" : 265
     },
     "perTestValidation" : {
-      "V000" : 263,
-      "V003" : 2
+      "V000" : 264,
+      "V003" : 1
     }
   },
   "classes" : {
@@ -6836,7 +6836,7 @@
   },
   "validationMetrics" : {
     "failingTests" : [
-      "org.finos.tracdap.common.storage.local.LocalStorageOperationsTest.testStat_dirATime"
+      "org.finos.tracdap.common.storage.local.LocalStorageOperationsTest.testStat_dirMTime"
     ]
   }
 }

@@ -16,6 +16,7 @@ import io.grpc.stub.StreamObserver;
 import io.netty.channel.DefaultEventLoop;
 import io.netty.util.concurrent.DefaultEventExecutor;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Vector;
 import java.util.concurrent.CompletableFuture;
@@ -188,124 +189,6 @@ class DataApiTestHelpersDiffblueTest {
    * Test {@link DataApiTestHelpers#serverStreaming(BiConsumer, Object, IExecutionContext)} with
    * {@code grpcMethod}, {@code request}, {@code execCtx}.
    *
-   * <p>Method under test: {@link DataApiTestHelpers#serverStreaming(BiConsumer, Object,
-   * IExecutionContext)}
-   */
-  @Test
-  @DisplayName(
-      "Test serverStreaming(BiConsumer, Object, IExecutionContext) with 'grpcMethod', 'request', 'execCtx'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({
-    "CompletionStage DataApiTestHelpers.serverStreaming(BiConsumer, Object, IExecutionContext)"
-  })
-  void testServerStreamingWithGrpcMethodRequestExecCtx5() {
-    // Arrange
-    BiConsumer<Object, StreamObserver<Object>> grpcMethod = mock(BiConsumer.class);
-    doNothing()
-        .when(grpcMethod)
-        .accept(Mockito.<Object>any(), Mockito.<StreamObserver<Object>>any());
-
-    DefaultEventLoop defaultEventLoop = new DefaultEventLoop();
-    defaultEventLoop.addShutdownHook(mock(Runnable.class));
-    defaultEventLoop.addShutdownHook(mock(Runnable.class));
-
-    IExecutionContext execCtx = mock(IExecutionContext.class);
-    when(execCtx.eventLoopExecutor()).thenReturn(defaultEventLoop);
-
-    // Act
-    CompletionStage<List<Object>> actualServerStreamingResult =
-        DataApiTestHelpers.serverStreaming(grpcMethod, "Request", execCtx);
-
-    // Assert
-    verify(grpcMethod).accept(isA(Object.class), isA(StreamObserver.class));
-    verify(execCtx).eventLoopExecutor();
-    assertTrue(actualServerStreamingResult instanceof CompletableFuture);
-  }
-
-  /**
-   * Test {@link DataApiTestHelpers#serverStreaming(BiConsumer, Object, IExecutionContext)} with
-   * {@code grpcMethod}, {@code request}, {@code execCtx}.
-   *
-   * <p>Method under test: {@link DataApiTestHelpers#serverStreaming(BiConsumer, Object,
-   * IExecutionContext)}
-   */
-  @Test
-  @DisplayName(
-      "Test serverStreaming(BiConsumer, Object, IExecutionContext) with 'grpcMethod', 'request', 'execCtx'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({
-    "CompletionStage DataApiTestHelpers.serverStreaming(BiConsumer, Object, IExecutionContext)"
-  })
-  void testServerStreamingWithGrpcMethodRequestExecCtx6() {
-    // Arrange
-    BiConsumer<Object, StreamObserver<Object>> grpcMethod = mock(BiConsumer.class);
-    doNothing()
-        .when(grpcMethod)
-        .accept(Mockito.<Object>any(), Mockito.<StreamObserver<Object>>any());
-
-    DefaultEventExecutor defaultEventExecutor = new DefaultEventExecutor();
-    defaultEventExecutor.addShutdownHook(mock(Runnable.class));
-    defaultEventExecutor.addShutdownHook(mock(Runnable.class));
-
-    IExecutionContext execCtx = mock(IExecutionContext.class);
-    when(execCtx.eventLoopExecutor()).thenReturn(defaultEventExecutor);
-
-    // Act
-    CompletionStage<List<Object>> actualServerStreamingResult =
-        DataApiTestHelpers.serverStreaming(grpcMethod, "Request", execCtx);
-
-    // Assert
-    verify(grpcMethod).accept(isA(Object.class), isA(StreamObserver.class));
-    verify(execCtx).eventLoopExecutor();
-    assertTrue(actualServerStreamingResult instanceof CompletableFuture);
-  }
-
-  /**
-   * Test {@link DataApiTestHelpers#serverStreaming(BiConsumer, Object, IExecutionContext)} with
-   * {@code grpcMethod}, {@code request}, {@code execCtx}.
-   *
-   * <p>Method under test: {@link DataApiTestHelpers#serverStreaming(BiConsumer, Object,
-   * IExecutionContext)}
-   */
-  @Test
-  @DisplayName(
-      "Test serverStreaming(BiConsumer, Object, IExecutionContext) with 'grpcMethod', 'request', 'execCtx'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({
-    "CompletionStage DataApiTestHelpers.serverStreaming(BiConsumer, Object, IExecutionContext)"
-  })
-  void testServerStreamingWithGrpcMethodRequestExecCtx7() {
-    // Arrange
-    BiConsumer<Object, StreamObserver<Object>> grpcMethod = mock(BiConsumer.class);
-    doNothing()
-        .when(grpcMethod)
-        .accept(Mockito.<Object>any(), Mockito.<StreamObserver<Object>>any());
-
-    DefaultEventExecutor defaultEventExecutor = new DefaultEventExecutor();
-    defaultEventExecutor.addShutdownHook(mock(Runnable.class));
-    defaultEventExecutor.addShutdownHook(mock(Runnable.class));
-    defaultEventExecutor.addShutdownHook(mock(Runnable.class));
-
-    IExecutionContext execCtx = mock(IExecutionContext.class);
-    when(execCtx.eventLoopExecutor()).thenReturn(defaultEventExecutor);
-
-    // Act
-    CompletionStage<List<Object>> actualServerStreamingResult =
-        DataApiTestHelpers.serverStreaming(grpcMethod, "Request", execCtx);
-
-    // Assert
-    verify(grpcMethod).accept(isA(Object.class), isA(StreamObserver.class));
-    verify(execCtx).eventLoopExecutor();
-    assertTrue(actualServerStreamingResult instanceof CompletableFuture);
-  }
-
-  /**
-   * Test {@link DataApiTestHelpers#serverStreaming(BiConsumer, Object, IExecutionContext)} with
-   * {@code grpcMethod}, {@code request}, {@code execCtx}.
-   *
    * <ul>
    *   <li>Given {@link DefaultEventLoop#DefaultEventLoop()}.
    * </ul>
@@ -379,7 +262,7 @@ class DataApiTestHelpersDiffblueTest {
    * {@code grpcMethod}, {@code request}, {@code execCtx}.
    *
    * <ul>
-   *   <li>When {@link ArrayList#ArrayList()}.
+   *   <li>When five.
    * </ul>
    *
    * <p>Method under test: {@link DataApiTestHelpers#serverStreaming(BiConsumer, Object,
@@ -387,30 +270,28 @@ class DataApiTestHelpersDiffblueTest {
    */
   @Test
   @DisplayName(
-      "Test serverStreaming(BiConsumer, Object, IExecutionContext) with 'grpcMethod', 'request', 'execCtx'; when ArrayList()")
+      "Test serverStreaming(BiConsumer, Object, IExecutionContext) with 'grpcMethod', 'request', 'execCtx'; when five")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({
     "CompletionStage DataApiTestHelpers.serverStreaming(BiConsumer, Object, IExecutionContext)"
   })
-  void testServerStreamingWithGrpcMethodRequestExecCtx_whenArrayList() {
+  void testServerStreamingWithGrpcMethodRequestExecCtx_whenFive() {
     // Arrange
     BiConsumer<Object, StreamObserver<Object>> grpcMethod = mock(BiConsumer.class);
     doNothing()
         .when(grpcMethod)
         .accept(Mockito.<Object>any(), Mockito.<StreamObserver<Object>>any());
-    ArrayList<Object> objectList = new ArrayList<>();
 
-    DefaultEventLoop defaultEventLoop = new DefaultEventLoop();
-    defaultEventLoop.addShutdownHook(mock(Runnable.class));
-    defaultEventLoop.addShutdownHook(mock(Runnable.class));
+    DefaultEventExecutor defaultEventExecutor = new DefaultEventExecutor();
+    defaultEventExecutor.addShutdownHook(mock(Runnable.class));
 
     IExecutionContext execCtx = mock(IExecutionContext.class);
-    when(execCtx.eventLoopExecutor()).thenReturn(defaultEventLoop);
+    when(execCtx.eventLoopExecutor()).thenReturn(defaultEventExecutor);
 
     // Act
     CompletionStage<List<Object>> actualServerStreamingResult =
-        DataApiTestHelpers.serverStreaming(grpcMethod, objectList, execCtx);
+        DataApiTestHelpers.serverStreaming(grpcMethod, 5, execCtx);
 
     // Assert
     verify(grpcMethod).accept(isA(Object.class), isA(StreamObserver.class));
@@ -423,7 +304,7 @@ class DataApiTestHelpersDiffblueTest {
    * {@code grpcMethod}, {@code request}, {@code execCtx}.
    *
    * <ul>
-   *   <li>When {@link DefaultEventExecutor#DefaultEventExecutor()}.
+   *   <li>When {@link LinkedList#LinkedList()}.
    * </ul>
    *
    * <p>Method under test: {@link DataApiTestHelpers#serverStreaming(BiConsumer, Object,
@@ -431,31 +312,29 @@ class DataApiTestHelpersDiffblueTest {
    */
   @Test
   @DisplayName(
-      "Test serverStreaming(BiConsumer, Object, IExecutionContext) with 'grpcMethod', 'request', 'execCtx'; when DefaultEventExecutor()")
+      "Test serverStreaming(BiConsumer, Object, IExecutionContext) with 'grpcMethod', 'request', 'execCtx'; when LinkedList()")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({
     "CompletionStage DataApiTestHelpers.serverStreaming(BiConsumer, Object, IExecutionContext)"
   })
-  void testServerStreamingWithGrpcMethodRequestExecCtx_whenDefaultEventExecutor() {
+  void testServerStreamingWithGrpcMethodRequestExecCtx_whenLinkedList() {
     // Arrange
     BiConsumer<Object, StreamObserver<Object>> grpcMethod = mock(BiConsumer.class);
     doNothing()
         .when(grpcMethod)
         .accept(Mockito.<Object>any(), Mockito.<StreamObserver<Object>>any());
-    DefaultEventExecutor defaultEventExecutor = new DefaultEventExecutor();
+    LinkedList<Object> objectList = new LinkedList<>();
 
-    DefaultEventExecutor defaultEventExecutor2 = new DefaultEventExecutor();
-    defaultEventExecutor2.addShutdownHook(mock(Runnable.class));
-    defaultEventExecutor2.addShutdownHook(mock(Runnable.class));
-    defaultEventExecutor2.addShutdownHook(mock(Runnable.class));
+    DefaultEventExecutor defaultEventExecutor = new DefaultEventExecutor();
+    defaultEventExecutor.addShutdownHook(mock(Runnable.class));
 
     IExecutionContext execCtx = mock(IExecutionContext.class);
-    when(execCtx.eventLoopExecutor()).thenReturn(defaultEventExecutor2);
+    when(execCtx.eventLoopExecutor()).thenReturn(defaultEventExecutor);
 
     // Act
     CompletionStage<List<Object>> actualServerStreamingResult =
-        DataApiTestHelpers.serverStreaming(grpcMethod, defaultEventExecutor, execCtx);
+        DataApiTestHelpers.serverStreaming(grpcMethod, objectList, execCtx);
 
     // Assert
     verify(grpcMethod).accept(isA(Object.class), isA(StreamObserver.class));
@@ -993,87 +872,6 @@ class DataApiTestHelpersDiffblueTest {
    * Test {@link DataApiTestHelpers#serverStreamingDiscard(BiConsumer, Object, IExecutionContext)}.
    *
    * <ul>
-   *   <li>Given {@link DefaultEventExecutor#DefaultEventExecutor()} addShutdownHook {@link
-   *       Runnable}.
-   * </ul>
-   *
-   * <p>Method under test: {@link DataApiTestHelpers#serverStreamingDiscard(BiConsumer, Object,
-   * IExecutionContext)}
-   */
-  @Test
-  @DisplayName(
-      "Test serverStreamingDiscard(BiConsumer, Object, IExecutionContext); given DefaultEventExecutor() addShutdownHook Runnable")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({
-    "CompletionStage DataApiTestHelpers.serverStreamingDiscard(BiConsumer, Object, IExecutionContext)"
-  })
-  void testServerStreamingDiscard_givenDefaultEventExecutorAddShutdownHookRunnable2() {
-    // Arrange
-    BiConsumer<Object, StreamObserver<Object>> grpcMethod = mock(BiConsumer.class);
-    doNothing()
-        .when(grpcMethod)
-        .accept(Mockito.<Object>any(), Mockito.<StreamObserver<Object>>any());
-
-    DefaultEventExecutor defaultEventExecutor = new DefaultEventExecutor();
-    defaultEventExecutor.addShutdownHook(mock(Runnable.class));
-    defaultEventExecutor.addShutdownHook(mock(Runnable.class));
-
-    IExecutionContext execCtx = mock(IExecutionContext.class);
-    when(execCtx.eventLoopExecutor()).thenReturn(defaultEventExecutor);
-
-    // Act
-    CompletionStage<Void> actualServerStreamingDiscardResult =
-        DataApiTestHelpers.serverStreamingDiscard(grpcMethod, "Request", execCtx);
-
-    // Assert
-    verify(grpcMethod).accept(isA(Object.class), isA(StreamObserver.class));
-    verify(execCtx).eventLoopExecutor();
-    assertTrue(actualServerStreamingDiscardResult instanceof CompletableFuture);
-  }
-
-  /**
-   * Test {@link DataApiTestHelpers#serverStreamingDiscard(BiConsumer, Object, IExecutionContext)}.
-   *
-   * <ul>
-   *   <li>Given {@link DefaultEventLoop#DefaultEventLoop()}.
-   * </ul>
-   *
-   * <p>Method under test: {@link DataApiTestHelpers#serverStreamingDiscard(BiConsumer, Object,
-   * IExecutionContext)}
-   */
-  @Test
-  @DisplayName(
-      "Test serverStreamingDiscard(BiConsumer, Object, IExecutionContext); given DefaultEventLoop()")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({
-    "CompletionStage DataApiTestHelpers.serverStreamingDiscard(BiConsumer, Object, IExecutionContext)"
-  })
-  void testServerStreamingDiscard_givenDefaultEventLoop() {
-    // Arrange
-    BiConsumer<Object, StreamObserver<Object>> grpcMethod = mock(BiConsumer.class);
-    doNothing()
-        .when(grpcMethod)
-        .accept(Mockito.<Object>any(), Mockito.<StreamObserver<Object>>any());
-
-    IExecutionContext execCtx = mock(IExecutionContext.class);
-    when(execCtx.eventLoopExecutor()).thenReturn(new DefaultEventLoop());
-
-    // Act
-    CompletionStage<Void> actualServerStreamingDiscardResult =
-        DataApiTestHelpers.serverStreamingDiscard(grpcMethod, "Request", execCtx);
-
-    // Assert
-    verify(grpcMethod).accept(isA(Object.class), isA(StreamObserver.class));
-    verify(execCtx).eventLoopExecutor();
-    assertTrue(actualServerStreamingDiscardResult instanceof CompletableFuture);
-  }
-
-  /**
-   * Test {@link DataApiTestHelpers#serverStreamingDiscard(BiConsumer, Object, IExecutionContext)}.
-   *
-   * <ul>
    *   <li>Given {@link DefaultEventLoop#DefaultEventLoop()} addShutdownHook {@link Runnable}.
    * </ul>
    *
@@ -1100,6 +898,45 @@ class DataApiTestHelpersDiffblueTest {
 
     IExecutionContext execCtx = mock(IExecutionContext.class);
     when(execCtx.eventLoopExecutor()).thenReturn(defaultEventLoop);
+
+    // Act
+    CompletionStage<Void> actualServerStreamingDiscardResult =
+        DataApiTestHelpers.serverStreamingDiscard(grpcMethod, "Request", execCtx);
+
+    // Assert
+    verify(grpcMethod).accept(isA(Object.class), isA(StreamObserver.class));
+    verify(execCtx).eventLoopExecutor();
+    assertTrue(actualServerStreamingDiscardResult instanceof CompletableFuture);
+  }
+
+  /**
+   * Test {@link DataApiTestHelpers#serverStreamingDiscard(BiConsumer, Object, IExecutionContext)}.
+   *
+   * <ul>
+   *   <li>Given {@link DefaultEventLoop#DefaultEventLoop()}.
+   *   <li>Then return {@link CompletableFuture}.
+   * </ul>
+   *
+   * <p>Method under test: {@link DataApiTestHelpers#serverStreamingDiscard(BiConsumer, Object,
+   * IExecutionContext)}
+   */
+  @Test
+  @DisplayName(
+      "Test serverStreamingDiscard(BiConsumer, Object, IExecutionContext); given DefaultEventLoop(); then return CompletableFuture")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({
+    "CompletionStage DataApiTestHelpers.serverStreamingDiscard(BiConsumer, Object, IExecutionContext)"
+  })
+  void testServerStreamingDiscard_givenDefaultEventLoop_thenReturnCompletableFuture() {
+    // Arrange
+    BiConsumer<Object, StreamObserver<Object>> grpcMethod = mock(BiConsumer.class);
+    doNothing()
+        .when(grpcMethod)
+        .accept(Mockito.<Object>any(), Mockito.<StreamObserver<Object>>any());
+
+    IExecutionContext execCtx = mock(IExecutionContext.class);
+    when(execCtx.eventLoopExecutor()).thenReturn(new DefaultEventLoop());
 
     // Act
     CompletionStage<Void> actualServerStreamingDiscardResult =

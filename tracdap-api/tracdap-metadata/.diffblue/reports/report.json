@@ -4,18 +4,18 @@
   },
   "run" : {
     "version" : "2025.09.01-44e352d-licensed",
-    "creationTimestamp" : "2025-10-06T09:58:55.285946006Z",
+    "creationTimestamp" : "2025-10-15T15:46:24.817560458Z",
     "command" : "dcover create --exclude-modules=sql-drivers --coverage-reports --upload http://localhost:8080 --project-name tracdap --name with-diffblue-tests",
-    "totalTime" : 215.625,
-    "environmentDetectionTime" : 0.666,
-    "indexingTime" : 0.421,
-    "entryPointsTime" : 0.647,
-    "generationTime" : 6143.408,
-    "timeToFirstTest" : 8094.802,
-    "timeToLastTest" : 7169.976,
-    "indexQueryTime" : 14.988,
-    "verificationTime" : 222.892,
-    "validationTime" : 36.373
+    "totalTime" : 402.901,
+    "environmentDetectionTime" : 0.749,
+    "indexingTime" : 0.441,
+    "entryPointsTime" : 0.72,
+    "generationTime" : 8342.524,
+    "timeToFirstTest" : 11206.96,
+    "timeToLastTest" : 9763.864,
+    "indexQueryTime" : 20.495,
+    "verificationTime" : 303.424,
+    "validationTime" : 69.173
   },
   "codes" : {
     "R000" : "Success",
@@ -80252,7 +80252,7 @@
   },
   "validationMetrics" : {
     "failingTests" : [
-      "org.finos.tracdap.common.storage.local.LocalStorageOperationsTest.testStat_dirATime"
+      "org.finos.tracdap.common.storage.local.LocalStorageOperationsTest.testStat_dirMTime"
     ]
   }
 }

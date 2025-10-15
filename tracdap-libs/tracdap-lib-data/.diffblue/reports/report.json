@@ -4,18 +4,18 @@
   },
   "run" : {
     "version" : "2025.09.01-44e352d-licensed",
-    "creationTimestamp" : "2025-10-06T09:58:55.285946006Z",
+    "creationTimestamp" : "2025-10-15T15:46:24.817560458Z",
     "command" : "dcover create --exclude-modules=sql-drivers --coverage-reports --upload http://localhost:8080 --project-name tracdap --name with-diffblue-tests",
-    "totalTime" : 1195.423,
-    "environmentDetectionTime" : 0.411,
-    "indexingTime" : 0.389,
-    "entryPointsTime" : 0.398,
-    "generationTime" : 2306.434,
-    "timeToFirstTest" : 2941.583,
-    "timeToLastTest" : 2710.432,
-    "indexQueryTime" : 6.15,
-    "verificationTime" : 74.797,
-    "validationTime" : 32.246
+    "totalTime" : 1595.471,
+    "environmentDetectionTime" : 0.404,
+    "indexingTime" : 0.409,
+    "entryPointsTime" : 0.392,
+    "generationTime" : 2700.17,
+    "timeToFirstTest" : 3322.46,
+    "timeToLastTest" : 3094.599,
+    "indexQueryTime" : 6.182,
+    "verificationTime" : 74.481,
+    "validationTime" : 32.733
   },
   "codes" : {
     "F009" : "Internal error",
@@ -44,9 +44,9 @@
   "summary" : {
     "classesCount" : 108,
     "methodsCount" : 738,
-    "cumulativeDiffblueTestCount" : 179,
+    "cumulativeDiffblueTestCount" : 183,
     "cumulativeManualTestCount" : 650,
-    "completeTestCount" : 179,
+    "completeTestCount" : 183,
     "incompleteTestCount" : 0,
     "skeletonTestCount" : 0,
     "totalPhysicalLineCount" : 6498,
@@ -66,12 +66,12 @@
     },
     "perMethodOutcome" : {
       "F009" : 1,
-      "R000" : 73,
+      "R000" : 74,
       "R002" : 19,
-      "R006" : 4,
-      "R011" : 164,
-      "R013" : 68,
-      "R081" : 6,
+      "R006" : 5,
+      "R011" : 163,
+      "R013" : 70,
+      "R081" : 7,
       "T003" : 164,
       "T004" : 9,
       "T005" : 7,
@@ -83,14 +83,14 @@
       "W001" : 2
     },
     "perTestOutcome" : {
-      "R000" : 179
+      "R000" : 183
     },
     "perTestValidation" : {
-      "V000" : 179
+      "V000" : 183
     },
     "warnings" : {
       "F009" : 1,
-      "W001" : 23,
+      "W001" : 26,
       "W002" : 1
     }
   },
@@ -128,7 +128,7 @@
     },
     "org.finos.tracdap.common.async.Flows" : {
       "methodsCount" : 10,
-      "completeTestCount" : 60,
+      "completeTestCount" : 56,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 9,
@@ -139,10 +139,10 @@
         "T005" : 1
       },
       "perTestOutcome" : {
-        "R000" : 60
+        "R000" : 56
       },
       "warnings" : {
-        "W001" : 17
+        "W001" : 20
       }
     },
     "org.finos.tracdap.common.async.Futures" : {
@@ -230,7 +230,7 @@
     },
     "org.finos.tracdap.common.async.flow.HubProcessor" : {
       "methodsCount" : 29,
-      "completeTestCount" : 3,
+      "completeTestCount" : 2,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 7,
@@ -245,7 +245,7 @@
         "T012" : 9
       },
       "perTestOutcome" : {
-        "R000" : 3
+        "R000" : 2
       }
     },
     "org.finos.tracdap.common.async.flow.HubProcessor$HubSubscription" : {
@@ -1057,8 +1057,8 @@
       }
     },
     "org.finos.tracdap.common.data.pipeline.GrpcDownloadSink" : {
-      "methodsCount" : 19,
-      "completeTestCount" : 5,
+      "methodsCount" : 23,
+      "completeTestCount" : 10,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 6,
@@ -1067,14 +1067,14 @@
         "T012" : 1
       },
       "perMethodOutcome" : {
-        "R000" : 1,
-        "R013" : 5,
-        "R081" : 1,
+        "R000" : 2,
+        "R013" : 7,
+        "R081" : 2,
         "T003" : 11,
         "T012" : 1
       },
       "perTestOutcome" : {
-        "R000" : 5
+        "R000" : 10
       }
     },
     "org.finos.tracdap.common.data.pipeline.GrpcDownloadSink$DownloadSubscriber" : {
@@ -1162,7 +1162,8 @@
       "perMethodOutcome" : {
         "R000" : 1,
         "R002" : 1,
-        "R011" : 7,
+        "R006" : 1,
+        "R011" : 6,
         "T003" : 1,
         "T012" : 1
       },
@@ -1592,7 +1593,7 @@
     },
     "org.finos.tracdap.common.storage.local.LocalFileWriter" : {
       "methodsCount" : 20,
-      "completeTestCount" : 13,
+      "completeTestCount" : 17,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 7,
@@ -1607,7 +1608,7 @@
         "T012" : 3
       },
       "perTestOutcome" : {
-        "R000" : 13
+        "R000" : 17
       }
     },
     "org.finos.tracdap.common.storage.local.LocalFileWriter$ChunkWriteHandler" : {
@@ -1965,12 +1966,12 @@
       ]
     },
     "org.finos.tracdap.common.async.Flows.map:(Ljava/util/concurrent/Flow$Publisher;Ljava/util/function/Function;)Ljava/util/concurrent/Flow$Publisher;" : {
-      "completeTestCount" : 10,
+      "completeTestCount" : 11,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 10
+        "R000" : 11
       },
       "warnings" : {
         "W001" : 5
@@ -1992,12 +1993,12 @@
       ]
     },
     "org.finos.tracdap.common.async.Flows.publish:(Ljava/util/List;)Ljava/util/concurrent/Flow$Publisher;" : {
-      "completeTestCount" : 14,
+      "completeTestCount" : 16,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 14
+        "R000" : 16
       },
       "warnings" : {
         "W001" : 5
@@ -2007,15 +2008,15 @@
       ]
     },
     "org.finos.tracdap.common.async.Flows.publish:(Ljava/util/stream/Stream;)Ljava/util/concurrent/Flow$Publisher;" : {
-      "completeTestCount" : 22,
+      "completeTestCount" : 15,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 22
+        "R000" : 15
       },
       "warnings" : {
-        "W001" : 5
+        "W001" : 8
       },
       "lineNumbers" : [
         41
@@ -2744,12 +2745,12 @@
       ]
     },
     "org.finos.tracdap.common.async.flow.HubProcessor.subscribe:(Ljava/util/concurrent/Flow$Subscriber;)V" : {
-      "completeTestCount" : 2,
+      "completeTestCount" : 1,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 2
+        "R000" : 1
       },
       "lineNumbers" : [
         89,
@@ -6524,12 +6525,12 @@
       ]
     },
     "org.finos.tracdap.common.data.pipeline.GrpcDownloadSink.<init>:(Lio/grpc/stub/StreamObserver;Ljava/util/function/Supplier;Z)V" : {
-      "completeTestCount" : 5,
+      "completeTestCount" : 10,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 5
+        "R000" : 10
       },
       "lineNumbers" : [
         66,
@@ -7169,7 +7170,7 @@
       "completeTestCount" : 0,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R011",
+      "perMethodOutcome" : "R006",
       "lineNumbers" : [
         73,
         74
@@ -11106,12 +11107,12 @@
       ]
     },
     "org.finos.tracdap.common.storage.local.LocalFileWriter.writeChunkComplete:(Ljava/lang/Integer;Lorg/apache/arrow/memory/ArrowBuf;)V" : {
-      "completeTestCount" : 7,
+      "completeTestCount" : 11,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
       "perMethodOutcome" : "R000",
       "perTestOutcome" : {
-        "R000" : 7
+        "R000" : 11
       },
       "lineNumbers" : [
         290,
@@ -11217,7 +11218,7 @@
   },
   "validationMetrics" : {
     "failingTests" : [
-      "org.finos.tracdap.common.storage.local.LocalStorageOperationsTest.testStat_dirATime"
+      "org.finos.tracdap.common.storage.local.LocalStorageOperationsTest.testStat_dirMTime"
     ]
   }
 }
