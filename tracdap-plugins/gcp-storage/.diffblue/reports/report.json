@@ -1,0 +1,1534 @@
+{
+  "meta" : {
+    "reportVersion" : "2.6"
+  },
+  "run" : {
+    "version" : "2025.02.02-08b2a5a-licensed",
+    "creationTimestamp" : "2025-10-31T11:48:49.137358268Z",
+    "command" : "dcover create --exclude-modules=sql-drivers --coverage-reports --upload http://localhost:8080 --project-name tracdap --name with-diffblue-tests",
+    "totalTime" : 188.499,
+    "environmentDetectionTime" : 1.055,
+    "indexingTime" : 0.233,
+    "entryPointsTime" : 0.907,
+    "generationTime" : 76.107,
+    "timeToFirstTest" : 81.18,
+    "timeToLastTest" : 141.084,
+    "indexQueryTime" : 10.879,
+    "verificationTime" : 8.393,
+    "validationTime" : 24.043
+  },
+  "codes" : {
+    "R000" : "Success",
+    "R002" : "Missing observers",
+    "R004" : "No meaningful assertions found",
+    "R006" : "Static initializer failed",
+    "R011" : "Sandboxing policy violation",
+    "R013" : "No inputs found that don't throw a trivial exception",
+    "T000" : "Method eligible for test creation",
+    "T001" : "Trivial getter",
+    "T003" : "Private method",
+    "T004" : "In anonymous inner class",
+    "T005" : "Trivial constructor",
+    "T008" : "Private and never called",
+    "T012" : "Synthetic method",
+    "V000" : "Validated successfully",
+    "W001" : "Test did not compile",
+    "W002" : "Test compiled, but did not pass"
+  },
+  "summary" : {
+    "classesCount" : 9,
+    "methodsCount" : 94,
+    "cumulativeDiffblueTestCount" : 15,
+    "cumulativeManualTestCount" : 0,
+    "completeTestCount" : 15,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 811,
+    "perMethodTestability" : {
+      "T000" : 38,
+      "T001" : 1,
+      "T003" : 22,
+      "T004" : 3,
+      "T005" : 4,
+      "T008" : 1,
+      "T012" : 25
+    },
+    "perMethodOutcome" : {
+      "R000" : 14,
+      "R002" : 1,
+      "R004" : 1,
+      "R006" : 1,
+      "R011" : 22,
+      "R013" : 2,
+      "T003" : 22,
+      "T004" : 3,
+      "T005" : 1,
+      "T008" : 1,
+      "T012" : 25,
+      "W002" : 1
+    },
+    "perTestOutcome" : {
+      "R000" : 15
+    },
+    "perTestValidation" : {
+      "V000" : 15
+    },
+    "warnings" : {
+      "W001" : 3,
+      "W002" : 1
+    }
+  },
+  "classes" : {
+    "org.finos.tracdap.plugins.gcp.storage.GcpStoragePlugin" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 4,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 6
+      }
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcpUnaryResponse" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T001" : 1,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 4,
+        "R004" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 3
+      }
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcpUtils" : {
+      "methodsCount" : 7,
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 4,
+        "T003" : 1,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 3,
+        "T003" : 1,
+        "T005" : 1,
+        "T012" : 1,
+        "W002" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "warnings" : {
+        "W001" : 3,
+        "W002" : 1
+      }
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectReader" : {
+      "methodsCount" : 10,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 7,
+        "T012" : 3
+      },
+      "perMethodOutcome" : {
+        "R006" : 1,
+        "R011" : 6,
+        "T012" : 3
+      }
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectReader$ApiResponseStream" : {
+      "methodsCount" : 6,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 4,
+        "T008" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "T003" : 4,
+        "T008" : 1,
+        "T012" : 1
+      }
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage" : {
+      "methodsCount" : 45,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 15,
+        "T003" : 15,
+        "T012" : 15
+      },
+      "perMethodOutcome" : {
+        "R000" : 2,
+        "R011" : 11,
+        "R013" : 2,
+        "T003" : 15,
+        "T012" : 15
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage$1" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T004" : 3,
+        "T012" : 2
+      },
+      "perMethodOutcome" : {
+        "T004" : 3,
+        "T012" : 2
+      }
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectWriter" : {
+      "methodsCount" : 8,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 5,
+        "T003" : 2,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R011" : 5,
+        "T003" : 2,
+        "T012" : 1
+      }
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsStorageErrors" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R002" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    }
+  },
+  "methods" : {
+    "org.finos.tracdap.plugins.gcp.storage.GcpStoragePlugin.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        36,
+        37,
+        36
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcpStoragePlugin.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        31
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcpStoragePlugin.createService:(Ljava/lang/String;Ljava/util/Properties;Lorg/finos/tracdap/common/config/ConfigManager;)Ljava/lang/Object;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        52,
+        53,
+        54,
+        57,
+        58
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcpStoragePlugin.pluginName:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        41
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcpStoragePlugin.serviceInfo:()Ljava/util/List;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        46
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcpUnaryResponse.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcpUnaryResponse.getResult:()Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        38
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcpUnaryResponse.onCompleted:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        57,
+        59,
+        60,
+        62,
+        63
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcpUnaryResponse.onError:(Ljava/lang/Throwable;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        51,
+        52
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcpUnaryResponse.onNext:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R004",
+      "lineNumbers" : [
+        44,
+        45,
+        46
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcpUtils.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "T005",
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcpUtils.clientStreamingCall:(Lcom/google/api/gax/rpc/ClientStreamingCallable;Ljava/lang/Object;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "W002",
+      "warnings" : {
+        "W002" : 1
+      },
+      "lineNumbers" : [
+        53,
+        54,
+        56,
+        57,
+        59,
+        60,
+        61,
+        62,
+        64
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcpUtils.gcpCallback:(Lcom/google/api/core/ApiFuture;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "warnings" : {
+        "W001" : 1
+      },
+      "lineNumbers" : [
+        70
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcpUtils.gcpCallback:(Lcom/google/api/core/ApiFuture;Ljava/util/concurrent/CompletableFuture;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        88,
+        89,
+        91,
+        92,
+        95,
+        96,
+        111,
+        99,
+        100,
+        111,
+        102,
+        104,
+        105,
+        107,
+        111,
+        109,
+        110,
+        112
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcpUtils.gcpCallback:(Lcom/google/api/core/ApiFuture;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "warnings" : {
+        "W001" : 1
+      },
+      "lineNumbers" : [
+        76,
+        78,
+        80
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcpUtils.lambda$gcpCallback$0:(Lcom/google/api/core/ApiFuture;Ljava/util/concurrent/CompletableFuture;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        78
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcpUtils.unaryCall:(Lcom/google/api/gax/rpc/UnaryCallable;Ljava/lang/Object;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "warnings" : {
+        "W001" : 1
+      },
+      "lineNumbers" : [
+        36,
+        37,
+        39,
+        40,
+        42,
+        44
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectReader$ApiResponseStream.<init>:(Lorg/finos/tracdap/plugins/gcp/storage/GcsObjectReader;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T008",
+      "perMethodOutcome" : "T008",
+      "lineNumbers" : [
+        130
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectReader$ApiResponseStream.onCompleteImpl:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        161,
+        162
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectReader$ApiResponseStream.onErrorImpl:(Ljava/lang/Throwable;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        155,
+        156
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectReader$ApiResponseStream.onResponseImpl:(Lcom/google/storage/v2/ReadObjectResponse;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        147,
+        149,
+        150
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectReader$ApiResponseStream.onResponseImpl:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        130
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectReader$ApiResponseStream.onStartImpl:(Lcom/google/api/gax/rpc/StreamController;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        135,
+        136,
+        138,
+        139,
+        140,
+        142
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectReader.<init>:(Lcom/google/storage/v2/StorageClient;Lorg/finos/tracdap/common/data/IDataContext;Lorg/finos/tracdap/common/storage/StorageErrors;Ljava/lang/String;Ljava/lang/String;Lcom/google/storage/v2/BucketName;Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R006",
+      "lineNumbers" : [
+        90,
+        91
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectReader.<init>:(Lcom/google/storage/v2/StorageClient;Lorg/finos/tracdap/common/data/IDataContext;Lorg/finos/tracdap/common/storage/StorageErrors;Ljava/lang/String;Ljava/lang/String;Lcom/google/storage/v2/BucketName;Ljava/lang/String;JJ)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        81,
+        84
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectReader.<init>:(Lcom/google/storage/v2/StorageClient;Lorg/finos/tracdap/common/data/IDataContext;Lorg/finos/tracdap/common/storage/StorageErrors;Ljava/lang/String;Ljava/lang/String;Lcom/google/storage/v2/BucketName;Ljava/lang/String;JJJ)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        71,
+        74
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectReader.<init>:(Lcom/google/storage/v2/StorageClient;Lorg/finos/tracdap/common/data/IDataContext;Lorg/finos/tracdap/common/storage/StorageErrors;Ljava/lang/String;Ljava/lang/String;Lcom/google/storage/v2/BucketName;Ljava/lang/String;JJJII)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        54,
+        57,
+        58,
+        60,
+        61,
+        62,
+        63,
+        64
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectReader.access$000:(Lorg/finos/tracdap/plugins/gcp/storage/GcsObjectReader;Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        31
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectReader.access$100:(Lorg/finos/tracdap/plugins/gcp/storage/GcsObjectReader;Ljava/lang/Throwable;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        31
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectReader.access$200:(Lorg/finos/tracdap/plugins/gcp/storage/GcsObjectReader;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        31
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectReader.clientCancel:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        124,
+        125,
+        126,
+        128
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectReader.clientRequest:(J)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        115,
+        116,
+        118,
+        119
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectReader.clientStart:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        103,
+        104,
+        106,
+        107,
+        109,
+        110
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage$1.<init>:(Lorg/finos/tracdap/plugins/gcp/storage/GcsObjectStorage;Ljava/util/concurrent/CompletableFuture;Ljava/util/ArrayList;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        469
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage$1.error:(Lcom/google/cloud/storage/StorageException;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        478,
+        479
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage$1.error:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        469
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage$1.success:(Ljava/lang/Boolean;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        473,
+        474
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage$1.success:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        469
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.<init>:(Ljava/lang/String;Ljava/util/Properties;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        83,
+        85,
+        86,
+        87,
+        89,
+        90,
+        91,
+        92
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.addMissingRequestParams:(Lcom/google/api/gax/rpc/ClientStreamingCallable;)Lcom/google/api/gax/rpc/ClientStreamingCallable;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        633,
+        634,
+        636,
+        638
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.buildDirStat:(Ljava/lang/String;)Lorg/finos/tracdap/common/storage/FileStat;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        354,
+        356,
+        357,
+        358,
+        359,
+        360,
+        362,
+        363,
+        364,
+        366,
+        367,
+        369
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.buildFileStat:(Lcom/google/storage/v2/Object;)Lorg/finos/tracdap/common/storage/FileStat;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        327,
+        329,
+        330,
+        331,
+        333,
+        334,
+        335,
+        337,
+        338,
+        339,
+        341,
+        342,
+        343,
+        345,
+        346,
+        347,
+        345,
+        349
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.configureChannel:(Lio/grpc/ManagedChannelBuilder;Lio/netty/channel/EventLoopGroup;)Lio/grpc/ManagedChannelBuilder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        146,
+        147,
+        149
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.configureNettyChannel:(Lio/grpc/netty/NettyChannelBuilder;Lio/netty/channel/EventLoopGroup;)Lio/grpc/netty/NettyChannelBuilder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        154,
+        156,
+        157,
+        158,
+        156,
+        161
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.fsCreateDir:(Ljava/lang/String;Lorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        375,
+        377,
+        378,
+        379,
+        381,
+        382,
+        383,
+        384,
+        382,
+        385,
+        386,
+        388,
+        390,
+        392
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.fsCreateDirCallback:(Ljava/lang/String;Lcom/google/storage/v2/WriteObjectResponse;Ljava/lang/Throwable;)Ljava/lang/Void;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        397,
+        398,
+        401,
+        402,
+        404
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.fsDeleteDir:(Ljava/lang/String;Lorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        436,
+        438,
+        440,
+        441,
+        442,
+        443,
+        445,
+        447,
+        449
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.fsDeleteDirBatch:(Lcom/google/storage/v2/ListObjectsResponse;Ljava/lang/String;Lorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        455,
+        456,
+        458,
+        459,
+        461,
+        463,
+        464,
+        465,
+        467,
+        469,
+        482,
+        484
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.fsDeleteDirCallback:(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Lorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        496,
+        498,
+        499,
+        500,
+        502,
+        506,
+        507,
+        510,
+        511,
+        512,
+        513,
+        515,
+        517,
+        519,
+        521,
+        523
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.fsDeleteFile:(Ljava/lang/String;Lorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        410,
+        412,
+        413,
+        414,
+        415,
+        417,
+        419,
+        421
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.fsDeleteFileCallback:(Ljava/lang/String;Ljava/lang/Throwable;)Ljava/lang/Void;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        426,
+        427,
+        430
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.fsDirExists:(Ljava/lang/String;Lorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        209,
+        211,
+        212,
+        213,
+        214,
+        215,
+        217,
+        219,
+        221
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.fsDirExistsCallback:(Ljava/lang/String;Lcom/google/storage/v2/ListObjectsResponse;Ljava/lang/Throwable;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        226,
+        227,
+        234
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.fsExists:(Ljava/lang/String;Lorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        177,
+        179,
+        180,
+        181,
+        182,
+        184,
+        186,
+        188
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.fsExistsCallback:(Ljava/lang/String;Ljava/lang/Throwable;)Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        193,
+        194,
+        196,
+        197,
+        203
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.fsGetDirInfo:(Ljava/lang/String;Lorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        266,
+        268,
+        270
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.fsGetFileInfo:(Ljava/lang/String;Lorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        240,
+        242,
+        243,
+        244,
+        245,
+        247,
+        249,
+        251
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.fsGetFileInfoCallback:(Ljava/lang/String;Lcom/google/storage/v2/Object;Ljava/lang/Throwable;)Lorg/finos/tracdap/common/storage/FileStat;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        256,
+        257,
+        260
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.fsListContents:(Ljava/lang/String;Ljava/lang/String;IZLorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        276,
+        278,
+        279,
+        280,
+        282,
+        283,
+        285,
+        286,
+        288,
+        289,
+        291,
+        293,
+        295,
+        296,
+        297,
+        299
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.fsListContentsCallback:(Ljava/lang/String;Ljava/lang/String;Lcom/google/storage/v2/ListObjectsResponse;Ljava/lang/Throwable;)Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        304,
+        305,
+        308,
+        310,
+        311,
+        312,
+        313,
+        315,
+        317,
+        318,
+        319,
+        320,
+        322
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.fsOpenInputStream:(Ljava/lang/String;Lorg/finos/tracdap/common/data/IDataContext;)Ljava/util/concurrent/Flow$Publisher;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        569,
+        571
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.fsOpenOutputStream:(Ljava/lang/String;Ljava/util/concurrent/CompletableFuture;Lorg/finos/tracdap/common/data/IDataContext;)Ljava/util/concurrent/Flow$Subscriber;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        577,
+        579
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.fsReadChunk:(Ljava/lang/String;JILorg/finos/tracdap/common/data/IDataContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        530,
+        532,
+        542,
+        543,
+        545,
+        559,
+        545
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.lambda$fsCreateDir$5:(Ljava/lang/String;Lcom/google/storage/v2/WriteObjectResponse;Ljava/lang/Throwable;)Ljava/lang/Void;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        392
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.lambda$fsDeleteDir$7:(Ljava/lang/String;Lorg/finos/tracdap/common/data/IExecutionContext;Lcom/google/storage/v2/ListObjectsResponse;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        449
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.lambda$fsDeleteDirBatch$8:(Ljava/lang/String;Lcom/google/storage/v2/ListObjectsResponse;Lorg/finos/tracdap/common/data/IExecutionContext;Ljava/util/List;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        485
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.lambda$fsDeleteDirCallback$10:(Lcom/google/cloud/storage/StorageBatchResult;)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        499
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.lambda$fsDeleteDirCallback$11:(Ljava/lang/String;Lorg/finos/tracdap/common/data/IExecutionContext;Lcom/google/storage/v2/ListObjectsResponse;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        519
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.lambda$fsDeleteDirCallback$9:(Lcom/google/cloud/storage/StorageBatchResult;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        496
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.lambda$fsDeleteFile$6:(Ljava/lang/String;Lcom/google/protobuf/Empty;Ljava/lang/Throwable;)Ljava/lang/Void;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        421
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.lambda$fsDirExists$2:(Ljava/lang/String;Lcom/google/storage/v2/ListObjectsResponse;Ljava/lang/Throwable;)Ljava/lang/Boolean;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        221
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.lambda$fsExists$1:(Ljava/lang/String;Lcom/google/storage/v2/Object;Ljava/lang/Throwable;)Ljava/lang/Boolean;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        188
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.lambda$fsGetFileInfo$3:(Ljava/lang/String;Lcom/google/storage/v2/Object;Ljava/lang/Throwable;)Lorg/finos/tracdap/common/storage/FileStat;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        251
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.lambda$fsListContents$4:(Ljava/lang/String;Ljava/lang/String;Lcom/google/storage/v2/ListObjectsResponse;Ljava/lang/Throwable;)Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        299
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.lambda$fsReadChunk$12:(Ljava/util/ArrayList;Lorg/apache/arrow/memory/ArrowBuf;)Ljava/util/ArrayList;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        543
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.lambda$fsReadChunk$13:(ILjava/lang/String;Ljava/util/ArrayList;)Lorg/apache/arrow/memory/ArrowBuf;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        548,
+        549,
+        551,
+        554,
+        555,
+        557
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.lambda$fsReadChunk$14:(Ljava/util/ArrayList;Ljava/lang/Throwable;)Lorg/apache/arrow/memory/ArrowBuf;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        561,
+        562
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.lambda$start$0:(Lio/netty/channel/EventLoopGroup;Lio/grpc/ManagedChannelBuilder;)Lio/grpc/ManagedChannelBuilder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        105
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.normalizePrefix:(Ljava/lang/String;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        584,
+        585,
+        587,
+        588,
+        590,
+        591,
+        593,
+        594,
+        596
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.removePrefix:(Ljava/lang/String;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        615,
+        616,
+        618,
+        619,
+        621
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.start:(Lio/netty/channel/EventLoopGroup;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        99,
+        101,
+        104,
+        105,
+        106,
+        108,
+        109,
+        110,
+        112,
+        114,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        125,
+        141,
+        127,
+        129,
+        131,
+        132,
+        133,
+        135,
+        136,
+        138,
+        139,
+        140,
+        142
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.stop:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        168,
+        170,
+        171
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectStorage.usePrefix:(Ljava/lang/String;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        601,
+        602,
+        604,
+        605,
+        607
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectWriter.<init>:(Lcom/google/storage/v2/StorageClient;Lorg/finos/tracdap/common/data/IDataContext;Lcom/google/storage/v2/BucketName;Ljava/lang/String;Ljava/util/concurrent/CompletableFuture;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        67,
+        50,
+        69,
+        70,
+        71,
+        73,
+        74,
+        75,
+        76,
+        74,
+        77,
+        79,
+        80
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectWriter.addMissingRequestParams:(Lcom/google/api/gax/rpc/ClientStreamingCallable;)Lcom/google/api/gax/rpc/ClientStreamingCallable;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        230,
+        231,
+        233,
+        235
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectWriter.onComplete:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        184,
+        185,
+        187,
+        189,
+        190,
+        192,
+        193,
+        196,
+        197,
+        198
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectWriter.onError:(Ljava/lang/Throwable;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        163,
+        165,
+        169,
+        170,
+        172,
+        176,
+        177,
+        179
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectWriter.onNext:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        41
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectWriter.onNext:(Lorg/apache/arrow/memory/ArrowBuf;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        114,
+        116,
+        118,
+        120,
+        121,
+        126,
+        127,
+        129,
+        131,
+        132,
+        134,
+        135,
+        136,
+        137,
+        139,
+        141,
+        142,
+        144,
+        146,
+        147,
+        114,
+        148
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectWriter.onSubscribe:(Ljava/util/concurrent/Flow$Subscription;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        85,
+        86,
+        88,
+        90,
+        91,
+        93,
+        94,
+        96,
+        98,
+        99,
+        100,
+        102,
+        103,
+        104,
+        106,
+        108,
+        109
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsObjectWriter.writeCompleteHandler:(Lcom/google/storage/v2/WriteObjectResponse;Ljava/lang/Throwable;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        202,
+        207,
+        208,
+        210,
+        212,
+        218,
+        219
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsStorageErrors.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        32,
+        33,
+        34,
+        35,
+        37,
+        32
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsStorageErrors.<init>:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        40,
+        41
+      ]
+    },
+    "org.finos.tracdap.plugins.gcp.storage.GcsStorageErrors.checkKnownExceptions:(Ljava/lang/Throwable;)Lorg/finos/tracdap/common/storage/StorageErrors$ExplicitError;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        47,
+        49,
+        51,
+        52,
+        54,
+        56
+      ]
+    }
+  }
+}

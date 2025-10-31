@@ -1,0 +1,2674 @@
+{
+  "meta" : {
+    "reportVersion" : "2.6"
+  },
+  "run" : {
+    "version" : "2025.02.02-08b2a5a-licensed",
+    "creationTimestamp" : "2025-10-31T11:48:49.137358268Z",
+    "command" : "dcover create --exclude-modules=sql-drivers --coverage-reports --upload http://localhost:8080 --project-name tracdap --name with-diffblue-tests",
+    "totalTime" : 318.123,
+    "environmentDetectionTime" : 0.489,
+    "indexingTime" : 0.253,
+    "entryPointsTime" : 0.481,
+    "generationTime" : 4047.181,
+    "timeToFirstTest" : 4830.092,
+    "timeToLastTest" : 4540.185,
+    "indexQueryTime" : 8.618,
+    "verificationTime" : 93.881,
+    "validationTime" : 38.462
+  },
+  "codes" : {
+    "R000" : "Success",
+    "R002" : "Missing observers",
+    "R006" : "Static initializer failed",
+    "R013" : "No inputs found that don't throw a trivial exception",
+    "R034" : "Diffblue Cover can't complete test",
+    "T000" : "Method eligible for test creation",
+    "T003" : "Private method",
+    "T004" : "In anonymous inner class",
+    "T005" : "Trivial constructor",
+    "T006" : "Main method",
+    "T012" : "Synthetic method",
+    "V000" : "Validated successfully"
+  },
+  "summary" : {
+    "classesCount" : 8,
+    "methodsCount" : 181,
+    "cumulativeDiffblueTestCount" : 18,
+    "cumulativeManualTestCount" : 251,
+    "completeTestCount" : 18,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 1379,
+    "perMethodTestability" : {
+      "T000" : 37,
+      "T003" : 49,
+      "T004" : 3,
+      "T005" : 3,
+      "T006" : 1,
+      "T012" : 88
+    },
+    "perMethodOutcome" : {
+      "R000" : 12,
+      "R002" : 3,
+      "R006" : 1,
+      "R013" : 20,
+      "R034" : 2,
+      "T003" : 49,
+      "T004" : 3,
+      "T005" : 2,
+      "T006" : 1,
+      "T012" : 88
+    },
+    "perTestOutcome" : {
+      "R000" : 18
+    },
+    "perTestValidation" : {
+      "V000" : 18
+    }
+  },
+  "classes" : {
+    "org.finos.tracdap.svc.data.TracDataService" : {
+      "methodsCount" : 12,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T003" : 3,
+        "T006" : 1,
+        "T012" : 5
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R002" : 1,
+        "R013" : 1,
+        "T003" : 3,
+        "T006" : 1,
+        "T012" : 5
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi" : {
+      "methodsCount" : 37,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 15,
+        "T003" : 6,
+        "T012" : 16
+      },
+      "perMethodOutcome" : {
+        "R013" : 15,
+        "T003" : 6,
+        "T012" : 16
+      }
+    },
+    "org.finos.tracdap.svc.data.service.DataService" : {
+      "methodsCount" : 55,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 4,
+        "T003" : 22,
+        "T012" : 29
+      },
+      "perMethodOutcome" : {
+        "R002" : 1,
+        "R013" : 3,
+        "T003" : 22,
+        "T012" : 29
+      }
+    },
+    "org.finos.tracdap.svc.data.service.FileService" : {
+      "methodsCount" : 60,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 4,
+        "T003" : 18,
+        "T012" : 38
+      },
+      "perMethodOutcome" : {
+        "R002" : 1,
+        "R013" : 1,
+        "R034" : 2,
+        "T003" : 18,
+        "T012" : 38
+      }
+    },
+    "org.finos.tracdap.svc.data.service.Helpers" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R006" : 1,
+        "T005" : 1
+      }
+    },
+    "org.finos.tracdap.svc.data.service.Helpers$1" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T004" : 3
+      },
+      "perMethodOutcome" : {
+        "T004" : 3
+      }
+    },
+    "org.finos.tracdap.svc.data.service.MetadataBuilders" : {
+      "methodsCount" : 11,
+      "completeTestCount" : 15,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 10,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 10,
+        "T005" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 15
+      }
+    },
+    "org.finos.tracdap.svc.data.service.RequestState" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    }
+  },
+  "methods" : {
+    "org.finos.tracdap.svc.data.TracDataService.<init>:(Lorg/finos/tracdap/common/plugin/PluginManager;Lorg/finos/tracdap/common/config/ConfigManager;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        84,
+        68,
+        85,
+        86,
+        87
+      ]
+    },
+    "org.finos.tracdap.svc.data.TracDataService.buildCommonConcerns:()Lorg/finos/tracdap/common/middleware/GrpcConcern;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        214,
+        217,
+        218,
+        221,
+        222,
+        223,
+        225
+      ]
+    },
+    "org.finos.tracdap.svc.data.TracDataService.checkDefaultStorageAndFormat:(Lorg/finos/tracdap/common/storage/IStorageManager;Lorg/finos/tracdap/common/codec/ICodecManager;Lorg/finos/tracdap/config/StorageConfig;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        232,
+        233,
+        234,
+        247,
+        236,
+        238,
+        239,
+        240,
+        242,
+        244,
+        245,
+        246,
+        248
+      ]
+    },
+    "org.finos.tracdap.svc.data.TracDataService.doShutdown:(Ljava/time/Duration;)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        280,
+        282,
+        288,
+        294,
+        300,
+        306,
+        312,
+        313,
+        315,
+        316,
+        318
+      ]
+    },
+    "org.finos.tracdap.svc.data.TracDataService.doStartup:(Ljava/time/Duration;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        97,
+        99,
+        100,
+        101,
+        105,
+        112,
+        107,
+        109,
+        110,
+        111,
+        116,
+        117,
+        125,
+        127,
+        128,
+        129,
+        131,
+        133,
+        134,
+        135,
+        136,
+        138,
+        140,
+        141,
+        143,
+        148,
+        149,
+        150,
+        152,
+        157,
+        158,
+        159,
+        157,
+        164,
+        160,
+        162,
+        163,
+        166,
+        167,
+        168,
+        170,
+        173,
+        176,
+        178,
+        180,
+        181,
+        182,
+        184,
+        185,
+        188,
+        189,
+        190,
+        191,
+        194,
+        197,
+        198,
+        199,
+        202,
+        204,
+        209,
+        206,
+        208,
+        210
+      ]
+    },
+    "org.finos.tracdap.svc.data.TracDataService.lambda$doShutdown$0:(Ljava/time/Duration;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        284,
+        285
+      ]
+    },
+    "org.finos.tracdap.svc.data.TracDataService.lambda$doShutdown$1:(Ljava/time/Duration;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        290,
+        291
+      ]
+    },
+    "org.finos.tracdap.svc.data.TracDataService.lambda$doShutdown$2:(Ljava/time/Duration;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        296,
+        297
+      ]
+    },
+    "org.finos.tracdap.svc.data.TracDataService.lambda$doShutdown$3:(Ljava/time/Duration;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        302,
+        303
+      ]
+    },
+    "org.finos.tracdap.svc.data.TracDataService.lambda$doShutdown$4:(Ljava/time/Duration;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        308,
+        309
+      ]
+    },
+    "org.finos.tracdap.svc.data.TracDataService.main:([Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T006",
+      "perMethodOutcome" : "T006",
+      "lineNumbers" : [
+        81,
+        82
+      ]
+    },
+    "org.finos.tracdap.svc.data.TracDataService.prepareMetadataClient:(Lorg/finos/tracdap/config/PlatformConfig;Ljava/lang/Class;Lorg/finos/tracdap/common/netty/EventLoopResolver;Lorg/finos/tracdap/common/middleware/GrpcConcern;)Lorg/finos/tracdap/api/internal/TrustedMetadataApiGrpc$TrustedMetadataApiFutureStub;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        257,
+        259,
+        260,
+        259,
+        262,
+        263,
+        264,
+        265,
+        266,
+        267,
+        268,
+        269,
+        271,
+        272,
+        274
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.<init>:(Lorg/finos/tracdap/svc/data/service/DataService;Lorg/finos/tracdap/svc/data/service/FileService;Lorg/finos/tracdap/common/netty/EventLoopResolver;Lorg/apache/arrow/memory/BufferAllocator;Lorg/finos/tracdap/common/middleware/GrpcConcern;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        61,
+        45,
+        63,
+        64,
+        65,
+        66,
+        67,
+        69,
+        70,
+        71
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.closeDataContext:(Lorg/finos/tracdap/common/data/IDataContext;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        353,
+        354,
+        355
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.closeDataContextLater:(Lorg/finos/tracdap/common/data/IDataContext;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        359,
+        361,
+        362,
+        364,
+        365,
+        366,
+        367,
+        368,
+        365,
+        370,
+        371,
+        372,
+        373,
+        370,
+        374,
+        359,
+        375
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.createDataset:(Lio/grpc/stub/StreamObserver;)Lio/grpc/stub/StreamObserver;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        81,
+        82,
+        83,
+        85,
+        86,
+        88,
+        89,
+        91,
+        92,
+        93,
+        94,
+        96
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.createFile:(Lio/grpc/stub/StreamObserver;)Lio/grpc/stub/StreamObserver;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        172,
+        173,
+        174,
+        176,
+        177,
+        179,
+        180,
+        182,
+        183,
+        190,
+        191,
+        193
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.createSmallDataset:(Lorg/finos/tracdap/api/DataWriteRequest;Lio/grpc/stub/StreamObserver;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        102,
+        104,
+        105,
+        106
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.createSmallFile:(Lorg/finos/tracdap/api/FileWriteRequest;Lio/grpc/stub/StreamObserver;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        199,
+        201,
+        202,
+        203
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.downloadFile:(Lorg/finos/tracdap/api/DownloadRequest;Lio/grpc/stub/StreamObserver;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        279,
+        280,
+        281,
+        282,
+        283,
+        284,
+        286,
+        287,
+        288
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.downloadFile:(Lorg/finos/tracdap/api/DownloadRequest;Lorg/finos/tracdap/metadata/TagSelector;Lorg/finos/tracdap/common/data/pipeline/GrpcDownloadSink;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        308,
+        309,
+        310,
+        312,
+        314,
+        319,
+        321,
+        322,
+        326,
+        327
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.downloadLatestFile:(Lorg/finos/tracdap/api/DownloadRequest;Lio/grpc/stub/StreamObserver;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        300,
+        301,
+        302
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.lambda$closeDataContext$15:(Lorg/finos/tracdap/common/data/IDataContext;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        354
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.lambda$createDataset$0:(Lorg/finos/tracdap/common/data/DataContext;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        86
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.lambda$createDataset$1:(Ljava/util/concurrent/Flow$Publisher;Lorg/finos/tracdap/common/data/DataContext;Lorg/finos/tracdap/common/grpc/RequestMetadata;Lorg/finos/tracdap/common/middleware/GrpcClientState;Lorg/finos/tracdap/api/DataWriteRequest;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        92
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.lambda$createFile$6:(Lorg/finos/tracdap/common/data/DataContext;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        177
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.lambda$createFile$7:(Ljava/util/concurrent/Flow$Publisher;Lorg/finos/tracdap/common/data/DataContext;Lorg/finos/tracdap/common/grpc/RequestMetadata;Lorg/finos/tracdap/common/middleware/GrpcClientState;Lorg/finos/tracdap/api/FileWriteRequest;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        183
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.lambda$downloadFile$12:(Lorg/finos/tracdap/common/data/DataContext;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        312
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.lambda$downloadFile$13:(Lorg/finos/tracdap/api/DownloadResponse$Builder;Lorg/finos/tracdap/metadata/FileDefinition;)Lorg/finos/tracdap/api/DownloadResponse$Builder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        314,
+        315,
+        316,
+        314
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.lambda$downloadFile$14:(Lorg/finos/tracdap/api/DownloadRequest;Lorg/finos/tracdap/metadata/TagSelector;Ljava/util/concurrent/CompletableFuture;Ljava/util/concurrent/Flow$Subscriber;Lorg/finos/tracdap/common/data/DataContext;Lorg/finos/tracdap/common/grpc/RequestMetadata;Lorg/finos/tracdap/common/middleware/GrpcClientState;Lorg/finos/tracdap/api/DownloadRequest;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        322,
+        323,
+        322
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.lambda$readDataset$4:(Lorg/finos/tracdap/common/data/DataContext;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        159
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.lambda$readDataset$5:(Ljava/util/concurrent/CompletableFuture;Ljava/util/concurrent/Flow$Subscriber;Lorg/finos/tracdap/common/data/DataContext;Lorg/finos/tracdap/common/grpc/RequestMetadata;Lorg/finos/tracdap/common/middleware/GrpcClientState;Lorg/finos/tracdap/api/DataReadRequest;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        165
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.lambda$readFile$10:(Lorg/finos/tracdap/common/data/DataContext;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        262
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.lambda$readFile$11:(Lorg/finos/tracdap/api/FileReadRequest;Ljava/util/concurrent/CompletableFuture;Ljava/util/concurrent/Flow$Subscriber;Lorg/finos/tracdap/common/data/DataContext;Lorg/finos/tracdap/common/grpc/RequestMetadata;Lorg/finos/tracdap/common/middleware/GrpcClientState;Lorg/finos/tracdap/api/FileReadRequest;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        268,
+        269,
+        270,
+        268
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.lambda$updateDataset$2:(Lorg/finos/tracdap/common/data/DataContext;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        116
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.lambda$updateDataset$3:(Ljava/util/concurrent/Flow$Publisher;Lorg/finos/tracdap/common/data/DataContext;Lorg/finos/tracdap/common/grpc/RequestMetadata;Lorg/finos/tracdap/common/middleware/GrpcClientState;Lorg/finos/tracdap/api/DataWriteRequest;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        122
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.lambda$updateFile$8:(Lorg/finos/tracdap/common/data/DataContext;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        213
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.lambda$updateFile$9:(Ljava/util/concurrent/Flow$Publisher;Lorg/finos/tracdap/common/data/DataContext;Lorg/finos/tracdap/common/grpc/RequestMetadata;Lorg/finos/tracdap/common/middleware/GrpcClientState;Lorg/finos/tracdap/api/FileWriteRequest;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        219
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.prepareDataContext:(Lorg/finos/tracdap/common/grpc/RequestMetadata;)Lorg/finos/tracdap/common/data/DataContext;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        338,
+        339,
+        340,
+        342,
+        344
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.readDataset:(Lorg/finos/tracdap/api/DataReadRequest;Lio/grpc/stub/StreamObserver;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        141,
+        142
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.readDataset:(Lorg/finos/tracdap/api/DataReadRequest;Lio/grpc/stub/StreamObserver;Z)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        154,
+        155,
+        156,
+        158,
+        159,
+        161,
+        162,
+        164,
+        165,
+        166,
+        167
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.readFile:(Lorg/finos/tracdap/api/FileReadRequest;Lio/grpc/stub/StreamObserver;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        245,
+        246,
+        247
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.readFile:(Lorg/finos/tracdap/api/FileReadRequest;Lorg/finos/tracdap/common/data/pipeline/GrpcDownloadSink;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        258,
+        259,
+        260,
+        262,
+        264,
+        265,
+        267,
+        268,
+        273,
+        274
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.readSmallDataset:(Lorg/finos/tracdap/api/DataReadRequest;Lio/grpc/stub/StreamObserver;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        147,
+        148
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.readSmallFile:(Lorg/finos/tracdap/api/FileReadRequest;Lio/grpc/stub/StreamObserver;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        252,
+        253,
+        254
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.updateDataset:(Lio/grpc/stub/StreamObserver;)Lio/grpc/stub/StreamObserver;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        111,
+        112,
+        114,
+        115,
+        116,
+        118,
+        119,
+        121,
+        122,
+        123,
+        124,
+        126
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.updateFile:(Lio/grpc/stub/StreamObserver;)Lio/grpc/stub/StreamObserver;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        208,
+        209,
+        210,
+        212,
+        213,
+        215,
+        216,
+        218,
+        219,
+        227,
+        228,
+        230
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.updateSmallDataset:(Lorg/finos/tracdap/api/DataWriteRequest;Lio/grpc/stub/StreamObserver;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        132,
+        134,
+        135,
+        136
+      ]
+    },
+    "org.finos.tracdap.svc.data.api.TracDataApi.updateSmallFile:(Lorg/finos/tracdap/api/FileWriteRequest;Lio/grpc/stub/StreamObserver;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        236,
+        238,
+        239,
+        240
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.<init>:(Lorg/finos/tracdap/config/StorageConfig;Ljava/util/Map;Lorg/finos/tracdap/common/storage/IStorageManager;Lorg/finos/tracdap/common/codec/ICodecManager;Lorg/finos/tracdap/api/internal/TrustedMetadataApiGrpc$TrustedMetadataApiFutureStub;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        79,
+        63,
+        71,
+        72,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.buildDataItem:(Lorg/finos/tracdap/svc/data/service/RequestState;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        464,
+        465,
+        466,
+        468,
+        470,
+        468
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.buildMetadata:(Lorg/finos/tracdap/api/DataWriteRequest;Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/time/OffsetDateTime;)Lorg/finos/tracdap/svc/data/service/RequestState;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        382,
+        383,
+        385,
+        386,
+        388,
+        389,
+        390,
+        392,
+        393,
+        395,
+        396,
+        398,
+        399,
+        401,
+        402,
+        403,
+        404,
+        406
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.buildStorageItem:(Ljava/lang/String;Ljava/lang/String;Ljava/time/OffsetDateTime;)Lorg/finos/tracdap/metadata/StorageItem;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        587,
+        588,
+        590,
+        592,
+        594,
+        595,
+        597,
+        598,
+        603,
+        605,
+        606,
+        607,
+        608,
+        609,
+        610,
+        612,
+        613,
+        614,
+        615,
+        616,
+        618,
+        619,
+        620,
+        618
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.buildStoragePath:(Lorg/finos/tracdap/svc/data/service/RequestState;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        475,
+        476,
+        477,
+        478,
+        480,
+        482,
+        483,
+        480
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.buildUpdateMetadata:(Lorg/finos/tracdap/api/DataWriteRequest;Lorg/finos/tracdap/svc/data/service/RequestState;Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/time/OffsetDateTime;)Lorg/finos/tracdap/svc/data/service/RequestState;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        413,
+        414,
+        416,
+        417,
+        419,
+        420,
+        422,
+        424,
+        425,
+        428,
+        429,
+        431,
+        434,
+        435,
+        441,
+        443,
+        445,
+        446,
+        448,
+        451,
+        452,
+        454,
+        455,
+        456,
+        457,
+        459
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.controlledStorageAttrs:(Lorg/finos/tracdap/metadata/TagHeader;)Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        637,
+        638,
+        640,
+        641,
+        642,
+        643,
+        644,
+        646
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.createDataDef:(Lorg/finos/tracdap/api/DataWriteRequest;Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/String;)Lorg/finos/tracdap/metadata/DataDefinition;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        488,
+        491,
+        492,
+        493,
+        494,
+        496,
+        500,
+        501,
+        502,
+        504,
+        505,
+        506,
+        508,
+        509,
+        510,
+        512,
+        516,
+        517,
+        519
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.createDataset:(Lorg/finos/tracdap/api/DataWriteRequest;Ljava/util/concurrent/Flow$Publisher;Lorg/finos/tracdap/common/data/IDataContext;Lorg/finos/tracdap/common/grpc/RequestMetadata;Lorg/finos/tracdap/common/middleware/GrpcClientConfig;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        95,
+        96,
+        97,
+        99,
+        103,
+        104,
+        106,
+        110,
+        114,
+        117,
+        122,
+        133,
+        137,
+        106
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.createStorageDef:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/time/OffsetDateTime;)Lorg/finos/tracdap/metadata/StorageDefinition;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        564,
+        566,
+        567,
+        568,
+        566
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.decodeAndSave:(Lorg/finos/tracdap/metadata/SchemaDefinition;Ljava/util/concurrent/Flow$Publisher;Lorg/finos/tracdap/common/codec/ICodec;Ljava/util/Map;Lorg/finos/tracdap/metadata/StorageCopy;Lorg/finos/tracdap/common/data/IDataContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        673,
+        675,
+        677,
+        678,
+        679,
+        681,
+        682,
+        683,
+        685,
+        687
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.finalizeMetadata:(Lorg/finos/tracdap/svc/data/service/RequestState;J)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        626,
+        627
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.finalizeUpdateMetadata:(Lorg/finos/tracdap/svc/data/service/RequestState;J)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        632
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.lambda$createDataset$0:(Lorg/finos/tracdap/api/DataWriteRequest;Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/Object;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        110
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.lambda$createDataset$1:(Lorg/finos/tracdap/api/DataWriteRequest;Lorg/finos/tracdap/svc/data/service/RequestState;Lorg/finos/tracdap/metadata/SchemaDefinition;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        114
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.lambda$createDataset$2:(Lorg/finos/tracdap/api/DataWriteRequest;Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/time/OffsetDateTime;Ljava/lang/Void;)Lorg/finos/tracdap/svc/data/service/RequestState;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        117
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.lambda$createDataset$3:(Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/util/concurrent/Flow$Publisher;Lorg/finos/tracdap/common/codec/ICodec;Ljava/util/Map;Lorg/finos/tracdap/common/data/IDataContext;Lorg/finos/tracdap/svc/data/service/RequestState;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        122
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.lambda$createDataset$4:(Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/Long;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        133
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.lambda$createDataset$5:(Lorg/finos/tracdap/api/DataWriteRequest;Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/Void;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        137
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.lambda$loadMetadata$18:(Lorg/finos/tracdap/svc/data/service/RequestState;Lorg/finos/tracdap/metadata/Tag;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        247,
+        248,
+        249
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.lambda$loadMetadata$19:(Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/String;Ljava/lang/Void;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        250,
+        251,
+        252,
+        250
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.lambda$loadStorageAndEmbeddedSchema$21:(Lorg/finos/tracdap/svc/data/service/RequestState;Lorg/finos/tracdap/metadata/Tag;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        282,
+        283,
+        286,
+        287
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.lambda$loadStorageAndExternalSchema$20:(Lorg/finos/tracdap/svc/data/service/RequestState;Lorg/finos/tracdap/api/MetadataBatchResponse;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        263,
+        264,
+        266,
+        267,
+        270,
+        271
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.lambda$preallocateIds$23:(Lorg/finos/tracdap/api/internal/TrustedMetadataApiGrpc$TrustedMetadataApiFutureStub;Lorg/finos/tracdap/api/MetadataWriteRequest;Ljava/lang/Integer;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        345
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.lambda$preallocateIds$24:(Lorg/finos/tracdap/svc/data/service/RequestState;Lorg/finos/tracdap/metadata/TagHeader;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        346
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.lambda$preallocateIds$25:(Lorg/finos/tracdap/api/internal/TrustedMetadataApiGrpc$TrustedMetadataApiFutureStub;Lorg/finos/tracdap/api/MetadataWriteRequest;Ljava/lang/Void;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        348
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.lambda$preallocateIds$26:(Lorg/finos/tracdap/svc/data/service/RequestState;Lorg/finos/tracdap/metadata/TagHeader;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        349
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.lambda$readDataset$13:(Lorg/finos/tracdap/api/DataReadRequest;Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/Object;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        221
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.lambda$readDataset$14:(Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/Void;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        224
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.lambda$readDataset$15:(Ljava/util/concurrent/CompletableFuture;Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/Void;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        228
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.lambda$readDataset$16:(Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/util/concurrent/Flow$Subscriber;Lorg/finos/tracdap/common/codec/ICodec;Ljava/util/Map;Lorg/finos/tracdap/common/data/IDataContext;Ljava/lang/Void;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        233
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.lambda$readDataset$17:(Ljava/util/concurrent/CompletableFuture;Ljava/util/concurrent/Flow$Subscriber;Ljava/lang/Throwable;)Ljava/lang/Void;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        237
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.lambda$resolveSchema$22:(Lorg/finos/tracdap/svc/data/service/RequestState;Lorg/finos/tracdap/metadata/Tag;)Lorg/finos/tracdap/metadata/SchemaDefinition;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        304
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.lambda$saveMetadata$27:(Lorg/finos/tracdap/api/internal/TrustedMetadataApiGrpc$TrustedMetadataApiFutureStub;Lorg/finos/tracdap/api/MetadataWriteRequest;Lorg/finos/tracdap/metadata/TagHeader;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        363
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.lambda$saveMetadata$28:(Lorg/finos/tracdap/api/internal/TrustedMetadataApiGrpc$TrustedMetadataApiFutureStub;Lorg/finos/tracdap/api/MetadataWriteRequest;Lorg/finos/tracdap/metadata/TagHeader;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        377
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.lambda$updateDataset$10:(Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/util/concurrent/Flow$Publisher;Lorg/finos/tracdap/common/codec/ICodec;Ljava/util/Map;Lorg/finos/tracdap/common/data/IDataContext;Ljava/lang/Void;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        181
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.lambda$updateDataset$11:(Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/Long;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        192
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.lambda$updateDataset$12:(Lorg/finos/tracdap/api/DataWriteRequest;Lorg/finos/tracdap/svc/data/service/RequestState;Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/Void;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        196
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.lambda$updateDataset$6:(Lorg/finos/tracdap/api/DataWriteRequest;Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/Object;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        164
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.lambda$updateDataset$7:(Lorg/finos/tracdap/api/DataWriteRequest;Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/Void;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        168
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.lambda$updateDataset$8:(Lorg/finos/tracdap/api/DataWriteRequest;Lorg/finos/tracdap/svc/data/service/RequestState;Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/time/OffsetDateTime;Lorg/finos/tracdap/metadata/SchemaDefinition;)Lorg/finos/tracdap/svc/data/service/RequestState;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        171
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.lambda$updateDataset$9:(Lorg/finos/tracdap/svc/data/service/RequestState;Lorg/finos/tracdap/svc/data/service/RequestState;Lorg/finos/tracdap/svc/data/service/RequestState;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        176
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.loadAndEncode:(Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/util/concurrent/Flow$Subscriber;Lorg/finos/tracdap/common/codec/ICodec;Ljava/util/Map;Lorg/finos/tracdap/common/data/IDataContext;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        654,
+        656,
+        657,
+        658,
+        660,
+        661,
+        662,
+        664,
+        665
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.loadMetadata:(Ljava/lang/String;Lorg/finos/tracdap/metadata/TagSelector;Lorg/finos/tracdap/svc/data/service/RequestState;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        242,
+        243,
+        245,
+        246,
+        250,
+        245
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.loadStorageAndEmbeddedSchema:(Ljava/lang/String;Lorg/finos/tracdap/svc/data/service/RequestState;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        276,
+        277,
+        279,
+        280,
+        279
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.loadStorageAndExternalSchema:(Ljava/lang/String;Lorg/finos/tracdap/svc/data/service/RequestState;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        257,
+        258,
+        260,
+        261,
+        260
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.preallocateIds:(Lorg/finos/tracdap/api/DataWriteRequest;Lorg/finos/tracdap/svc/data/service/RequestState;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        338,
+        340,
+        341,
+        343,
+        345,
+        346,
+        348,
+        349,
+        343
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.readDataset:(Lorg/finos/tracdap/api/DataReadRequest;Ljava/util/concurrent/CompletableFuture;Ljava/util/concurrent/Flow$Subscriber;Lorg/finos/tracdap/common/data/IDataContext;Lorg/finos/tracdap/common/grpc/RequestMetadata;Lorg/finos/tracdap/common/middleware/GrpcClientConfig;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        208,
+        209,
+        210,
+        212,
+        213,
+        215,
+        216,
+        218,
+        221,
+        224,
+        228,
+        233,
+        237,
+        238
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.resolveSchema:(Lorg/finos/tracdap/api/DataWriteRequest;Lorg/finos/tracdap/svc/data/service/RequestState;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        292,
+        294,
+        295,
+        296,
+        299,
+        301,
+        303,
+        304,
+        303,
+        307
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.saveMetadata:(Lorg/finos/tracdap/api/DataWriteRequest;Lorg/finos/tracdap/svc/data/service/RequestState;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        354,
+        356,
+        357,
+        359,
+        360,
+        362,
+        363,
+        362
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.saveMetadata:(Lorg/finos/tracdap/api/DataWriteRequest;Lorg/finos/tracdap/svc/data/service/RequestState;Lorg/finos/tracdap/svc/data/service/RequestState;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        368,
+        370,
+        371,
+        373,
+        374,
+        376,
+        377,
+        376
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.selectCopy:(Lorg/finos/tracdap/svc/data/service/RequestState;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        312,
+        317,
+        320,
+        321,
+        323,
+        324,
+        325,
+        326,
+        328,
+        330,
+        331,
+        332,
+        333,
+        334
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.updateDataDef:(Lorg/finos/tracdap/api/DataWriteRequest;Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/String;Lorg/finos/tracdap/metadata/DataDefinition;)Lorg/finos/tracdap/metadata/DataDefinition;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        524,
+        528,
+        529,
+        530,
+        531,
+        533,
+        537,
+        539,
+        540,
+        541,
+        543,
+        544,
+        545,
+        547,
+        548,
+        549,
+        551,
+        552,
+        553,
+        557
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.updateDataset:(Lorg/finos/tracdap/api/DataWriteRequest;Ljava/util/concurrent/Flow$Publisher;Lorg/finos/tracdap/common/data/IDataContext;Lorg/finos/tracdap/common/grpc/RequestMetadata;Lorg/finos/tracdap/common/middleware/GrpcClientConfig;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        147,
+        148,
+        149,
+        151,
+        152,
+        154,
+        158,
+        159,
+        161,
+        164,
+        168,
+        171,
+        176,
+        181,
+        192,
+        196,
+        161
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.DataService.updateStorageDef:(Ljava/lang/String;Lorg/finos/tracdap/metadata/StorageDefinition;Ljava/lang/String;Ljava/lang/String;Ljava/time/OffsetDateTime;)Lorg/finos/tracdap/metadata/StorageDefinition;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        576,
+        578,
+        579,
+        580,
+        578
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.<init>:(Lorg/finos/tracdap/config/StorageConfig;Ljava/util/Map;Lorg/finos/tracdap/common/storage/IStorageManager;Lorg/finos/tracdap/api/internal/TrustedMetadataApiGrpc$TrustedMetadataApiFutureStub;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        81,
+        67,
+        74,
+        75,
+        83,
+        84,
+        85,
+        86,
+        87
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.buildFileDef:(Lorg/finos/tracdap/metadata/FileDefinition$Builder;Lorg/finos/tracdap/metadata/TagHeader;Ljava/lang/String;Ljava/lang/String;Lorg/finos/tracdap/metadata/TagSelector;)Lorg/finos/tracdap/metadata/FileDefinition;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        403,
+        404,
+        406,
+        408,
+        409,
+        410,
+        413,
+        414,
+        415,
+        416,
+        417,
+        418,
+        419,
+        413
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.buildStorageDef:(Lorg/finos/tracdap/metadata/StorageDefinition$Builder;Ljava/lang/String;Ljava/time/Instant;Lorg/finos/tracdap/metadata/TagHeader;Ljava/lang/String;Ljava/lang/String;)Lorg/finos/tracdap/metadata/StorageDefinition;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        444,
+        445,
+        447,
+        453,
+        455,
+        457,
+        458,
+        460,
+        475,
+        476,
+        478,
+        480,
+        484,
+        485,
+        486,
+        487,
+        488,
+        489,
+        491,
+        492,
+        493,
+        494,
+        495,
+        497,
+        498,
+        499,
+        501,
+        502,
+        503,
+        501
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.checkSize:(JLjava/lang/Long;)J" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        364,
+        365,
+        367,
+        369,
+        371,
+        369,
+        373,
+        374,
+        377
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.createFile:(Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/concurrent/Flow$Publisher;Lorg/finos/tracdap/common/data/IDataContext;Lorg/finos/tracdap/common/grpc/RequestMetadata;Lorg/finos/tracdap/common/middleware/GrpcClientConfig;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R034",
+      "lineNumbers" : [
+        97,
+        98,
+        99,
+        101,
+        102,
+        105,
+        106,
+        107,
+        112,
+        115,
+        117,
+        120,
+        121,
+        122,
+        125,
+        128,
+        129,
+        130,
+        131,
+        134,
+        135,
+        140,
+        146,
+        147,
+        150,
+        151,
+        154,
+        117
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.createFileAttrs:(Ljava/util/List;Lorg/finos/tracdap/metadata/FileDefinition;)Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        508,
+        509,
+        510,
+        511,
+        512,
+        514,
+        515,
+        516,
+        517,
+        518,
+        520,
+        521,
+        522,
+        523,
+        524,
+        526,
+        527,
+        528,
+        529,
+        530,
+        532,
+        534
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.createFileDef:(Lorg/finos/tracdap/metadata/TagHeader;Ljava/lang/String;Ljava/lang/String;Lorg/finos/tracdap/metadata/TagHeader;)Lorg/finos/tracdap/metadata/FileDefinition;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        388
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.createStorageAttrs:(Ljava/util/List;Lorg/finos/tracdap/metadata/TagHeader;)Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        561,
+        562,
+        564,
+        565,
+        566,
+        567,
+        568,
+        570,
+        572
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.createStorageDef:(Ljava/lang/String;Ljava/time/Instant;Lorg/finos/tracdap/metadata/TagHeader;Ljava/lang/String;Ljava/lang/String;)Lorg/finos/tracdap/metadata/StorageDefinition;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        426,
+        427,
+        426
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.doWriteDataItem:(Lorg/finos/tracdap/common/storage/IFileStorage;Ljava/lang/String;Ljava/util/concurrent/Flow$Publisher;Lorg/finos/tracdap/common/data/IDataContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        338,
+        339,
+        340,
+        341
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$createFile$0:(Ljava/lang/String;Ljava/lang/Object;)Lorg/finos/tracdap/api/MetadataWriteRequest;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        120
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$createFile$10:(Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/util/concurrent/Flow$Publisher;Lorg/finos/tracdap/common/data/IDataContext;Ljava/lang/Void;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        140,
+        142,
+        140
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$createFile$11:(Ljava/lang/Long;Ljava/lang/Long;)Ljava/lang/Long;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        146
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$createFile$12:(Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/Long;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        147
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$createFile$13:(Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/Void;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        150
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$createFile$14:(Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/Void;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        151
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$createFile$15:(Ljava/lang/String;Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/Void;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        154
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$createFile$1:(Lorg/finos/tracdap/api/internal/TrustedMetadataApiGrpc$TrustedMetadataApiFutureStub;Lorg/finos/tracdap/api/MetadataWriteRequest;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        121
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$createFile$2:(Lorg/finos/tracdap/svc/data/service/RequestState;Lorg/finos/tracdap/metadata/TagHeader;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        122
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$createFile$3:(Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/Void;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        125
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$createFile$4:(Ljava/lang/String;Ljava/lang/Void;)Lorg/finos/tracdap/api/MetadataWriteRequest;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        128
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$createFile$5:(Lorg/finos/tracdap/api/internal/TrustedMetadataApiGrpc$TrustedMetadataApiFutureStub;Lorg/finos/tracdap/api/MetadataWriteRequest;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        129
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$createFile$6:(Lorg/finos/tracdap/svc/data/service/RequestState;Lorg/finos/tracdap/metadata/TagHeader;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        130
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$createFile$7:(Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/Void;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        131
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$createFile$8:(Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Void;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        134
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$createFile$9:(Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/String;Ljava/time/Instant;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Void;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        135
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$loadMetadata$32:(Lorg/finos/tracdap/svc/data/service/RequestState;Lorg/finos/tracdap/metadata/Tag;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        251,
+        252,
+        253
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$loadMetadata$33:(Ljava/lang/String;Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/Void;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        254
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$loadStorageMetadata$34:(Lorg/finos/tracdap/svc/data/service/RequestState;Lorg/finos/tracdap/metadata/Tag;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        265,
+        266,
+        267
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$readFile$27:(Ljava/lang/String;Lorg/finos/tracdap/metadata/TagSelector;Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/Object;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        234
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$readFile$28:(Ljava/util/concurrent/CompletableFuture;Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/Void;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        236
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$readFile$29:(Lorg/finos/tracdap/svc/data/service/RequestState;Lorg/finos/tracdap/common/data/IDataContext;Ljava/lang/Void;)Ljava/util/concurrent/Flow$Publisher;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        238
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$readFile$30:(Ljava/util/concurrent/Flow$Subscriber;Ljava/util/concurrent/Flow$Publisher;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        239
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$readFile$31:(Ljava/util/concurrent/CompletableFuture;Ljava/util/concurrent/Flow$Subscriber;Ljava/lang/Throwable;)Ljava/lang/Void;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        241
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$saveMetadata$35:(Lorg/finos/tracdap/api/internal/TrustedMetadataApiGrpc$TrustedMetadataApiFutureStub;Lorg/finos/tracdap/api/MetadataWriteRequest;Lorg/finos/tracdap/metadata/TagHeader;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        281
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$saveMetadata$36:(Lorg/finos/tracdap/api/internal/TrustedMetadataApiGrpc$TrustedMetadataApiFutureStub;Lorg/finos/tracdap/api/MetadataWriteRequest;Lorg/finos/tracdap/metadata/TagHeader;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        295
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$updateFile$16:(Ljava/lang/String;Lorg/finos/tracdap/metadata/TagSelector;Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/Object;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        187
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$updateFile$17:(Lorg/finos/tracdap/svc/data/service/RequestState;Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/Void;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        190
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$updateFile$18:(Lorg/finos/tracdap/svc/data/service/RequestState;Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/Void;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        191
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$updateFile$19:(Lorg/finos/tracdap/svc/data/service/RequestState;Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Void;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        194
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$updateFile$20:(Lorg/finos/tracdap/svc/data/service/RequestState;Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/String;Ljava/time/Instant;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Void;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        195
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$updateFile$21:(Lorg/finos/tracdap/svc/data/service/RequestState;Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/Void;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        199
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$updateFile$22:(Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/util/concurrent/Flow$Publisher;Lorg/finos/tracdap/common/data/IDataContext;Ljava/lang/Void;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        202,
+        204,
+        202
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$updateFile$23:(Ljava/lang/Long;Ljava/lang/Long;)Ljava/lang/Long;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        208
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$updateFile$24:(Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/Long;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        209
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$updateFile$25:(Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/Void;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        212
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$updateFile$26:(Ljava/lang/String;Lorg/finos/tracdap/svc/data/service/RequestState;Lorg/finos/tracdap/svc/data/service/RequestState;Ljava/lang/Void;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        217
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.lambda$writeDataItem$37:(Lorg/finos/tracdap/common/storage/IFileStorage;Ljava/lang/String;Ljava/util/concurrent/Flow$Publisher;Lorg/finos/tracdap/common/data/IDataContext;Ljava/lang/Void;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        330
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.loadMetadata:(Ljava/lang/String;Lorg/finos/tracdap/metadata/TagSelector;Lorg/finos/tracdap/svc/data/service/RequestState;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        246,
+        247,
+        249,
+        250,
+        254,
+        249
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.loadStorageMetadata:(Ljava/lang/String;Lorg/finos/tracdap/svc/data/service/RequestState;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        259,
+        260,
+        262,
+        263,
+        262
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.readFile:(Ljava/lang/String;Lorg/finos/tracdap/metadata/TagSelector;Ljava/util/concurrent/CompletableFuture;Ljava/util/concurrent/Flow$Subscriber;Lorg/finos/tracdap/common/data/IDataContext;Lorg/finos/tracdap/common/grpc/RequestMetadata;Lorg/finos/tracdap/common/middleware/GrpcClientConfig;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        228,
+        229,
+        230,
+        232,
+        234,
+        236,
+        238,
+        239,
+        241,
+        242
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.readFile:(Lorg/finos/tracdap/metadata/FileDefinition;Lorg/finos/tracdap/metadata/StorageDefinition;Lorg/finos/tracdap/common/data/IDataContext;)Ljava/util/concurrent/Flow$Publisher;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        348,
+        349,
+        351,
+        352,
+        354,
+        355,
+        357,
+        358
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.recordSize:(JLorg/finos/tracdap/metadata/FileDefinition;)Lorg/finos/tracdap/metadata/FileDefinition;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        577,
+        578,
+        579,
+        577
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.saveMetadata:(Ljava/lang/String;Lorg/finos/tracdap/svc/data/service/RequestState;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        272,
+        274,
+        275,
+        277,
+        278,
+        280,
+        281,
+        280
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.saveMetadata:(Ljava/lang/String;Lorg/finos/tracdap/svc/data/service/RequestState;Lorg/finos/tracdap/svc/data/service/RequestState;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        286,
+        288,
+        289,
+        291,
+        292,
+        294,
+        295,
+        294
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.updateFile:(Ljava/lang/String;Ljava/util/List;Lorg/finos/tracdap/metadata/TagSelector;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/concurrent/Flow$Publisher;Lorg/finos/tracdap/common/data/IDataContext;Lorg/finos/tracdap/common/grpc/RequestMetadata;Lorg/finos/tracdap/common/middleware/GrpcClientConfig;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R034",
+      "lineNumbers" : [
+        166,
+        167,
+        168,
+        170,
+        171,
+        173,
+        174,
+        177,
+        178,
+        179,
+        182,
+        184,
+        187,
+        190,
+        191,
+        194,
+        195,
+        199,
+        202,
+        208,
+        209,
+        212,
+        217,
+        184
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.updateFileAttrs:(Ljava/util/List;Lorg/finos/tracdap/metadata/FileDefinition;)Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        541,
+        542,
+        543,
+        544,
+        545,
+        547,
+        548,
+        549,
+        550,
+        551,
+        553,
+        555
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.updateFileDef:(Lorg/finos/tracdap/metadata/FileDefinition;Lorg/finos/tracdap/metadata/TagHeader;Ljava/lang/String;Ljava/lang/String;)Lorg/finos/tracdap/metadata/FileDefinition;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        395
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.updateStorageDef:(Lorg/finos/tracdap/metadata/StorageDefinition;Ljava/lang/String;Ljava/time/Instant;Lorg/finos/tracdap/metadata/TagHeader;Ljava/lang/String;Ljava/lang/String;)Lorg/finos/tracdap/metadata/StorageDefinition;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        435,
+        436,
+        435
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.FileService.writeDataItem:(Lorg/finos/tracdap/metadata/StorageDefinitionOrBuilder;Ljava/lang/String;Ljava/util/concurrent/Flow$Publisher;Lorg/finos/tracdap/common/data/IDataContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        302,
+        307,
+        308,
+        313,
+        314,
+        318,
+        322,
+        323,
+        325,
+        329,
+        331,
+        329
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.Helpers$1.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        37
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.Helpers$1.cancel:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        39
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.Helpers$1.request:(J)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        38
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.Helpers.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "T005",
+      "lineNumbers" : [
+        24
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.Helpers.reportError:(Ljava/lang/Throwable;Ljava/util/concurrent/CompletableFuture;Ljava/util/concurrent/Flow$Subscriber;)Ljava/lang/Void;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R006",
+      "lineNumbers" : [
+        31,
+        32,
+        37,
+        45,
+        42,
+        47,
+        50
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.MetadataBuilders.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "T005",
+      "lineNumbers" : [
+        29
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.MetadataBuilders.buildCreateObjectReq:(Ljava/lang/String;Lorg/finos/tracdap/metadata/TagSelector;Lcom/google/protobuf/Message;Ljava/util/List;)Lorg/finos/tracdap/api/MetadataWriteRequest;" : {
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 4
+      },
+      "lineNumbers" : [
+        119,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        121
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.MetadataBuilders.bumpVersion:(Lorg/finos/tracdap/metadata/TagHeader;)Lorg/finos/tracdap/metadata/TagHeader;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        60,
+        61,
+        62,
+        63,
+        60
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.MetadataBuilders.objectOf:(Lcom/google/protobuf/Message;)Lorg/finos/tracdap/metadata/ObjectDefinition;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        68,
+        69,
+        71,
+        72,
+        74,
+        75,
+        77,
+        78,
+        80
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.MetadataBuilders.objectOf:(Lorg/finos/tracdap/metadata/DataDefinition;)Lorg/finos/tracdap/metadata/ObjectDefinition;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        85,
+        86,
+        87,
+        88,
+        85
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.MetadataBuilders.objectOf:(Lorg/finos/tracdap/metadata/FileDefinition;)Lorg/finos/tracdap/metadata/ObjectDefinition;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        93,
+        94,
+        95,
+        96,
+        93
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.MetadataBuilders.objectOf:(Lorg/finos/tracdap/metadata/SchemaDefinition;)Lorg/finos/tracdap/metadata/ObjectDefinition;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        101,
+        102,
+        103,
+        104,
+        101
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.MetadataBuilders.objectOf:(Lorg/finos/tracdap/metadata/StorageDefinition;)Lorg/finos/tracdap/metadata/ObjectDefinition;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        109,
+        110,
+        111,
+        112,
+        109
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.MetadataBuilders.preallocateRequest:(Ljava/lang/String;Lorg/finos/tracdap/metadata/ObjectType;)Lorg/finos/tracdap/api/MetadataWriteRequest;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        33,
+        34,
+        35,
+        36,
+        33
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.MetadataBuilders.requestForBatch:(Ljava/lang/String;[Lorg/finos/tracdap/metadata/TagSelector;)Lorg/finos/tracdap/api/MetadataBatchRequest;" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        49,
+        50,
+        52,
+        53,
+        52,
+        55
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.MetadataBuilders.requestForSelector:(Ljava/lang/String;Lorg/finos/tracdap/metadata/TagSelector;)Lorg/finos/tracdap/api/MetadataReadRequest;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        41,
+        42,
+        43,
+        44,
+        41
+      ]
+    },
+    "org.finos.tracdap.svc.data.service.RequestState.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        27
+      ]
+    }
+  }
+}
