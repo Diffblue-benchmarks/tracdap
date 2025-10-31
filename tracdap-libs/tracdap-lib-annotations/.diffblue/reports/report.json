@@ -1,0 +1,72 @@
+{
+  "meta" : {
+    "reportVersion" : "2.6"
+  },
+  "run" : {
+    "version" : "2024.10.01-2ee2e3d-licensed",
+    "creationTimestamp" : "2025-10-31T11:38:28.380635044Z",
+    "command" : "dcover coverage-reports --exclude-modules=sql-drivers",
+    "totalTime" : 38.066,
+    "environmentDetectionTime" : 23.994,
+    "indexingTime" : 0.0,
+    "entryPointsTime" : 0.0,
+    "generationTime" : 0.0,
+    "timeToFirstTest" : 38.066,
+    "timeToLastTest" : 38.066,
+    "indexQueryTime" : 0.0,
+    "verificationTime" : 0.0,
+    "validationTime" : 0.0
+  },
+  "codes" : {
+    "T010" : "Abstract or interface method"
+  },
+  "summary" : {
+    "classesCount" : 1,
+    "methodsCount" : 3,
+    "cumulativeDiffblueTestCount" : 0,
+    "cumulativeManualTestCount" : 0,
+    "completeTestCount" : 0,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 12,
+    "perMethodTestability" : {
+      "T010" : 3
+    },
+    "perMethodOutcome" : {
+      "T010" : 3
+    }
+  },
+  "classes" : {
+    "javax.annotation.Generated" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 3
+      },
+      "perMethodOutcome" : {
+        "T010" : 3
+      }
+    }
+  },
+  "methods" : {
+    "javax.annotation.Generated.comments:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "javax.annotation.Generated.date:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "javax.annotation.Generated.value:()[Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    }
+  }
+}

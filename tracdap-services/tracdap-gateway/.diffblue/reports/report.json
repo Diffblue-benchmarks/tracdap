@@ -1,0 +1,5981 @@
+{
+  "meta" : {
+    "reportVersion" : "2.6"
+  },
+  "run" : {
+    "version" : "2024.10.01-2ee2e3d-licensed",
+    "creationTimestamp" : "2025-10-31T11:47:20.088054465Z",
+    "command" : "dcover create --exclude-modules=sql-drivers --coverage-reports --upload http://localhost:8080 --project-name tracdap --name with-diffblue-tests",
+    "totalTime" : 19256.835,
+    "environmentDetectionTime" : 0.582,
+    "indexingTime" : 0.299,
+    "entryPointsTime" : 0.577,
+    "generationTime" : 16273.315,
+    "timeToFirstTest" : 91.135,
+    "timeToLastTest" : 147.768,
+    "indexQueryTime" : 8.303,
+    "verificationTime" : 770.471,
+    "validationTime" : 33.616
+  },
+  "codes" : {
+    "R000" : "Success",
+    "R002" : "Missing observers",
+    "R004" : "No meaningful assertions found",
+    "R005" : "Unable to load class",
+    "R006" : "Static initializer failed",
+    "R011" : "Sandboxing policy violation",
+    "R013" : "No inputs found that don't throw a trivial exception",
+    "R081" : "Exception in arrange section",
+    "T000" : "Method eligible for test creation",
+    "T001" : "Trivial getter",
+    "T003" : "Private method",
+    "T004" : "In anonymous inner class",
+    "T005" : "Trivial constructor",
+    "T006" : "Main method",
+    "T008" : "Private and never called",
+    "T010" : "Abstract or interface method",
+    "T012" : "Synthetic method",
+    "V000" : "Validated successfully",
+    "V003" : "Tests discarded during validation"
+  },
+  "summary" : {
+    "classesCount" : 40,
+    "methodsCount" : 318,
+    "cumulativeDiffblueTestCount" : 141,
+    "cumulativeManualTestCount" : 16,
+    "completeTestCount" : 142,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 3735,
+    "perMethodTestability" : {
+      "T000" : 99,
+      "T001" : 13,
+      "T003" : 119,
+      "T004" : 2,
+      "T005" : 9,
+      "T006" : 1,
+      "T008" : 2,
+      "T010" : 5,
+      "T012" : 68
+    },
+    "perMethodOutcome" : {
+      "R000" : 75,
+      "R002" : 5,
+      "R004" : 4,
+      "R005" : 1,
+      "R006" : 1,
+      "R011" : 9,
+      "R013" : 17,
+      "R081" : 6,
+      "T003" : 119,
+      "T004" : 2,
+      "T005" : 3,
+      "T006" : 1,
+      "T008" : 2,
+      "T010" : 5,
+      "T012" : 68
+    },
+    "perTestOutcome" : {
+      "R000" : 142
+    },
+    "perTestValidation" : {
+      "V000" : 142,
+      "V003" : 2
+    }
+  },
+  "classes" : {
+    "org.finos.tracdap.gateway.TracPlatformGateway" : {
+      "methodsCount" : 8,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T003" : 4,
+        "T006" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R002" : 1,
+        "R013" : 1,
+        "T003" : 4,
+        "T006" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "org.finos.tracdap.gateway.builders.RedirectBuilder" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T003" : 1,
+        "T005" : 1,
+        "T012" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R002" : 1,
+        "T003" : 1,
+        "T012" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "org.finos.tracdap.gateway.builders.RestApiBuilder" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R013" : 2,
+        "T005" : 1,
+        "T012" : 1
+      }
+    },
+    "org.finos.tracdap.gateway.builders.RouteBuilder" : {
+      "methodsCount" : 11,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T003" : 4,
+        "T005" : 1,
+        "T012" : 5
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R002" : 1,
+        "T003" : 4,
+        "T012" : 5
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "org.finos.tracdap.gateway.builders.ServiceInfo" : {
+      "methodsCount" : 16,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 5,
+        "T001" : 6,
+        "T003" : 4,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R013" : 4,
+        "R081" : 6,
+        "T003" : 4,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "org.finos.tracdap.gateway.exec.IRouteMatcher" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 1
+      },
+      "perMethodOutcome" : {
+        "T010" : 1
+      }
+    },
+    "org.finos.tracdap.gateway.exec.Redirect" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T001" : 3,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 4
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "org.finos.tracdap.gateway.exec.Route" : {
+      "methodsCount" : 6,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T001" : 4,
+        "T005" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 6
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcProtocol" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 1,
+        "T012" : 4
+      },
+      "perMethodOutcome" : {
+        "T003" : 1,
+        "T012" : 4
+      }
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcProxy" : {
+      "methodsCount" : 7,
+      "completeTestCount" : 9,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T003" : 2,
+        "T012" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 3,
+        "T003" : 2,
+        "T012" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 9
+      }
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcProxyBuilder" : {
+      "methodsCount" : 7,
+      "completeTestCount" : 7,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T003" : 4,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 2,
+        "T003" : 4,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 7
+      }
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcProxyBuilder$1" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "T012" : 1
+      }
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcUtils" : {
+      "methodsCount" : 10,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 7,
+        "T003" : 1,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 2,
+        "R006" : 1,
+        "R011" : 4,
+        "T003" : 1,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcWebProxy" : {
+      "methodsCount" : 11,
+      "completeTestCount" : 8,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T003" : 6,
+        "T012" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 2,
+        "R005" : 1,
+        "T003" : 6,
+        "T012" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 8
+      }
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcWebProxy$1" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T004" : 2
+      },
+      "perMethodOutcome" : {
+        "T004" : 2
+      }
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.WebSocketsTranslator" : {
+      "methodsCount" : 13,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T003" : 8,
+        "T012" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 2,
+        "R011" : 1,
+        "T003" : 8,
+        "T012" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http1Proxy" : {
+      "methodsCount" : 10,
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T003" : 6,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 2,
+        "R011" : 1,
+        "T003" : 6,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 4
+      }
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http1ProxyBuilder" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R002" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http1to2Proxy" : {
+      "methodsCount" : 11,
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T003" : 6,
+        "T012" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 2,
+        "R011" : 1,
+        "T003" : 6,
+        "T012" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 3
+      }
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http2FlowControl" : {
+      "methodsCount" : 26,
+      "completeTestCount" : 10,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 6,
+        "T003" : 17,
+        "T012" : 3
+      },
+      "perMethodOutcome" : {
+        "R000" : 5,
+        "R002" : 1,
+        "T003" : 17,
+        "T012" : 3
+      },
+      "perTestOutcome" : {
+        "R000" : 10
+      }
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http2FlowControl$StreamState" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T008" : 1
+      },
+      "perMethodOutcome" : {
+        "T008" : 1
+      }
+    },
+    "org.finos.tracdap.gateway.proxy.http.HttpProtocol" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 1,
+        "T012" : 4
+      },
+      "perMethodOutcome" : {
+        "T003" : 1,
+        "T012" : 4
+      }
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiFields" : {
+      "methodsCount" : 9,
+      "completeTestCount" : 7,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 4,
+        "T003" : 1,
+        "T005" : 1,
+        "T012" : 3
+      },
+      "perMethodOutcome" : {
+        "R000" : 4,
+        "T003" : 1,
+        "T005" : 1,
+        "T012" : 3
+      },
+      "perTestOutcome" : {
+        "R000" : 7
+      }
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiMatcher" : {
+      "methodsCount" : 13,
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T003" : 7,
+        "T012" : 4
+      },
+      "perMethodOutcome" : {
+        "R000" : 2,
+        "T003" : 7,
+        "T012" : 4
+      },
+      "perTestOutcome" : {
+        "R000" : 5
+      }
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiMatcher$1" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "T012" : 1
+      }
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiMethod" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T003" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 2,
+        "T003" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiProxy" : {
+      "methodsCount" : 16,
+      "completeTestCount" : 14,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 4,
+        "T003" : 11,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 4,
+        "T003" : 11,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 14
+      }
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiProxy$RestApiCallState" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 1
+      },
+      "perMethodOutcome" : {
+        "T003" : 1
+      }
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiProxyBuilder" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 2,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 4
+      }
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiTranslator" : {
+      "methodsCount" : 26,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 7,
+        "T003" : 14,
+        "T012" : 5
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R013" : 6,
+        "T003" : 14,
+        "T012" : 5
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiTranslator$1" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "T012" : 1
+      }
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouter" : {
+      "methodsCount" : 23,
+      "completeTestCount" : 7,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 13,
+        "T003" : 3,
+        "T010" : 4,
+        "T012" : 3
+      },
+      "perMethodOutcome" : {
+        "R000" : 4,
+        "R004" : 4,
+        "R011" : 1,
+        "R013" : 4,
+        "T003" : 3,
+        "T010" : 4,
+        "T012" : 3
+      },
+      "perTestOutcome" : {
+        "R000" : 7
+      }
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouter$TargetChannelState" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouterLink" : {
+      "methodsCount" : 9,
+      "completeTestCount" : 7,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 6,
+        "T003" : 1,
+        "T012" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 6,
+        "T003" : 1,
+        "T012" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 7
+      }
+    },
+    "org.finos.tracdap.gateway.routing.Http1Router" : {
+      "methodsCount" : 12,
+      "completeTestCount" : 15,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 6,
+        "T003" : 3,
+        "T012" : 3
+      },
+      "perMethodOutcome" : {
+        "R000" : 6,
+        "T003" : 3,
+        "T012" : 3
+      },
+      "perTestOutcome" : {
+        "R000" : 15
+      }
+    },
+    "org.finos.tracdap.gateway.routing.Http1Router$1" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "T012" : 1
+      }
+    },
+    "org.finos.tracdap.gateway.routing.Http1Router$RequestState" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T008" : 1
+      },
+      "perMethodOutcome" : {
+        "T008" : 1
+      }
+    },
+    "org.finos.tracdap.gateway.routing.Http1Router$RequestStatus" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 1,
+        "T012" : 4
+      },
+      "perMethodOutcome" : {
+        "T003" : 1,
+        "T012" : 4
+      }
+    },
+    "org.finos.tracdap.gateway.routing.Http2Router" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T003" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R011" : 1,
+        "T003" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 3
+      }
+    },
+    "org.finos.tracdap.gateway.routing.WebSocketsRouter" : {
+      "methodsCount" : 22,
+      "completeTestCount" : 20,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 7,
+        "T003" : 10,
+        "T012" : 5
+      },
+      "perMethodOutcome" : {
+        "R000" : 7,
+        "T003" : 10,
+        "T012" : 5
+      },
+      "perTestOutcome" : {
+        "R000" : 20
+      }
+    }
+  },
+  "methods" : {
+    "org.finos.tracdap.gateway.TracPlatformGateway.<init>:(Lorg/finos/tracdap/common/plugin/PluginManager;Lorg/finos/tracdap/common/config/ConfigManager;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        93,
+        74,
+        81,
+        82,
+        94,
+        95,
+        96
+      ]
+    },
+    "org.finos.tracdap.gateway.TracPlatformGateway.buildCommonConcerns:()Lorg/finos/tracdap/common/middleware/NettyConcern;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        238,
+        241,
+        242,
+        243,
+        245
+      ]
+    },
+    "org.finos.tracdap.gateway.TracPlatformGateway.doShutdown:(Ljava/time/Duration;)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        205,
+        207,
+        209,
+        210,
+        212,
+        214,
+        215,
+        218,
+        220,
+        221,
+        223,
+        224,
+        226,
+        228,
+        229,
+        232,
+        233
+      ]
+    },
+    "org.finos.tracdap.gateway.TracPlatformGateway.doStartup:(Ljava/time/Duration;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        104,
+        106,
+        107,
+        108,
+        110,
+        111,
+        112,
+        114,
+        121,
+        116,
+        118,
+        119,
+        120,
+        125,
+        128,
+        129,
+        130,
+        133,
+        136,
+        138,
+        139,
+        140,
+        142,
+        144,
+        145,
+        146,
+        147,
+        149,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        159,
+        164,
+        166,
+        168,
+        169,
+        170,
+        173,
+        174,
+        175,
+        177,
+        199,
+        183,
+        185,
+        186,
+        188,
+        189,
+        195,
+        196,
+        198,
+        200
+      ]
+    },
+    "org.finos.tracdap.gateway.TracPlatformGateway.httpHandler:()Lio/netty/channel/ChannelHandler;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        249
+      ]
+    },
+    "org.finos.tracdap.gateway.TracPlatformGateway.main:([Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T006",
+      "perMethodOutcome" : "T006",
+      "lineNumbers" : [
+        90,
+        91
+      ]
+    },
+    "org.finos.tracdap.gateway.TracPlatformGateway.websocketConfig:(Lio/netty/handler/codec/http/HttpRequest;)Lio/netty/handler/codec/http/websocketx/WebSocketServerProtocolConfig;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        258,
+        259,
+        260,
+        261,
+        262,
+        263,
+        258
+      ]
+    },
+    "org.finos.tracdap.gateway.TracPlatformGateway.websocketHandler:()Lio/netty/channel/ChannelHandler;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        253
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.RedirectBuilder.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        35
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.RedirectBuilder.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        39,
+        40,
+        41
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.RedirectBuilder.buildRedirect:(Lorg/finos/tracdap/config/GatewayRedirect;)Lorg/finos/tracdap/gateway/exec/Redirect;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        75,
+        77,
+        78,
+        80
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.RedirectBuilder.buildRedirects:(Lorg/finos/tracdap/config/PlatformConfig;)Ljava/util/List;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        45,
+        47,
+        48,
+        49,
+        52,
+        54,
+        56,
+        57,
+        58,
+        59,
+        61,
+        63,
+        64,
+        65,
+        66,
+        67,
+        63,
+        68,
+        70
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.RedirectBuilder.lambda$buildRedirect$0:(Ljava/util/regex/Pattern;Lio/netty/handler/codec/http/HttpMethod;Ljava/net/URI;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        78
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.RestApiBuilder.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "T005",
+      "lineNumbers" : [
+        32
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.RestApiBuilder.buildAllMethods:(Lcom/google/protobuf/Descriptors$ServiceDescriptor;Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        38,
+        40,
+        42,
+        44,
+        45,
+        46,
+        47,
+        49,
+        50,
+        51,
+        52,
+        54,
+        56
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.RestApiBuilder.buildMethod:(Lcom/google/protobuf/Descriptors$MethodDescriptor;Ljava/lang/String;Lcom/google/api/HttpRule;Ljava/lang/ClassLoader;)Lorg/finos/tracdap/gateway/proxy/rest/RestApiMethod;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        66,
+        67,
+        68,
+        69,
+        70,
+        72,
+        73,
+        74,
+        75,
+        76,
+        78,
+        80,
+        81,
+        83,
+        88,
+        90,
+        91,
+        92,
+        94,
+        99,
+        101,
+        103
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.RestApiBuilder.lambda$buildAllMethods$0:(Ljava/util/Map$Entry;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        46
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.RouteBuilder.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        34,
+        36
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.RouteBuilder.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        41,
+        42,
+        43
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.RouteBuilder.buildCustomRoute:(Lorg/finos/tracdap/config/RouteConfig;)Lorg/finos/tracdap/gateway/exec/Route;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        188,
+        190,
+        191,
+        193
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.RouteBuilder.buildGrpcServiceRoute:(Lorg/finos/tracdap/config/PlatformConfig;Lorg/finos/tracdap/gateway/builders/ServiceInfo;)Lorg/finos/tracdap/gateway/exec/Route;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        95,
+        96,
+        97,
+        99,
+        100,
+        101,
+        102,
+        104,
+        105,
+        107,
+        108,
+        109,
+        110,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        120
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.RouteBuilder.buildHttpServiceRoute:(Lorg/finos/tracdap/config/PlatformConfig;Lorg/finos/tracdap/gateway/builders/ServiceInfo;)Lorg/finos/tracdap/gateway/exec/Route;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        158,
+        159,
+        160,
+        162,
+        163,
+        164,
+        165,
+        167,
+        168,
+        170,
+        171,
+        172,
+        173,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        183
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.RouteBuilder.buildRestServiceRoute:(Lorg/finos/tracdap/config/PlatformConfig;Lorg/finos/tracdap/gateway/builders/ServiceInfo;)Lorg/finos/tracdap/gateway/exec/Route;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        125,
+        126,
+        127,
+        129,
+        130,
+        131,
+        132,
+        134,
+        135,
+        137,
+        138,
+        140,
+        141,
+        142,
+        143,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        153
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.RouteBuilder.buildRoutes:(Lorg/finos/tracdap/config/PlatformConfig;)Ljava/util/List;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        47,
+        49,
+        50,
+        52,
+        53,
+        55,
+        56,
+        57,
+        58,
+        60,
+        62,
+        63,
+        64,
+        65,
+        67,
+        69,
+        70,
+        71,
+        72,
+        74,
+        76,
+        77,
+        78,
+        79,
+        81,
+        83,
+        84,
+        85,
+        86,
+        87,
+        83,
+        88,
+        90
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.RouteBuilder.lambda$buildCustomRoute$3:(Ljava/lang/String;Lio/netty/handler/codec/http/HttpMethod;Ljava/net/URI;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        191
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.RouteBuilder.lambda$buildGrpcServiceRoute$0:(Ljava/lang/String;Lio/netty/handler/codec/http/HttpMethod;Ljava/net/URI;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        100
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.RouteBuilder.lambda$buildHttpServiceRoute$2:(Ljava/lang/String;Lio/netty/handler/codec/http/HttpMethod;Ljava/net/URI;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        163
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.RouteBuilder.lambda$buildRestServiceRoute$1:(Ljava/lang/String;Lio/netty/handler/codec/http/HttpMethod;Ljava/net/URI;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        130
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.ServiceInfo.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        38,
+        39,
+        40,
+        41,
+        42,
+        38,
+        44,
+        45,
+        46,
+        47,
+        44,
+        49,
+        50,
+        51,
+        52,
+        49
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.ServiceInfo.<init>:(Ljava/lang/String;Lorg/finos/tracdap/config/ServiceConfig;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        155,
+        156
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.ServiceInfo.<init>:(Ljava/lang/String;Lorg/finos/tracdap/config/ServiceConfig;Lcom/google/protobuf/Descriptors$ServiceDescriptor;Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        160,
+        162,
+        163,
+        164,
+        166,
+        167,
+        168,
+        170,
+        171,
+        172,
+        173,
+        176,
+        177,
+        178,
+        179,
+        181,
+        182,
+        183,
+        186,
+        187,
+        189
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.ServiceInfo.buildServiceInfo:(Lorg/finos/tracdap/config/PlatformConfig;)Ljava/util/List;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        66,
+        69,
+        72,
+        73,
+        76,
+        78,
+        79,
+        81,
+        83
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.ServiceInfo.buildServiceInfo:(Lorg/finos/tracdap/config/PlatformConfig;Ljava/lang/String;)Lorg/finos/tracdap/gateway/builders/ServiceInfo;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        88,
+        90,
+        92,
+        93,
+        94,
+        97
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.ServiceInfo.config:()Lorg/finos/tracdap/config/ServiceConfig;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        121
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.ServiceInfo.descriptor:()Lcom/google/protobuf/Descriptors$ServiceDescriptor;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        125
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.ServiceInfo.hasGrpc:()Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        101
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.ServiceInfo.hasHttp:()Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        109
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.ServiceInfo.hasRest:()Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        105
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.ServiceInfo.httpPrefix:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        129
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.ServiceInfo.isEnabled:(Lorg/finos/tracdap/config/ServiceConfig;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        138
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.ServiceInfo.restPrefix:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        133
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.ServiceInfo.serviceDescriptor:(Lcom/google/protobuf/Descriptors$FileDescriptor;Ljava/lang/String;)Lcom/google/protobuf/Descriptors$ServiceDescriptor;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        145,
+        147,
+        148,
+        150
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.ServiceInfo.serviceKey:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        113
+      ]
+    },
+    "org.finos.tracdap.gateway.builders.ServiceInfo.serviceName:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        117
+      ]
+    },
+    "org.finos.tracdap.gateway.exec.IRouteMatcher.matches:(Lio/netty/handler/codec/http/HttpMethod;Ljava/net/URI;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.gateway.exec.Redirect.<init>:(ILorg/finos/tracdap/config/GatewayRedirect;Lorg/finos/tracdap/gateway/exec/IRouteMatcher;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        28,
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    "org.finos.tracdap.gateway.exec.Redirect.getConfig:()Lorg/finos/tracdap/config/GatewayRedirect;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        39
+      ]
+    },
+    "org.finos.tracdap.gateway.exec.Redirect.getIndex:()I" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        35
+      ]
+    },
+    "org.finos.tracdap.gateway.exec.Redirect.getMatcher:()Lorg/finos/tracdap/gateway/exec/IRouteMatcher;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        43
+      ]
+    },
+    "org.finos.tracdap.gateway.exec.Route.<init>:(ILorg/finos/tracdap/config/RouteConfig;Lorg/finos/tracdap/gateway/exec/IRouteMatcher;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        34,
+        35
+      ]
+    },
+    "org.finos.tracdap.gateway.exec.Route.<init>:(ILorg/finos/tracdap/config/RouteConfig;Lorg/finos/tracdap/gateway/exec/IRouteMatcher;Ljava/util/List;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        41,
+        43,
+        44,
+        45,
+        46,
+        47
+      ]
+    },
+    "org.finos.tracdap.gateway.exec.Route.getConfig:()Lorg/finos/tracdap/config/RouteConfig;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        54
+      ]
+    },
+    "org.finos.tracdap.gateway.exec.Route.getIndex:()I" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        50
+      ]
+    },
+    "org.finos.tracdap.gateway.exec.Route.getMatcher:()Lorg/finos/tracdap/gateway/exec/IRouteMatcher;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        58
+      ]
+    },
+    "org.finos.tracdap.gateway.exec.Route.getRestMethods:()Ljava/util/List;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        62
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcProtocol.$values:()[Lorg/finos/tracdap/gateway/proxy/grpc/GrpcProtocol;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        20
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcProtocol.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        22,
+        23,
+        24,
+        20
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcProtocol.<init>:(Ljava/lang/String;I)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        20
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcProtocol.valueOf:(Ljava/lang/String;)Lorg/finos/tracdap/gateway/proxy/grpc/GrpcProtocol;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        20
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcProtocol.values:()[Lorg/finos/tracdap/gateway/proxy/grpc/GrpcProtocol;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        20
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcProxy.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        33
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcProxy.<init>:(I)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        38,
+        34,
+        39,
+        40
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcProxy.channelRead:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 4
+      },
+      "lineNumbers" : [
+        66,
+        67,
+        69,
+        71,
+        73,
+        75,
+        76,
+        79,
+        80
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcProxy.lambda$logRequestStart$0:(Lio/netty/handler/codec/http2/Http2HeadersFrame;Ljava/lang/CharSequence;Lio/netty/util/concurrent/Future;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        88,
+        89,
+        88
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcProxy.logRequestStart:(Lio/netty/handler/codec/http2/Http2HeadersFrame;Lio/netty/channel/ChannelPromise;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        84,
+        85,
+        87,
+        90
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcProxy.logResponseComplete:(Lio/netty/handler/codec/http2/Http2HeadersFrame;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        94,
+        95,
+        96,
+        98,
+        100,
+        102,
+        103,
+        104,
+        102,
+        105,
+        109,
+        110,
+        111,
+        109,
+        113
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcProxy.write:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Object;Lio/netty/channel/ChannelPromise;)V" : {
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 4
+      },
+      "lineNumbers" : [
+        46,
+        47,
+        49,
+        51,
+        53,
+        55,
+        56,
+        59,
+        60
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcProxyBuilder$1.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        164,
+        140
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcProxyBuilder.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        50
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcProxyBuilder.<init>:(Lorg/finos/tracdap/config/RouteConfig;Lio/netty/channel/ChannelDuplexHandler;ILorg/finos/tracdap/gateway/proxy/http/HttpProtocol;Lorg/finos/tracdap/gateway/proxy/grpc/GrpcProtocol;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        67,
+        51,
+        69,
+        70,
+        72,
+        73,
+        74,
+        76,
+        77,
+        78,
+        76,
+        79
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcProxyBuilder.initChannel:(Lio/netty/channel/Channel;)V" : {
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 6
+      },
+      "lineNumbers" : [
+        84,
+        85,
+        87,
+        90,
+        93,
+        96,
+        97
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcProxyBuilder.isDataRoute:()Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        188
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcProxyBuilder.setupGrpcTranslation:(Lio/netty/channel/ChannelPipeline;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        140,
+        143,
+        144,
+        147,
+        148,
+        149,
+        152,
+        153,
+        154,
+        155,
+        158,
+        160
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcProxyBuilder.setupHttp2:(Lio/netty/channel/ChannelPipeline;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        101,
+        105,
+        107,
+        108,
+        110,
+        111,
+        112,
+        116,
+        117,
+        118,
+        121,
+        122,
+        123,
+        124,
+        125,
+        129,
+        130,
+        132,
+        134,
+        135,
+        136
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcProxyBuilder.setupRouterLink:(Lio/netty/channel/ChannelPipeline;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        164,
+        168,
+        169,
+        170,
+        173,
+        174,
+        178,
+        180,
+        178,
+        182,
+        184
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcUtils.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        34
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcUtils.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "T005",
+      "lineNumbers" : [
+        32
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcUtils.asciiToLpm:(Ljava/lang/StringBuilder;Lio/netty/buffer/ByteBufAllocator;)Lio/netty/buffer/ByteBuf;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        149,
+        150,
+        152,
+        153,
+        154,
+        155,
+        157
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcUtils.canDecodeLpm:(Lio/netty/buffer/ByteBuf;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        91,
+        92,
+        98,
+        100
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcUtils.decodeHeadersFrame:(Lio/netty/buffer/ByteBuf;)Lio/netty/handler/codec/http2/Http2Headers;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R006",
+      "lineNumbers" : [
+        105,
+        107,
+        108,
+        110,
+        111,
+        113,
+        117,
+        118,
+        120,
+        121,
+        122,
+        124,
+        113,
+        127
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcUtils.decodeLpm:(Lcom/google/protobuf/Message;Lio/netty/buffer/ByteBuf;)Lcom/google/protobuf/Message;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        61,
+        62,
+        64,
+        65,
+        67,
+        68,
+        71,
+        72,
+        74,
+        76,
+        77,
+        79,
+        80,
+        79,
+        74,
+        81,
+        82,
+        84,
+        85
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcUtils.encodeLpm:(Lcom/google/protobuf/Message;Lio/netty/buffer/ByteBufAllocator;)Lio/netty/buffer/ByteBuf;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        39,
+        40,
+        41,
+        42,
+        44,
+        46,
+        47,
+        48,
+        50,
+        51,
+        50,
+        44,
+        52,
+        53
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcUtils.lpmHeaders:(Lio/netty/handler/codec/http2/Http2Headers;Lio/netty/buffer/ByteBufAllocator;)Lio/netty/buffer/ByteBuf;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        132,
+        134,
+        136,
+        137,
+        138,
+        139,
+        140,
+        144
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcUtils.readLpmFlag:([B)S" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        162
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcUtils.readLpmLength:([B)J" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        167
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcWebProxy$1.<init>:(Lorg/finos/tracdap/gateway/proxy/grpc/GrpcWebProxy;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        200
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcWebProxy$1.encodeHeaders0:(Lio/netty/handler/codec/http/HttpHeaders;Lio/netty/buffer/ByteBuf;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        202,
+        203
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcWebProxy.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        38,
+        41
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcWebProxy.<init>:(I)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        47,
+        42,
+        48,
+        49,
+        50
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcWebProxy.channelRead:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        103,
+        104,
+        106,
+        108,
+        110,
+        111,
+        112,
+        113,
+        115,
+        116,
+        117,
+        119,
+        120,
+        121,
+        122,
+        124,
+        125,
+        131,
+        136,
+        137,
+        136,
+        137,
+        138
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcWebProxy.decodeWebTextFrame:(Lio/netty/handler/codec/http2/Http2DataFrame;)Lio/netty/handler/codec/http2/Http2DataFrame;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        190
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcWebProxy.encodeWebTextFrame:(Lio/netty/handler/codec/http2/Http2DataFrame;)Lio/netty/handler/codec/http2/Http2DataFrame;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        195
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcWebProxy.lambda$write$0:(Lio/netty/handler/codec/http2/Http2HeadersFrame;Lio/netty/handler/codec/http2/Http2HeadersFrame;Lio/netty/util/concurrent/Future;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        69,
+        70,
+        69
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcWebProxy.lengthPrefixedMessage:(Lio/netty/handler/codec/http/HttpHeaders;Lio/netty/buffer/ByteBufAllocator;)Lio/netty/buffer/ByteBuf;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        200,
+        206,
+        209,
+        210,
+        212,
+        213,
+        216,
+        217,
+        218,
+        221,
+        223
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcWebProxy.translateRequestHeaders:(Lio/netty/handler/codec/http2/Http2HeadersFrame;)Lio/netty/handler/codec/http2/Http2HeadersFrame;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        142,
+        144,
+        146,
+        147,
+        148,
+        149,
+        152
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcWebProxy.translateResponseHeaders:(Lio/netty/handler/codec/http2/Http2HeadersFrame;)Lio/netty/handler/codec/http2/Http2HeadersFrame;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        157,
+        159,
+        161,
+        162,
+        163,
+        166
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcWebProxy.translateResponseTrailers:(Lio/netty/handler/codec/http2/Http2HeadersFrame;Lio/netty/buffer/ByteBufAllocator;)Lio/netty/handler/codec/http2/Http2DataFrame;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        171,
+        172,
+        174,
+        175,
+        177,
+        179,
+        180,
+        182,
+        183,
+        185
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.GrpcWebProxy.write:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Object;Lio/netty/channel/ChannelPromise;)V" : {
+      "completeTestCount" : 7,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 7
+      },
+      "lineNumbers" : [
+        58,
+        59,
+        61,
+        63,
+        65,
+        66,
+        69,
+        72,
+        73,
+        74,
+        76,
+        77,
+        78,
+        79,
+        81,
+        82,
+        88,
+        89,
+        93,
+        94,
+        93,
+        94,
+        95
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.WebSocketsTranslator.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        50
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.WebSocketsTranslator.<init>:(I)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        62,
+        51,
+        64,
+        65,
+        66
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.WebSocketsTranslator.channelRead:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        283,
+        284,
+        285,
+        288,
+        289,
+        293,
+        295,
+        296,
+        298,
+        299,
+        301,
+        303,
+        304,
+        306,
+        307,
+        312,
+        320,
+        322,
+        323,
+        324,
+        332,
+        333,
+        332,
+        333,
+        334
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.WebSocketsTranslator.consumeLpmBytes:(Lio/netty/channel/ChannelHandlerContext;Lio/netty/buffer/ByteBuf;I)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        243,
+        245,
+        246,
+        248,
+        249,
+        250,
+        252,
+        253,
+        254
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.WebSocketsTranslator.lambda$processOutboundHeaders$0:(Lio/netty/handler/codec/http2/Http2Headers;Lio/netty/util/concurrent/Future;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        137,
+        138,
+        137
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.WebSocketsTranslator.processInboundData:(Lio/netty/channel/ChannelHandlerContext;Lio/netty/handler/codec/http2/Http2DataFrame;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        355,
+        356,
+        358,
+        359,
+        361,
+        362
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.WebSocketsTranslator.processInboundHeaders:(Lio/netty/channel/ChannelHandlerContext;Lio/netty/handler/codec/http2/Http2HeadersFrame;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        340,
+        341,
+        343,
+        344,
+        346,
+        347
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.WebSocketsTranslator.processOutboundData:(Lio/netty/channel/ChannelHandlerContext;Lio/netty/handler/codec/http/websocketx/WebSocketFrame;Lio/netty/channel/ChannelPromise;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        154,
+        155,
+        156,
+        158,
+        159,
+        161,
+        164,
+        166,
+        170,
+        171,
+        173,
+        174,
+        179,
+        180,
+        184,
+        185,
+        189,
+        190,
+        191,
+        196,
+        197,
+        200,
+        205,
+        202,
+        203,
+        204,
+        206
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.WebSocketsTranslator.processOutboundHeaders:(Lio/netty/channel/ChannelHandlerContext;Lio/netty/handler/codec/http/websocketx/WebSocketFrame;Lio/netty/channel/ChannelPromise;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        125,
+        127,
+        128,
+        130,
+        131,
+        133,
+        136,
+        140,
+        141
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.WebSocketsTranslator.sendExplicitEos:(Lio/netty/channel/ChannelHandlerContext;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        258,
+        259,
+        262,
+        263,
+        264,
+        265
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.WebSocketsTranslator.sniffLpmPrefix:(Lio/netty/buffer/ByteBuf;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        219,
+        220,
+        222,
+        224,
+        226,
+        231,
+        234,
+        235,
+        237
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.WebSocketsTranslator.sniffWsPrefix:(Lio/netty/buffer/ByteBuf;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        210,
+        213,
+        214,
+        215
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.grpc.WebSocketsTranslator.write:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Object;Lio/netty/channel/ChannelPromise;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        85,
+        86,
+        87,
+        90,
+        94,
+        95,
+        117,
+        96,
+        101,
+        103,
+        104,
+        117,
+        105,
+        108,
+        111,
+        117,
+        118,
+        117,
+        118,
+        119
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http1Proxy.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        39
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http1Proxy.<init>:(Lorg/finos/tracdap/config/RouteConfig;J)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        51,
+        40,
+        48,
+        53,
+        54,
+        59,
+        60,
+        65,
+        66,
+        67,
+        68,
+        70,
+        71
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http1Proxy.channelRead:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        106,
+        108,
+        109,
+        111,
+        113,
+        114,
+        115,
+        117,
+        120,
+        123,
+        124,
+        123,
+        124,
+        125
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http1Proxy.logRequest:(Lio/netty/handler/codec/http/HttpRequest;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        274,
+        275,
+        276,
+        277,
+        274,
+        278
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http1Proxy.logResponse:(Lio/netty/handler/codec/http/HttpResponse;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        282,
+        283,
+        284,
+        285,
+        282,
+        286
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http1Proxy.proxyRequest:(Lio/netty/handler/codec/http/HttpRequest;)Lio/netty/handler/codec/http/HttpRequest;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        131,
+        132,
+        135,
+        136,
+        138,
+        139,
+        140,
+        141,
+        143,
+        144,
+        146,
+        148,
+        149,
+        150,
+        153,
+        155,
+        156,
+        158,
+        159,
+        160,
+        164,
+        158,
+        168,
+        169,
+        170,
+        168
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http1Proxy.proxyResponse:(Lio/netty/handler/codec/http/HttpResponse;)Lio/netty/handler/codec/http/HttpResponse;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        178,
+        179,
+        181,
+        183,
+        184,
+        185,
+        188,
+        190,
+        191,
+        193,
+        194,
+        195,
+        198,
+        193,
+        202,
+        203,
+        204,
+        202
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http1Proxy.translateHostHeader:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        211,
+        212,
+        215,
+        216,
+        217,
+        218,
+        220
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http1Proxy.translateLocationHeader:(Ljava/lang/String;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        225,
+        226,
+        227,
+        228,
+        229,
+        232,
+        233,
+        234,
+        235,
+        234,
+        239,
+        242,
+        243,
+        246,
+        254,
+        255,
+        257,
+        259,
+        261,
+        262,
+        269
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http1Proxy.write:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Object;Lio/netty/channel/ChannelPromise;)V" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        78,
+        80,
+        82,
+        83,
+        85,
+        87,
+        88,
+        89,
+        91,
+        94,
+        97,
+        98,
+        97,
+        98,
+        99
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http1ProxyBuilder.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        30
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http1ProxyBuilder.<init>:(Lorg/finos/tracdap/config/RouteConfig;Lio/netty/channel/ChannelDuplexHandler;J)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        40,
+        31,
+        42,
+        43,
+        44,
+        45
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http1ProxyBuilder.initChannel:(Lio/netty/channel/Channel;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        50,
+        51,
+        53,
+        54,
+        55,
+        56,
+        57
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http1to2Proxy.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        40
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http1to2Proxy.<init>:(Lorg/finos/tracdap/config/RouteConfig;I)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        51,
+        41,
+        53,
+        54,
+        56,
+        57,
+        58,
+        59
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http1to2Proxy.channelRead:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        88,
+        89,
+        91,
+        92,
+        94,
+        95,
+        98,
+        99,
+        98,
+        99,
+        100
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http1to2Proxy.lambda$newSeqStream$0:(Lio/netty/handler/codec/http2/Http2FrameStream;Lio/netty/util/concurrent/Future;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        109
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http1to2Proxy.logTranslation:(Lio/netty/handler/codec/http2/Http2FrameStream;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        114,
+        115
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http1to2Proxy.newSeqStream:(Lio/netty/channel/ChannelPromise;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        104,
+        106,
+        107,
+        109,
+        110
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http1to2Proxy.translateRequestFrames:(Ljava/lang/Object;)Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        119,
+        120,
+        122,
+        123,
+        125,
+        127,
+        129,
+        130,
+        132,
+        133,
+        134,
+        135,
+        137,
+        138,
+        140,
+        144,
+        145,
+        146,
+        147,
+        148,
+        144,
+        150,
+        151,
+        152,
+        151,
+        154,
+        155,
+        158,
+        160,
+        161,
+        163,
+        165,
+        167,
+        168,
+        169,
+        170,
+        172,
+        173,
+        175,
+        177,
+        178,
+        181,
+        182,
+        184
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http1to2Proxy.translateResponseData:(Lio/netty/handler/codec/http2/Http2DataFrame;)Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        235,
+        237,
+        238,
+        240
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http1to2Proxy.translateResponseFrame:(Lio/netty/handler/codec/http2/Http2Frame;)Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        189,
+        190,
+        192,
+        193,
+        195
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http1to2Proxy.translateResponseHeaders:(Lio/netty/handler/codec/http2/Http2HeadersFrame;)Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        200,
+        201,
+        203,
+        204,
+        205,
+        204,
+        207,
+        208,
+        210,
+        212,
+        213,
+        215,
+        216,
+        218,
+        228,
+        229
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http1to2Proxy.write:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Object;Lio/netty/channel/ChannelPromise;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        66,
+        67,
+        69,
+        70,
+        71,
+        73,
+        74,
+        76,
+        79,
+        80,
+        79,
+        80,
+        81
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http2FlowControl$StreamState.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T008",
+      "perMethodOutcome" : "T008",
+      "lineNumbers" : [
+        585
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http2FlowControl.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        67
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http2FlowControl.<init>:(ILjava/lang/String;Lio/netty/handler/codec/http2/Http2Settings;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        81,
+        68,
+        83,
+        84,
+        86,
+        87,
+        89,
+        90
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http2FlowControl.channelActive:(Lio/netty/channel/ChannelHandlerContext;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        95,
+        96,
+        101,
+        102,
+        103,
+        105
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http2FlowControl.channelInactive:(Lio/netty/channel/ChannelHandlerContext;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        110,
+        111,
+        113,
+        114
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http2FlowControl.channelRead:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        171,
+        172,
+        173,
+        176,
+        178,
+        179,
+        181,
+        183,
+        184,
+        185,
+        187,
+        189,
+        190,
+        191,
+        193,
+        195,
+        196,
+        197,
+        199,
+        201,
+        204,
+        206,
+        207,
+        208,
+        210,
+        212,
+        213,
+        214,
+        218,
+        222,
+        223,
+        222,
+        223,
+        224
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http2FlowControl.createStreamState:(Lio/netty/handler/codec/http2/Http2FrameStream;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        593,
+        594,
+        595,
+        597,
+        598
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http2FlowControl.destroyStreamState:(Lio/netty/handler/codec/http2/Http2FrameStream;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        609,
+        612,
+        613,
+        614,
+        617,
+        619,
+        621,
+        624,
+        625,
+        627,
+        628,
+        630,
+        631,
+        633,
+        635,
+        637
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http2FlowControl.dispatchFrame:(Lio/netty/channel/ChannelHandlerContext;Lorg/finos/tracdap/gateway/proxy/http/Http2FlowControl$StreamState;Lio/netty/handler/codec/http2/Http2DataFrame;Lio/netty/channel/ChannelPromise;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        287,
+        289,
+        291,
+        292,
+        293,
+        291,
+        296,
+        297,
+        299,
+        301,
+        302,
+        305,
+        307
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http2FlowControl.fillDefaultSettings:(Lio/netty/handler/codec/http2/Http2Settings;)Lio/netty/handler/codec/http2/Http2Settings;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        641,
+        642,
+        645,
+        646,
+        649
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http2FlowControl.flush:(Lio/netty/channel/ChannelHandlerContext;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        159,
+        160,
+        163,
+        164
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http2FlowControl.getStreamState:(Lio/netty/handler/codec/http2/Http2FrameStream;)Lorg/finos/tracdap/gateway/proxy/http/Http2FlowControl$StreamState;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        602
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http2FlowControl.lambda$processOutboundHeaders$0:(Lio/netty/handler/codec/http2/Http2FrameStream;Lio/netty/util/concurrent/Future;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        242,
+        243,
+        242
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http2FlowControl.lambda$processOutboundHeaders$1:(Lio/netty/handler/codec/http2/Http2FrameStream;Lio/netty/util/concurrent/Future;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        256,
+        257,
+        256
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http2FlowControl.logFrameTrace:(Lio/netty/handler/codec/http2/Http2Frame;Z)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        654,
+        656,
+        658,
+        660,
+        661,
+        662,
+        663,
+        664,
+        660,
+        666,
+        667,
+        669,
+        671,
+        672,
+        673,
+        674,
+        671,
+        675,
+        676,
+        678,
+        680,
+        681,
+        682,
+        680,
+        683,
+        686,
+        687,
+        686,
+        689
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http2FlowControl.processAllQueues:(Lio/netty/channel/ChannelHandlerContext;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        360,
+        361,
+        363,
+        365,
+        366,
+        367,
+        368,
+        369
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http2FlowControl.processInboundData:(Lio/netty/channel/ChannelHandlerContext;Lio/netty/handler/codec/http2/Http2DataFrame;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        404,
+        405,
+        406,
+        409,
+        410,
+        412,
+        413,
+        419,
+        420,
+        422
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http2FlowControl.processInboundHeaders:(Lio/netty/channel/ChannelHandlerContext;Lio/netty/handler/codec/http2/Http2HeadersFrame;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        383,
+        384,
+        387,
+        391,
+        392,
+        394
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http2FlowControl.processOutboundData:(Lio/netty/channel/ChannelHandlerContext;Lio/netty/handler/codec/http2/Http2DataFrame;Lio/netty/channel/ChannelPromise;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        266,
+        267,
+        269,
+        271,
+        272,
+        273,
+        277,
+        279,
+        280,
+        282,
+        283
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http2FlowControl.processOutboundHeaders:(Lio/netty/channel/ChannelHandlerContext;Lio/netty/handler/codec/http2/Http2HeadersFrame;Lio/netty/channel/ChannelPromise;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        234,
+        236,
+        238,
+        241,
+        246,
+        249,
+        251,
+        253,
+        255,
+        260,
+        262
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http2FlowControl.processPing:(Lio/netty/channel/ChannelHandlerContext;Lio/netty/handler/codec/http2/Http2PingFrame;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        434
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http2FlowControl.processQueue:(Lio/netty/channel/ChannelHandlerContext;ILorg/finos/tracdap/gateway/proxy/http/Http2FlowControl$StreamState;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        325,
+        327,
+        328,
+        331,
+        333,
+        334,
+        335,
+        336,
+        339,
+        340,
+        342,
+        343,
+        345,
+        346,
+        348,
+        350,
+        351,
+        354,
+        356
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http2FlowControl.processSettings:(Lio/netty/channel/ChannelHandlerContext;Lio/netty/handler/codec/http2/Http2SettingsFrame;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        438,
+        443,
+        444,
+        446,
+        448,
+        449,
+        450,
+        451,
+        448,
+        454,
+        456,
+        457,
+        460,
+        461,
+        470,
+        471,
+        472,
+        474,
+        476,
+        478,
+        479,
+        478,
+        482,
+        483,
+        488,
+        492,
+        493,
+        502
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http2FlowControl.processSettingsAck:(Lio/netty/channel/ChannelHandlerContext;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        506,
+        510,
+        512,
+        514,
+        515,
+        516,
+        517,
+        514,
+        520,
+        522,
+        523,
+        526,
+        527,
+        530
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http2FlowControl.processWindowUpdate:(Lio/netty/channel/ChannelHandlerContext;Lio/netty/handler/codec/http2/Http2WindowUpdateFrame;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        534,
+        536,
+        537,
+        536,
+        539,
+        542,
+        548,
+        550,
+        551,
+        550,
+        553,
+        556,
+        560,
+        561,
+        566,
+        568,
+        570,
+        571,
+        572,
+        573,
+        570,
+        576,
+        577
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http2FlowControl.queueFrame:(Lorg/finos/tracdap/gateway/proxy/http/Http2FlowControl$StreamState;Lio/netty/handler/codec/http2/Http2DataFrame;Lio/netty/channel/ChannelPromise;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        311,
+        313,
+        315,
+        316,
+        317,
+        315,
+        320,
+        321
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.Http2FlowControl.write:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Object;Lio/netty/channel/ChannelPromise;)V" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        121,
+        122,
+        123,
+        126,
+        128,
+        129,
+        131,
+        133,
+        134,
+        135,
+        136,
+        138,
+        139,
+        140,
+        147,
+        148,
+        152,
+        153,
+        152,
+        153,
+        154
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.HttpProtocol.$values:()[Lorg/finos/tracdap/gateway/proxy/http/HttpProtocol;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        20
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.HttpProtocol.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        22,
+        23,
+        24,
+        25,
+        20
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.HttpProtocol.<init>:(Ljava/lang/String;I)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        20
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.HttpProtocol.valueOf:(Ljava/lang/String;)Lorg/finos/tracdap/gateway/proxy/http/HttpProtocol;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        20
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.http.HttpProtocol.values:()[Lorg/finos/tracdap/gateway/proxy/http/HttpProtocol;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        20
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiFields.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        35
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiFields.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "T005",
+      "lineNumbers" : [
+        31
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiFields.isSegmentCapture:(Ljava/lang/String;)Z" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        41
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiFields.lambda$prepareSubFieldMapper$0:(Lcom/google/protobuf/Message$Builder;)Lcom/google/protobuf/Message$Builder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        98
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiFields.lambda$prepareSubFieldMapper$1:(Ljava/util/List;Lcom/google/protobuf/Message$Builder;)Lcom/google/protobuf/Message$Builder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        100
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiFields.mapSubfield:(Lcom/google/protobuf/Message$Builder;Ljava/util/List;)Lcom/google/protobuf/Message$Builder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        106,
+        108,
+        109,
+        111,
+        112,
+        113,
+        116,
+        106,
+        119
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiFields.prepareFieldDescriptors:(Lcom/google/protobuf/Descriptors$Descriptor;Ljava/lang/String;)Ljava/util/List;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        62,
+        63,
+        65,
+        66,
+        68,
+        70,
+        71,
+        73,
+        75,
+        76,
+        79,
+        81,
+        82,
+        84,
+        86,
+        87,
+        68,
+        91
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiFields.prepareFieldsForPathSegment:(Lcom/google/protobuf/Descriptors$Descriptor;Ljava/lang/String;)Ljava/util/List;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        47,
+        49,
+        50,
+        52,
+        54
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiFields.prepareSubFieldMapper:(Ljava/util/List;)Ljava/util/function/Function;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        97,
+        98,
+        100
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiMatcher$1.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        81
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiMatcher.<init>:(Lio/netty/handler/codec/http/HttpMethod;Ljava/lang/String;Lcom/google/protobuf/Message;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        40,
+        42,
+        44,
+        45,
+        47,
+        48,
+        49,
+        50
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiMatcher.lambda$new$0:(Lcom/google/protobuf/Message;Ljava/lang/String;)Ljava/util/function/Function;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        48
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiMatcher.lambda$prepareMatcherForSegment$1:(Ljava/lang/String;)Ljava/lang/Boolean;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        60
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiMatcher.lambda$prepareMatcherForSegment$2:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Boolean;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        64
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiMatcher.lambda$prepareMatcherForTargetField$3:(Lcom/google/protobuf/Descriptors$EnumDescriptor;Ljava/lang/String;)Ljava/lang/Boolean;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        88
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiMatcher.matchEnumSegment:(Lcom/google/protobuf/Descriptors$EnumDescriptor;Ljava/lang/String;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        144
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiMatcher.matchIntSegment:(Ljava/lang/String;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        163,
+        164,
+        166,
+        167
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiMatcher.matchLiteralSegment:(Ljava/lang/String;Ljava/lang/String;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        134
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiMatcher.matchLongSegment:(Ljava/lang/String;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        151,
+        152,
+        154,
+        155
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiMatcher.matchStringSegment:(Ljava/lang/String;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        139
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiMatcher.matches:(Lio/netty/handler/codec/http/HttpMethod;Ljava/net/URI;)Z" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        110,
+        111,
+        113,
+        115,
+        116,
+        118,
+        120,
+        121,
+        123,
+        125,
+        126,
+        118,
+        129
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiMatcher.prepareMatcherForSegment:(Ljava/lang/String;Lcom/google/protobuf/Message;)Ljava/util/function/Function;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        59,
+        60,
+        63,
+        64,
+        66,
+        68,
+        69,
+        70,
+        72,
+        75
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiMatcher.prepareMatcherForTargetField:(Lcom/google/protobuf/Descriptors$FieldDescriptor;)Ljava/util/function/Function;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        81,
+        84,
+        87,
+        88,
+        91,
+        94,
+        98
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiMethod.<init>:(Lcom/google/protobuf/Descriptors$MethodDescriptor;Lorg/finos/tracdap/gateway/proxy/rest/RestApiTranslator;Lorg/finos/tracdap/gateway/proxy/rest/RestApiMatcher;ZZ)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        39,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiMethod.GET:(Lcom/google/protobuf/Descriptors$MethodDescriptor;Lcom/google/protobuf/Message;Lcom/google/protobuf/Message;Ljava/lang/String;Ljava/lang/String;)Lorg/finos/tracdap/gateway/proxy/rest/RestApiMethod;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        68,
+        69,
+        72,
+        74
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiMethod.POST:(Lcom/google/protobuf/Descriptors$MethodDescriptor;Lcom/google/protobuf/Message;Lcom/google/protobuf/Message;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/finos/tracdap/gateway/proxy/rest/RestApiMethod;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        55,
+        56,
+        58
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiProxy$RestApiCallState.<init>:(Lio/netty/channel/ChannelHandlerContext;Lio/netty/handler/codec/http2/Http2FrameStream;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        585,
+        587,
+        589,
+        590,
+        591,
+        592,
+        593
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiProxy.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        48,
+        56,
+        57,
+        58,
+        59,
+        60,
+        56,
+        62
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiProxy.<init>:(Ljava/util/List;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        69,
+        63,
+        70,
+        71,
+        72
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiProxy.channelRead:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 4
+      },
+      "lineNumbers" : [
+        142,
+        143,
+        146,
+        147,
+        148,
+        202,
+        149,
+        152,
+        153,
+        154,
+        155,
+        157,
+        159,
+        160,
+        162,
+        164,
+        165,
+        166,
+        170,
+        171,
+        172,
+        173,
+        175,
+        176,
+        178,
+        180,
+        181,
+        182,
+        185,
+        186,
+        187,
+        190,
+        191,
+        192,
+        194,
+        197,
+        202,
+        203,
+        202,
+        203,
+        204
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiProxy.checkRequestHeaders:(Lorg/finos/tracdap/gateway/proxy/rest/RestApiProxy$RestApiCallState;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        495,
+        500,
+        502,
+        503,
+        505,
+        507,
+        508,
+        509,
+        512,
+        513,
+        520,
+        522,
+        523,
+        525,
+        527,
+        528,
+        529,
+        532,
+        533,
+        535
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiProxy.dispatchDownloadStreamHeaders:(Lorg/finos/tracdap/gateway/proxy/rest/RestApiProxy$RestApiCallState;Lio/netty/channel/ChannelHandlerContext;Lorg/finos/tracdap/api/DownloadResponse;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        343,
+        345,
+        347,
+        348,
+        350,
+        351,
+        353,
+        354,
+        356,
+        357,
+        359
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiProxy.dispatchRequest:(Lorg/finos/tracdap/gateway/proxy/rest/RestApiProxy$RestApiCallState;Lio/netty/channel/ChannelHandlerContext;Lio/netty/channel/ChannelPromise;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        218,
+        220,
+        221,
+        223,
+        224,
+        225,
+        269,
+        270,
+        271,
+        226,
+        232,
+        237,
+        234,
+        235,
+        269,
+        270,
+        271,
+        236,
+        239,
+        240,
+        241,
+        242,
+        243,
+        245,
+        247,
+        248,
+        250,
+        251,
+        269,
+        270,
+        271,
+        253,
+        255,
+        261,
+        262,
+        264,
+        265,
+        269,
+        270,
+        271,
+        269,
+        270,
+        271,
+        273,
+        274
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiProxy.dispatchStreamComplete:(Lorg/finos/tracdap/gateway/proxy/rest/RestApiProxy$RestApiCallState;Lio/netty/channel/ChannelHandlerContext;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        385,
+        386,
+        393,
+        394,
+        395,
+        397,
+        398,
+        399,
+        400,
+        402,
+        404
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiProxy.dispatchStreamContent:(Lorg/finos/tracdap/gateway/proxy/rest/RestApiProxy$RestApiCallState;Lio/netty/channel/ChannelHandlerContext;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        364,
+        366,
+        370,
+        371,
+        373,
+        374,
+        375,
+        376,
+        379,
+        380,
+        379,
+        380,
+        381
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiProxy.dispatchStreamHeaders:(Lorg/finos/tracdap/gateway/proxy/rest/RestApiProxy$RestApiCallState;Lio/netty/channel/ChannelHandlerContext;Z)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        330,
+        332,
+        333,
+        334,
+        336,
+        337,
+        339
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiProxy.dispatchUnaryResponse:(Lorg/finos/tracdap/gateway/proxy/rest/RestApiProxy$RestApiCallState;Lio/netty/channel/ChannelHandlerContext;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        280,
+        281,
+        283,
+        284,
+        288,
+        289,
+        292,
+        293,
+        296,
+        297,
+        298,
+        300,
+        301,
+        303,
+        304,
+        321,
+        322,
+        323,
+        306,
+        308,
+        314,
+        315,
+        317,
+        321,
+        322,
+        323,
+        321,
+        322,
+        323,
+        325,
+        326
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiProxy.exceptionCaught:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Throwable;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        209,
+        211,
+        212
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiProxy.lookupMethod:(Lio/netty/handler/codec/http2/Http2Headers;)Lorg/finos/tracdap/gateway/proxy/rest/RestApiMethod;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        408,
+        410,
+        411,
+        413,
+        414,
+        415,
+        417
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiProxy.sendErrorResponse:(Lio/netty/handler/codec/http2/Http2FrameStream;Lio/netty/channel/ChannelHandlerContext;Lio/netty/handler/codec/http/HttpResponseStatus;Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        541,
+        542,
+        544,
+        546,
+        547,
+        548,
+        549,
+        555,
+        556,
+        558,
+        559,
+        561,
+        562,
+        564,
+        565,
+        566,
+        568
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiProxy.translateRequestHeaders:(Lio/netty/handler/codec/http2/Http2Headers;Lorg/finos/tracdap/gateway/proxy/rest/RestApiProxy$RestApiCallState;)Lio/netty/handler/codec/http2/Http2Headers;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        422,
+        426,
+        427,
+        428,
+        429,
+        433,
+        434,
+        436,
+        437,
+        438,
+        442,
+        443,
+        445
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiProxy.translateResponseHeaders:(Lio/netty/handler/codec/http2/Http2Headers;Lorg/finos/tracdap/gateway/proxy/rest/RestApiProxy$RestApiCallState;Z)Lio/netty/handler/codec/http2/Http2Headers;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        450,
+        454,
+        455,
+        456,
+        457,
+        461,
+        462,
+        463,
+        466,
+        467,
+        470,
+        471,
+        472,
+        473,
+        474,
+        475,
+        476,
+        479,
+        480,
+        484,
+        485,
+        486,
+        489
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiProxy.write:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Object;Lio/netty/channel/ChannelPromise;)V" : {
+      "completeTestCount" : 8,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 8
+      },
+      "lineNumbers" : [
+        80,
+        81,
+        84,
+        85,
+        86,
+        132,
+        87,
+        90,
+        91,
+        93,
+        94,
+        95,
+        98,
+        100,
+        102,
+        103,
+        105,
+        106,
+        108,
+        109,
+        110,
+        112,
+        114,
+        115,
+        116,
+        119,
+        120,
+        122,
+        123,
+        126,
+        127,
+        132,
+        133,
+        132,
+        133,
+        134
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiProxyBuilder.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        40
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiProxyBuilder.<init>:(Lorg/finos/tracdap/gateway/exec/Route;Lorg/finos/tracdap/gateway/routing/CoreRouterLink;ILorg/finos/tracdap/gateway/proxy/http/HttpProtocol;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        52,
+        41,
+        54,
+        55,
+        56,
+        57,
+        58
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiProxyBuilder.initChannel:(Lio/netty/channel/Channel;)V" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        63,
+        65,
+        69,
+        70,
+        72,
+        73,
+        74,
+        72,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        83,
+        85,
+        86,
+        91,
+        92,
+        93,
+        97,
+        99,
+        100,
+        104,
+        106,
+        104,
+        108,
+        110
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiTranslator$1.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        406,
+        197
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiTranslator.<init>:(Lcom/google/protobuf/Message;Lcom/google/protobuf/Message;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        63,
+        53,
+        65,
+        66,
+        68,
+        69,
+        71,
+        73,
+        74,
+        75,
+        78,
+        79,
+        82,
+        83
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiTranslator.decodeGrpcResponse:(Lio/netty/buffer/ByteBuf;)Lcom/google/protobuf/Message;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        160,
+        162,
+        164
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiTranslator.decodeRestBody:(Lio/netty/buffer/ByteBuf;Lcom/google/protobuf/Message$Builder;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        126,
+        127,
+        129,
+        130,
+        131,
+        126,
+        131,
+        126,
+        149,
+        132,
+        134,
+        136,
+        138,
+        136,
+        141,
+        142,
+        144,
+        147,
+        148,
+        150
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiTranslator.decodeRestRequest:(Ljava/lang/String;)Lcom/google/protobuf/Message;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        93,
+        94,
+        96,
+        97,
+        99,
+        100,
+        102
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiTranslator.decodeRestRequest:(Ljava/lang/String;Lio/netty/buffer/ByteBuf;)Lcom/google/protobuf/Message;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        109,
+        110,
+        112,
+        113,
+        115,
+        116,
+        118,
+        119,
+        121
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiTranslator.encodeGrpcRequest:(Lcom/google/protobuf/Message;Lio/netty/buffer/ByteBufAllocator;)Lio/netty/buffer/ByteBuf;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        154
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiTranslator.encodeRestResponse:(Lcom/google/protobuf/Message;)Lio/netty/buffer/ByteBuf;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        173,
+        175,
+        177,
+        178,
+        180,
+        182,
+        186,
+        190,
+        191
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiTranslator.extractEnum:(Ljava/util/function/Function;Ljava/util/function/Function;Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/net/URI;Lcom/google/protobuf/Message$Builder;)Lcom/google/protobuf/Message$Builder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        298,
+        299,
+        301,
+        302,
+        305,
+        306,
+        308,
+        309,
+        311
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiTranslator.extractInt:(Ljava/util/function/Function;Ljava/util/function/Function;Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/net/URI;Lcom/google/protobuf/Message$Builder;)Lcom/google/protobuf/Message$Builder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        342,
+        343,
+        346,
+        347,
+        348,
+        350,
+        352,
+        354
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiTranslator.extractLong:(Ljava/util/function/Function;Ljava/util/function/Function;Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/net/URI;Lcom/google/protobuf/Message$Builder;)Lcom/google/protobuf/Message$Builder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        320,
+        321,
+        324,
+        325,
+        326,
+        328,
+        330,
+        332
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiTranslator.extractPathSegment:(ILjava/net/URI;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        268,
+        271,
+        272,
+        274
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiTranslator.extractString:(Ljava/util/function/Function;Ljava/util/function/Function;Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/net/URI;Lcom/google/protobuf/Message$Builder;)Lcom/google/protobuf/Message$Builder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        283,
+        284,
+        286,
+        287,
+        289
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiTranslator.lambda$prepareExtractorForTargetField$0:(Ljava/util/function/Function;Ljava/util/function/Function;Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/net/URI;Lcom/google/protobuf/Message$Builder;)Lcom/google/protobuf/Message$Builder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        409
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiTranslator.lambda$prepareExtractorForTargetField$1:(Ljava/util/function/Function;Ljava/util/function/Function;Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/net/URI;Lcom/google/protobuf/Message$Builder;)Lcom/google/protobuf/Message$Builder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        412
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiTranslator.lambda$prepareExtractorForTargetField$2:(Ljava/util/function/Function;Ljava/util/function/Function;Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/net/URI;Lcom/google/protobuf/Message$Builder;)Lcom/google/protobuf/Message$Builder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        415
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiTranslator.lambda$prepareExtractorForTargetField$3:(Ljava/util/function/Function;Ljava/util/function/Function;Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/net/URI;Lcom/google/protobuf/Message$Builder;)Lcom/google/protobuf/Message$Builder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        418
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiTranslator.lambda$preparePathSegmentExtractor$4:(ILjava/net/URI;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        427
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiTranslator.lookupField:(Lcom/google/protobuf/Message$Builder;Ljava/util/List;)Lcom/google/protobuf/Message$Builder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        230
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiTranslator.lookupField:(Lcom/google/protobuf/Message$Builder;Ljava/util/List;I)Lcom/google/protobuf/Message$Builder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        235,
+        236,
+        238,
+        239,
+        241
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiTranslator.lookupField:(Lcom/google/protobuf/Message;Ljava/util/List;)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        245
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiTranslator.lookupField:(Lcom/google/protobuf/Message;Ljava/util/List;I)Ljava/lang/Object;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        250,
+        251,
+        253,
+        254,
+        256,
+        257,
+        259,
+        260,
+        263
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiTranslator.prepareExtractorForTargetField:(Ljava/util/function/Function;Ljava/util/function/Function;Lcom/google/protobuf/Descriptors$FieldDescriptor;)Ljava/util/function/BiFunction;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        406,
+        409,
+        412,
+        415,
+        418,
+        422
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiTranslator.prepareFieldExtractors:(Ljava/lang/String;Lcom/google/protobuf/Descriptors$Descriptor;)Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        366,
+        367,
+        368,
+        370,
+        372,
+        374,
+        377,
+        378,
+        380,
+        382,
+        383,
+        385,
+        386,
+        388,
+        389,
+        390,
+        394,
+        372,
+        397
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiTranslator.preparePathSegmentExtractor:(I)Ljava/util/function/Function;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        427
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiTranslator.sanitizeErrorMessage:(Ljava/lang/String;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        435,
+        436,
+        438
+      ]
+    },
+    "org.finos.tracdap.gateway.proxy.rest.RestApiTranslator.translateGrpcErrorCode:(Lio/grpc/Status$Code;)Lio/netty/handler/codec/http/HttpResponseStatus;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        197,
+        200,
+        203,
+        206,
+        209,
+        212,
+        215,
+        218,
+        221,
+        225
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouter$TargetChannelState.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        363,
+        372
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouter.<init>:(Ljava/util/List;ILjava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010",
+      "lineNumbers" : [
+        61,
+        62
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouter.<init>:(Ljava/util/List;Ljava/util/List;ILjava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010",
+      "lineNumbers" : [
+        64,
+        47,
+        66,
+        67,
+        68,
+        69,
+        71,
+        72,
+        73
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouter.associateRoute:(Ljava/lang/Object;I)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R004",
+      "lineNumbers" : [
+        352,
+        353
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouter.closeAndRemoveTarget:(I)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R004",
+      "lineNumbers" : [
+        339,
+        341,
+        343,
+        344,
+        346,
+        347,
+        349
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouter.destroyAssociation:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R004",
+      "lineNumbers" : [
+        360,
+        361
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouter.flushMessages:(Lorg/finos/tracdap/gateway/routing/CoreRouter$TargetChannelState;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        304,
+        306,
+        308,
+        309,
+        308,
+        312,
+        314
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouter.getAssociatedRoute:(Ljava/lang/Object;)Ljava/lang/Integer;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        356
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouter.getOrCreateTarget:(Lio/netty/channel/ChannelHandlerContext;Lorg/finos/tracdap/gateway/exec/Route;)Lorg/finos/tracdap/gateway/routing/CoreRouter$TargetChannelState;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        318,
+        319,
+        321,
+        322,
+        324,
+        325,
+        327,
+        329
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouter.getTarget:(I)Lorg/finos/tracdap/gateway/routing/CoreRouter$TargetChannelState;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        334
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouter.handlerAdded:(Lio/netty/channel/ChannelHandlerContext;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        78,
+        79,
+        88,
+        89,
+        91,
+        92,
+        93,
+        94,
+        96,
+        97
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouter.handlerRemoved:(Lio/netty/channel/ChannelHandlerContext;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R004",
+      "lineNumbers" : [
+        102,
+        103,
+        105,
+        108,
+        109,
+        110
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouter.initializeProxyRoute:(Lio/netty/channel/ChannelHandlerContext;Lorg/finos/tracdap/gateway/routing/CoreRouterLink;Lorg/finos/tracdap/gateway/exec/Route;)Lio/netty/channel/ChannelInitializer;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouter.lambda$openProxyChannel$0:(Lio/netty/channel/ChannelHandlerContext;Lorg/finos/tracdap/gateway/routing/CoreRouter$TargetChannelState;Lio/netty/util/concurrent/Future;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        186
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouter.lambda$openProxyChannel$1:(Lio/netty/channel/ChannelHandlerContext;Lorg/finos/tracdap/gateway/routing/CoreRouter$TargetChannelState;Lio/netty/util/concurrent/Future;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        187
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouter.lambda$openProxyChannel$2:(Lio/netty/channel/ChannelHandlerContext;Lorg/finos/tracdap/gateway/routing/CoreRouter$TargetChannelState;Lio/netty/util/concurrent/Future;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        188
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouter.lookupRedirect:(Ljava/net/URI;Lio/netty/handler/codec/http/HttpMethod;J)Lorg/finos/tracdap/gateway/exec/Redirect;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        121,
+        122,
+        124,
+        125,
+        127,
+        128,
+        130,
+        131,
+        127,
+        133,
+        135,
+        137
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouter.lookupRoute:(Ljava/net/URI;Lio/netty/handler/codec/http/HttpMethod;J)Lorg/finos/tracdap/gateway/exec/Route;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        143,
+        144,
+        146,
+        147,
+        149,
+        150,
+        146,
+        152,
+        154,
+        157,
+        158,
+        157,
+        160
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouter.openProxyChannel:(Lorg/finos/tracdap/gateway/routing/CoreRouter$TargetChannelState;Lorg/finos/tracdap/gateway/exec/Route;Lio/netty/channel/ChannelHandlerContext;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        166,
+        169,
+        170,
+        174,
+        176,
+        177,
+        178,
+        180,
+        181,
+        182,
+        184,
+        186,
+        187,
+        188,
+        189
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouter.proxyChannelActive:(Lio/netty/channel/ChannelHandlerContext;Lorg/finos/tracdap/gateway/routing/CoreRouter$TargetChannelState;Lio/netty/util/concurrent/Future;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        222,
+        224,
+        226,
+        228,
+        229,
+        230,
+        231,
+        233,
+        236,
+        238,
+        239,
+        240,
+        243,
+        244
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouter.proxyChannelClosed:(Lio/netty/channel/ChannelHandlerContext;Lorg/finos/tracdap/gateway/routing/CoreRouter$TargetChannelState;Lio/netty/util/concurrent/Future;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        252,
+        253,
+        255,
+        256,
+        257,
+        258,
+        260,
+        261,
+        263,
+        265,
+        266,
+        268,
+        272,
+        273,
+        275
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouter.proxyChannelOpen:(Lio/netty/channel/ChannelHandlerContext;Lorg/finos/tracdap/gateway/routing/CoreRouter$TargetChannelState;Lio/netty/util/concurrent/Future;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        196,
+        198,
+        200,
+        204,
+        206,
+        208,
+        209,
+        210,
+        211,
+        213,
+        215
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouter.relayMessage:(Lorg/finos/tracdap/gateway/routing/CoreRouter$TargetChannelState;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        279,
+        281,
+        283,
+        284,
+        283,
+        287,
+        291,
+        293,
+        294,
+        295,
+        293,
+        298,
+        300
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouter.reportProxyRouteError:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Throwable;Z)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouterLink.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        47
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouterLink.<init>:(Lorg/finos/tracdap/gateway/routing/CoreRouter;Lio/netty/channel/ChannelHandlerContext;Lio/netty/channel/ChannelPromise;II)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        60,
+        48,
+        62,
+        63,
+        64,
+        67,
+        68,
+        69
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouterLink.channelActive:(Lio/netty/channel/ChannelHandlerContext;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        78,
+        79,
+        81,
+        83,
+        84
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouterLink.channelRead:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        109,
+        110,
+        116,
+        117,
+        118
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouterLink.channelReadComplete:(Lio/netty/channel/ChannelHandlerContext;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        123,
+        124
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouterLink.exceptionCaught:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Throwable;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        132,
+        133
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouterLink.handleError:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Throwable;Z)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        150,
+        151,
+        153,
+        155,
+        159,
+        160,
+        159,
+        160,
+        161
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouterLink.lambda$write$0:(Lio/netty/channel/ChannelHandlerContext;Lio/netty/util/concurrent/Future;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        101,
+        102,
+        103
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.CoreRouterLink.write:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Object;Lio/netty/channel/ChannelPromise;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        89,
+        90,
+        95,
+        100,
+        104
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.Http1Router$1.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        294
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.Http1Router$RequestState.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T008",
+      "perMethodOutcome" : "T008",
+      "lineNumbers" : [
+        346
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.Http1Router$RequestStatus.$values:()[Lorg/finos/tracdap/gateway/routing/Http1Router$RequestStatus;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        354
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.Http1Router$RequestStatus.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        355,
+        356,
+        357,
+        358,
+        359,
+        360,
+        354
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.Http1Router$RequestStatus.<init>:(Ljava/lang/String;I)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        354
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.Http1Router$RequestStatus.valueOf:(Ljava/lang/String;)Lorg/finos/tracdap/gateway/routing/Http1Router$RequestStatus;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        354
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.Http1Router$RequestStatus.values:()[Lorg/finos/tracdap/gateway/routing/Http1Router$RequestStatus;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        354
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.Http1Router.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        46,
+        50,
+        54
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.Http1Router.<init>:(Ljava/util/List;Ljava/util/List;I)V" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        64,
+        55,
+        66,
+        68,
+        69,
+        70
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.Http1Router.channelRead:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        81,
+        82,
+        84,
+        85,
+        87,
+        88,
+        91,
+        94,
+        95,
+        99,
+        100,
+        99,
+        100,
+        101
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.Http1Router.exceptionCaught:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Throwable;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        124,
+        130,
+        131,
+        133,
+        135,
+        137,
+        140,
+        148,
+        150,
+        151
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.Http1Router.handlerAdded:(Lio/netty/channel/ChannelHandlerContext;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        41
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.Http1Router.handlerRemoved:(Lio/netty/channel/ChannelHandlerContext;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        41
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.Http1Router.initializeProxyRoute:(Lio/netty/channel/ChannelHandlerContext;Lorg/finos/tracdap/gateway/routing/CoreRouterLink;Lorg/finos/tracdap/gateway/exec/Route;)Lio/netty/channel/ChannelInitializer;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        294,
+        298,
+        299,
+        298,
+        303,
+        304,
+        303,
+        310,
+        315
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.Http1Router.processEndOfRequest:(Lio/netty/channel/ChannelHandlerContext;Lio/netty/handler/codec/http/LastHttpContent;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        251,
+        253,
+        254,
+        256,
+        259,
+        260,
+        263,
+        264,
+        268,
+        269,
+        272,
+        275,
+        277,
+        278,
+        282,
+        283
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.Http1Router.processNewRequest:(Lio/netty/channel/ChannelHandlerContext;Lio/netty/handler/codec/http/HttpRequest;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        165,
+        166,
+        167,
+        168,
+        175,
+        177,
+        179,
+        181,
+        182,
+        183,
+        184,
+        186,
+        188,
+        189,
+        191,
+        194,
+        196,
+        198,
+        199,
+        200,
+        201,
+        203,
+        204,
+        206,
+        209,
+        214,
+        217,
+        219,
+        220
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.Http1Router.processRequestContent:(Lio/netty/channel/ChannelHandlerContext;Lio/netty/handler/codec/http/HttpContent;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        224,
+        226,
+        227,
+        233,
+        234,
+        236,
+        237,
+        239,
+        241,
+        242,
+        244,
+        246,
+        247
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.Http1Router.reportProxyRouteError:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Throwable;Z)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        341,
+        342,
+        343,
+        344
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.Http1Router.write:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Object;Lio/netty/channel/ChannelPromise;)V" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        109,
+        110,
+        112,
+        113,
+        116,
+        117,
+        118,
+        116,
+        117,
+        118,
+        119
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.Http2Router.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        35
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.Http2Router.<init>:(Ljava/util/List;)V" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        38,
+        36,
+        40
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.Http2Router.channelRead0:(Lio/netty/channel/ChannelHandlerContext;Lio/netty/handler/codec/http2/Http2Frame;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        53,
+        54
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.Http2Router.channelRead:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        45,
+        46,
+        48,
+        49
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.WebSocketsRouter.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        48,
+        51
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.WebSocketsRouter.<init>:(Ljava/util/List;I)V" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        63,
+        52,
+        56,
+        58,
+        59,
+        60,
+        64
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.WebSocketsRouter.addUpgradeHeaders:(Lio/netty/handler/codec/http/websocketx/BinaryWebSocketFrame;)Lio/netty/handler/codec/http/websocketx/BinaryWebSocketFrame;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        412,
+        414,
+        415,
+        416,
+        418,
+        420,
+        422,
+        423,
+        424,
+        425,
+        426,
+        428,
+        430,
+        432,
+        433,
+        434,
+        436,
+        437,
+        438,
+        436,
+        440
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.WebSocketsRouter.channelRead:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        101,
+        102,
+        103,
+        152,
+        104,
+        108,
+        109,
+        110,
+        113,
+        115,
+        117,
+        118,
+        117,
+        123,
+        124,
+        127,
+        128,
+        131,
+        132,
+        135,
+        136,
+        139,
+        140,
+        143,
+        144,
+        148,
+        152,
+        153,
+        152,
+        153,
+        154
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.WebSocketsRouter.exceptionCaught:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Throwable;)V" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        219,
+        221,
+        222
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.WebSocketsRouter.handlerAdded:(Lio/netty/channel/ChannelHandlerContext;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        45
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.WebSocketsRouter.handlerRemoved:(Lio/netty/channel/ChannelHandlerContext;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        45
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.WebSocketsRouter.initializeProxyRoute:(Lio/netty/channel/ChannelHandlerContext;Lorg/finos/tracdap/gateway/routing/CoreRouterLink;Lorg/finos/tracdap/gateway/exec/Route;)Lio/netty/channel/ChannelInitializer;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        235,
+        236,
+        238,
+        239,
+        238
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.WebSocketsRouter.lambda$processInboundCloseFrame$0:(Lio/netty/channel/ChannelHandlerContext;Lio/netty/util/concurrent/Future;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        366
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.WebSocketsRouter.lambda$reportErrorAndClose$1:(Lio/netty/channel/ChannelPromise;Lio/netty/channel/ChannelHandlerContext;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        499
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.WebSocketsRouter.processInboundBinaryFrame:(Lio/netty/channel/ChannelHandlerContext;Lio/netty/handler/codec/http/websocketx/BinaryWebSocketFrame;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        265,
+        267,
+        268,
+        271,
+        272,
+        273,
+        274,
+        275,
+        280,
+        281,
+        282,
+        286,
+        288,
+        289,
+        292,
+        294
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.WebSocketsRouter.processInboundCloseFrame:(Lio/netty/channel/ChannelHandlerContext;Lio/netty/handler/codec/http/websocketx/CloseWebSocketFrame;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        341,
+        343,
+        344,
+        346,
+        352,
+        353,
+        355,
+        356,
+        358,
+        359,
+        361,
+        363,
+        364,
+        366,
+        368
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.WebSocketsRouter.processInboundContinuationFrame:(Lio/netty/channel/ChannelHandlerContext;Lio/netty/handler/codec/http/websocketx/ContinuationWebSocketFrame;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        310,
+        311,
+        312,
+        313,
+        314,
+        317,
+        318
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.WebSocketsRouter.processInboundPingFrame:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        324,
+        325,
+        327
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.WebSocketsRouter.processInboundPongFrame:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        333,
+        334,
+        336
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.WebSocketsRouter.processInboundTextFrame:(Lio/netty/channel/ChannelHandlerContext;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        301,
+        302,
+        304,
+        305
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.WebSocketsRouter.processOutboundCloseFrame:(Lio/netty/channel/ChannelHandlerContext;Lio/netty/handler/codec/http/websocketx/CloseWebSocketFrame;Lio/netty/channel/ChannelPromise;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        381,
+        383,
+        388,
+        389,
+        391,
+        392,
+        394,
+        395,
+        397
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.WebSocketsRouter.relayFrame:(Lio/netty/channel/ChannelHandlerContext;Lio/netty/handler/codec/http/websocketx/WebSocketFrame;Z)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        447,
+        451,
+        452,
+        453,
+        454,
+        455,
+        461,
+        462,
+        468,
+        464,
+        465,
+        466,
+        467,
+        469
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.WebSocketsRouter.reportErrorAndClose:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/String;Lio/netty/handler/codec/http/websocketx/WebSocketCloseStatus;Ljava/lang/Throwable;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        476,
+        478,
+        479,
+        480,
+        481,
+        478,
+        487,
+        488,
+        489,
+        490,
+        487,
+        494,
+        495,
+        496,
+        498,
+        500,
+        498,
+        501
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.WebSocketsRouter.reportProxyRouteError:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Throwable;Z)V" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        252,
+        254,
+        255
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.WebSocketsRouter.userEventTriggered:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        75,
+        77,
+        79,
+        80,
+        81,
+        83,
+        84,
+        86,
+        87,
+        89,
+        91,
+        93
+      ]
+    },
+    "org.finos.tracdap.gateway.routing.WebSocketsRouter.write:(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Object;Lio/netty/channel/ChannelPromise;)V" : {
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 4
+      },
+      "lineNumbers" : [
+        162,
+        163,
+        164,
+        206,
+        207,
+        165,
+        169,
+        170,
+        171,
+        176,
+        178,
+        180,
+        181,
+        180,
+        184,
+        188,
+        189,
+        190,
+        199,
+        200,
+        201,
+        206,
+        207,
+        208,
+        206,
+        207,
+        208,
+        209
+      ]
+    }
+  },
+  "validationMetrics" : {
+    "failingTests" : [
+      "org.finos.tracdap.gateway.proxy.http.Http1ProxyTest.initializationError"
+    ]
+  }
+}

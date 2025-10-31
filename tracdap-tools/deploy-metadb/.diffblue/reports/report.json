@@ -1,0 +1,265 @@
+{
+  "meta" : {
+    "reportVersion" : "2.6"
+  },
+  "run" : {
+    "version" : "2024.10.01-2ee2e3d-licensed",
+    "creationTimestamp" : "2025-10-31T11:47:20.088054465Z",
+    "command" : "dcover create --exclude-modules=sql-drivers --coverage-reports --upload http://localhost:8080 --project-name tracdap --name with-diffblue-tests",
+    "totalTime" : 6437.996,
+    "environmentDetectionTime" : 0.316,
+    "indexingTime" : 0.272,
+    "entryPointsTime" : 0.313,
+    "generationTime" : 5021.189,
+    "timeToFirstTest" : 91.135,
+    "timeToLastTest" : 147.768,
+    "indexQueryTime" : 6.186,
+    "verificationTime" : 239.922,
+    "validationTime" : 21.497
+  },
+  "codes" : {
+    "R000" : "Success",
+    "T000" : "Method eligible for test creation",
+    "T003" : "Private method",
+    "T006" : "Main method",
+    "T012" : "Synthetic method",
+    "V000" : "Validated successfully",
+    "V003" : "Tests discarded during validation"
+  },
+  "summary" : {
+    "classesCount" : 1,
+    "methodsCount" : 7,
+    "cumulativeDiffblueTestCount" : 2,
+    "cumulativeManualTestCount" : 0,
+    "completeTestCount" : 2,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 141,
+    "perMethodTestability" : {
+      "T000" : 2,
+      "T003" : 3,
+      "T006" : 1,
+      "T012" : 1
+    },
+    "perMethodOutcome" : {
+      "R000" : 2,
+      "T003" : 3,
+      "T006" : 1,
+      "T012" : 1
+    },
+    "perTestOutcome" : {
+      "R000" : 2
+    },
+    "perTestValidation" : {
+      "V000" : 2,
+      "V003" : 4
+    }
+  },
+  "classes" : {
+    "org.finos.tracdap.tools.deploy.metadb.DeployMetaDB" : {
+      "methodsCount" : 7,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T003" : 3,
+        "T006" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 2,
+        "T003" : 3,
+        "T006" : 1,
+        "T012" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    }
+  },
+  "methods" : {
+    "org.finos.tracdap.tools.deploy.metadb.DeployMetaDB.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        53,
+        54,
+        55,
+        56,
+        53
+      ]
+    },
+    "org.finos.tracdap.tools.deploy.metadb.DeployMetaDB.<init>:(Lorg/finos/tracdap/common/config/ConfigManager;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        66,
+        68,
+        69,
+        70
+      ]
+    },
+    "org.finos.tracdap.tools.deploy.metadb.DeployMetaDB.addTenant:(Ljavax/sql/DataSource;Ljava/lang/String;Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        133,
+        134,
+        136,
+        137,
+        141,
+        143,
+        145,
+        147,
+        149,
+        150,
+        152,
+        155,
+        156,
+        143,
+        156,
+        143,
+        158,
+        160,
+        161,
+        162,
+        163,
+        164,
+        158,
+        165,
+        141,
+        169,
+        166,
+        168,
+        170
+      ]
+    },
+    "org.finos.tracdap.tools.deploy.metadb.DeployMetaDB.alterTenant:(Ljavax/sql/DataSource;Ljava/lang/String;Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        174,
+        175,
+        177,
+        178,
+        182,
+        184,
+        186,
+        188,
+        189,
+        190,
+        191,
+        188,
+        192,
+        184,
+        194,
+        196,
+        197,
+        198,
+        199,
+        194,
+        200,
+        182,
+        204,
+        201,
+        203,
+        206
+      ]
+    },
+    "org.finos.tracdap.tools.deploy.metadb.DeployMetaDB.deploySchema:(Ljavax/sql/DataSource;Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        119,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        128,
+        129
+      ]
+    },
+    "org.finos.tracdap.tools.deploy.metadb.DeployMetaDB.main:([Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T006",
+      "perMethodOutcome" : "T006",
+      "lineNumbers" : [
+        217,
+        218,
+        220,
+        221,
+        223,
+        224,
+        226,
+        244,
+        228,
+        230,
+        231,
+        233,
+        234,
+        236,
+        244,
+        238,
+        240,
+        241,
+        243,
+        245
+      ]
+    },
+    "org.finos.tracdap.tools.deploy.metadb.DeployMetaDB.runDeployment:(Ljava/util/List;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        79,
+        81,
+        83,
+        84,
+        87,
+        89,
+        90,
+        94,
+        96,
+        97,
+        99,
+        100,
+        102,
+        103,
+        106,
+        107,
+        109,
+        113,
+        114,
+        113,
+        114,
+        115
+      ]
+    }
+  },
+  "validationMetrics" : {
+    "failingTests" : [
+      "org.finos.tracdap.common.storage.local.LocalStorageOperationsTest.testStat_fileATime",
+      "org.finos.tracdap.common.storage.local.LocalStorageOperationsTest.testStat_dirMTime"
+    ]
+  }
+}

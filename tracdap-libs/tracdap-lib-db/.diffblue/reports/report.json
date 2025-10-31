@@ -1,0 +1,304 @@
+{
+  "meta" : {
+    "reportVersion" : "2.6"
+  },
+  "run" : {
+    "version" : "2024.10.01-2ee2e3d-licensed",
+    "creationTimestamp" : "2025-10-31T11:47:20.088054465Z",
+    "command" : "dcover create --exclude-modules=sql-drivers --coverage-reports --upload http://localhost:8080 --project-name tracdap --name with-diffblue-tests",
+    "totalTime" : 16301.518,
+    "environmentDetectionTime" : 0.314,
+    "indexingTime" : 0.281,
+    "entryPointsTime" : 0.309,
+    "generationTime" : 14108.737,
+    "timeToFirstTest" : 91.135,
+    "timeToLastTest" : 147.768,
+    "indexQueryTime" : 6.469,
+    "verificationTime" : 689.931,
+    "validationTime" : 21.147
+  },
+  "codes" : {
+    "R000" : "Success",
+    "T000" : "Method eligible for test creation",
+    "T003" : "Private method",
+    "T005" : "Trivial constructor",
+    "T012" : "Synthetic method",
+    "V000" : "Validated successfully",
+    "V003" : "Tests discarded during validation"
+  },
+  "summary" : {
+    "classesCount" : 2,
+    "methodsCount" : 15,
+    "cumulativeDiffblueTestCount" : 7,
+    "cumulativeManualTestCount" : 0,
+    "completeTestCount" : 8,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 106,
+    "perMethodTestability" : {
+      "T000" : 5,
+      "T003" : 5,
+      "T005" : 1,
+      "T012" : 4
+    },
+    "perMethodOutcome" : {
+      "R000" : 5,
+      "T003" : 5,
+      "T005" : 1,
+      "T012" : 4
+    },
+    "perTestOutcome" : {
+      "R000" : 8
+    },
+    "perTestValidation" : {
+      "V000" : 8,
+      "V003" : 4
+    }
+  },
+  "classes" : {
+    "org.finos.tracdap.common.db.JdbcDialect" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 1,
+        "T012" : 4
+      },
+      "perMethodOutcome" : {
+        "T003" : 1,
+        "T012" : 4
+      }
+    },
+    "org.finos.tracdap.common.db.JdbcSetup" : {
+      "methodsCount" : 10,
+      "completeTestCount" : 8,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 5,
+        "T003" : 4,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 5,
+        "T003" : 4,
+        "T005" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 8
+      }
+    }
+  },
+  "methods" : {
+    "org.finos.tracdap.common.db.JdbcDialect.$values:()[Lorg/finos/tracdap/common/db/JdbcDialect;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        20
+      ]
+    },
+    "org.finos.tracdap.common.db.JdbcDialect.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        20
+      ]
+    },
+    "org.finos.tracdap.common.db.JdbcDialect.<init>:(Ljava/lang/String;I)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        20
+      ]
+    },
+    "org.finos.tracdap.common.db.JdbcDialect.valueOf:(Ljava/lang/String;)Lorg/finos/tracdap/common/db/JdbcDialect;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        20
+      ]
+    },
+    "org.finos.tracdap.common.db.JdbcDialect.values:()[Lorg/finos/tracdap/common/db/JdbcDialect;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        20
+      ]
+    },
+    "org.finos.tracdap.common.db.JdbcSetup.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "T005",
+      "lineNumbers" : [
+        33
+      ]
+    },
+    "org.finos.tracdap.common.db.JdbcSetup.buildJdbcUrl:(Ljava/util/Properties;Lorg/finos/tracdap/common/db/JdbcDialect;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        144,
+        146
+      ]
+    },
+    "org.finos.tracdap.common.db.JdbcSetup.checkSqlDialect:(Ljava/lang/String;)Lorg/finos/tracdap/common/db/JdbcDialect;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        52,
+        53,
+        56,
+        58,
+        59
+      ]
+    },
+    "org.finos.tracdap.common.db.JdbcSetup.copyDialectProperties:(Ljava/util/Properties;Ljava/util/Properties;Lorg/finos/tracdap/common/db/JdbcDialect;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        151,
+        153,
+        155,
+        157,
+        158,
+        159,
+        161,
+        163,
+        164
+      ]
+    },
+    "org.finos.tracdap.common.db.JdbcSetup.createDatasource:(Ljava/util/Properties;)Ljavax/sql/DataSource;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        83,
+        85,
+        86,
+        88,
+        89,
+        91,
+        93,
+        97,
+        98,
+        100,
+        101,
+        103,
+        106,
+        107,
+        109
+      ]
+    },
+    "org.finos.tracdap.common.db.JdbcSetup.createDatasource:(Lorg/finos/tracdap/common/config/ConfigManager;Lorg/finos/tracdap/config/PluginConfig;)Ljavax/sql/DataSource;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        68,
+        69,
+        71,
+        72,
+        73,
+        74,
+        75,
+        77
+      ]
+    },
+    "org.finos.tracdap.common.db.JdbcSetup.createHikariProperties:(Ljava/util/Properties;)Ljava/util/Properties;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        124,
+        125,
+        127,
+        128,
+        130,
+        132,
+        134,
+        136,
+        137,
+        139
+      ]
+    },
+    "org.finos.tracdap.common.db.JdbcSetup.destroyDatasource:(Ljavax/sql/DataSource;)V" : {
+      "completeTestCount" : 3,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 3
+      },
+      "lineNumbers" : [
+        115,
+        116,
+        118,
+        119,
+        120
+      ]
+    },
+    "org.finos.tracdap.common.db.JdbcSetup.getSqlDialect:(Ljava/util/Properties;)Lorg/finos/tracdap/common/db/JdbcDialect;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        46,
+        47
+      ]
+    },
+    "org.finos.tracdap.common.db.JdbcSetup.getSqlDialect:(Lorg/finos/tracdap/config/PluginConfig;)Lorg/finos/tracdap/common/db/JdbcDialect;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        40,
+        41
+      ]
+    }
+  },
+  "validationMetrics" : {
+    "failingTests" : [
+      "org.finos.tracdap.common.storage.local.LocalStorageOperationsTest.testStat_fileATime",
+      "org.finos.tracdap.common.storage.local.LocalStorageOperationsTest.testStat_dirMTime"
+    ]
+  }
+}
