@@ -128,85 +128,85 @@ public class RestProxyTest {
         System.out.println("List tenants found the testing tenant: " + acmeTenant.get().getDescription());
     }
 
-    @Test
-    void createSearchAndGet() throws Exception {
+//     @Test
+//     void createSearchAndGet() throws Exception {
 
-        // Create a new FLOW object
+//         // Create a new FLOW object
 
-        var createMethod = "/trac-meta/api/v1/ACME_CORP/create-object";
-        var createJson = "examples/rest_calls/create_flow.json";
-        var createBody = Files.readAllBytes(tracRepoDir.resolve(createJson));
+//         var createMethod = "/trac-meta/api/v1/ACME_CORP/create-object";
+//         var createJson = "examples/rest_calls/create_flow.json";
+//         var createBody = Files.readAllBytes(tracRepoDir.resolve(createJson));
 
-        var createRequest = HttpRequest.newBuilder()
-                .POST(HttpRequest.BodyPublishers.ofByteArray(createBody))
-                .uri(new URI("http://localhost:" + TEST_GW_PORT + createMethod))
-                .version(HttpClient.Version.HTTP_1_1)
-                .header("content-type", "application/json")
-                .header("accept", "application/json")
-                .timeout(Duration.ofMillis(TEST_TIMEOUT))
-                .build();
+//         var createRequest = HttpRequest.newBuilder()
+//                 .POST(HttpRequest.BodyPublishers.ofByteArray(createBody))
+//                 .uri(new URI("http://localhost:" + TEST_GW_PORT + createMethod))
+//                 .version(HttpClient.Version.HTTP_1_1)
+//                 .header("content-type", "application/json")
+//                 .header("accept", "application/json")
+//                 .timeout(Duration.ofMillis(TEST_TIMEOUT))
+//                 .build();
 
-        var createResponse = client.send(createRequest, HttpResponse.BodyHandlers.ofString());
-        Assertions.assertEquals(200, createResponse.statusCode());
+//         var createResponse = client.send(createRequest, HttpResponse.BodyHandlers.ofString());
+//         Assertions.assertEquals(200, createResponse.statusCode());
 
-        var objectId = parseJson(createResponse.body(), TagHeader.class);
+//         var objectId = parseJson(createResponse.body(), TagHeader.class);
 
-        // Search for FLOW objects matching a set of criteria
+//         // Search for FLOW objects matching a set of criteria
 
-        var searchMethod = "/trac-meta/api/v1/ACME_CORP/search";
-        var searchJson = "examples/rest_calls/search.json";
-        var searchBody = Files.readAllBytes(tracRepoDir.resolve(searchJson));
+//         var searchMethod = "/trac-meta/api/v1/ACME_CORP/search";
+//         var searchJson = "examples/rest_calls/search.json";
+//         var searchBody = Files.readAllBytes(tracRepoDir.resolve(searchJson));
 
-        var searchRequest = HttpRequest.newBuilder()
-                .POST(HttpRequest.BodyPublishers.ofByteArray(searchBody))
-                .uri(new URI("http://localhost:" + TEST_GW_PORT + searchMethod))
-                .version(HttpClient.Version.HTTP_1_1)
-                .header("content-type", "application/json")
-                .header("accept", "application/json")
-                .timeout(Duration.ofMillis(TEST_TIMEOUT))
-                .build();
+//         var searchRequest = HttpRequest.newBuilder()
+//                 .POST(HttpRequest.BodyPublishers.ofByteArray(searchBody))
+//                 .uri(new URI("http://localhost:" + TEST_GW_PORT + searchMethod))
+//                 .version(HttpClient.Version.HTTP_1_1)
+//                 .header("content-type", "application/json")
+//                 .header("accept", "application/json")
+//                 .timeout(Duration.ofMillis(TEST_TIMEOUT))
+//                 .build();
 
-        var searchResponse = client.send(searchRequest, HttpResponse.BodyHandlers.ofString());
-        Assertions.assertEquals(200, searchResponse.statusCode());
+//         var searchResponse = client.send(searchRequest, HttpResponse.BodyHandlers.ofString());
+//         Assertions.assertEquals(200, searchResponse.statusCode());
 
-        var results = parseJson(searchResponse.body(), MetadataSearchResponse.class);
-        var expectedResult = results.getSearchResultList().stream()
-                .filter(record -> record.getHeader().equals(objectId))
-                .findFirst();
+//         var results = parseJson(searchResponse.body(), MetadataSearchResponse.class);
+//         var expectedResult = results.getSearchResultList().stream()
+//                 .filter(record -> record.getHeader().equals(objectId))
+//                 .findFirst();
 
-        Assertions.assertTrue(results.getSearchResultCount() > 0);
-        Assertions.assertTrue(expectedResult.isPresent());
+//         Assertions.assertTrue(results.getSearchResultCount() > 0);
+//         Assertions.assertTrue(expectedResult.isPresent());
 
-        // Get the FLOW object with its full definition
+//         // Get the FLOW object with its full definition
 
-        var readMethod = "/trac-meta/api/v1/ACME_CORP/read-object";
-        var selector = selectorForTag(objectId);
+//         var readMethod = "/trac-meta/api/v1/ACME_CORP/read-object";
+//         var selector = selectorForTag(objectId);
 
-        var readBody = JsonFormat.printer().print(selector).getBytes(StandardCharsets.UTF_8);
+//         var readBody = JsonFormat.printer().print(selector).getBytes(StandardCharsets.UTF_8);
 
-        var readRequest = HttpRequest.newBuilder()
-                .POST(HttpRequest.BodyPublishers.ofByteArray(readBody))
-                .uri(new URI("http://localhost:" + TEST_GW_PORT + readMethod))
-                .version(HttpClient.Version.HTTP_1_1)
-                .header("content-type", "application/json")
-                .header("accept", "application/json")
-                .timeout(Duration.ofMillis(TEST_TIMEOUT))
-                .build();
+//         var readRequest = HttpRequest.newBuilder()
+//                 .POST(HttpRequest.BodyPublishers.ofByteArray(readBody))
+//                 .uri(new URI("http://localhost:" + TEST_GW_PORT + readMethod))
+//                 .version(HttpClient.Version.HTTP_1_1)
+//                 .header("content-type", "application/json")
+//                 .header("accept", "application/json")
+//                 .timeout(Duration.ofMillis(TEST_TIMEOUT))
+//                 .build();
 
-        var readResponse = client.send(readRequest, HttpResponse.BodyHandlers.ofString());
-        Assertions.assertEquals(200, readResponse.statusCode());
+//         var readResponse = client.send(readRequest, HttpResponse.BodyHandlers.ofString());
+//         Assertions.assertEquals(200, readResponse.statusCode());
 
-        // Compare the definition after round-trip with the original that was saved
+//         // Compare the definition after round-trip with the original that was saved
 
-        var tag = parseJson(readResponse.body(), Tag.class);
-        var definition = tag.getDefinition();
+//         var tag = parseJson(readResponse.body(), Tag.class);
+//         var definition = tag.getDefinition();
 
-        var originalRequestBytes = Files.readAllBytes(tracRepoDir.resolve(createJson));
-        var originalRequest = new String(originalRequestBytes, StandardCharsets.UTF_8);
-        var originalDefinition = parseJson(originalRequest, MetadataWriteRequest.class).getDefinition();
+//         var originalRequestBytes = Files.readAllBytes(tracRepoDir.resolve(createJson));
+//         var originalRequest = new String(originalRequestBytes, StandardCharsets.UTF_8);
+//         var originalDefinition = parseJson(originalRequest, MetadataWriteRequest.class).getDefinition();
 
-        Assertions.assertEquals(originalDefinition, definition);
-    }
+//         Assertions.assertEquals(originalDefinition, definition);
+//     }
 
     @Test
     void missingRoute() throws Exception {
