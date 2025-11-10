@@ -23,3 +23,9 @@ apply from: "${rootProject.projectDir.path}/gradle/base-java.gradle"
 
 
 description = "Common annotations from the javax namespace"
+
+dependencies {
+    testImplementation("org.mockito:mockito-junit-jupiter:5.11.0")
+    compileOnly("com.diffblue.cover:cover-annotations:1.7.0")
+    testImplementation("com.diffblue.cover:cover-annotations:1.7.0")
+}

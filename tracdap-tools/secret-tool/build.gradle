@@ -45,6 +45,9 @@ dependencies {
     implementation project(':tracdap-api-config')
     implementation project(':tracdap-lib-common')
     implementation project(':tracdap-lib-db')
+    testImplementation("org.mockito:mockito-junit-jupiter:5.11.0")
+    compileOnly("com.diffblue.cover:cover-annotations:1.7.0")
+    testImplementation("com.diffblue.cover:cover-annotations:1.7.0")
 }
 
 distributions {

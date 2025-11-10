@@ -69,6 +69,9 @@ dependencies {
 
     // JavaX "Generated" annotation is still required by gRPC generated code
     implementation project(':tracdap-lib-annotations')
+    testImplementation("org.mockito:mockito-junit-jupiter:5.11.0")
+    compileOnly("com.diffblue.cover:cover-annotations:1.7.0")
+    testImplementation("com.diffblue.cover:cover-annotations:1.7.0")
 }
 
 // Javadoc gives a lot of warnings on the protobuf generated code

@@ -41,6 +41,10 @@ dependencies {
     implementation group: 'net.minidev', name: 'json-smart', version: '2.5.2'
 
     testImplementation project(path: ":tracdap-lib-data", configuration: "testSuite")
+    testImplementation("org.mockito:mockito-junit-jupiter:5.11.0")
+    testImplementation("io.projectreactor:reactor-test:3.4.41")
+    compileOnly("com.diffblue.cover:cover-annotations:1.7.0")
+    testImplementation("com.diffblue.cover:cover-annotations:1.7.0")
 }
 
 // Use a different build dir (don't include plugins in the main release package)
