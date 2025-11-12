@@ -1,0 +1,299 @@
+package org.finos.tracdap.common.netty;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.ArgumentMatchers.isA;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+import com.diffblue.cover.annotations.ManagedByDiffblue;
+import com.diffblue.cover.annotations.MethodsUnderTest;
+import io.netty.util.concurrent.FastThreadLocalThread;
+import java.util.concurrent.ThreadFactory;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+
+class NettyThreadFactoryWrapperDiffblueTest {
+  /**
+   * Test {@link NettyThreadFactoryWrapper#NettyThreadFactoryWrapper(String)}.
+   *
+   * <p>Method under test: {@link NettyThreadFactoryWrapper#NettyThreadFactoryWrapper(String)}
+   */
+  @Test
+  @DisplayName("Test new NettyThreadFactoryWrapper(String)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void NettyThreadFactoryWrapper.<init>(String)"})
+  void testNewNettyThreadFactoryWrapper() {
+    // Arrange and Act
+    Thread actualNewThreadResult =
+        new NettyThreadFactoryWrapper("Pool Name").newThread(mock(Runnable.class));
+
+    // Assert
+    assertTrue(actualNewThreadResult instanceof FastThreadLocalThread);
+    assertEquals("Pool Name-0", actualNewThreadResult.getName());
+  }
+
+  /**
+   * Test {@link NettyThreadFactoryWrapper#NettyThreadFactoryWrapper(String, boolean, int)}.
+   *
+   * <p>Method under test: {@link NettyThreadFactoryWrapper#NettyThreadFactoryWrapper(String,
+   * boolean, int)}
+   */
+  @Test
+  @DisplayName("Test new NettyThreadFactoryWrapper(String, boolean, int)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void NettyThreadFactoryWrapper.<init>(String, boolean, int)"})
+  void testNewNettyThreadFactoryWrapper2() {
+    // Arrange and Act
+    Thread actualNewThreadResult =
+        new NettyThreadFactoryWrapper("Pool Name", true, 1).newThread(mock(Runnable.class));
+
+    // Assert
+    assertTrue(actualNewThreadResult instanceof FastThreadLocalThread);
+    assertEquals("Pool Name-0", actualNewThreadResult.getName());
+  }
+
+  /**
+   * Test {@link NettyThreadFactoryWrapper#NettyThreadFactoryWrapper(String, boolean, int,
+   * ThreadGroup)}.
+   *
+   * <p>Method under test: {@link NettyThreadFactoryWrapper#NettyThreadFactoryWrapper(String,
+   * boolean, int, ThreadGroup)}
+   */
+  @Test
+  @DisplayName("Test new NettyThreadFactoryWrapper(String, boolean, int, ThreadGroup)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void NettyThreadFactoryWrapper.<init>(String, boolean, int, ThreadGroup)"})
+  void testNewNettyThreadFactoryWrapper3() {
+    // Arrange and Act
+    Thread actualNewThreadResult =
+        new NettyThreadFactoryWrapper("Pool Name", true, 1, new ThreadGroup("Name"))
+            .newThread(mock(Runnable.class));
+
+    // Assert
+    assertTrue(actualNewThreadResult instanceof FastThreadLocalThread);
+    assertEquals("Pool Name-0", actualNewThreadResult.getName());
+  }
+
+  /**
+   * Test {@link NettyThreadFactoryWrapper#NettyThreadFactoryWrapper(String, ThreadFactory)}.
+   *
+   * <ul>
+   *   <li>Given {@link Thread#Thread()}.
+   *   <li>Then return newThread {@link Runnable} is {@link Thread#Thread()}.
+   * </ul>
+   *
+   * <p>Method under test: {@link NettyThreadFactoryWrapper#NettyThreadFactoryWrapper(String,
+   * ThreadFactory)}
+   */
+  @Test
+  @DisplayName(
+      "Test new NettyThreadFactoryWrapper(String, ThreadFactory); given Thread(); then return newThread Runnable is Thread()")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void NettyThreadFactoryWrapper.<init>(String, ThreadFactory)"})
+  void testNewNettyThreadFactoryWrapper_givenThread_thenReturnNewThreadRunnableIsThread() {
+    // Arrange
+    ThreadFactory internalFactory = mock(ThreadFactory.class);
+    Thread thread = new Thread();
+    when(internalFactory.newThread(Mockito.<Runnable>any())).thenReturn(thread);
+
+    // Act
+    NettyThreadFactoryWrapper actualNettyThreadFactoryWrapper =
+        new NettyThreadFactoryWrapper("Pool Name", internalFactory);
+    Thread actualNewThreadResult = actualNettyThreadFactoryWrapper.newThread(mock(Runnable.class));
+
+    // Assert
+    verify(internalFactory).newThread(isA(Runnable.class));
+    assertSame(thread, actualNewThreadResult);
+  }
+
+  /**
+   * Test {@link NettyThreadFactoryWrapper#NettyThreadFactoryWrapper(String, boolean, int)}.
+   *
+   * <ul>
+   *   <li>When {@code false}.
+   * </ul>
+   *
+   * <p>Method under test: {@link NettyThreadFactoryWrapper#NettyThreadFactoryWrapper(String,
+   * boolean, int)}
+   */
+  @Test
+  @DisplayName("Test new NettyThreadFactoryWrapper(String, boolean, int); when 'false'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void NettyThreadFactoryWrapper.<init>(String, boolean, int)"})
+  void testNewNettyThreadFactoryWrapper_whenFalse() {
+    // Arrange and Act
+    Thread actualNewThreadResult =
+        new NettyThreadFactoryWrapper("Pool Name", false, 1).newThread(mock(Runnable.class));
+
+    // Assert
+    assertTrue(actualNewThreadResult instanceof FastThreadLocalThread);
+    assertEquals("Pool Name-0", actualNewThreadResult.getName());
+  }
+
+  /**
+   * Test {@link NettyThreadFactoryWrapper#NettyThreadFactoryWrapper(String, boolean, int,
+   * ThreadGroup)}.
+   *
+   * <ul>
+   *   <li>When {@code false}.
+   * </ul>
+   *
+   * <p>Method under test: {@link NettyThreadFactoryWrapper#NettyThreadFactoryWrapper(String,
+   * boolean, int, ThreadGroup)}
+   */
+  @Test
+  @DisplayName(
+      "Test new NettyThreadFactoryWrapper(String, boolean, int, ThreadGroup); when 'false'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void NettyThreadFactoryWrapper.<init>(String, boolean, int, ThreadGroup)"})
+  void testNewNettyThreadFactoryWrapper_whenFalse2() {
+    // Arrange and Act
+    Thread actualNewThreadResult =
+        new NettyThreadFactoryWrapper("Pool Name", false, 1, new ThreadGroup("Name"))
+            .newThread(mock(Runnable.class));
+
+    // Assert
+    assertTrue(actualNewThreadResult instanceof FastThreadLocalThread);
+    assertEquals("Pool Name-0", actualNewThreadResult.getName());
+  }
+
+  /**
+   * Test {@link NettyThreadFactoryWrapper#NettyThreadFactoryWrapper(String, boolean, int)}.
+   *
+   * <ul>
+   *   <li>When five.
+   * </ul>
+   *
+   * <p>Method under test: {@link NettyThreadFactoryWrapper#NettyThreadFactoryWrapper(String,
+   * boolean, int)}
+   */
+  @Test
+  @DisplayName("Test new NettyThreadFactoryWrapper(String, boolean, int); when five")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void NettyThreadFactoryWrapper.<init>(String, boolean, int)"})
+  void testNewNettyThreadFactoryWrapper_whenFive() {
+    // Arrange and Act
+    Thread actualNewThreadResult =
+        new NettyThreadFactoryWrapper("Pool Name", true, 5).newThread(mock(Runnable.class));
+
+    // Assert
+    assertTrue(actualNewThreadResult instanceof FastThreadLocalThread);
+    assertEquals("Pool Name-0", actualNewThreadResult.getName());
+  }
+
+  /**
+   * Test {@link NettyThreadFactoryWrapper#NettyThreadFactoryWrapper(String, boolean, int,
+   * ThreadGroup)}.
+   *
+   * <ul>
+   *   <li>When five.
+   * </ul>
+   *
+   * <p>Method under test: {@link NettyThreadFactoryWrapper#NettyThreadFactoryWrapper(String,
+   * boolean, int, ThreadGroup)}
+   */
+  @Test
+  @DisplayName("Test new NettyThreadFactoryWrapper(String, boolean, int, ThreadGroup); when five")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void NettyThreadFactoryWrapper.<init>(String, boolean, int, ThreadGroup)"})
+  void testNewNettyThreadFactoryWrapper_whenFive2() {
+    // Arrange and Act
+    Thread actualNewThreadResult =
+        new NettyThreadFactoryWrapper("Pool Name", true, 5, new ThreadGroup("Name"))
+            .newThread(mock(Runnable.class));
+
+    // Assert
+    assertTrue(actualNewThreadResult instanceof FastThreadLocalThread);
+    assertEquals("Pool Name-0", actualNewThreadResult.getName());
+  }
+
+  /**
+   * Test {@link NettyThreadFactoryWrapper#newThread(Runnable)}.
+   *
+   * <p>Method under test: {@link NettyThreadFactoryWrapper#newThread(Runnable)}
+   */
+  @Test
+  @DisplayName("Test newThread(Runnable)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Thread NettyThreadFactoryWrapper.newThread(Runnable)"})
+  void testNewThread() {
+    // Arrange and Act
+    Thread actualNewThreadResult =
+        new NettyThreadFactoryWrapper("Pool Name", true, 1).newThread(mock(Runnable.class));
+
+    // Assert
+    assertTrue(actualNewThreadResult instanceof FastThreadLocalThread);
+    assertEquals("Pool Name-0", actualNewThreadResult.getName());
+  }
+
+  /**
+   * Test {@link NettyThreadFactoryWrapper#newThread(Runnable)}.
+   *
+   * <ul>
+   *   <li>Given {@link NettyThreadFactoryWrapper#NettyThreadFactoryWrapper(String)} with {@code
+   *       Pool Name}.
+   * </ul>
+   *
+   * <p>Method under test: {@link NettyThreadFactoryWrapper#newThread(Runnable)}
+   */
+  @Test
+  @DisplayName("Test newThread(Runnable); given NettyThreadFactoryWrapper(String) with 'Pool Name'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Thread NettyThreadFactoryWrapper.newThread(Runnable)"})
+  void testNewThread_givenNettyThreadFactoryWrapperWithPoolName() {
+    // Arrange and Act
+    Thread actualNewThreadResult =
+        new NettyThreadFactoryWrapper("Pool Name").newThread(mock(Runnable.class));
+
+    // Assert
+    assertTrue(actualNewThreadResult instanceof FastThreadLocalThread);
+    assertEquals("Pool Name-0", actualNewThreadResult.getName());
+  }
+
+  /**
+   * Test {@link NettyThreadFactoryWrapper#newThread(Runnable)}.
+   *
+   * <ul>
+   *   <li>Given {@link ThreadFactory} {@link ThreadFactory#newThread(Runnable)} return {@link
+   *       Thread#Thread()}.
+   *   <li>Then return {@link Thread#Thread()}.
+   * </ul>
+   *
+   * <p>Method under test: {@link NettyThreadFactoryWrapper#newThread(Runnable)}
+   */
+  @Test
+  @DisplayName(
+      "Test newThread(Runnable); given ThreadFactory newThread(Runnable) return Thread(); then return Thread()")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Thread NettyThreadFactoryWrapper.newThread(Runnable)"})
+  void testNewThread_givenThreadFactoryNewThreadReturnThread_thenReturnThread() {
+    // Arrange
+    ThreadFactory internalFactory = mock(ThreadFactory.class);
+    Thread thread = new Thread();
+    when(internalFactory.newThread(Mockito.<Runnable>any())).thenReturn(thread);
+    NettyThreadFactoryWrapper nettyThreadFactoryWrapper =
+        new NettyThreadFactoryWrapper("Pool Name", internalFactory);
+
+    // Act
+    Thread actualNewThreadResult = nettyThreadFactoryWrapper.newThread(mock(Runnable.class));
+
+    // Assert
+    verify(internalFactory).newThread(isA(Runnable.class));
+    assertSame(thread, actualNewThreadResult);
+  }
+}

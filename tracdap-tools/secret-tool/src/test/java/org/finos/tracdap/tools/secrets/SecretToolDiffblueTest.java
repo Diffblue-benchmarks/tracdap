@@ -1,0 +1,61 @@
+package org.finos.tracdap.tools.secrets;
+
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.ArgumentMatchers.isA;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+import com.diffblue.cover.annotations.ManagedByDiffblue;
+import com.diffblue.cover.annotations.MethodsUnderTest;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Properties;
+import org.finos.tracdap.common.config.ConfigManager;
+import org.finos.tracdap.common.config.IConfigLoader;
+import org.finos.tracdap.common.exception.EStartup;
+import org.finos.tracdap.common.plugin.PluginManager;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+
+class SecretToolDiffblueTest {
+  /**
+   * Test {@link SecretTool#SecretTool(ConfigManager, String)}.
+   *
+   * <ul>
+   *   <li>Then throw {@link EStartup}.
+   * </ul>
+   *
+   * <p>Method under test: {@link SecretTool#SecretTool(ConfigManager, String)}
+   */
+  @Test
+  @DisplayName("Test new SecretTool(ConfigManager, String); then throw EStartup")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void SecretTool.<init>(ConfigManager, String)"})
+  void testNewSecretTool_thenThrowEStartup() {
+    // Arrange
+    PluginManager plugins = mock(PluginManager.class);
+    when(plugins.createConfigService(
+            eq(IConfigLoader.class), Mockito.<String>any(), Mockito.<Properties>any()))
+        .thenThrow(EStartup.quietShutdown(1));
+    when(plugins.isServiceAvailable(Mockito.<Class<?>>any(), Mockito.<String>any()))
+        .thenReturn(true);
+    when(plugins.getExtensions()).thenReturn(new ArrayList<>());
+    Path workingDir = Paths.get(System.getProperty("java.io.tmpdir"), "test.txt");
+
+    ConfigManager configManager =
+        new ConfigManager("https://example.org/example", workingDir, plugins);
+
+    // Act and Assert
+    assertThrows(
+        EStartup.class,
+        () -> new SecretTool(configManager, "EXAMPLEKEYwjalrXUtnFEMI/K7MDENG/bPxRfiCY"));
+    verify(plugins).createConfigService(isA(Class.class), eq("https"), isA(Properties.class));
+    verify(plugins).getExtensions();
+    verify(plugins).isServiceAvailable(isA(Class.class), eq("https"));
+  }
+}
