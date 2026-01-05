@@ -46,3 +46,21 @@ dependencies {
 tasks.withType(Javadoc).configureEach {
     options.addStringOption('Xdoclint:none', '-quiet')
 }
+
+allprojects {
+  afterEvaluate {
+    plugins.withId('jacoco') {
+      jacocoTestReport {
+        classDirectories.setFrom(
+          files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: [
+              'org/finos/tracdap/test/config/ConfigExtensionsProto.class',
+              'org/finos/tracdap/test/config/TestConfigExt.class',
+              'org/finos/tracdap/test/config/TestConfigExt$Builder.class',
+            ])
+          })
+        )
+      }
+    }
+  }
+}
