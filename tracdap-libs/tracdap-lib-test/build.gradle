@@ -73,3 +73,20 @@ dependencies {
 // This dependency ensures resources are always processed, even for partial builds
 
 compileJava.dependsOn(processResources)
+
+allprojects {
+  afterEvaluate {
+    plugins.withId('jacoco') {
+      jacocoTestReport {
+        classDirectories.setFrom(
+          files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: [
+              'org/finos/tracdap/test/grpc/GrpcTestStreams$ClientResponseStream.class',
+              'org/finos/tracdap/test/grpc/GrpcTestStreams$ClientResultHandler.class',
+            ])
+          })
+        )
+      }
+    }
+  }
+}

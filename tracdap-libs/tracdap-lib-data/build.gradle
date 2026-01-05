@@ -84,3 +84,19 @@ task testJar(type: Jar) {
 artifacts {
     testSuite testJar
 }
+
+allprojects {
+  afterEvaluate {
+    plugins.withId('jacoco') {
+      jacocoTestReport {
+        classDirectories.setFrom(
+          files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: [
+              'org/finos/tracdap/common/data/pipeline/GrpcUploadSource$UploadRequestObserver*',
+            ])
+          })
+        )
+      }
+    }
+  }
+}
