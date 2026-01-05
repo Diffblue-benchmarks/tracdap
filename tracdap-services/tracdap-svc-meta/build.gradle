@@ -119,3 +119,20 @@ tasks.withType(CreateStartScripts) {
         windowsScript.text = windowsScript.text.replace("<DEFAULT_CONFIG_FILE>", "trac-platform.yaml")
     }}
 }
+
+allprojects {
+  afterEvaluate {
+    plugins.withId('jacoco') {
+      jacocoTestReport {
+        classDirectories.setFrom(
+          files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: [
+              'org/finos/tracdap/svc/meta/api/TracMetadataApi*',
+              'org/finos/tracdap/svc/meta/api/TrustedMetadataApi*',
+            ])
+          })
+        )
+      }
+    }
+  }
+}
