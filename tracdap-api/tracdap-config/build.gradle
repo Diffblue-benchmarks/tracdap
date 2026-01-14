@@ -39,10 +39,76 @@ dependencies {
     api "com.google.protobuf:protobuf-java"
 
     api project(":tracdap-api-metadata")
+    testImplementation("org.mockito:mockito-junit-jupiter:5.11.0")
+    compileOnly("com.diffblue.cover:cover-annotations:1.6.0")
+    testImplementation("com.diffblue.cover:cover-annotations:1.6.0")
+
 }
 
 // Javadoc gives a lot of warnings on the protobuf generated code
 // Turn these warnings off, they're noisy and obscure real Javadoc warnings from TRAC's own code
 tasks.withType(Javadoc).configureEach {
     options.addStringOption('Xdoclint:none', '-quiet')
+}
+
+allprojects {
+  afterEvaluate {
+    plugins.withId('jacoco') {
+      jacocoTestReport {
+        classDirectories.setFrom(
+          files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: [
+              'org/finos/tracdap/config/ClientConfig.class',
+              'org/finos/tracdap/config/ClientConfig$Builder.class',
+              'org/finos/tracdap/config/CommonConfigProto.class',
+              'org/finos/tracdap/config/DeploymentConfig.class',
+              'org/finos/tracdap/config/DeploymentConfig$Builder.class',
+              'org/finos/tracdap/config/DeploymentLayout.class',
+              'org/finos/tracdap/config/GatewayConfig.class',
+              'org/finos/tracdap/config/GatewayConfig$Builder.class',
+              'org/finos/tracdap/config/GatewayRedirect.class',
+              'org/finos/tracdap/config/GatewayRedirect$Builder.class',
+              'org/finos/tracdap/config/JobConfig.class',
+              'org/finos/tracdap/config/JobConfig$Builder.class',
+              'org/finos/tracdap/config/JobConfigProto.class',
+              'org/finos/tracdap/config/JobResult.class',
+              'org/finos/tracdap/config/JobResult$Builder.class',
+              'org/finos/tracdap/config/MetadataConfig.class',
+              'org/finos/tracdap/config/MetadataConfig$Builder.class',
+              'org/finos/tracdap/config/PlatformConfig.class',
+              'org/finos/tracdap/config/PlatformConfig$Builder.class',
+              'org/finos/tracdap/config/PlatformConfigProto.class',
+              'org/finos/tracdap/config/PlatformInfo.class',
+              'org/finos/tracdap/config/PlatformInfo$Builder.class',
+              'org/finos/tracdap/config/PluginConfig.class',
+              'org/finos/tracdap/config/PluginConfig$Builder.class',
+              'org/finos/tracdap/config/ResultConfigProto.class',
+              'org/finos/tracdap/config/RouteConfig.class',
+              'org/finos/tracdap/config/RouteConfig$Builder.class',
+              'org/finos/tracdap/config/RoutingMatch.class',
+              'org/finos/tracdap/config/RoutingMatch$Builder.class',
+              'org/finos/tracdap/config/RoutingProtocol.class',
+              'org/finos/tracdap/config/RoutingTarget.class',
+              'org/finos/tracdap/config/RoutingTarget$Builder.class',
+              'org/finos/tracdap/config/RuntimeConfig.class',
+              'org/finos/tracdap/config/RuntimeConfig$Builder.class',
+              'org/finos/tracdap/config/RuntimeConfigProto.class',
+              'org/finos/tracdap/config/ServiceConfig.class',
+              'org/finos/tracdap/config/ServiceConfig$Builder.class',
+              'org/finos/tracdap/config/SparkSettings.class',
+              'org/finos/tracdap/config/SparkSettings$Builder.class',
+              'org/finos/tracdap/config/StorageConfig.class',
+              'org/finos/tracdap/config/StorageConfig$Builder.class',
+              'org/finos/tracdap/config/TagUpdateList.class',
+              'org/finos/tracdap/config/TagUpdateList$Builder.class',
+              'org/finos/tracdap/config/TenantConfig.class',
+              'org/finos/tracdap/config/TenantConfig$Builder.class',
+              'org/finos/tracdap/config/_ConfigFile.class',
+              'org/finos/tracdap/config/_ConfigFile$Builder.class',
+            ])
+          })
+        )
+      }
+    }
+  }
 }

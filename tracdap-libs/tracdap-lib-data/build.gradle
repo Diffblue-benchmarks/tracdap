@@ -55,6 +55,9 @@ dependencies {
     implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: "$jackson_databind_version"
 
     testImplementation project(':tracdap-lib-test')
+    testImplementation("org.mockito:mockito-junit-jupiter:5.11.0")
+    compileOnly("com.diffblue.cover:cover-annotations:1.6.0")
+    testImplementation("com.diffblue.cover:cover-annotations:1.6.0")
 }
 
 
@@ -80,4 +83,20 @@ task testJar(type: Jar) {
 
 artifacts {
     testSuite testJar
+}
+
+allprojects {
+  afterEvaluate {
+    plugins.withId('jacoco') {
+      jacocoTestReport {
+        classDirectories.setFrom(
+          files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: [
+              'org/finos/tracdap/common/data/pipeline/GrpcUploadSource$UploadRequestObserver*',
+            ])
+          })
+        )
+      }
+    }
+  }
 }

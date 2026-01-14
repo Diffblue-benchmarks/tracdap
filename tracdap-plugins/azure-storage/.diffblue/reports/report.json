@@ -1,0 +1,1476 @@
+{
+  "meta" : {
+    "reportVersion" : "2.7"
+  },
+  "run" : {
+    "version" : "2025.09.01-44e352d-licensed",
+    "creationTimestamp" : "2025-10-15T15:46:24.817560458Z",
+    "command" : "dcover create --exclude-modules=sql-drivers --coverage-reports --upload http://localhost:8080 --project-name tracdap --name with-diffblue-tests",
+    "totalTime" : 543.416,
+    "environmentDetectionTime" : 0.835,
+    "indexingTime" : 0.435,
+    "entryPointsTime" : 0.798,
+    "generationTime" : 8287.79,
+    "timeToFirstTest" : 10802.055,
+    "timeToLastTest" : 9532.419,
+    "indexQueryTime" : 17.156,
+    "verificationTime" : 284.013,
+    "validationTime" : 99.777
+  },
+  "codes" : {
+    "R000" : "Success",
+    "R002" : "Missing observers",
+    "R006" : "Static initializer failed",
+    "R011" : "Sandboxing policy violation",
+    "R013" : "No inputs found that don't throw a trivial exception",
+    "R081" : "Exception in arrange section",
+    "T000" : "Method eligible for test creation",
+    "T003" : "Private method",
+    "T005" : "Trivial constructor",
+    "T008" : "Private and never called",
+    "T012" : "Synthetic method",
+    "T021" : "Empty method body",
+    "T023" : "Testability unknown",
+    "V000" : "Validated successfully",
+    "V003" : "Tests discarded during validation"
+  },
+  "summary" : {
+    "classesCount" : 10,
+    "methodsCount" : 103,
+    "cumulativeDiffblueTestCount" : 8,
+    "cumulativeManualTestCount" : 0,
+    "completeTestCount" : 10,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 678,
+    "perMethodTestability" : {
+      "T000" : 27,
+      "T003" : 38,
+      "T005" : 4,
+      "T008" : 2,
+      "T012" : 27,
+      "T021" : 1,
+      "T023" : 4
+    },
+    "perMethodOutcome" : {
+      "R000" : 7,
+      "R002" : 1,
+      "R006" : 1,
+      "R011" : 20,
+      "R013" : 1,
+      "R081" : 1,
+      "T003" : 38,
+      "T005" : 1,
+      "T008" : 2,
+      "T012" : 27,
+      "T023" : 4
+    },
+    "perTestOutcome" : {
+      "R000" : 10
+    },
+    "perTestValidation" : {
+      "V000" : 10,
+      "V003" : 4
+    }
+  },
+  "classes" : {
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobReader" : {
+      "methodsCount" : 10,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 5,
+        "T003" : 1,
+        "T012" : 4
+      },
+      "perMethodOutcome" : {
+        "R006" : 1,
+        "R011" : 4,
+        "T003" : 1,
+        "T012" : 4
+      }
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobReader$FluxSubscriber" : {
+      "methodsCount" : 6,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 4,
+        "T008" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "T003" : 4,
+        "T008" : 1,
+        "T012" : 1
+      }
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage" : {
+      "methodsCount" : 56,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 13,
+        "T003" : 21,
+        "T012" : 20,
+        "T021" : 1,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R011" : 11,
+        "R013" : 1,
+        "R081" : 1,
+        "T003" : 21,
+        "T012" : 20,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage$CredentialsProvider" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 1
+      },
+      "perMethodOutcome" : {
+        "T003" : 1
+      }
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobWriter" : {
+      "methodsCount" : 8,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 4,
+        "T003" : 2,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R011" : 5,
+        "T003" : 2,
+        "T012" : 1
+      }
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobWriter$FluxSubscription" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 3
+      },
+      "perMethodOutcome" : {
+        "T003" : 3
+      }
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobWriter$FluxTransformer" : {
+      "methodsCount" : 7,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 5,
+        "T008" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "T003" : 5,
+        "T008" : 1,
+        "T012" : 1
+      }
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureScheduling" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "T005" : 1,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureStorageErrors" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T003" : 1,
+        "T005" : 1,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 1,
+        "R002" : 1,
+        "T003" : 1,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 1
+      }
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureStoragePlugin" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 3,
+        "T005" : 1,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 4,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 5
+      }
+    }
+  },
+  "methods" : {
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobReader$FluxSubscriber.<init>:(Lorg/finos/tracdap/plugins/azure/storage/AzureBlobReader;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T008",
+      "perMethodOutcome" : "T008",
+      "lineNumbers" : [
+        120
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobReader$FluxSubscriber.onComplete:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        148,
+        149
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobReader$FluxSubscriber.onError:(Ljava/lang/Throwable;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        143,
+        144
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobReader$FluxSubscriber.onNext:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        120
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobReader$FluxSubscriber.onNext:(Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        138,
+        139
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobReader$FluxSubscriber.onSubscribe:(Lorg/reactivestreams/Subscription;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        125,
+        126,
+        128,
+        130,
+        131,
+        132,
+        134
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobReader.<init>:(Lcom/azure/storage/blob/BlobAsyncClient;Lorg/finos/tracdap/common/data/IDataContext;Lorg/finos/tracdap/common/storage/StorageErrors;Ljava/lang/String;Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R006",
+      "lineNumbers" : [
+        69,
+        70
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobReader.<init>:(Lcom/azure/storage/blob/BlobAsyncClient;Lorg/finos/tracdap/common/data/IDataContext;Lorg/finos/tracdap/common/storage/StorageErrors;Ljava/lang/String;Ljava/lang/String;JJJ)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        56,
+        58,
+        59,
+        61,
+        62,
+        63
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobReader.access$000:(Lorg/finos/tracdap/plugins/azure/storage/AzureBlobReader;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        35
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobReader.access$100:(Lorg/finos/tracdap/plugins/azure/storage/AzureBlobReader;Ljava/nio/ByteBuffer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        35
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobReader.access$200:(Lorg/finos/tracdap/plugins/azure/storage/AzureBlobReader;Ljava/lang/Throwable;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        35
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobReader.access$300:(Lorg/finos/tracdap/plugins/azure/storage/AzureBlobReader;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        35
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobReader.clientCancel:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        105,
+        106,
+        107,
+        109
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobReader.clientRequest:(J)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        96,
+        97,
+        99,
+        100
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobReader.clientStart:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        75,
+        77,
+        78,
+        79,
+        81,
+        82,
+        84,
+        86,
+        88,
+        89,
+        90,
+        91
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobReader.onDownload:(Lcom/azure/storage/blob/models/BlobDownloadAsyncResponse;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        113,
+        115,
+        116,
+        117,
+        118
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage$CredentialsProvider.setCredentials:(Lcom/azure/storage/blob/BlobServiceClientBuilder;)Lcom/azure/storage/blob/BlobServiceClientBuilder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003"
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.<init>:(Ljava/lang/String;Ljava/util/Properties;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        94,
+        96,
+        97,
+        98,
+        100,
+        101,
+        102,
+        104,
+        105
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.buildDirStat:(Ljava/lang/String;)Lorg/finos/tracdap/common/storage/FileStat;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        370,
+        372,
+        373,
+        374,
+        375,
+        376,
+        378,
+        379,
+        380,
+        382,
+        383,
+        385
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.buildFileStat:(Ljava/lang/String;Lcom/azure/storage/blob/models/BlobItemProperties;)Lorg/finos/tracdap/common/storage/FileStat;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        344,
+        346,
+        347,
+        348,
+        350,
+        351,
+        352,
+        354,
+        355,
+        356,
+        358,
+        359,
+        360,
+        362,
+        363,
+        365
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.buildFileStat:(Ljava/lang/String;Lcom/azure/storage/blob/models/BlobProperties;)Lorg/finos/tracdap/common/storage/FileStat;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        318,
+        320,
+        321,
+        322,
+        324,
+        325,
+        326,
+        328,
+        329,
+        330,
+        332,
+        333,
+        334,
+        336,
+        337,
+        339
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.checkRootExists:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        163,
+        165,
+        166,
+        167,
+        168,
+        171,
+        172,
+        173,
+        175,
+        176,
+        177,
+        180,
+        182,
+        186,
+        188,
+        190
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.fsCreateDir:(Ljava/lang/String;Lorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        391,
+        393,
+        394,
+        396,
+        398
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.fsCreateDirError:(Ljava/lang/String;Ljava/lang/Throwable;)Lorg/finos/tracdap/common/exception/ETrac;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        403
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.fsDeleteDir:(Ljava/lang/String;Lorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        425,
+        427
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.fsDeleteDirContent:(Ljava/lang/String;Ljava/lang/String;Lcom/azure/core/http/rest/PagedResponse;Lorg/finos/tracdap/common/data/IExecutionContext;)Lreactor/core/publisher/Mono;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        452,
+        453,
+        454,
+        456,
+        459,
+        460,
+        462,
+        463,
+        464,
+        465,
+        466,
+        467,
+        469,
+        471,
+        472,
+        474,
+        476,
+        477,
+        478,
+        476
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.fsDeleteDirError:(Ljava/lang/String;Ljava/lang/Throwable;)Lorg/finos/tracdap/common/exception/ETrac;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        483
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.fsDeleteDirPage:(Ljava/lang/String;Ljava/lang/String;Lorg/finos/tracdap/common/data/IExecutionContext;)Lreactor/core/publisher/Mono;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        432,
+        434,
+        435,
+        436,
+        438,
+        439,
+        440,
+        442,
+        444,
+        445,
+        446,
+        447,
+        444
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.fsDeleteFile:(Ljava/lang/String;Lorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        409,
+        410,
+        412,
+        414
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.fsDeleteFileError:(Ljava/lang/String;Ljava/lang/Throwable;)Lorg/finos/tracdap/common/exception/ETrac;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        419
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.fsDirExists:(Ljava/lang/String;Lorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        224,
+        226,
+        227,
+        228,
+        233,
+        234,
+        235,
+        237
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.fsExists:(Ljava/lang/String;Lorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        201,
+        202,
+        204,
+        206
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.fsExistsCallback:(Z)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        213
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.fsExistsError:(Ljava/lang/String;Ljava/lang/Throwable;)Lorg/finos/tracdap/common/exception/ETrac;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        218
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.fsGetDirInfo:(Ljava/lang/String;Lorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        270,
+        272,
+        274
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.fsGetFileInfo:(Ljava/lang/String;Lorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        245,
+        246,
+        248,
+        250
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.fsGetFileInfoCallback:(Ljava/lang/String;Lcom/azure/storage/blob/models/BlobProperties;)Lorg/finos/tracdap/common/storage/FileStat;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        257,
+        259
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.fsGetFileInfoError:(Ljava/lang/String;Ljava/lang/Throwable;)Lorg/finos/tracdap/common/exception/ETrac;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        264
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.fsListContents:(Ljava/lang/String;Ljava/lang/String;IZLorg/finos/tracdap/common/data/IExecutionContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        280,
+        282,
+        283,
+        285,
+        286,
+        287,
+        288,
+        290,
+        291,
+        292,
+        294,
+        295,
+        297
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.fsListContentsCallback:(Lcom/azure/core/http/rest/PagedResponse;Ljava/lang/String;)Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        304,
+        305,
+        306,
+        307,
+        308,
+        304
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.fsListContentsError:(Ljava/lang/String;Ljava/lang/Throwable;)Lorg/finos/tracdap/common/exception/ETrac;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        313
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.fsOpenInputStream:(Ljava/lang/String;Lorg/finos/tracdap/common/data/IDataContext;)Ljava/util/concurrent/Flow$Publisher;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        527,
+        528,
+        530
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.fsOpenOutputStream:(Ljava/lang/String;Ljava/util/concurrent/CompletableFuture;Lorg/finos/tracdap/common/data/IDataContext;)Ljava/util/concurrent/Flow$Subscriber;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        536,
+        537,
+        539
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.fsReadChunk:(Ljava/lang/String;JILorg/finos/tracdap/common/data/IDataContext;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        489,
+        490,
+        492,
+        500,
+        501,
+        503,
+        517,
+        503
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.handle:(Lreactor/core/publisher/Mono;Lorg/finos/tracdap/common/data/IExecutionContext;Ljava/util/function/Function;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        608,
+        610,
+        611,
+        612,
+        613,
+        614,
+        610
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.handle:(Lreactor/core/publisher/Mono;Lorg/finos/tracdap/common/data/IExecutionContext;Ljava/util/function/Function;Ljava/util/function/Function;)Ljava/util/concurrent/CompletionStage;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        595,
+        597,
+        598,
+        599,
+        600,
+        601,
+        597
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.lambda$fsCreateDir$11:(Ljava/lang/String;Ljava/lang/Throwable;)Lorg/finos/tracdap/common/exception/ETrac;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        398
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.lambda$fsDeleteDir$13:(Ljava/lang/String;Ljava/lang/Throwable;)Lorg/finos/tracdap/common/exception/ETrac;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        427
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.lambda$fsDeleteDirContent$15:(Ljava/util/List;)Ljava/lang/Void;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        472
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.lambda$fsDeleteDirPage$14:(Ljava/lang/String;Ljava/lang/String;Lorg/finos/tracdap/common/data/IExecutionContext;Lcom/azure/core/http/rest/PagedResponse;)Lreactor/core/publisher/Mono;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        447
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.lambda$fsDeleteFile$12:(Ljava/lang/String;Ljava/lang/Throwable;)Lorg/finos/tracdap/common/exception/ETrac;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        414
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.lambda$fsDirExists$3:(Lcom/azure/storage/blob/models/BlobItem;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        235
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.lambda$fsDirExists$4:(Ljava/lang/String;Ljava/lang/Throwable;)Lorg/finos/tracdap/common/exception/ETrac;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        239
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.lambda$fsExists$2:(Ljava/lang/String;Ljava/lang/Throwable;)Lorg/finos/tracdap/common/exception/ETrac;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        208
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.lambda$fsGetFileInfo$5:(Ljava/lang/String;Lcom/azure/storage/blob/models/BlobProperties;)Lorg/finos/tracdap/common/storage/FileStat;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        251
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.lambda$fsGetFileInfo$6:(Ljava/lang/String;Ljava/lang/Throwable;)Lorg/finos/tracdap/common/exception/ETrac;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        252
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.lambda$fsListContents$7:(Ljava/lang/String;Lcom/azure/core/http/rest/PagedResponse;)Ljava/util/List;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        298
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.lambda$fsListContents$8:(Ljava/lang/String;Ljava/lang/Throwable;)Lorg/finos/tracdap/common/exception/ETrac;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        299
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.lambda$fsListContentsCallback$10:(Lcom/azure/storage/blob/models/BlobItem;)Lorg/finos/tracdap/common/storage/FileStat;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        307
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.lambda$fsListContentsCallback$9:(Ljava/lang/String;Lcom/azure/storage/blob/models/BlobItem;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        306
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.lambda$fsReadChunk$16:(Ljava/util/ArrayList;Lorg/apache/arrow/memory/ArrowBuf;)Ljava/util/ArrayList;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        501
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.lambda$fsReadChunk$17:(ILjava/lang/String;Ljava/util/ArrayList;)Lorg/apache/arrow/memory/ArrowBuf;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        506,
+        507,
+        509,
+        512,
+        513,
+        515
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.lambda$fsReadChunk$18:(Ljava/util/ArrayList;Ljava/lang/Throwable;)Lorg/apache/arrow/memory/ArrowBuf;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        519,
+        520
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.lambda$handle$19:(Ljava/lang/Object;)Ljava/lang/Void;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        612
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.lambda$prepareCredentials$0:(Lcom/azure/identity/DefaultAzureCredential;Lcom/azure/storage/blob/BlobServiceClientBuilder;)Lcom/azure/storage/blob/BlobServiceClientBuilder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        118
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.lambda$prepareCredentials$1:(Lcom/azure/storage/common/StorageSharedKeyCredential;Lcom/azure/storage/blob/BlobServiceClientBuilder;)Lcom/azure/storage/blob/BlobServiceClientBuilder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        128
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.normalizePrefix:(Ljava/lang/String;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        544,
+        545,
+        547,
+        548,
+        550,
+        551,
+        553,
+        554,
+        556
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.prepareCredentials:(Ljava/util/Properties;)Lorg/finos/tracdap/plugins/azure/storage/AzureBlobStorage$CredentialsProvider;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        109,
+        110,
+        111,
+        113,
+        115,
+        116,
+        118,
+        121,
+        123,
+        125,
+        126,
+        128,
+        131,
+        132,
+        133
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.removePrefix:(Ljava/lang/String;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        575,
+        576,
+        578,
+        579,
+        581
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.start:(Lio/netty/channel/EventLoopGroup;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        139,
+        141,
+        142,
+        143,
+        145,
+        146,
+        147,
+        149,
+        150,
+        151,
+        153,
+        154,
+        156,
+        157
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.stop:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T021",
+      "perMethodOutcome" : "R081",
+      "lineNumbers" : [
+        196
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobStorage.usePrefix:(Ljava/lang/String;)Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        561,
+        562,
+        564,
+        565,
+        567
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobWriter$FluxSubscription.<init>:(Ljava/util/concurrent/Flow$Subscription;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        155,
+        156,
+        157
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobWriter$FluxSubscription.cancel:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        166,
+        167
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobWriter$FluxSubscription.request:(J)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        161,
+        162
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobWriter$FluxTransformer.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T008",
+      "perMethodOutcome" : "T008",
+      "lineNumbers" : [
+        104
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobWriter$FluxTransformer.onComplete:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        147,
+        148
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobWriter$FluxTransformer.onError:(Ljava/lang/Throwable;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        142,
+        143
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobWriter$FluxTransformer.onNext:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        104
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobWriter$FluxTransformer.onNext:(Lorg/apache/arrow/memory/ArrowBuf;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        130,
+        132,
+        133,
+        134,
+        136,
+        137,
+        130,
+        138
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobWriter$FluxTransformer.onSubscribe:(Lorg/reactivestreams/Subscription;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        121,
+        123,
+        124,
+        125
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobWriter$FluxTransformer.subscribe:(Lorg/reactivestreams/Subscriber;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        112,
+        114,
+        115,
+        116
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobWriter.<init>:(Lcom/azure/storage/blob/BlobAsyncClient;Ljava/util/concurrent/CompletableFuture;Lorg/finos/tracdap/common/data/IDataContext;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        48,
+        50,
+        51,
+        52,
+        53
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobWriter.onComplete:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        93,
+        94
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobWriter.onError:(Ljava/lang/Throwable;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        85,
+        86,
+        88,
+        89
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobWriter.onFailure:(Ljava/lang/Throwable;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        101,
+        102
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobWriter.onNext:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        37
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobWriter.onNext:(Lorg/apache/arrow/memory/ArrowBuf;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        75,
+        76,
+        77
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobWriter.onSubscribe:(Ljava/util/concurrent/Flow$Subscription;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R011",
+      "lineNumbers" : [
+        58,
+        60,
+        61,
+        64,
+        66,
+        68,
+        69,
+        70,
+        71
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureBlobWriter.onSuccess:(Lcom/azure/storage/blob/models/BlockBlobItem;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        97,
+        98
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureScheduling.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureScheduling.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "T005",
+      "lineNumbers" : [
+        28
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureScheduling.schedulerFor:(Ljava/util/concurrent/ExecutorService;)Lreactor/core/scheduler/Scheduler;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        34,
+        36,
+        37,
+        39,
+        40,
+        42
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureStorageErrors.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureStorageErrors.<init>:(Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        34,
+        35
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureStorageErrors.checkBlobStorageErrorCode:(Lcom/azure/storage/blob/models/BlobStorageException;)Lorg/finos/tracdap/common/storage/StorageErrors$ExplicitError;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        49
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureStorageErrors.checkKnownExceptions:(Ljava/lang/Throwable;)Lorg/finos/tracdap/common/storage/StorageErrors$ExplicitError;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        40,
+        41,
+        44
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureStoragePlugin.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureStoragePlugin.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        31
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureStoragePlugin.createService:(Ljava/lang/String;Ljava/util/Properties;Lorg/finos/tracdap/common/config/ConfigManager;)Ljava/lang/Object;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        52,
+        53,
+        54,
+        57,
+        58
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureStoragePlugin.pluginName:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        41
+      ]
+    },
+    "org.finos.tracdap.plugins.azure.storage.AzureStoragePlugin.serviceInfo:()Ljava/util/List;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        46
+      ]
+    }
+  },
+  "validationMetrics" : {
+    "failingTests" : [
+      "org.finos.tracdap.common.storage.local.LocalStorageOperationsTest.testStat_dirMTime"
+    ]
+  }
+}

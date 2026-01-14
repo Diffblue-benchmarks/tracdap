@@ -61,6 +61,10 @@ dependencies {
 
     // Use Flyway to deploy schemas in test cases
     implementation group: 'org.flywaydb', name: 'flyway-core', version: "$flyway_version"
+    testImplementation("org.mockito:mockito-junit-jupiter:5.11.0")
+    compileOnly("com.diffblue.cover:cover-annotations:1.6.0")
+    testImplementation("com.diffblue.cover:cover-annotations:1.6.0")
+
 }
 
 
@@ -69,3 +73,20 @@ dependencies {
 // This dependency ensures resources are always processed, even for partial builds
 
 compileJava.dependsOn(processResources)
+
+allprojects {
+  afterEvaluate {
+    plugins.withId('jacoco') {
+      jacocoTestReport {
+        classDirectories.setFrom(
+          files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: [
+              'org/finos/tracdap/test/grpc/GrpcTestStreams$ClientResponseStream.class',
+              'org/finos/tracdap/test/grpc/GrpcTestStreams$ClientResultHandler.class',
+            ])
+          })
+        )
+      }
+    }
+  }
+}

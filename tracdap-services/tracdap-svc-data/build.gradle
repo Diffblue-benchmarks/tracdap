@@ -78,6 +78,11 @@ dependencies {
         // Do not pull in JUnit 4, use migration support from JUnit 5 instead
         exclude group: 'junit', module: 'junit'
     }
+    testImplementation("org.mockito:mockito-junit-jupiter:5.11.0")
+    compileOnly("com.diffblue.cover:cover-annotations:1.6.0")
+    testImplementation("com.diffblue.cover:cover-annotations:1.6.0")
+    testImplementation("org.junit.vintage:junit-vintage-engine:5.10.2")
+
 }
 
 // Add any plugin dependencies enabled at build time
@@ -102,4 +107,20 @@ tasks.withType(CreateStartScripts) {
         unixScript.text = unixScript.text.replace("<DEFAULT_CONFIG_FILE>", "trac-platform.yaml")
         windowsScript.text = windowsScript.text.replace("<DEFAULT_CONFIG_FILE>", "trac-platform.yaml")
     }}
+}
+
+allprojects {
+  afterEvaluate {
+    plugins.withId('jacoco') {
+      jacocoTestReport {
+        classDirectories.setFrom(
+          files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: [
+              'org/finos/tracdap/svc/data/api/*',
+            ])
+          })
+        )
+      }
+    }
+  }
 }

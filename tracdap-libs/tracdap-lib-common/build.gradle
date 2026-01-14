@@ -79,6 +79,10 @@ dependencies {
     implementation group: 'org.apache.logging.log4j', name: 'log4j-slf4j2-impl', version: "$log4j_version"
 
     testImplementation project(':tracdap-lib-test')
+    testImplementation("org.mockito:mockito-junit-jupiter:5.11.0")
+    compileOnly("com.diffblue.cover:cover-annotations:1.6.0")
+    testImplementation("com.diffblue.cover:cover-annotations:1.6.0")
+
 }
 
 

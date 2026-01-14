@@ -31,7 +31,11 @@ dependencies {
     api project(':tracdap-api-services')
     api project(':tracdap-lib-common')
 
-    testImplementation project(':tracdap-lib-test')
+    testImplementation project(':tracdap-lib-test')      
+    testImplementation("org.mockito:mockito-junit-jupiter:5.11.0")
+    compileOnly("com.diffblue.cover:cover-annotations:1.6.0")
+    testImplementation("com.diffblue.cover:cover-annotations:1.6.0")
+
 }
 
 // Compiling dependent targets does not require processResources to be executed by default

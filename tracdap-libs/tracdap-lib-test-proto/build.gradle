@@ -37,6 +37,10 @@ dependencies {
     api project(":tracdap-api-services")
 
     api "com.google.protobuf:protobuf-java"
+    testImplementation("org.mockito:mockito-junit-jupiter:5.11.0")
+    compileOnly("com.diffblue.cover:cover-annotations:1.6.0")
+    testImplementation("com.diffblue.cover:cover-annotations:1.6.0")
+
 }
 
 
@@ -44,4 +48,22 @@ dependencies {
 // Turn these warnings off, they're noisy and obscure real Javadoc warnings from TRAC's own code
 tasks.withType(Javadoc).configureEach {
     options.addStringOption('Xdoclint:none', '-quiet')
+}
+
+allprojects {
+  afterEvaluate {
+    plugins.withId('jacoco') {
+      jacocoTestReport {
+        classDirectories.setFrom(
+          files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: [
+              'org/finos/tracdap/test/config/ConfigExtensionsProto.class',
+              'org/finos/tracdap/test/config/TestConfigExt.class',
+              'org/finos/tracdap/test/config/TestConfigExt$Builder.class',
+            ])
+          })
+        )
+      }
+    }
+  }
 }

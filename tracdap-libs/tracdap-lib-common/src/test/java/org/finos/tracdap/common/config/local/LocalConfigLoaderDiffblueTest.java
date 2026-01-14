@@ -1,0 +1,118 @@
+package org.finos.tracdap.common.config.local;
+
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import com.diffblue.cover.annotations.ManagedByDiffblue;
+import com.diffblue.cover.annotations.MethodsUnderTest;
+import java.net.URI;
+import java.nio.file.Paths;
+import org.finos.tracdap.common.exception.EConfigLoad;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+
+class LocalConfigLoaderDiffblueTest {
+  /**
+   * Test {@link LocalConfigLoader#loadTextFile(URI)}.
+   *
+   * <ul>
+   *   <li>When Property is {@code java.io.tmpdir} is {@code Failed to load config file: %2$s
+   *       [%1$s]} toUri.
+   * </ul>
+   *
+   * <p>Method under test: {@link LocalConfigLoader#loadTextFile(URI)}
+   */
+  @Test
+  @DisplayName(
+      "Test loadTextFile(URI); when Property is 'java.io.tmpdir' is 'Failed to load config file: %2$s [%1$s]' toUri")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"java.lang.String LocalConfigLoader.loadTextFile(URI)"})
+  void testLoadTextFile_whenPropertyIsJavaIoTmpdirIsFailedToLoadConfigFile2S1SToUri() {
+    // Arrange, Act and Assert
+    assertThrows(
+        EConfigLoad.class,
+        () ->
+            new LocalConfigLoader()
+                .loadTextFile(
+                    Paths.get(
+                            System.getProperty("java.io.tmpdir"),
+                            "Failed to load config file: %2$s [%1$s]")
+                        .toUri()));
+  }
+
+  /**
+   * Test {@link LocalConfigLoader#loadTextFile(URI)}.
+   *
+   * <ul>
+   *   <li>When Property is {@code java.io.tmpdir} is {@code test.txt} toUri.
+   * </ul>
+   *
+   * <p>Method under test: {@link LocalConfigLoader#loadTextFile(URI)}
+   */
+  @Test
+  @DisplayName("Test loadTextFile(URI); when Property is 'java.io.tmpdir' is 'test.txt' toUri")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"java.lang.String LocalConfigLoader.loadTextFile(URI)"})
+  void testLoadTextFile_whenPropertyIsJavaIoTmpdirIsTestTxtToUri() {
+    // Arrange, Act and Assert
+    assertThrows(
+        EConfigLoad.class,
+        () ->
+            new LocalConfigLoader()
+                .loadTextFile(Paths.get(System.getProperty("java.io.tmpdir"), "test.txt").toUri()));
+  }
+
+  /**
+   * Test {@link LocalConfigLoader#loadBinaryFile(URI)}.
+   *
+   * <ul>
+   *   <li>When Property is {@code java.io.tmpdir} is {@code Failed to load config file: %2$s
+   *       [%1$s]} toUri.
+   * </ul>
+   *
+   * <p>Method under test: {@link LocalConfigLoader#loadBinaryFile(URI)}
+   */
+  @Test
+  @DisplayName(
+      "Test loadBinaryFile(URI); when Property is 'java.io.tmpdir' is 'Failed to load config file: %2$s [%1$s]' toUri")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"byte[] LocalConfigLoader.loadBinaryFile(URI)"})
+  void testLoadBinaryFile_whenPropertyIsJavaIoTmpdirIsFailedToLoadConfigFile2S1SToUri() {
+    // Arrange, Act and Assert
+    assertThrows(
+        EConfigLoad.class,
+        () ->
+            new LocalConfigLoader()
+                .loadBinaryFile(
+                    Paths.get(
+                            System.getProperty("java.io.tmpdir"),
+                            "Failed to load config file: %2$s [%1$s]")
+                        .toUri()));
+  }
+
+  /**
+   * Test {@link LocalConfigLoader#loadBinaryFile(URI)}.
+   *
+   * <ul>
+   *   <li>When Property is {@code java.io.tmpdir} is {@code test.txt} toUri.
+   * </ul>
+   *
+   * <p>Method under test: {@link LocalConfigLoader#loadBinaryFile(URI)}
+   */
+  @Test
+  @DisplayName("Test loadBinaryFile(URI); when Property is 'java.io.tmpdir' is 'test.txt' toUri")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"byte[] LocalConfigLoader.loadBinaryFile(URI)"})
+  void testLoadBinaryFile_whenPropertyIsJavaIoTmpdirIsTestTxtToUri() {
+    // Arrange, Act and Assert
+    assertThrows(
+        EConfigLoad.class,
+        () ->
+            new LocalConfigLoader()
+                .loadBinaryFile(
+                    Paths.get(System.getProperty("java.io.tmpdir"), "test.txt").toUri()));
+  }
+}
