@@ -1,5 +1,7 @@
 package org.finos.tracdap.common.codec.json;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
@@ -7,8 +9,12 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
+import java.util.ArrayList;
 import org.apache.arrow.memory.ArrowBuf;
+import org.apache.arrow.memory.BufferAllocator;
 import org.apache.arrow.vector.types.pojo.Schema;
+import org.finos.tracdap.common.data.DataPipeline;
+import org.finos.tracdap.common.data.DataPipeline.ArrowApi;
 import org.finos.tracdap.common.exception.EUnexpected;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -20,6 +26,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 class JsonDecoderDiffblueTest {
+  @Mock private BufferAllocator bufferAllocator;
+
   @InjectMocks private JsonDecoder jsonDecoder;
 
   @Mock private Schema schema;

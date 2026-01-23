@@ -1,6 +1,9 @@
 package org.finos.tracdap.test.data;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.isA;
@@ -15,6 +18,9 @@ import com.google.protobuf.UnknownFieldSet;
 import io.grpc.stub.StreamObserver;
 import io.netty.channel.DefaultEventLoop;
 import io.netty.util.concurrent.DefaultEventExecutor;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
@@ -32,6 +38,8 @@ import org.finos.tracdap.common.async.flow.FutureFirstItemSubscriber;
 import org.finos.tracdap.common.async.flow.HubProcessor;
 import org.finos.tracdap.common.async.flow.ReduceProcessor;
 import org.finos.tracdap.common.data.IExecutionContext;
+import org.finos.tracdap.common.exception.EUnexpected;
+import org.finos.tracdap.metadata.BasicType;
 import org.finos.tracdap.metadata.SchemaDefinition;
 import org.finos.tracdap.metadata.SchemaDefinition.Builder;
 import org.finos.tracdap.metadata.TagHeader;
@@ -180,7 +188,6 @@ class DataApiTestHelpersDiffblueTest {
 
     DefaultEventExecutor defaultEventExecutor2 = new DefaultEventExecutor();
     defaultEventExecutor2.addShutdownHook(mock(Runnable.class));
-    defaultEventExecutor2.addShutdownHook(mock(Runnable.class));
 
     IExecutionContext execCtx = mock(IExecutionContext.class);
     when(execCtx.eventLoopExecutor()).thenReturn(defaultEventExecutor2);
@@ -227,6 +234,49 @@ class DataApiTestHelpersDiffblueTest {
     // Act
     CompletionStage<List<Object>> actualServerStreamingResult =
         DataApiTestHelpers.serverStreaming(grpcMethod, "Request", execCtx);
+
+    // Assert
+    verify(grpcMethod).accept(isA(Object.class), isA(StreamObserver.class));
+    verify(execCtx).eventLoopExecutor();
+    assertTrue(actualServerStreamingResult instanceof CompletableFuture);
+  }
+
+  /**
+   * Test {@link DataApiTestHelpers#serverStreaming(BiConsumer, Object, IExecutionContext)} with
+   * {@code grpcMethod}, {@code request}, {@code execCtx}.
+   *
+   * <ul>
+   *   <li>When {@link ArrayList#ArrayList()}.
+   * </ul>
+   *
+   * <p>Method under test: {@link DataApiTestHelpers#serverStreaming(BiConsumer, Object,
+   * IExecutionContext)}
+   */
+  @Test
+  @DisplayName(
+      "Test serverStreaming(BiConsumer, Object, IExecutionContext) with 'grpcMethod', 'request', 'execCtx'; when ArrayList()")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({
+    "CompletionStage DataApiTestHelpers.serverStreaming(BiConsumer, Object, IExecutionContext)"
+  })
+  void testServerStreamingWithGrpcMethodRequestExecCtx_whenArrayList() {
+    // Arrange
+    BiConsumer<Object, StreamObserver<Object>> grpcMethod = mock(BiConsumer.class);
+    doNothing()
+        .when(grpcMethod)
+        .accept(Mockito.<Object>any(), Mockito.<StreamObserver<Object>>any());
+    ArrayList<Object> objectList = new ArrayList<>();
+
+    DefaultEventExecutor defaultEventExecutor = new DefaultEventExecutor();
+    defaultEventExecutor.addShutdownHook(mock(Runnable.class));
+
+    IExecutionContext execCtx = mock(IExecutionContext.class);
+    when(execCtx.eventLoopExecutor()).thenReturn(defaultEventExecutor);
+
+    // Act
+    CompletionStage<List<Object>> actualServerStreamingResult =
+        DataApiTestHelpers.serverStreaming(grpcMethod, objectList, execCtx);
 
     // Assert
     verify(grpcMethod).accept(isA(Object.class), isA(StreamObserver.class));
@@ -755,6 +805,89 @@ class DataApiTestHelpersDiffblueTest {
    * Test {@link DataApiTestHelpers#serverStreamingDiscard(BiConsumer, Object, IExecutionContext)}.
    *
    * <ul>
+   *   <li>Given {@link DefaultEventExecutor#DefaultEventExecutor()} addShutdownHook {@link
+   *       Runnable}.
+   * </ul>
+   *
+   * <p>Method under test: {@link DataApiTestHelpers#serverStreamingDiscard(BiConsumer, Object,
+   * IExecutionContext)}
+   */
+  @Test
+  @DisplayName(
+      "Test serverStreamingDiscard(BiConsumer, Object, IExecutionContext); given DefaultEventExecutor() addShutdownHook Runnable")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({
+    "CompletionStage DataApiTestHelpers.serverStreamingDiscard(BiConsumer, Object, IExecutionContext)"
+  })
+  void testServerStreamingDiscard_givenDefaultEventExecutorAddShutdownHookRunnable() {
+    // Arrange
+    BiConsumer<Object, StreamObserver<Object>> grpcMethod = mock(BiConsumer.class);
+    doNothing()
+        .when(grpcMethod)
+        .accept(Mockito.<Object>any(), Mockito.<StreamObserver<Object>>any());
+
+    DefaultEventExecutor defaultEventExecutor = new DefaultEventExecutor();
+    defaultEventExecutor.addShutdownHook(mock(Runnable.class));
+
+    IExecutionContext execCtx = mock(IExecutionContext.class);
+    when(execCtx.eventLoopExecutor()).thenReturn(defaultEventExecutor);
+
+    // Act
+    CompletionStage<Void> actualServerStreamingDiscardResult =
+        DataApiTestHelpers.serverStreamingDiscard(grpcMethod, "Request", execCtx);
+
+    // Assert
+    verify(grpcMethod).accept(isA(Object.class), isA(StreamObserver.class));
+    verify(execCtx).eventLoopExecutor();
+    assertTrue(actualServerStreamingDiscardResult instanceof CompletableFuture);
+  }
+
+  /**
+   * Test {@link DataApiTestHelpers#serverStreamingDiscard(BiConsumer, Object, IExecutionContext)}.
+   *
+   * <ul>
+   *   <li>Given {@link DefaultEventLoop#DefaultEventLoop()} addShutdownHook {@link Runnable}.
+   * </ul>
+   *
+   * <p>Method under test: {@link DataApiTestHelpers#serverStreamingDiscard(BiConsumer, Object,
+   * IExecutionContext)}
+   */
+  @Test
+  @DisplayName(
+      "Test serverStreamingDiscard(BiConsumer, Object, IExecutionContext); given DefaultEventLoop() addShutdownHook Runnable")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({
+    "CompletionStage DataApiTestHelpers.serverStreamingDiscard(BiConsumer, Object, IExecutionContext)"
+  })
+  void testServerStreamingDiscard_givenDefaultEventLoopAddShutdownHookRunnable() {
+    // Arrange
+    BiConsumer<Object, StreamObserver<Object>> grpcMethod = mock(BiConsumer.class);
+    doNothing()
+        .when(grpcMethod)
+        .accept(Mockito.<Object>any(), Mockito.<StreamObserver<Object>>any());
+
+    DefaultEventLoop defaultEventLoop = new DefaultEventLoop();
+    defaultEventLoop.addShutdownHook(mock(Runnable.class));
+
+    IExecutionContext execCtx = mock(IExecutionContext.class);
+    when(execCtx.eventLoopExecutor()).thenReturn(defaultEventLoop);
+
+    // Act
+    CompletionStage<Void> actualServerStreamingDiscardResult =
+        DataApiTestHelpers.serverStreamingDiscard(grpcMethod, "Request", execCtx);
+
+    // Assert
+    verify(grpcMethod).accept(isA(Object.class), isA(StreamObserver.class));
+    verify(execCtx).eventLoopExecutor();
+    assertTrue(actualServerStreamingDiscardResult instanceof CompletableFuture);
+  }
+
+  /**
+   * Test {@link DataApiTestHelpers#serverStreamingDiscard(BiConsumer, Object, IExecutionContext)}.
+   *
+   * <ul>
    *   <li>Given {@link DefaultEventLoop#DefaultEventLoop()}.
    *   <li>Then return {@link CompletableFuture}.
    * </ul>
@@ -788,6 +921,43 @@ class DataApiTestHelpersDiffblueTest {
     verify(grpcMethod).accept(isA(Object.class), isA(StreamObserver.class));
     verify(execCtx).eventLoopExecutor();
     assertTrue(actualServerStreamingDiscardResult instanceof CompletableFuture);
+  }
+
+  /**
+   * Test {@link DataApiTestHelpers#serverStreamingDiscard(BiConsumer, Object, IExecutionContext)}.
+   *
+   * <ul>
+   *   <li>Given {@link EUnexpected#EUnexpected()}.
+   *   <li>Then throw {@link EUnexpected}.
+   * </ul>
+   *
+   * <p>Method under test: {@link DataApiTestHelpers#serverStreamingDiscard(BiConsumer, Object,
+   * IExecutionContext)}
+   */
+  @Test
+  @DisplayName(
+      "Test serverStreamingDiscard(BiConsumer, Object, IExecutionContext); given EUnexpected(); then throw EUnexpected")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({
+    "CompletionStage DataApiTestHelpers.serverStreamingDiscard(BiConsumer, Object, IExecutionContext)"
+  })
+  void testServerStreamingDiscard_givenEUnexpected_thenThrowEUnexpected() {
+    // Arrange
+    BiConsumer<Object, StreamObserver<Object>> grpcMethod = mock(BiConsumer.class);
+    doThrow(new EUnexpected())
+        .when(grpcMethod)
+        .accept(Mockito.<Object>any(), Mockito.<StreamObserver<Object>>any());
+
+    IExecutionContext execCtx = mock(IExecutionContext.class);
+    when(execCtx.eventLoopExecutor()).thenReturn(new DefaultEventLoop());
+
+    // Act and Assert
+    assertThrows(
+        EUnexpected.class,
+        () -> DataApiTestHelpers.serverStreamingDiscard(grpcMethod, "Request", execCtx));
+    verify(grpcMethod).accept(isA(Object.class), isA(StreamObserver.class));
+    verify(execCtx).eventLoopExecutor();
   }
 
   /**
@@ -1309,5 +1479,495 @@ class DataApiTestHelpersDiffblueTest {
     assertThrows(
         RuntimeException.class,
         () -> DataApiTestHelpers.decodeJson(SampleData.ALT_TABLE_SCHEMA_V2, new ArrayList<>()));
+  }
+
+  /**
+   * Test {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>Then return toLocalTime toString is {@code 00:00}.
+   * </ul>
+   *
+   * <p>Method under test: {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}
+   */
+  @Test
+  @DisplayName(
+      "Test decodeJavaObject(BasicType, Object); then return toLocalTime toString is '00:00'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object DataApiTestHelpers.decodeJavaObject(BasicType, Object)"})
+  void testDecodeJavaObject_thenReturnToLocalTimeToStringIs0000() {
+    // Arrange
+    LocalDate ofResult = LocalDate.of(1970, 1, 1);
+
+    // Act
+    Object actualDecodeJavaObjectResult =
+        DataApiTestHelpers.decodeJavaObject(BasicType.DATETIME, ofResult.atStartOfDay());
+
+    // Assert
+    assertEquals("00:00", ((LocalDateTime) actualDecodeJavaObjectResult).toLocalTime().toString());
+    LocalDate toLocalDateResult = ((LocalDateTime) actualDecodeJavaObjectResult).toLocalDate();
+    assertEquals("1970-01-01", toLocalDateResult.toString());
+    assertSame(ofResult, toLocalDateResult);
+  }
+
+  /**
+   * Test {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>Then return toString is {@code 1970-01-01}.
+   * </ul>
+   *
+   * <p>Method under test: {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}
+   */
+  @Test
+  @DisplayName("Test decodeJavaObject(BasicType, Object); then return toString is '1970-01-01'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object DataApiTestHelpers.decodeJavaObject(BasicType, Object)"})
+  void testDecodeJavaObject_thenReturnToStringIs19700101() {
+    // Arrange, Act and Assert
+    assertEquals(
+        "1970-01-01",
+        DataApiTestHelpers.decodeJavaObject(BasicType.DATE, LocalDate.of(1970, 1, 1)).toString());
+  }
+
+  /**
+   * Test {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>When {@code 42}.
+   *   <li>Then does not throw.
+   * </ul>
+   *
+   * <p>Method under test: {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}
+   */
+  @Test
+  @DisplayName("Test decodeJavaObject(BasicType, Object); when '42'; then does not throw")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object DataApiTestHelpers.decodeJavaObject(BasicType, Object)"})
+  void testDecodeJavaObject_when42_thenDoesNotThrow() {
+    // Arrange, Act and Assert
+    assertDoesNotThrow(() -> DataApiTestHelpers.decodeJavaObject(BasicType.DECIMAL, "42"));
+  }
+
+  /**
+   * Test {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>When {@code 42}.
+   *   <li>Then return doubleValue is forty-two.
+   * </ul>
+   *
+   * <p>Method under test: {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}
+   */
+  @Test
+  @DisplayName(
+      "Test decodeJavaObject(BasicType, Object); when '42'; then return doubleValue is forty-two")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object DataApiTestHelpers.decodeJavaObject(BasicType, Object)"})
+  void testDecodeJavaObject_when42_thenReturnDoubleValueIsFortyTwo() {
+    // Arrange, Act and Assert
+    assertEquals(
+        42.0d, ((Double) DataApiTestHelpers.decodeJavaObject(BasicType.FLOAT, "42")).doubleValue());
+  }
+
+  /**
+   * Test {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>When {@code 42}.
+   *   <li>Then return longValue is forty-two.
+   * </ul>
+   *
+   * <p>Method under test: {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}
+   */
+  @Test
+  @DisplayName(
+      "Test decodeJavaObject(BasicType, Object); when '42'; then return longValue is forty-two")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object DataApiTestHelpers.decodeJavaObject(BasicType, Object)"})
+  void testDecodeJavaObject_when42_thenReturnLongValueIsFortyTwo() {
+    // Arrange, Act and Assert
+    assertEquals(
+        42L, ((Long) DataApiTestHelpers.decodeJavaObject(BasicType.INTEGER, "42")).longValue());
+  }
+
+  /**
+   * Test {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>When {@code A}.
+   *   <li>Then return longValue is sixty-five.
+   * </ul>
+   *
+   * <p>Method under test: {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}
+   */
+  @Test
+  @DisplayName(
+      "Test decodeJavaObject(BasicType, Object); when 'A'; then return longValue is sixty-five")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object DataApiTestHelpers.decodeJavaObject(BasicType, Object)"})
+  void testDecodeJavaObject_whenA_thenReturnLongValueIsSixtyFive() {
+    // Arrange and Act
+    Object actualDecodeJavaObjectResult =
+        DataApiTestHelpers.decodeJavaObject(BasicType.INTEGER, (byte) 'A');
+
+    // Assert
+    assertEquals(65L, ((Long) actualDecodeJavaObjectResult).longValue());
+  }
+
+  /**
+   * Test {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>When {@code BASIC_TYPE_NOT_SET}.
+   *   <li>Then throw {@link EUnexpected}.
+   * </ul>
+   *
+   * <p>Method under test: {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}
+   */
+  @Test
+  @DisplayName(
+      "Test decodeJavaObject(BasicType, Object); when 'BASIC_TYPE_NOT_SET'; then throw EUnexpected")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object DataApiTestHelpers.decodeJavaObject(BasicType, Object)"})
+  void testDecodeJavaObject_whenBasicTypeNotSet_thenThrowEUnexpected() {
+    // Arrange, Act and Assert
+    assertThrows(
+        EUnexpected.class,
+        () -> DataApiTestHelpers.decodeJavaObject(BasicType.BASIC_TYPE_NOT_SET, "Raw Object"));
+  }
+
+  /**
+   * Test {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>When {@link BigDecimal#BigDecimal(String)} with {@code 2.3}.
+   *   <li>Then does not throw.
+   * </ul>
+   *
+   * <p>Method under test: {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}
+   */
+  @Test
+  @DisplayName(
+      "Test decodeJavaObject(BasicType, Object); when BigDecimal(String) with '2.3'; then does not throw")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object DataApiTestHelpers.decodeJavaObject(BasicType, Object)"})
+  void testDecodeJavaObject_whenBigDecimalWith23_thenDoesNotThrow() {
+    // Arrange, Act and Assert
+    assertDoesNotThrow(
+        () -> DataApiTestHelpers.decodeJavaObject(BasicType.DECIMAL, new BigDecimal("2.3")));
+  }
+
+  /**
+   * Test {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>When {@code BOOLEAN}.
+   *   <li>Then return {@code false}.
+   * </ul>
+   *
+   * <p>Method under test: {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}
+   */
+  @Test
+  @DisplayName("Test decodeJavaObject(BasicType, Object); when 'BOOLEAN'; then return 'false'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object DataApiTestHelpers.decodeJavaObject(BasicType, Object)"})
+  void testDecodeJavaObject_whenBoolean_thenReturnFalse() {
+    // Arrange, Act and Assert
+    assertFalse((Boolean) DataApiTestHelpers.decodeJavaObject(BasicType.BOOLEAN, "Raw Object"));
+  }
+
+  /**
+   * Test {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>When {@code BOOLEAN}.
+   *   <li>Then return {@code true}.
+   * </ul>
+   *
+   * <p>Method under test: {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}
+   */
+  @Test
+  @DisplayName("Test decodeJavaObject(BasicType, Object); when 'BOOLEAN'; then return 'true'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object DataApiTestHelpers.decodeJavaObject(BasicType, Object)"})
+  void testDecodeJavaObject_whenBoolean_thenReturnTrue() {
+    // Arrange, Act and Assert
+    assertTrue((Boolean) DataApiTestHelpers.decodeJavaObject(BasicType.BOOLEAN, true));
+  }
+
+  /**
+   * Test {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>When {@code BOOLEAN}.
+   *   <li>Then throw {@link EUnexpected}.
+   * </ul>
+   *
+   * <p>Method under test: {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}
+   */
+  @Test
+  @DisplayName("Test decodeJavaObject(BasicType, Object); when 'BOOLEAN'; then throw EUnexpected")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object DataApiTestHelpers.decodeJavaObject(BasicType, Object)"})
+  void testDecodeJavaObject_whenBoolean_thenThrowEUnexpected() {
+    // Arrange, Act and Assert
+    assertThrows(
+        EUnexpected.class, () -> DataApiTestHelpers.decodeJavaObject(BasicType.BOOLEAN, 1L));
+  }
+
+  /**
+   * Test {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>When {@code DATE}.
+   *   <li>Then throw {@link EUnexpected}.
+   * </ul>
+   *
+   * <p>Method under test: {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}
+   */
+  @Test
+  @DisplayName("Test decodeJavaObject(BasicType, Object); when 'DATE'; then throw EUnexpected")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object DataApiTestHelpers.decodeJavaObject(BasicType, Object)"})
+  void testDecodeJavaObject_whenDate_thenThrowEUnexpected() {
+    // Arrange, Act and Assert
+    assertThrows(EUnexpected.class, () -> DataApiTestHelpers.decodeJavaObject(BasicType.DATE, 1));
+  }
+
+  /**
+   * Test {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>When {@code DATETIME}.
+   *   <li>Then throw {@link EUnexpected}.
+   * </ul>
+   *
+   * <p>Method under test: {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}
+   */
+  @Test
+  @DisplayName("Test decodeJavaObject(BasicType, Object); when 'DATETIME'; then throw EUnexpected")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object DataApiTestHelpers.decodeJavaObject(BasicType, Object)"})
+  void testDecodeJavaObject_whenDatetime_thenThrowEUnexpected() {
+    // Arrange, Act and Assert
+    assertThrows(
+        EUnexpected.class, () -> DataApiTestHelpers.decodeJavaObject(BasicType.DATETIME, 1));
+  }
+
+  /**
+   * Test {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>When {@code DECIMAL}.
+   *   <li>Then throw {@link EUnexpected}.
+   * </ul>
+   *
+   * <p>Method under test: {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}
+   */
+  @Test
+  @DisplayName("Test decodeJavaObject(BasicType, Object); when 'DECIMAL'; then throw EUnexpected")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object DataApiTestHelpers.decodeJavaObject(BasicType, Object)"})
+  void testDecodeJavaObject_whenDecimal_thenThrowEUnexpected() {
+    // Arrange, Act and Assert
+    assertThrows(
+        EUnexpected.class, () -> DataApiTestHelpers.decodeJavaObject(BasicType.DECIMAL, true));
+  }
+
+  /**
+   * Test {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>When {@code FLOAT}.
+   *   <li>Then throw {@link EUnexpected}.
+   * </ul>
+   *
+   * <p>Method under test: {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}
+   */
+  @Test
+  @DisplayName("Test decodeJavaObject(BasicType, Object); when 'FLOAT'; then throw EUnexpected")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object DataApiTestHelpers.decodeJavaObject(BasicType, Object)"})
+  void testDecodeJavaObject_whenFloat_thenThrowEUnexpected() {
+    // Arrange, Act and Assert
+    assertThrows(
+        EUnexpected.class, () -> DataApiTestHelpers.decodeJavaObject(BasicType.FLOAT, true));
+  }
+
+  /**
+   * Test {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>When one.
+   *   <li>Then return longValue is one.
+   * </ul>
+   *
+   * <p>Method under test: {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}
+   */
+  @Test
+  @DisplayName("Test decodeJavaObject(BasicType, Object); when one; then return longValue is one")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object DataApiTestHelpers.decodeJavaObject(BasicType, Object)"})
+  void testDecodeJavaObject_whenOne_thenReturnLongValueIsOne() {
+    // Arrange and Act
+    Object actualDecodeJavaObjectResult =
+        DataApiTestHelpers.decodeJavaObject(BasicType.INTEGER, 1L);
+
+    // Assert
+    assertEquals(1L, ((Long) actualDecodeJavaObjectResult).longValue());
+  }
+
+  /**
+   * Test {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>When one.
+   *   <li>Then return longValue is one.
+   * </ul>
+   *
+   * <p>Method under test: {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}
+   */
+  @Test
+  @DisplayName("Test decodeJavaObject(BasicType, Object); when one; then return longValue is one")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object DataApiTestHelpers.decodeJavaObject(BasicType, Object)"})
+  void testDecodeJavaObject_whenOne_thenReturnLongValueIsOne2() {
+    // Arrange and Act
+    Object actualDecodeJavaObjectResult = DataApiTestHelpers.decodeJavaObject(BasicType.INTEGER, 1);
+
+    // Assert
+    assertEquals(1L, ((Long) actualDecodeJavaObjectResult).longValue());
+  }
+
+  /**
+   * Test {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>When one.
+   *   <li>Then return longValue is one.
+   * </ul>
+   *
+   * <p>Method under test: {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}
+   */
+  @Test
+  @DisplayName("Test decodeJavaObject(BasicType, Object); when one; then return longValue is one")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object DataApiTestHelpers.decodeJavaObject(BasicType, Object)"})
+  void testDecodeJavaObject_whenOne_thenReturnLongValueIsOne3() {
+    // Arrange and Act
+    Object actualDecodeJavaObjectResult =
+        DataApiTestHelpers.decodeJavaObject(BasicType.INTEGER, (short) 1);
+
+    // Assert
+    assertEquals(1L, ((Long) actualDecodeJavaObjectResult).longValue());
+  }
+
+  /**
+   * Test {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>When {@code STRING}.
+   *   <li>Then return {@link Boolean#TRUE} toString.
+   * </ul>
+   *
+   * <p>Method under test: {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}
+   */
+  @Test
+  @DisplayName("Test decodeJavaObject(BasicType, Object); when 'STRING'; then return TRUE toString")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object DataApiTestHelpers.decodeJavaObject(BasicType, Object)"})
+  void testDecodeJavaObject_whenString_thenReturnTrueToString() {
+    // Arrange, Act and Assert
+    assertEquals(
+        Boolean.TRUE.toString(), DataApiTestHelpers.decodeJavaObject(BasicType.STRING, true));
+  }
+
+  /**
+   * Test {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>When ten.
+   *   <li>Then return doubleValue is ten.
+   * </ul>
+   *
+   * <p>Method under test: {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}
+   */
+  @Test
+  @DisplayName("Test decodeJavaObject(BasicType, Object); when ten; then return doubleValue is ten")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object DataApiTestHelpers.decodeJavaObject(BasicType, Object)"})
+  void testDecodeJavaObject_whenTen_thenReturnDoubleValueIsTen() {
+    // Arrange and Act
+    Object actualDecodeJavaObjectResult =
+        DataApiTestHelpers.decodeJavaObject(BasicType.FLOAT, 10.0d);
+
+    // Assert
+    assertEquals(10.0d, ((Double) actualDecodeJavaObjectResult).doubleValue());
+  }
+
+  /**
+   * Test {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>When ten.
+   *   <li>Then return floatValue is ten.
+   * </ul>
+   *
+   * <p>Method under test: {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}
+   */
+  @Test
+  @DisplayName("Test decodeJavaObject(BasicType, Object); when ten; then return floatValue is ten")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object DataApiTestHelpers.decodeJavaObject(BasicType, Object)"})
+  void testDecodeJavaObject_whenTen_thenReturnFloatValueIsTen() {
+    // Arrange and Act
+    Object actualDecodeJavaObjectResult =
+        DataApiTestHelpers.decodeJavaObject(BasicType.FLOAT, 10.0f);
+
+    // Assert
+    assertEquals(10.0f, ((Float) actualDecodeJavaObjectResult).floatValue());
+  }
+
+  /**
+   * Test {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>When {@code true}.
+   *   <li>Then throw {@link EUnexpected}.
+   * </ul>
+   *
+   * <p>Method under test: {@link DataApiTestHelpers#decodeJavaObject(BasicType, Object)}
+   */
+  @Test
+  @DisplayName("Test decodeJavaObject(BasicType, Object); when 'true'; then throw EUnexpected")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object DataApiTestHelpers.decodeJavaObject(BasicType, Object)"})
+  void testDecodeJavaObject_whenTrue_thenThrowEUnexpected() {
+    // Arrange, Act and Assert
+    assertThrows(
+        EUnexpected.class, () -> DataApiTestHelpers.decodeJavaObject(BasicType.INTEGER, true));
   }
 }

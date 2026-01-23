@@ -1,5 +1,6 @@
 package org.finos.tracdap.test.meta;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertSame;
@@ -8,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
 import com.google.protobuf.ByteString;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -1627,6 +1629,130 @@ class SampleMetadataDiffblueTest {
   }
 
   /**
+   * Test {@link SampleMetadata#objectOfType(BasicType)}.
+   *
+   * <ul>
+   *   <li>When {@code BASIC_TYPE_NOT_SET}.
+   *   <li>Then throw {@link RuntimeException}.
+   * </ul>
+   *
+   * <p>Method under test: {@link SampleMetadata#objectOfType(BasicType)}
+   */
+  @Test
+  @DisplayName(
+      "Test objectOfType(BasicType); when 'BASIC_TYPE_NOT_SET'; then throw RuntimeException")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object SampleMetadata.objectOfType(BasicType)"})
+  void testObjectOfType_whenBasicTypeNotSet_thenThrowRuntimeException() {
+    // Arrange, Act and Assert
+    assertThrows(
+        RuntimeException.class, () -> SampleMetadata.objectOfType(BasicType.BASIC_TYPE_NOT_SET));
+  }
+
+  /**
+   * Test {@link SampleMetadata#objectOfType(BasicType)}.
+   *
+   * <ul>
+   *   <li>When {@code BOOLEAN}.
+   *   <li>Then return {@code true}.
+   * </ul>
+   *
+   * <p>Method under test: {@link SampleMetadata#objectOfType(BasicType)}
+   */
+  @Test
+  @DisplayName("Test objectOfType(BasicType); when 'BOOLEAN'; then return 'true'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object SampleMetadata.objectOfType(BasicType)"})
+  void testObjectOfType_whenBoolean_thenReturnTrue() {
+    // Arrange, Act and Assert
+    assertTrue((Boolean) SampleMetadata.objectOfType(BasicType.BOOLEAN));
+  }
+
+  /**
+   * Test {@link SampleMetadata#objectOfType(BasicType)}.
+   *
+   * <ul>
+   *   <li>When {@code DECIMAL}.
+   *   <li>Then does not throw.
+   * </ul>
+   *
+   * <p>Method under test: {@link SampleMetadata#objectOfType(BasicType)}
+   */
+  @Test
+  @DisplayName("Test objectOfType(BasicType); when 'DECIMAL'; then does not throw")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object SampleMetadata.objectOfType(BasicType)"})
+  void testObjectOfType_whenDecimal_thenDoesNotThrow() {
+    // Arrange, Act and Assert
+    assertDoesNotThrow(() -> SampleMetadata.objectOfType(BasicType.DECIMAL));
+  }
+
+  /**
+   * Test {@link SampleMetadata#objectOfType(BasicType)}.
+   *
+   * <ul>
+   *   <li>When {@code FLOAT}.
+   *   <li>Then return doubleValue is {@link Math#PI}.
+   * </ul>
+   *
+   * <p>Method under test: {@link SampleMetadata#objectOfType(BasicType)}
+   */
+  @Test
+  @DisplayName("Test objectOfType(BasicType); when 'FLOAT'; then return doubleValue is PI")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object SampleMetadata.objectOfType(BasicType)"})
+  void testObjectOfType_whenFloat_thenReturnDoubleValueIsPi() {
+    // Arrange, Act and Assert
+    assertEquals(
+        3.141592653589793d, ((Double) SampleMetadata.objectOfType(BasicType.FLOAT)).doubleValue());
+  }
+
+  /**
+   * Test {@link SampleMetadata#objectOfType(BasicType)}.
+   *
+   * <ul>
+   *   <li>When {@code INTEGER}.
+   *   <li>Then return longValue is forty-two.
+   * </ul>
+   *
+   * <p>Method under test: {@link SampleMetadata#objectOfType(BasicType)}
+   */
+  @Test
+  @DisplayName("Test objectOfType(BasicType); when 'INTEGER'; then return longValue is forty-two")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object SampleMetadata.objectOfType(BasicType)"})
+  void testObjectOfType_whenInteger_thenReturnLongValueIsFortyTwo() {
+    // Arrange, Act and Assert
+    assertEquals(42L, ((Long) SampleMetadata.objectOfType(BasicType.INTEGER)).longValue());
+  }
+
+  /**
+   * Test {@link SampleMetadata#objectOfType(BasicType)}.
+   *
+   * <ul>
+   *   <li>When {@code STRING}.
+   *   <li>Then return {@code the_droids_you_are_looking_for}.
+   * </ul>
+   *
+   * <p>Method under test: {@link SampleMetadata#objectOfType(BasicType)}
+   */
+  @Test
+  @DisplayName(
+      "Test objectOfType(BasicType); when 'STRING'; then return 'the_droids_you_are_looking_for'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object SampleMetadata.objectOfType(BasicType)"})
+  void testObjectOfType_whenString_thenReturnTheDroidsYouAreLookingFor() {
+    // Arrange, Act and Assert
+    assertEquals("the_droids_you_are_looking_for", SampleMetadata.objectOfType(BasicType.STRING));
+  }
+
+  /**
    * Test {@link SampleMetadata#objectOfDifferentType(BasicType)}.
    *
    * <ul>
@@ -1640,7 +1766,7 @@ class SampleMetadataDiffblueTest {
       "Test objectOfDifferentType(BasicType); then return 'the_droids_you_are_looking_for'")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
-  @MethodsUnderTest({"java.lang.Object SampleMetadata.objectOfDifferentType(BasicType)"})
+  @MethodsUnderTest({"Object SampleMetadata.objectOfDifferentType(BasicType)"})
   void testObjectOfDifferentType_thenReturnTheDroidsYouAreLookingFor() {
     // Arrange, Act and Assert
     assertEquals(
@@ -1663,10 +1789,230 @@ class SampleMetadataDiffblueTest {
       "Test objectOfDifferentType(BasicType); when STRING; then return longValue is forty-two")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
-  @MethodsUnderTest({"java.lang.Object SampleMetadata.objectOfDifferentType(BasicType)"})
+  @MethodsUnderTest({"Object SampleMetadata.objectOfDifferentType(BasicType)"})
   void testObjectOfDifferentType_whenString_thenReturnLongValueIsFortyTwo() {
     // Arrange, Act and Assert
     assertEquals(42L, ((Long) SampleMetadata.objectOfDifferentType(BasicType.STRING)).longValue());
+  }
+
+  /**
+   * Test {@link SampleMetadata#differentObjectOfSameType(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>Then return toLocalDateTime toLocalTime toString is {@code 01:00}.
+   * </ul>
+   *
+   * <p>Method under test: {@link SampleMetadata#differentObjectOfSameType(BasicType, Object)}
+   */
+  @Test
+  @DisplayName(
+      "Test differentObjectOfSameType(BasicType, Object); then return toLocalDateTime toLocalTime toString is '01:00'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object SampleMetadata.differentObjectOfSameType(BasicType, Object)"})
+  void testDifferentObjectOfSameType_thenReturnToLocalDateTimeToLocalTimeToStringIs0100() {
+    // Arrange
+    LocalDate ofResult = LocalDate.of(1970, 1, 1);
+    OffsetDateTime ofResult2 = OffsetDateTime.of(ofResult, LocalTime.MIDNIGHT, ZoneOffset.UTC);
+
+    // Act
+    Object actualDifferentObjectOfSameTypeResult =
+        SampleMetadata.differentObjectOfSameType(BasicType.DATETIME, ofResult2);
+
+    // Assert
+    LocalDateTime toLocalDateTimeResult =
+        ((OffsetDateTime) actualDifferentObjectOfSameTypeResult).toLocalDateTime();
+    assertEquals("01:00", toLocalDateTimeResult.toLocalTime().toString());
+    LocalDate toLocalDateResult = toLocalDateTimeResult.toLocalDate();
+    assertEquals("1970-01-01", toLocalDateResult.toString());
+    assertEquals(
+        "Z", ((OffsetDateTime) actualDifferentObjectOfSameTypeResult).getOffset().toString());
+    assertSame(ofResult, toLocalDateResult);
+  }
+
+  /**
+   * Test {@link SampleMetadata#differentObjectOfSameType(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>When {@code BASIC_TYPE_NOT_SET}.
+   *   <li>Then throw {@link RuntimeException}.
+   * </ul>
+   *
+   * <p>Method under test: {@link SampleMetadata#differentObjectOfSameType(BasicType, Object)}
+   */
+  @Test
+  @DisplayName(
+      "Test differentObjectOfSameType(BasicType, Object); when 'BASIC_TYPE_NOT_SET'; then throw RuntimeException")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object SampleMetadata.differentObjectOfSameType(BasicType, Object)"})
+  void testDifferentObjectOfSameType_whenBasicTypeNotSet_thenThrowRuntimeException() {
+    // Arrange, Act and Assert
+    assertThrows(
+        RuntimeException.class,
+        () ->
+            SampleMetadata.differentObjectOfSameType(
+                BasicType.BASIC_TYPE_NOT_SET, "Original Object"));
+  }
+
+  /**
+   * Test {@link SampleMetadata#differentObjectOfSameType(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>When {@link BigDecimal#BigDecimal(String)} with {@code 2.3}.
+   *   <li>Then does not throw.
+   * </ul>
+   *
+   * <p>Method under test: {@link SampleMetadata#differentObjectOfSameType(BasicType, Object)}
+   */
+  @Test
+  @DisplayName(
+      "Test differentObjectOfSameType(BasicType, Object); when BigDecimal(String) with '2.3'; then does not throw")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object SampleMetadata.differentObjectOfSameType(BasicType, Object)"})
+  void testDifferentObjectOfSameType_whenBigDecimalWith23_thenDoesNotThrow() {
+    // Arrange, Act and Assert
+    assertDoesNotThrow(
+        () -> SampleMetadata.differentObjectOfSameType(BasicType.DECIMAL, new BigDecimal("2.3")));
+  }
+
+  /**
+   * Test {@link SampleMetadata#differentObjectOfSameType(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>When {@code BOOLEAN}.
+   *   <li>Then return {@code false}.
+   * </ul>
+   *
+   * <p>Method under test: {@link SampleMetadata#differentObjectOfSameType(BasicType, Object)}
+   */
+  @Test
+  @DisplayName(
+      "Test differentObjectOfSameType(BasicType, Object); when 'BOOLEAN'; then return 'false'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object SampleMetadata.differentObjectOfSameType(BasicType, Object)"})
+  void testDifferentObjectOfSameType_whenBoolean_thenReturnFalse() {
+    // Arrange, Act and Assert
+    assertFalse((Boolean) SampleMetadata.differentObjectOfSameType(BasicType.BOOLEAN, true));
+  }
+
+  /**
+   * Test {@link SampleMetadata#differentObjectOfSameType(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>When {@code DATE}.
+   *   <li>Then return toString is {@code 1970-01-02}.
+   * </ul>
+   *
+   * <p>Method under test: {@link SampleMetadata#differentObjectOfSameType(BasicType, Object)}
+   */
+  @Test
+  @DisplayName(
+      "Test differentObjectOfSameType(BasicType, Object); when 'DATE'; then return toString is '1970-01-02'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object SampleMetadata.differentObjectOfSameType(BasicType, Object)"})
+  void testDifferentObjectOfSameType_whenDate_thenReturnToStringIs19700102() {
+    // Arrange, Act and Assert
+    assertEquals(
+        "1970-01-02",
+        SampleMetadata.differentObjectOfSameType(BasicType.DATE, LocalDate.of(1970, 1, 1))
+            .toString());
+  }
+
+  /**
+   * Test {@link SampleMetadata#differentObjectOfSameType(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>When {@code false}.
+   *   <li>Then return {@code true}.
+   * </ul>
+   *
+   * <p>Method under test: {@link SampleMetadata#differentObjectOfSameType(BasicType, Object)}
+   */
+  @Test
+  @DisplayName(
+      "Test differentObjectOfSameType(BasicType, Object); when 'false'; then return 'true'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object SampleMetadata.differentObjectOfSameType(BasicType, Object)"})
+  void testDifferentObjectOfSameType_whenFalse_thenReturnTrue() {
+    // Arrange, Act and Assert
+    assertTrue((Boolean) SampleMetadata.differentObjectOfSameType(BasicType.BOOLEAN, false));
+  }
+
+  /**
+   * Test {@link SampleMetadata#differentObjectOfSameType(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>When {@code FLOAT}.
+   *   <li>Then return doubleValue is twelve.
+   * </ul>
+   *
+   * <p>Method under test: {@link SampleMetadata#differentObjectOfSameType(BasicType, Object)}
+   */
+  @Test
+  @DisplayName(
+      "Test differentObjectOfSameType(BasicType, Object); when 'FLOAT'; then return doubleValue is twelve")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object SampleMetadata.differentObjectOfSameType(BasicType, Object)"})
+  void testDifferentObjectOfSameType_whenFloat_thenReturnDoubleValueIsTwelve() {
+    // Arrange and Act
+    Object actualDifferentObjectOfSameTypeResult =
+        SampleMetadata.differentObjectOfSameType(BasicType.FLOAT, 10.0d);
+
+    // Assert
+    assertEquals(12.0d, ((Double) actualDifferentObjectOfSameTypeResult).doubleValue());
+  }
+
+  /**
+   * Test {@link SampleMetadata#differentObjectOfSameType(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>When {@code INTEGER}.
+   *   <li>Then return longValue is two.
+   * </ul>
+   *
+   * <p>Method under test: {@link SampleMetadata#differentObjectOfSameType(BasicType, Object)}
+   */
+  @Test
+  @DisplayName(
+      "Test differentObjectOfSameType(BasicType, Object); when 'INTEGER'; then return longValue is two")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object SampleMetadata.differentObjectOfSameType(BasicType, Object)"})
+  void testDifferentObjectOfSameType_whenInteger_thenReturnLongValueIsTwo() {
+    // Arrange and Act
+    Object actualDifferentObjectOfSameTypeResult =
+        SampleMetadata.differentObjectOfSameType(BasicType.INTEGER, 1L);
+
+    // Assert
+    assertEquals(2L, ((Long) actualDifferentObjectOfSameTypeResult).longValue());
+  }
+
+  /**
+   * Test {@link SampleMetadata#differentObjectOfSameType(BasicType, Object)}.
+   *
+   * <ul>
+   *   <li>When {@code STRING}.
+   *   <li>Then return {@code true and friends}.
+   * </ul>
+   *
+   * <p>Method under test: {@link SampleMetadata#differentObjectOfSameType(BasicType, Object)}
+   */
+  @Test
+  @DisplayName(
+      "Test differentObjectOfSameType(BasicType, Object); when 'STRING'; then return 'true and friends'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Object SampleMetadata.differentObjectOfSameType(BasicType, Object)"})
+  void testDifferentObjectOfSameType_whenString_thenReturnTrueAndFriends() {
+    // Arrange, Act and Assert
+    assertEquals(
+        "true and friends", SampleMetadata.differentObjectOfSameType(BasicType.STRING, true));
   }
 
   /**

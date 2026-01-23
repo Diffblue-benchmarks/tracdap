@@ -2,6 +2,7 @@ package org.finos.tracdap.common.async.flow;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.mock;
 import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
 import io.netty.channel.DefaultEventLoop;
@@ -36,13 +37,82 @@ class HubProcessorDiffblueTest {
     // Arrange
     HubProcessor<Object> hubProcessor = new HubProcessor<>(new DefaultEventExecutor());
 
+    DefaultEventLoop eventLoop = new DefaultEventLoop();
+    eventLoop.addShutdownHook(mock(Runnable.class));
+    HubProcessor<? super Object> subscriber = new HubProcessor<>(eventLoop);
+
     CompletableFuture<?> signal = new CompletableFuture<>();
     signal.obtrudeException(new Throwable());
-    DelayedSubscriber<? super Object> subscriber =
-        new DelayedSubscriber<>(new HubProcessor<>(new DefaultEventLoop()), signal);
+
+    DelayedSubscriber<? super Object> subscriber2 = new DelayedSubscriber<>(subscriber, signal);
 
     // Act and Assert
-    assertDoesNotThrow(() -> hubProcessor.subscribe(subscriber));
+    assertDoesNotThrow(() -> hubProcessor.subscribe(subscriber2));
+  }
+
+  /**
+   * Test {@link HubProcessor#subscribe(Subscriber)}.
+   *
+   * <ul>
+   *   <li>Given {@link Runnable}.
+   *   <li>When {@link DefaultEventLoop#DefaultEventLoop()} addShutdownHook {@link Runnable}.
+   * </ul>
+   *
+   * <p>Method under test: {@link HubProcessor#subscribe(Subscriber)}
+   */
+  @Test
+  @DisplayName(
+      "Test subscribe(Subscriber); given Runnable; when DefaultEventLoop() addShutdownHook Runnable")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void HubProcessor.subscribe(Subscriber)"})
+  void testSubscribe_givenRunnable_whenDefaultEventLoopAddShutdownHookRunnable() {
+    // Arrange
+    HubProcessor<Object> hubProcessor = new HubProcessor<>(new DefaultEventLoop());
+
+    DefaultEventLoop eventLoop = new DefaultEventLoop();
+    eventLoop.addShutdownHook(mock(Runnable.class));
+    HubProcessor<? super Object> subscriber = new HubProcessor<>(eventLoop);
+
+    CompletableFuture<?> signal = new CompletableFuture<>();
+    signal.obtrudeException(new Throwable());
+
+    DelayedSubscriber<? super Object> subscriber2 = new DelayedSubscriber<>(subscriber, signal);
+
+    // Act and Assert
+    assertDoesNotThrow(() -> hubProcessor.subscribe(subscriber2));
+  }
+
+  /**
+   * Test {@link HubProcessor#subscribe(Subscriber)}.
+   *
+   * <ul>
+   *   <li>Given {@link Thread#Thread(Runnable, String)} with {@link Runnable} and {@code Name}.
+   * </ul>
+   *
+   * <p>Method under test: {@link HubProcessor#subscribe(Subscriber)}
+   */
+  @Test
+  @DisplayName(
+      "Test subscribe(Subscriber); given Thread(Runnable, String) with Runnable and 'Name'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void HubProcessor.subscribe(Subscriber)"})
+  void testSubscribe_givenThreadWithRunnableAndName() {
+    // Arrange
+    HubProcessor<Object> hubProcessor = new HubProcessor<>(new DefaultEventExecutor());
+
+    DefaultEventLoop eventLoop = new DefaultEventLoop();
+    eventLoop.addShutdownHook(new Thread(mock(Runnable.class), "Name"));
+    HubProcessor<? super Object> subscriber = new HubProcessor<>(eventLoop);
+
+    CompletableFuture<?> signal = new CompletableFuture<>();
+    signal.obtrudeException(new Throwable());
+
+    DelayedSubscriber<? super Object> subscriber2 = new DelayedSubscriber<>(subscriber, signal);
+
+    // Act and Assert
+    assertDoesNotThrow(() -> hubProcessor.subscribe(subscriber2));
   }
 
   /**

@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.isA;
-import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -24,13 +23,9 @@ import io.netty.handler.codec.http.websocketx.CloseWebSocketFrame;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
 import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler.HandshakeComplete;
-import io.netty.util.concurrent.DefaultEventExecutor;
-import io.netty.util.concurrent.UnorderedThreadPoolEventExecutor;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Executor;
-import java.util.concurrent.ThreadFactory;
 import org.finos.tracdap.common.exception.EUnexpected;
 import org.finos.tracdap.gateway.exec.Route;
 import org.junit.jupiter.api.DisplayName;
@@ -597,17 +592,19 @@ class WebSocketsRouterDiffblueTest {
    *
    * <ul>
    *   <li>Given {@link DefaultEventLoop#DefaultEventLoop()}.
+   *   <li>Then calls {@link ChannelHandlerContext#executor()}.
    * </ul>
    *
    * <p>Method under test: {@link WebSocketsRouter#exceptionCaught(ChannelHandlerContext,
    * Throwable)}
    */
   @Test
-  @DisplayName("Test exceptionCaught(ChannelHandlerContext, Throwable); given DefaultEventLoop()")
+  @DisplayName(
+      "Test exceptionCaught(ChannelHandlerContext, Throwable); given DefaultEventLoop(); then calls executor()")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"void WebSocketsRouter.exceptionCaught(ChannelHandlerContext, Throwable)"})
-  void testExceptionCaught_givenDefaultEventLoop() {
+  void testExceptionCaught_givenDefaultEventLoop_thenCallsExecutor() {
     // Arrange
     WebSocketsRouter webSocketsRouter = new WebSocketsRouter(new ArrayList<>(), 1);
 
@@ -619,42 +616,6 @@ class WebSocketsRouterDiffblueTest {
 
     // Act
     webSocketsRouter.exceptionCaught(ctx, new Throwable());
-
-    // Assert
-    verify(ctx).executor();
-    verify(ctx).newPromise();
-    verify(ctx).writeAndFlush(isA(Object.class), isA(ChannelPromise.class));
-  }
-
-  /**
-   * Test {@link WebSocketsRouter#exceptionCaught(ChannelHandlerContext, Throwable)}.
-   *
-   * <ul>
-   *   <li>Given {@link DefaultEventLoop#DefaultEventLoop()}.
-   *   <li>When {@link IOException#IOException(String)} with {@code An error occurred}.
-   * </ul>
-   *
-   * <p>Method under test: {@link WebSocketsRouter#exceptionCaught(ChannelHandlerContext,
-   * Throwable)}
-   */
-  @Test
-  @DisplayName(
-      "Test exceptionCaught(ChannelHandlerContext, Throwable); given DefaultEventLoop(); when IOException(String) with 'An error occurred'")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"void WebSocketsRouter.exceptionCaught(ChannelHandlerContext, Throwable)"})
-  void testExceptionCaught_givenDefaultEventLoop_whenIOExceptionWithAnErrorOccurred() {
-    // Arrange
-    WebSocketsRouter webSocketsRouter = new WebSocketsRouter(new ArrayList<>(), 1);
-
-    ChannelHandlerContext ctx = mock(ChannelHandlerContext.class);
-    when(ctx.writeAndFlush(Mockito.<Object>any(), Mockito.<ChannelPromise>any()))
-        .thenReturn(new DefaultChannelProgressivePromise(new EmbeddedChannel()));
-    when(ctx.newPromise()).thenReturn(new DefaultChannelProgressivePromise(new EmbeddedChannel()));
-    when(ctx.executor()).thenReturn(new DefaultEventLoop());
-
-    // Act
-    webSocketsRouter.exceptionCaught(ctx, new IOException("An error occurred"));
 
     // Assert
     verify(ctx).executor();
@@ -695,8 +656,8 @@ class WebSocketsRouterDiffblueTest {
    * Test {@link WebSocketsRouter#exceptionCaught(ChannelHandlerContext, Throwable)}.
    *
    * <ul>
-   *   <li>Given {@link Executor} {@link Executor#execute(Runnable)} does nothing.
-   *   <li>Then calls {@link Executor#execute(Runnable)}.
+   *   <li>When {@link IOException#IOException(String)} with {@code An error occurred}.
+   *   <li>Then calls {@link ChannelHandlerContext#executor()}.
    * </ul>
    *
    * <p>Method under test: {@link WebSocketsRouter#exceptionCaught(ChannelHandlerContext,
@@ -704,97 +665,13 @@ class WebSocketsRouterDiffblueTest {
    */
   @Test
   @DisplayName(
-      "Test exceptionCaught(ChannelHandlerContext, Throwable); given Executor execute(Runnable) does nothing; then calls execute(Runnable)")
+      "Test exceptionCaught(ChannelHandlerContext, Throwable); when IOException(String) with 'An error occurred'; then calls executor()")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"void WebSocketsRouter.exceptionCaught(ChannelHandlerContext, Throwable)"})
-  void testExceptionCaught_givenExecutorExecuteDoesNothing_thenCallsExecute() {
+  void testExceptionCaught_whenIOExceptionWithAnErrorOccurred_thenCallsExecutor() {
     // Arrange
-    WebSocketsRouter webSocketsRouter = new WebSocketsRouter(new ArrayList<>(), 3);
-
-    Executor executor = mock(Executor.class);
-    doNothing().when(executor).execute(Mockito.<Runnable>any());
-    DefaultEventExecutor defaultEventExecutor =
-        new DefaultEventExecutor(new DefaultEventLoop(), executor);
-
-    ChannelHandlerContext ctx = mock(ChannelHandlerContext.class);
-    when(ctx.writeAndFlush(Mockito.<Object>any(), Mockito.<ChannelPromise>any()))
-        .thenReturn(new DefaultChannelProgressivePromise(new EmbeddedChannel()));
-    when(ctx.newPromise()).thenReturn(new DefaultChannelProgressivePromise(new EmbeddedChannel()));
-    when(ctx.executor()).thenReturn(defaultEventExecutor);
-
-    // Act
-    webSocketsRouter.exceptionCaught(ctx, new Throwable());
-
-    // Assert
-    verify(ctx).executor();
-    verify(ctx).newPromise();
-    verify(ctx).writeAndFlush(isA(Object.class), isA(ChannelPromise.class));
-    verify(executor).execute(isA(Runnable.class));
-  }
-
-  /**
-   * Test {@link WebSocketsRouter#exceptionCaught(ChannelHandlerContext, Throwable)}.
-   *
-   * <ul>
-   *   <li>Given {@link ThreadFactory} {@link ThreadFactory#newThread(Runnable)} return {@link
-   *       Thread#Thread()}.
-   *   <li>Then calls {@link ThreadFactory#newThread(Runnable)}.
-   * </ul>
-   *
-   * <p>Method under test: {@link WebSocketsRouter#exceptionCaught(ChannelHandlerContext,
-   * Throwable)}
-   */
-  @Test
-  @DisplayName(
-      "Test exceptionCaught(ChannelHandlerContext, Throwable); given ThreadFactory newThread(Runnable) return Thread(); then calls newThread(Runnable)")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"void WebSocketsRouter.exceptionCaught(ChannelHandlerContext, Throwable)"})
-  void testExceptionCaught_givenThreadFactoryNewThreadReturnThread_thenCallsNewThread() {
-    // Arrange
-    WebSocketsRouter webSocketsRouter = new WebSocketsRouter(new ArrayList<>(), 3);
-
-    ThreadFactory threadFactory = mock(ThreadFactory.class);
-    when(threadFactory.newThread(Mockito.<Runnable>any())).thenReturn(new Thread());
-    DefaultEventLoop defaultEventLoop = new DefaultEventLoop(threadFactory);
-
-    ChannelHandlerContext ctx = mock(ChannelHandlerContext.class);
-    when(ctx.writeAndFlush(Mockito.<Object>any(), Mockito.<ChannelPromise>any()))
-        .thenReturn(new DefaultChannelProgressivePromise(new EmbeddedChannel()));
-    when(ctx.newPromise()).thenReturn(new DefaultChannelProgressivePromise(new EmbeddedChannel()));
-    when(ctx.executor()).thenReturn(defaultEventLoop);
-
-    // Act
-    webSocketsRouter.exceptionCaught(ctx, new Throwable());
-
-    // Assert
-    verify(ctx).executor();
-    verify(ctx).newPromise();
-    verify(ctx).writeAndFlush(isA(Object.class), isA(ChannelPromise.class));
-    verify(threadFactory).newThread(isA(Runnable.class));
-  }
-
-  /**
-   * Test {@link WebSocketsRouter#exceptionCaught(ChannelHandlerContext, Throwable)}.
-   *
-   * <ul>
-   *   <li>Given {@link WebSocketsRouter#WebSocketsRouter(List, int)} with routes is {@link
-   *       ArrayList#ArrayList()} and connId is eight.
-   * </ul>
-   *
-   * <p>Method under test: {@link WebSocketsRouter#exceptionCaught(ChannelHandlerContext,
-   * Throwable)}
-   */
-  @Test
-  @DisplayName(
-      "Test exceptionCaught(ChannelHandlerContext, Throwable); given WebSocketsRouter(List, int) with routes is ArrayList() and connId is eight")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"void WebSocketsRouter.exceptionCaught(ChannelHandlerContext, Throwable)"})
-  void testExceptionCaught_givenWebSocketsRouterWithRoutesIsArrayListAndConnIdIsEight() {
-    // Arrange
-    WebSocketsRouter webSocketsRouter = new WebSocketsRouter(new ArrayList<>(), 8);
+    WebSocketsRouter webSocketsRouter = new WebSocketsRouter(new ArrayList<>(), 1);
 
     ChannelHandlerContext ctx = mock(ChannelHandlerContext.class);
     when(ctx.writeAndFlush(Mockito.<Object>any(), Mockito.<ChannelPromise>any()))
@@ -803,111 +680,7 @@ class WebSocketsRouterDiffblueTest {
     when(ctx.executor()).thenReturn(new DefaultEventLoop());
 
     // Act
-    webSocketsRouter.exceptionCaught(ctx, new Throwable());
-
-    // Assert
-    verify(ctx).executor();
-    verify(ctx).newPromise();
-    verify(ctx).writeAndFlush(isA(Object.class), isA(ChannelPromise.class));
-  }
-
-  /**
-   * Test {@link WebSocketsRouter#exceptionCaught(ChannelHandlerContext, Throwable)}.
-   *
-   * <ul>
-   *   <li>Then calls {@link ThreadFactory#newThread(Runnable)}.
-   * </ul>
-   *
-   * <p>Method under test: {@link WebSocketsRouter#exceptionCaught(ChannelHandlerContext,
-   * Throwable)}
-   */
-  @Test
-  @DisplayName(
-      "Test exceptionCaught(ChannelHandlerContext, Throwable); then calls newThread(Runnable)")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"void WebSocketsRouter.exceptionCaught(ChannelHandlerContext, Throwable)"})
-  void testExceptionCaught_thenCallsNewThread() {
-    // Arrange
-    WebSocketsRouter webSocketsRouter = new WebSocketsRouter(new ArrayList<>(), 8);
-
-    ThreadFactory threadFactory = mock(ThreadFactory.class);
-    when(threadFactory.newThread(Mockito.<Runnable>any())).thenReturn(new Thread());
-    DefaultEventLoop defaultEventLoop = new DefaultEventLoop(threadFactory);
-
-    ChannelHandlerContext ctx = mock(ChannelHandlerContext.class);
-    when(ctx.writeAndFlush(Mockito.<Object>any(), Mockito.<ChannelPromise>any()))
-        .thenReturn(new DefaultChannelProgressivePromise(new EmbeddedChannel()));
-    when(ctx.newPromise()).thenReturn(new DefaultChannelProgressivePromise(new EmbeddedChannel()));
-    when(ctx.executor()).thenReturn(defaultEventLoop);
-
-    // Act
-    webSocketsRouter.exceptionCaught(ctx, new Throwable());
-
-    // Assert
-    verify(ctx).executor();
-    verify(ctx).newPromise();
-    verify(ctx).writeAndFlush(isA(Object.class), isA(ChannelPromise.class));
-    verify(threadFactory).newThread(isA(Runnable.class));
-  }
-
-  /**
-   * Test {@link WebSocketsRouter#reportProxyRouteError(ChannelHandlerContext, Throwable, boolean)}.
-   *
-   * <p>Method under test: {@link WebSocketsRouter#reportProxyRouteError(ChannelHandlerContext,
-   * Throwable, boolean)}
-   */
-  @Test
-  @DisplayName("Test reportProxyRouteError(ChannelHandlerContext, Throwable, boolean)")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({
-    "void WebSocketsRouter.reportProxyRouteError(ChannelHandlerContext, Throwable, boolean)"
-  })
-  void testReportProxyRouteError() {
-    // Arrange
-    WebSocketsRouter webSocketsRouter = new WebSocketsRouter(new ArrayList<>(), 5);
-
-    ChannelHandlerContext ctx = mock(ChannelHandlerContext.class);
-    when(ctx.writeAndFlush(Mockito.<Object>any(), Mockito.<ChannelPromise>any()))
-        .thenReturn(new DefaultChannelProgressivePromise(new EmbeddedChannel()));
-    when(ctx.newPromise()).thenReturn(new DefaultChannelProgressivePromise(new EmbeddedChannel()));
-    when(ctx.executor()).thenReturn(new DefaultEventLoop());
-
-    // Act
-    webSocketsRouter.reportProxyRouteError(ctx, new Throwable(), true);
-
-    // Assert
-    verify(ctx).executor();
-    verify(ctx).newPromise();
-    verify(ctx).writeAndFlush(isA(Object.class), isA(ChannelPromise.class));
-  }
-
-  /**
-   * Test {@link WebSocketsRouter#reportProxyRouteError(ChannelHandlerContext, Throwable, boolean)}.
-   *
-   * <p>Method under test: {@link WebSocketsRouter#reportProxyRouteError(ChannelHandlerContext,
-   * Throwable, boolean)}
-   */
-  @Test
-  @DisplayName("Test reportProxyRouteError(ChannelHandlerContext, Throwable, boolean)")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({
-    "void WebSocketsRouter.reportProxyRouteError(ChannelHandlerContext, Throwable, boolean)"
-  })
-  void testReportProxyRouteError2() {
-    // Arrange
-    WebSocketsRouter webSocketsRouter = new WebSocketsRouter(new ArrayList<>(), 2);
-
-    ChannelHandlerContext ctx = mock(ChannelHandlerContext.class);
-    when(ctx.writeAndFlush(Mockito.<Object>any(), Mockito.<ChannelPromise>any()))
-        .thenReturn(new DefaultChannelProgressivePromise(new EmbeddedChannel()));
-    when(ctx.newPromise()).thenReturn(new DefaultChannelProgressivePromise(new EmbeddedChannel()));
-    when(ctx.executor()).thenReturn(new DefaultEventLoop());
-
-    // Act
-    webSocketsRouter.reportProxyRouteError(ctx, new IOException("An error occurred"), true);
+    webSocketsRouter.exceptionCaught(ctx, new IOException("An error occurred"));
 
     // Assert
     verify(ctx).executor();
@@ -920,6 +693,7 @@ class WebSocketsRouterDiffblueTest {
    *
    * <ul>
    *   <li>Given {@link DefaultEventLoop#DefaultEventLoop()}.
+   *   <li>Then calls {@link ChannelHandlerContext#executor()}.
    * </ul>
    *
    * <p>Method under test: {@link WebSocketsRouter#reportProxyRouteError(ChannelHandlerContext,
@@ -927,13 +701,13 @@ class WebSocketsRouterDiffblueTest {
    */
   @Test
   @DisplayName(
-      "Test reportProxyRouteError(ChannelHandlerContext, Throwable, boolean); given DefaultEventLoop()")
+      "Test reportProxyRouteError(ChannelHandlerContext, Throwable, boolean); given DefaultEventLoop(); then calls executor()")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({
     "void WebSocketsRouter.reportProxyRouteError(ChannelHandlerContext, Throwable, boolean)"
   })
-  void testReportProxyRouteError_givenDefaultEventLoop() {
+  void testReportProxyRouteError_givenDefaultEventLoop_thenCallsExecutor() {
     // Arrange
     WebSocketsRouter webSocketsRouter = new WebSocketsRouter(new ArrayList<>(), 1);
 
@@ -989,7 +763,8 @@ class WebSocketsRouterDiffblueTest {
    * Test {@link WebSocketsRouter#reportProxyRouteError(ChannelHandlerContext, Throwable, boolean)}.
    *
    * <ul>
-   *   <li>Then calls {@link ThreadFactory#newThread(Runnable)}.
+   *   <li>When {@link BootstrapMethodError#BootstrapMethodError()}.
+   *   <li>Then calls {@link ChannelHandlerContext#executor()}.
    * </ul>
    *
    * <p>Method under test: {@link WebSocketsRouter#reportProxyRouteError(ChannelHandlerContext,
@@ -997,35 +772,29 @@ class WebSocketsRouterDiffblueTest {
    */
   @Test
   @DisplayName(
-      "Test reportProxyRouteError(ChannelHandlerContext, Throwable, boolean); then calls newThread(Runnable)")
+      "Test reportProxyRouteError(ChannelHandlerContext, Throwable, boolean); when BootstrapMethodError(); then calls executor()")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({
     "void WebSocketsRouter.reportProxyRouteError(ChannelHandlerContext, Throwable, boolean)"
   })
-  void testReportProxyRouteError_thenCallsNewThread() {
+  void testReportProxyRouteError_whenBootstrapMethodError_thenCallsExecutor() {
     // Arrange
     WebSocketsRouter webSocketsRouter = new WebSocketsRouter(new ArrayList<>(), 1);
-
-    ThreadFactory threadFactory = mock(ThreadFactory.class);
-    when(threadFactory.newThread(Mockito.<Runnable>any())).thenReturn(new Thread());
-    UnorderedThreadPoolEventExecutor unorderedThreadPoolEventExecutor =
-        new UnorderedThreadPoolEventExecutor(3, threadFactory);
 
     ChannelHandlerContext ctx = mock(ChannelHandlerContext.class);
     when(ctx.writeAndFlush(Mockito.<Object>any(), Mockito.<ChannelPromise>any()))
         .thenReturn(new DefaultChannelProgressivePromise(new EmbeddedChannel()));
     when(ctx.newPromise()).thenReturn(new DefaultChannelProgressivePromise(new EmbeddedChannel()));
-    when(ctx.executor()).thenReturn(unorderedThreadPoolEventExecutor);
+    when(ctx.executor()).thenReturn(new DefaultEventLoop());
 
     // Act
-    webSocketsRouter.reportProxyRouteError(ctx, new IOException("An error occurred"), true);
+    webSocketsRouter.reportProxyRouteError(ctx, new BootstrapMethodError(), true);
 
     // Assert
     verify(ctx).executor();
     verify(ctx).newPromise();
     verify(ctx).writeAndFlush(isA(Object.class), isA(ChannelPromise.class));
-    verify(threadFactory).newThread(isA(Runnable.class));
   }
 
   /**
@@ -1033,6 +802,7 @@ class WebSocketsRouterDiffblueTest {
    *
    * <ul>
    *   <li>When {@link IOException#IOException(String)} with {@code An error occurred}.
+   *   <li>Then calls {@link ChannelHandlerContext#executor()}.
    * </ul>
    *
    * <p>Method under test: {@link WebSocketsRouter#reportProxyRouteError(ChannelHandlerContext,
@@ -1040,13 +810,13 @@ class WebSocketsRouterDiffblueTest {
    */
   @Test
   @DisplayName(
-      "Test reportProxyRouteError(ChannelHandlerContext, Throwable, boolean); when IOException(String) with 'An error occurred'")
+      "Test reportProxyRouteError(ChannelHandlerContext, Throwable, boolean); when IOException(String) with 'An error occurred'; then calls executor()")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({
     "void WebSocketsRouter.reportProxyRouteError(ChannelHandlerContext, Throwable, boolean)"
   })
-  void testReportProxyRouteError_whenIOExceptionWithAnErrorOccurred() {
+  void testReportProxyRouteError_whenIOExceptionWithAnErrorOccurred_thenCallsExecutor() {
     // Arrange
     WebSocketsRouter webSocketsRouter = new WebSocketsRouter(new ArrayList<>(), 1);
 

@@ -58,6 +58,33 @@ class DataPipelineImplDiffblueTest {
    * Test {@link DataPipelineImpl#pumpData()}.
    *
    * <ul>
+   *   <li>Given {@link DefaultEventLoop#DefaultEventLoop()} addShutdownHook {@link Runnable}.
+   * </ul>
+   *
+   * <p>Method under test: {@link DataPipelineImpl#pumpData()}
+   */
+  @Test
+  @DisplayName("Test pumpData(); given DefaultEventLoop() addShutdownHook Runnable")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void DataPipelineImpl.pumpData()"})
+  void testPumpData_givenDefaultEventLoopAddShutdownHookRunnable() {
+    // Arrange
+    DefaultEventLoop defaultEventLoop = new DefaultEventLoop();
+    defaultEventLoop.addShutdownHook(mock(Runnable.class));
+    when(iDataContext.eventLoopExecutor()).thenReturn(defaultEventLoop);
+
+    // Act
+    dataPipelineImpl.pumpData();
+
+    // Assert
+    verify(iDataContext).eventLoopExecutor();
+  }
+
+  /**
+   * Test {@link DataPipelineImpl#pumpData()}.
+   *
+   * <ul>
    *   <li>Given {@link IDataContext} {@link IDataContext#eventLoopExecutor()} return {@link
    *       DefaultEventLoop#DefaultEventLoop()}.
    * </ul>

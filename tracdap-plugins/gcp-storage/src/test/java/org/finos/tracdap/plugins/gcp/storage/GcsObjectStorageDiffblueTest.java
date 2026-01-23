@@ -97,21 +97,19 @@ class GcsObjectStorageDiffblueTest {
    * Test {@link GcsObjectStorage#fsExistsCallback(String, Throwable)}.
    *
    * <ul>
+   *   <li>When {@code null}.
    *   <li>Then return {@code true}.
    * </ul>
    *
    * <p>Method under test: {@link GcsObjectStorage#fsExistsCallback(String, Throwable)}
    */
   @Test
-  @DisplayName("Test fsExistsCallback(String, Throwable); then return 'true'")
+  @DisplayName("Test fsExistsCallback(String, Throwable); when 'null'; then return 'true'")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"boolean GcsObjectStorage.fsExistsCallback(String, Throwable)"})
-  void testFsExistsCallback_thenReturnTrue() {
-    // Arrange
-    GcsObjectStorage gcsObjectStorage = new GcsObjectStorage("Storage Key", new Properties());
-
-    // Act and Assert
+  void testFsExistsCallback_whenNull_thenReturnTrue() {
+    // Arrange, Act and Assert
     assertTrue(gcsObjectStorage.fsExistsCallback("Storage Path", null));
   }
 

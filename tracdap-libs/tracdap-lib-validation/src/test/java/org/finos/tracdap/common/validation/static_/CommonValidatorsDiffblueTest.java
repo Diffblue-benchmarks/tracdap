@@ -82,26 +82,6 @@ class CommonValidatorsDiffblueTest {
   }
 
   /**
-   * Test {@link CommonValidators#optional(ValidationContext)}.
-   *
-   * <p>Method under test: {@link CommonValidators#optional(ValidationContext)}
-   */
-  @Test
-  @DisplayName("Test optional(ValidationContext)")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"ValidationContext CommonValidators.optional(ValidationContext)"})
-  void testOptional() {
-    // Arrange
-    ValidationContext ctx = mock(ValidationContext.class);
-    when(ctx.parentMsg()).thenThrow(new IllegalArgumentException());
-
-    // Act and Assert
-    assertThrows(IllegalArgumentException.class, () -> CommonValidators.optional(ctx));
-    verify(ctx).parentMsg();
-  }
-
-  /**
    * Test {@link CommonValidators#ifAndOnlyIf(boolean, String, boolean)} with {@code condition},
    * {@code qualifier}, {@code inverted}.
    *

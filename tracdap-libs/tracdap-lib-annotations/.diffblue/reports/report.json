@@ -3,16 +3,16 @@
     "reportVersion" : "2.8"
   },
   "run" : {
-    "version" : "2025.11.01-3385b9f-licensed",
-    "creationTimestamp" : "2025-11-12T08:31:35.738980344Z",
+    "version" : "2026.01.01-c73dc7d-licensed",
+    "creationTimestamp" : "2026-01-23T12:37:22.243664152Z",
     "command" : "dcover coverage-reports --exclude-modules=sql-drivers",
-    "totalTime" : 36.577,
-    "environmentDetectionTime" : 15.932,
+    "totalTime" : 37.116,
+    "environmentDetectionTime" : 16.335,
     "indexingTime" : 0.0,
     "entryPointsTime" : 0.0,
     "generationTime" : 0.0,
-    "timeToFirstTest" : 36.577,
-    "timeToLastTest" : 36.577,
+    "timeToFirstTest" : 37.116,
+    "timeToLastTest" : 37.116,
     "indexQueryTime" : 0.0,
     "verificationTime" : 0.0,
     "validationTime" : 0.0

@@ -1,8 +1,13 @@
 package org.finos.tracdap.common.util;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
+import com.google.protobuf.ByteString;
 import java.util.MissingResourceException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -19,9 +24,7 @@ class ResourceHelpersDiffblueTest {
   @DisplayName("Test loadResourceAsByteString(String, Class) with 'resourcePath', 'clazz'")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
-  @MethodsUnderTest({
-    "com.google.protobuf.ByteString ResourceHelpers.loadResourceAsByteString(String, Class)"
-  })
+  @MethodsUnderTest({"ByteString ResourceHelpers.loadResourceAsByteString(String, Class)"})
   void testLoadResourceAsByteStringWithResourcePathClazz() {
     // Arrange
     Class<Object> clazz = Object.class;
@@ -46,9 +49,7 @@ class ResourceHelpersDiffblueTest {
       "Test loadResourceAsByteString(String) with 'resourcePath'; then throw MissingResourceException")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
-  @MethodsUnderTest({
-    "com.google.protobuf.ByteString ResourceHelpers.loadResourceAsByteString(String)"
-  })
+  @MethodsUnderTest({"ByteString ResourceHelpers.loadResourceAsByteString(String)"})
   void testLoadResourceAsByteStringWithResourcePath_thenThrowMissingResourceException() {
     // Arrange, Act and Assert
     assertThrows(

@@ -2,6 +2,7 @@ package org.finos.tracdap.common.async;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.isA;
+import static org.mockito.Mockito.atLeast;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
@@ -11,7 +12,6 @@ import com.diffblue.cover.annotations.MethodsUnderTest;
 import io.netty.channel.DefaultEventLoop;
 import io.netty.util.concurrent.DefaultEventExecutor;
 import io.netty.util.concurrent.OrderedEventExecutor;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -22,6 +22,7 @@ import java.util.concurrent.Flow.Publisher;
 import java.util.concurrent.Flow.Subscriber;
 import java.util.concurrent.ThreadFactory;
 import java.util.function.BiFunction;
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.stream.Stream;
 import org.finos.tracdap.common.async.flow.DelayedPublisher;
@@ -515,6 +516,85 @@ class FlowsDiffblueTest {
    * <ul>
    *   <li>Given {@code 42}.
    *   <li>When {@link ArrayList#ArrayList()} add {@code 42}.
+   *   <li>Then calls {@link Consumer#accept(Object)}.
+   * </ul>
+   *
+   * <p>Method under test: {@link Flows#publish(Stream)}
+   */
+  @Test
+  @DisplayName(
+      "Test publish(Stream) with 'Stream'; given '42'; when ArrayList() add '42'; then calls accept(Object)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Publisher Flows.publish(Stream)"})
+  void testPublishWithStream_given42_whenArrayListAdd42_thenCallsAccept() {
+    // Arrange
+    ArrayList<Object> objectList = new ArrayList<>();
+    objectList.add("42");
+    Stream<Object> source = objectList.stream();
+
+    // Act
+    Publisher<Object> actualPublishResult = Flows.publish(source);
+    DefaultEventLoop eventLoop = new DefaultEventLoop();
+    Consumer<Object> releaseFunc = mock(Consumer.class);
+    doNothing().when(releaseFunc).accept(Mockito.<Object>any());
+    HubProcessor<? super Object> subscriber = new HubProcessor<>(eventLoop, releaseFunc);
+    DelayedSubscriber<? super Object> subscriber2 =
+        new DelayedSubscriber<>(subscriber, new CompletableFuture<>());
+    actualPublishResult.subscribe(
+        new ClientRequestStream<>(new ClientResponseStream<>(subscriber2)));
+
+    // Assert
+    verify(releaseFunc).accept(isA(Object.class));
+    assertTrue(actualPublishResult instanceof SourcePublisher);
+  }
+
+  /**
+   * Test {@link Flows#publish(Stream)} with {@code Stream}.
+   *
+   * <ul>
+   *   <li>Given {@code 42}.
+   *   <li>When {@link ArrayList#ArrayList()} add {@code 42}.
+   *   <li>Then calls {@link Consumer#accept(Object)}.
+   * </ul>
+   *
+   * <p>Method under test: {@link Flows#publish(Stream)}
+   */
+  @Test
+  @DisplayName(
+      "Test publish(Stream) with 'Stream'; given '42'; when ArrayList() add '42'; then calls accept(Object)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"Publisher Flows.publish(Stream)"})
+  void testPublishWithStream_given42_whenArrayListAdd42_thenCallsAccept2() {
+    // Arrange
+    ArrayList<Object> objectList = new ArrayList<>();
+    objectList.add("42");
+    objectList.add("42");
+    Stream<Object> source = objectList.stream();
+
+    // Act
+    Publisher<Object> actualPublishResult = Flows.publish(source);
+    DefaultEventLoop eventLoop = new DefaultEventLoop();
+    Consumer<Object> releaseFunc = mock(Consumer.class);
+    doNothing().when(releaseFunc).accept(Mockito.<Object>any());
+    HubProcessor<? super Object> subscriber = new HubProcessor<>(eventLoop, releaseFunc);
+    DelayedSubscriber<? super Object> subscriber2 =
+        new DelayedSubscriber<>(subscriber, new CompletableFuture<>());
+    actualPublishResult.subscribe(
+        new ClientRequestStream<>(new ClientResponseStream<>(subscriber2)));
+
+    // Assert
+    assertTrue(actualPublishResult instanceof SourcePublisher);
+    verify(releaseFunc, atLeast(1)).accept(isA(Object.class));
+  }
+
+  /**
+   * Test {@link Flows#publish(Stream)} with {@code Stream}.
+   *
+   * <ul>
+   *   <li>Given {@code 42}.
+   *   <li>When {@link ArrayList#ArrayList()} add {@code 42}.
    *   <li>Then calls {@link ThreadFactory#newThread(Runnable)}.
    * </ul>
    *
@@ -648,11 +728,14 @@ class FlowsDiffblueTest {
 
     // Act
     Publisher<Object> actualPublishResult = Flows.publish(source);
-    HubProcessor<? super Object> subscriber = new HubProcessor<>(new DefaultEventLoop());
+    FutureFirstItemSubscriber<? super Object> subscriber =
+        new FutureFirstItemSubscriber<>(new CompletableFuture<>());
     DelayedSubscriber<? super Object> subscriber2 =
         new DelayedSubscriber<>(subscriber, new CompletableFuture<>());
+    DelayedSubscriber<? super Object> subscriber3 =
+        new DelayedSubscriber<>(subscriber2, new CompletableFuture<>());
     actualPublishResult.subscribe(
-        new ClientRequestStream<>(new ClientResponseStream<>(subscriber2)));
+        new ClientRequestStream<>(new ClientResponseStream<>(subscriber3)));
 
     // Assert
     assertTrue(actualPublishResult instanceof SourcePublisher);
@@ -683,14 +766,12 @@ class FlowsDiffblueTest {
 
     // Act
     Publisher<Object> actualPublishResult = Flows.publish(source);
-    FutureFirstItemSubscriber<? super Object> subscriber =
-        new FutureFirstItemSubscriber<>(new CompletableFuture<>());
-    DelayedSubscriber<? super Object> subscriber2 =
-        new DelayedSubscriber<>(subscriber, new CompletableFuture<>());
-    DelayedSubscriber<? super Object> subscriber3 =
-        new DelayedSubscriber<>(subscriber2, new CompletableFuture<>());
+    CompletableFuture<?> signal = new CompletableFuture<>();
+    signal.obtrudeException(new Throwable());
+    DelayedSubscriber<? super Object> subscriber =
+        new DelayedSubscriber<>(new HubProcessor<>(new DefaultEventLoop()), signal);
     actualPublishResult.subscribe(
-        new ClientRequestStream<>(new ClientResponseStream<>(subscriber3)));
+        new ClientRequestStream<>(new ClientResponseStream<>(subscriber)));
 
     // Assert
     assertTrue(actualPublishResult instanceof SourcePublisher);
@@ -722,79 +803,7 @@ class FlowsDiffblueTest {
     // Act
     Publisher<Object> actualPublishResult = Flows.publish(source);
     CompletableFuture<?> signal = new CompletableFuture<>();
-    signal.obtrudeException(new Throwable());
-    DelayedSubscriber<? super Object> subscriber =
-        new DelayedSubscriber<>(new HubProcessor<>(new DefaultEventLoop()), signal);
-    actualPublishResult.subscribe(
-        new ClientRequestStream<>(new ClientResponseStream<>(subscriber)));
-
-    // Assert
-    assertTrue(actualPublishResult instanceof SourcePublisher);
-  }
-
-  /**
-   * Test {@link Flows#publish(Stream)} with {@code Stream}.
-   *
-   * <ul>
-   *   <li>Given {@code 42}.
-   *   <li>When {@link ArrayList#ArrayList()} add {@code 42}.
-   *   <li>Then return {@link SourcePublisher}.
-   * </ul>
-   *
-   * <p>Method under test: {@link Flows#publish(Stream)}
-   */
-  @Test
-  @DisplayName(
-      "Test publish(Stream) with 'Stream'; given '42'; when ArrayList() add '42'; then return SourcePublisher")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"Publisher Flows.publish(Stream)"})
-  void testPublishWithStream_given42_whenArrayListAdd42_thenReturnSourcePublisher5() {
-    // Arrange
-    ArrayList<Object> objectList = new ArrayList<>();
-    objectList.add("42");
-    Stream<Object> source = objectList.stream();
-
-    // Act
-    Publisher<Object> actualPublishResult = Flows.publish(source);
-    CompletableFuture<?> signal = new CompletableFuture<>();
-    signal.obtrudeException(new IOException());
-    DelayedSubscriber<? super Object> subscriber =
-        new DelayedSubscriber<>(new HubProcessor<>(new DefaultEventLoop()), signal);
-    actualPublishResult.subscribe(
-        new ClientRequestStream<>(new ClientResponseStream<>(subscriber)));
-
-    // Assert
-    assertTrue(actualPublishResult instanceof SourcePublisher);
-  }
-
-  /**
-   * Test {@link Flows#publish(Stream)} with {@code Stream}.
-   *
-   * <ul>
-   *   <li>Given two.
-   *   <li>When {@link ArrayList#ArrayList()} add two.
-   *   <li>Then return {@link SourcePublisher}.
-   * </ul>
-   *
-   * <p>Method under test: {@link Flows#publish(Stream)}
-   */
-  @Test
-  @DisplayName(
-      "Test publish(Stream) with 'Stream'; given two; when ArrayList() add two; then return SourcePublisher")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({"Publisher Flows.publish(Stream)"})
-  void testPublishWithStream_givenTwo_whenArrayListAddTwo_thenReturnSourcePublisher() {
-    // Arrange
-    ArrayList<Object> objectList = new ArrayList<>();
-    objectList.add(2);
-    Stream<Object> source = objectList.stream();
-
-    // Act
-    Publisher<Object> actualPublishResult = Flows.publish(source);
-    CompletableFuture<?> signal = new CompletableFuture<>();
-    signal.obtrudeException(new Throwable());
+    signal.obtrudeException(new IllegalStateException());
     DelayedSubscriber<? super Object> subscriber =
         new DelayedSubscriber<>(new HubProcessor<>(new DefaultEventLoop()), signal);
     actualPublishResult.subscribe(

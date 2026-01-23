@@ -12,14 +12,23 @@ import static org.mockito.Mockito.when;
 import com.diffblue.cover.annotations.ManagedByDiffblue;
 import com.diffblue.cover.annotations.MethodsUnderTest;
 import io.netty.buffer.AdaptiveByteBufAllocator;
+import io.netty.buffer.DuplicatedByteBuf;
+import io.netty.buffer.EmptyByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelPromise;
 import io.netty.channel.DefaultChannelProgressivePromise;
+import io.netty.channel.PreferHeapByteBufAllocator;
 import io.netty.channel.embedded.EmbeddedChannel;
-import io.netty.channel.local.LocalServerChannel;
+import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.http2.DefaultHttp2DataFrame;
 import io.netty.handler.codec.http2.DefaultHttp2GoAwayFrame;
+import io.netty.handler.codec.http2.DefaultHttp2Headers;
+import io.netty.handler.codec.http2.DefaultHttp2HeadersFrame;
 import io.netty.handler.codec.http2.DefaultHttp2PingFrame;
+import io.netty.handler.codec.http2.DefaultHttp2PriorityFrame;
+import io.netty.handler.codec.http2.DefaultHttp2PushPromiseFrame;
+import io.netty.handler.codec.http2.DefaultHttp2UnknownFrame;
+import io.netty.handler.codec.http2.Http2Flags;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -89,10 +98,10 @@ class RestApiProxyDiffblueTest {
     RestApiProxy restApiProxy = new RestApiProxy(new ArrayList<>());
 
     ChannelHandlerContext ctx = mock(ChannelHandlerContext.class);
-    when(ctx.alloc()).thenReturn(new AdaptiveByteBufAllocator());
+    when(ctx.alloc()).thenReturn(new PreferHeapByteBufAllocator(new AdaptiveByteBufAllocator()));
     DefaultHttp2DataFrame defaultHttp2DataFrame = new DefaultHttp2DataFrame(false);
     DefaultChannelProgressivePromise promise =
-        new DefaultChannelProgressivePromise(new LocalServerChannel());
+        new DefaultChannelProgressivePromise(new NioServerSocketChannel());
 
     // Act
     restApiProxy.write(ctx, defaultHttp2DataFrame, promise);
@@ -106,37 +115,101 @@ class RestApiProxyDiffblueTest {
   /**
    * Test {@link RestApiProxy#write(ChannelHandlerContext, Object, ChannelPromise)}.
    *
+   * <p>Method under test: {@link RestApiProxy#write(ChannelHandlerContext, Object, ChannelPromise)}
+   */
+  @Test
+  @DisplayName("Test write(ChannelHandlerContext, Object, ChannelPromise)")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void RestApiProxy.write(ChannelHandlerContext, Object, ChannelPromise)"})
+  void testWrite2() throws InterruptedException, ExecutionException {
+    // Arrange
+    RestApiProxy restApiProxy = new RestApiProxy(new ArrayList<>());
+
+    ChannelHandlerContext ctx = mock(ChannelHandlerContext.class);
+    when(ctx.alloc()).thenReturn(new AdaptiveByteBufAllocator());
+    DefaultHttp2PriorityFrame defaultHttp2PriorityFrame =
+        new DefaultHttp2PriorityFrame(3, (short) 1, true);
+    DefaultChannelProgressivePromise promise =
+        new DefaultChannelProgressivePromise(new EmbeddedChannel());
+
+    // Act
+    restApiProxy.write(ctx, defaultHttp2PriorityFrame, promise);
+
+    // Assert
+    verify(ctx, atLeast(1)).alloc();
+    assertNull(promise.get());
+    assertTrue(promise.isDone());
+  }
+
+  /**
+   * Test {@link RestApiProxy#write(ChannelHandlerContext, Object, ChannelPromise)}.
+   *
    * <ul>
-   *   <li>Then {@link DefaultChannelProgressivePromise#DefaultChannelProgressivePromise(Channel)}
-   *       with channel is {@link EmbeddedChannel#EmbeddedChannel()} is {@code null}.
+   *   <li>Given {@link DefaultChannelProgressivePromise#DefaultChannelProgressivePromise(Channel)}
+   *       with channel is {@link EmbeddedChannel#EmbeddedChannel()}.
    * </ul>
    *
    * <p>Method under test: {@link RestApiProxy#write(ChannelHandlerContext, Object, ChannelPromise)}
    */
   @Test
   @DisplayName(
-      "Test write(ChannelHandlerContext, Object, ChannelPromise); then DefaultChannelProgressivePromise(Channel) with channel is EmbeddedChannel() is 'null'")
+      "Test write(ChannelHandlerContext, Object, ChannelPromise); given DefaultChannelProgressivePromise(Channel) with channel is EmbeddedChannel()")
   @Tag("ContributionFromDiffblue")
   @ManagedByDiffblue
   @MethodsUnderTest({"void RestApiProxy.write(ChannelHandlerContext, Object, ChannelPromise)"})
-  void testWrite_thenDefaultChannelProgressivePromiseWithChannelIsEmbeddedChannelIsNull()
-      throws InterruptedException, ExecutionException {
+  void testWrite_givenDefaultChannelProgressivePromiseWithChannelIsEmbeddedChannel() {
     // Arrange
     RestApiProxy restApiProxy = new RestApiProxy(new ArrayList<>());
 
     ChannelHandlerContext ctx = mock(ChannelHandlerContext.class);
-    when(ctx.alloc()).thenReturn(new AdaptiveByteBufAllocator());
-    DefaultHttp2DataFrame defaultHttp2DataFrame = new DefaultHttp2DataFrame(false);
-    DefaultChannelProgressivePromise promise =
-        new DefaultChannelProgressivePromise(new EmbeddedChannel());
+    when(ctx.write(Mockito.<Object>any(), Mockito.<ChannelPromise>any()))
+        .thenReturn(new DefaultChannelProgressivePromise(new EmbeddedChannel()));
+    DefaultHttp2GoAwayFrame defaultHttp2GoAwayFrame = new DefaultHttp2GoAwayFrame(-1L);
 
     // Act
-    restApiProxy.write(ctx, defaultHttp2DataFrame, promise);
+    restApiProxy.write(
+        ctx, defaultHttp2GoAwayFrame, new DefaultChannelProgressivePromise(new EmbeddedChannel()));
 
     // Assert
-    verify(ctx, atLeast(1)).alloc();
-    assertNull(promise.get());
-    assertTrue(promise.isDone());
+    verify(ctx).write(isA(Object.class), isA(ChannelPromise.class));
+  }
+
+  /**
+   * Test {@link RestApiProxy#write(ChannelHandlerContext, Object, ChannelPromise)}.
+   *
+   * <ul>
+   *   <li>When {@link ChannelHandlerContext} {@link ChannelHandlerContext#write(Object,
+   *       ChannelPromise)} throw {@link EUnexpected#EUnexpected()}.
+   *   <li>Then throw {@link EUnexpected}.
+   * </ul>
+   *
+   * <p>Method under test: {@link RestApiProxy#write(ChannelHandlerContext, Object, ChannelPromise)}
+   */
+  @Test
+  @DisplayName(
+      "Test write(ChannelHandlerContext, Object, ChannelPromise); when ChannelHandlerContext write(Object, ChannelPromise) throw EUnexpected(); then throw EUnexpected")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void RestApiProxy.write(ChannelHandlerContext, Object, ChannelPromise)"})
+  void testWrite_whenChannelHandlerContextWriteThrowEUnexpected_thenThrowEUnexpected() {
+    // Arrange
+    RestApiProxy restApiProxy = new RestApiProxy(new ArrayList<>());
+
+    ChannelHandlerContext ctx = mock(ChannelHandlerContext.class);
+    when(ctx.write(Mockito.<Object>any(), Mockito.<ChannelPromise>any()))
+        .thenThrow(new EUnexpected());
+    DefaultHttp2GoAwayFrame defaultHttp2GoAwayFrame = new DefaultHttp2GoAwayFrame(-1L);
+
+    // Act and Assert
+    assertThrows(
+        EUnexpected.class,
+        () ->
+            restApiProxy.write(
+                ctx,
+                defaultHttp2GoAwayFrame,
+                new DefaultChannelProgressivePromise(new EmbeddedChannel())));
+    verify(ctx).write(isA(Object.class), isA(ChannelPromise.class));
   }
 
   /**
@@ -166,6 +239,223 @@ class RestApiProxyDiffblueTest {
         () ->
             restApiProxy.write(
                 ctx, "Msg", new DefaultChannelProgressivePromise(new EmbeddedChannel())));
+  }
+
+  /**
+   * Test {@link RestApiProxy#write(ChannelHandlerContext, Object, ChannelPromise)}.
+   *
+   * <ul>
+   *   <li>When {@link DefaultHttp2DataFrame#DefaultHttp2DataFrame(boolean)} with endStream is
+   *       {@code false}.
+   * </ul>
+   *
+   * <p>Method under test: {@link RestApiProxy#write(ChannelHandlerContext, Object, ChannelPromise)}
+   */
+  @Test
+  @DisplayName(
+      "Test write(ChannelHandlerContext, Object, ChannelPromise); when DefaultHttp2DataFrame(boolean) with endStream is 'false'")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void RestApiProxy.write(ChannelHandlerContext, Object, ChannelPromise)"})
+  void testWrite_whenDefaultHttp2DataFrameWithEndStreamIsFalse()
+      throws InterruptedException, ExecutionException {
+    // Arrange
+    RestApiProxy restApiProxy = new RestApiProxy(new ArrayList<>());
+
+    ChannelHandlerContext ctx = mock(ChannelHandlerContext.class);
+    when(ctx.alloc()).thenReturn(new AdaptiveByteBufAllocator());
+    DefaultHttp2DataFrame defaultHttp2DataFrame = new DefaultHttp2DataFrame(false);
+    DefaultChannelProgressivePromise promise =
+        new DefaultChannelProgressivePromise(new EmbeddedChannel());
+
+    // Act
+    restApiProxy.write(ctx, defaultHttp2DataFrame, promise);
+
+    // Assert
+    verify(ctx, atLeast(1)).alloc();
+    assertNull(promise.get());
+    assertTrue(promise.isDone());
+  }
+
+  /**
+   * Test {@link RestApiProxy#write(ChannelHandlerContext, Object, ChannelPromise)}.
+   *
+   * <ul>
+   *   <li>When {@link DefaultHttp2HeadersFrame#DefaultHttp2HeadersFrame(Http2Headers)} with headers
+   *       is {@link DefaultHttp2Headers#DefaultHttp2Headers()}.
+   * </ul>
+   *
+   * <p>Method under test: {@link RestApiProxy#write(ChannelHandlerContext, Object, ChannelPromise)}
+   */
+  @Test
+  @DisplayName(
+      "Test write(ChannelHandlerContext, Object, ChannelPromise); when DefaultHttp2HeadersFrame(Http2Headers) with headers is DefaultHttp2Headers()")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void RestApiProxy.write(ChannelHandlerContext, Object, ChannelPromise)"})
+  void testWrite_whenDefaultHttp2HeadersFrameWithHeadersIsDefaultHttp2Headers()
+      throws InterruptedException, ExecutionException {
+    // Arrange
+    RestApiProxy restApiProxy = new RestApiProxy(new ArrayList<>());
+
+    ChannelHandlerContext ctx = mock(ChannelHandlerContext.class);
+    when(ctx.alloc()).thenReturn(new AdaptiveByteBufAllocator());
+    DefaultHttp2HeadersFrame defaultHttp2HeadersFrame =
+        new DefaultHttp2HeadersFrame(new DefaultHttp2Headers());
+    DefaultChannelProgressivePromise promise =
+        new DefaultChannelProgressivePromise(new EmbeddedChannel());
+
+    // Act
+    restApiProxy.write(ctx, defaultHttp2HeadersFrame, promise);
+
+    // Assert
+    verify(ctx, atLeast(1)).alloc();
+    assertNull(promise.get());
+    assertTrue(promise.isDone());
+  }
+
+  /**
+   * Test {@link RestApiProxy#write(ChannelHandlerContext, Object, ChannelPromise)}.
+   *
+   * <ul>
+   *   <li>When {@link DefaultHttp2PingFrame#DefaultHttp2PingFrame(long)} with content is one.
+   * </ul>
+   *
+   * <p>Method under test: {@link RestApiProxy#write(ChannelHandlerContext, Object, ChannelPromise)}
+   */
+  @Test
+  @DisplayName(
+      "Test write(ChannelHandlerContext, Object, ChannelPromise); when DefaultHttp2PingFrame(long) with content is one")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void RestApiProxy.write(ChannelHandlerContext, Object, ChannelPromise)"})
+  void testWrite_whenDefaultHttp2PingFrameWithContentIsOne() {
+    // Arrange
+    RestApiProxy restApiProxy = new RestApiProxy(new ArrayList<>());
+
+    ChannelHandlerContext ctx = mock(ChannelHandlerContext.class);
+    when(ctx.write(Mockito.<Object>any(), Mockito.<ChannelPromise>any()))
+        .thenReturn(new DefaultChannelProgressivePromise(new EmbeddedChannel()));
+    DefaultHttp2PingFrame defaultHttp2PingFrame = new DefaultHttp2PingFrame(1L);
+
+    // Act
+    restApiProxy.write(
+        ctx, defaultHttp2PingFrame, new DefaultChannelProgressivePromise(new EmbeddedChannel()));
+
+    // Assert
+    verify(ctx).write(isA(Object.class), isA(ChannelPromise.class));
+  }
+
+  /**
+   * Test {@link RestApiProxy#write(ChannelHandlerContext, Object, ChannelPromise)}.
+   *
+   * <ul>
+   *   <li>When {@link DefaultHttp2PushPromiseFrame#DefaultHttp2PushPromiseFrame(Http2Headers)} with
+   *       http2Headers is {@link DefaultHttp2Headers#DefaultHttp2Headers()}.
+   * </ul>
+   *
+   * <p>Method under test: {@link RestApiProxy#write(ChannelHandlerContext, Object, ChannelPromise)}
+   */
+  @Test
+  @DisplayName(
+      "Test write(ChannelHandlerContext, Object, ChannelPromise); when DefaultHttp2PushPromiseFrame(Http2Headers) with http2Headers is DefaultHttp2Headers()")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void RestApiProxy.write(ChannelHandlerContext, Object, ChannelPromise)"})
+  void testWrite_whenDefaultHttp2PushPromiseFrameWithHttp2HeadersIsDefaultHttp2Headers()
+      throws InterruptedException, ExecutionException {
+    // Arrange
+    RestApiProxy restApiProxy = new RestApiProxy(new ArrayList<>());
+
+    ChannelHandlerContext ctx = mock(ChannelHandlerContext.class);
+    when(ctx.alloc()).thenReturn(new AdaptiveByteBufAllocator());
+    DefaultHttp2PushPromiseFrame defaultHttp2PushPromiseFrame =
+        new DefaultHttp2PushPromiseFrame(new DefaultHttp2Headers());
+    DefaultChannelProgressivePromise promise =
+        new DefaultChannelProgressivePromise(new EmbeddedChannel());
+
+    // Act
+    restApiProxy.write(ctx, defaultHttp2PushPromiseFrame, promise);
+
+    // Assert
+    verify(ctx, atLeast(1)).alloc();
+    assertNull(promise.get());
+    assertTrue(promise.isDone());
+  }
+
+  /**
+   * Test {@link RestApiProxy#write(ChannelHandlerContext, Object, ChannelPromise)}.
+   *
+   * <ul>
+   *   <li>When {@link DefaultHttp2UnknownFrame#DefaultHttp2UnknownFrame(byte, Http2Flags)} with
+   *       frameType is {@code A} and flags is {@link Http2Flags#Http2Flags()}.
+   * </ul>
+   *
+   * <p>Method under test: {@link RestApiProxy#write(ChannelHandlerContext, Object, ChannelPromise)}
+   */
+  @Test
+  @DisplayName(
+      "Test write(ChannelHandlerContext, Object, ChannelPromise); when DefaultHttp2UnknownFrame(byte, Http2Flags) with frameType is 'A' and flags is Http2Flags()")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void RestApiProxy.write(ChannelHandlerContext, Object, ChannelPromise)"})
+  void testWrite_whenDefaultHttp2UnknownFrameWithFrameTypeIsAAndFlagsIsHttp2Flags()
+      throws InterruptedException, ExecutionException {
+    // Arrange
+    RestApiProxy restApiProxy = new RestApiProxy(new ArrayList<>());
+
+    ChannelHandlerContext ctx = mock(ChannelHandlerContext.class);
+    when(ctx.alloc()).thenReturn(new AdaptiveByteBufAllocator());
+    DefaultHttp2UnknownFrame defaultHttp2UnknownFrame =
+        new DefaultHttp2UnknownFrame((byte) 'A', new Http2Flags());
+    DefaultChannelProgressivePromise promise =
+        new DefaultChannelProgressivePromise(new EmbeddedChannel());
+
+    // Act
+    restApiProxy.write(ctx, defaultHttp2UnknownFrame, promise);
+
+    // Assert
+    verify(ctx, atLeast(1)).alloc();
+    assertNull(promise.get());
+    assertTrue(promise.isDone());
+  }
+
+  /**
+   * Test {@link RestApiProxy#write(ChannelHandlerContext, Object, ChannelPromise)}.
+   *
+   * <ul>
+   *   <li>When {@link EmptyByteBuf#EmptyByteBuf(ByteBufAllocator)} with alloc is {@link
+   *       AdaptiveByteBufAllocator#AdaptiveByteBufAllocator()}.
+   * </ul>
+   *
+   * <p>Method under test: {@link RestApiProxy#write(ChannelHandlerContext, Object, ChannelPromise)}
+   */
+  @Test
+  @DisplayName(
+      "Test write(ChannelHandlerContext, Object, ChannelPromise); when EmptyByteBuf(ByteBufAllocator) with alloc is AdaptiveByteBufAllocator()")
+  @Tag("ContributionFromDiffblue")
+  @ManagedByDiffblue
+  @MethodsUnderTest({"void RestApiProxy.write(ChannelHandlerContext, Object, ChannelPromise)"})
+  void testWrite_whenEmptyByteBufWithAllocIsAdaptiveByteBufAllocator()
+      throws InterruptedException, ExecutionException {
+    // Arrange
+    RestApiProxy restApiProxy = new RestApiProxy(new ArrayList<>());
+
+    ChannelHandlerContext ctx = mock(ChannelHandlerContext.class);
+    when(ctx.alloc()).thenReturn(new AdaptiveByteBufAllocator());
+    DuplicatedByteBuf content =
+        new DuplicatedByteBuf(new EmptyByteBuf(new AdaptiveByteBufAllocator()));
+    DefaultHttp2DataFrame defaultHttp2DataFrame = new DefaultHttp2DataFrame(content);
+    DefaultChannelProgressivePromise promise =
+        new DefaultChannelProgressivePromise(new EmbeddedChannel());
+
+    // Act
+    restApiProxy.write(ctx, defaultHttp2DataFrame, promise);
+
+    // Assert
+    verify(ctx, atLeast(1)).alloc();
+    assertNull(promise.get());
+    assertTrue(promise.isDone());
   }
 
   /**

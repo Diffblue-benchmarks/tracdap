@@ -14,6 +14,8 @@ import com.google.protobuf.Descriptors.ServiceDescriptor;
 import java.util.ArrayList;
 import java.util.List;
 import javax.management.loading.MLet;
+import org.finos.tracdap.api.FileWriteRequest;
+import org.finos.tracdap.api.ListTenantsRequest;
 import org.finos.tracdap.common.exception.EConfig;
 import org.finos.tracdap.gateway.proxy.rest.RestApiMethod;
 import org.junit.jupiter.api.DisplayName;

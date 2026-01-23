@@ -2,7 +2,6 @@ package org.finos.tracdap.common.netty;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.isA;
-import static org.mockito.ArgumentMatchers.isNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -87,12 +86,22 @@ class EventLoopInterceptorDiffblueTest {
     "io.grpc.ClientCall EventLoopInterceptor.interceptCall(MethodDescriptor, CallOptions, Channel)"
   })
   void testInterceptCall3() {
-    // Arrange, Act and Assert
-    assertThrows(
-        ETracInternal.class,
-        () ->
-            new EventLoopInterceptor(new DefaultEventLoop(), true, true)
-                .interceptCall(null, mock(CallOptions.class), mock(Channel.class)));
+    // Arrange
+    EventLoopInterceptor eventLoopInterceptor =
+        new EventLoopInterceptor(new DefaultEventLoop(), false, true);
+    MethodDescriptor<Object, Object> method = mock(MethodDescriptor.class);
+    CallOptions options = mock(CallOptions.class);
+
+    Channel channel = mock(Channel.class);
+    when(channel.newCall(
+            Mockito.<MethodDescriptor<Object, Object>>any(), Mockito.<CallOptions>any()))
+        .thenReturn(null);
+
+    // Act
+    eventLoopInterceptor.interceptCall(method, options, channel);
+
+    // Assert
+    verify(channel).newCall(isA(MethodDescriptor.class), isA(CallOptions.class));
   }
 
   /**
@@ -111,38 +120,8 @@ class EventLoopInterceptorDiffblueTest {
   void testInterceptCall4() {
     // Arrange
     EventLoopInterceptor eventLoopInterceptor =
-        new EventLoopInterceptor(new DefaultEventLoop(), false, true);
-    CallOptions options = mock(CallOptions.class);
-
-    Channel channel = mock(Channel.class);
-    when(channel.newCall(
-            Mockito.<MethodDescriptor<Object, Object>>any(), Mockito.<CallOptions>any()))
-        .thenReturn(null);
-
-    // Act
-    eventLoopInterceptor.interceptCall(null, options, channel);
-
-    // Assert
-    verify(channel).newCall(isNull(), isA(CallOptions.class));
-  }
-
-  /**
-   * Test {@link EventLoopInterceptor#interceptCall(MethodDescriptor, CallOptions, Channel)}.
-   *
-   * <p>Method under test: {@link EventLoopInterceptor#interceptCall(MethodDescriptor, CallOptions,
-   * Channel)}
-   */
-  @Test
-  @DisplayName("Test interceptCall(MethodDescriptor, CallOptions, Channel)")
-  @Tag("ContributionFromDiffblue")
-  @ManagedByDiffblue
-  @MethodsUnderTest({
-    "io.grpc.ClientCall EventLoopInterceptor.interceptCall(MethodDescriptor, CallOptions, Channel)"
-  })
-  void testInterceptCall5() {
-    // Arrange
-    EventLoopInterceptor eventLoopInterceptor =
         new EventLoopInterceptor(new DefaultEventLoop(), false, false);
+    MethodDescriptor<Object, Object> method = mock(MethodDescriptor.class);
     CallOptions options = mock(CallOptions.class);
 
     Channel channel = mock(Channel.class);
@@ -151,10 +130,10 @@ class EventLoopInterceptorDiffblueTest {
         .thenReturn(null);
 
     // Act
-    eventLoopInterceptor.interceptCall(null, options, channel);
+    eventLoopInterceptor.interceptCall(method, options, channel);
 
     // Assert
-    verify(channel).newCall(isNull(), isA(CallOptions.class));
+    verify(channel).newCall(isA(MethodDescriptor.class), isA(CallOptions.class));
   }
 
   /**
@@ -180,6 +159,7 @@ class EventLoopInterceptorDiffblueTest {
     // Arrange
     EventLoopInterceptor eventLoopInterceptor =
         new EventLoopInterceptor(new DefaultEventLoop(), false, true);
+    MethodDescriptor<Object, Object> method = mock(MethodDescriptor.class);
     CallOptions options = mock(CallOptions.class);
 
     Channel channel = mock(Channel.class);
@@ -189,8 +169,8 @@ class EventLoopInterceptorDiffblueTest {
 
     // Act and Assert
     assertThrows(
-        ETracInternal.class, () -> eventLoopInterceptor.interceptCall(null, options, channel));
-    verify(channel).newCall(isNull(), isA(CallOptions.class));
+        ETracInternal.class, () -> eventLoopInterceptor.interceptCall(method, options, channel));
+    verify(channel).newCall(isA(MethodDescriptor.class), isA(CallOptions.class));
   }
 
   /**
