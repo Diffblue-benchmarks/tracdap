@@ -46,3 +46,9 @@
 
 .DS_Store
 __pycache__/
+
+.diffblue/cache
+**.diffblue/cache
+**/.diffblue/cache
+**/**.diffblue/cache
+**/**/.diffblue/cache
